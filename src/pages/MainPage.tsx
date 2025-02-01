@@ -1,4 +1,4 @@
-import './MainPage.css';
+import './styling/MainPage.css';
 
 export const MainPage = () => {
   return (

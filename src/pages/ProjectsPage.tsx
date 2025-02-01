@@ -1,4 +1,4 @@
-import './ProjectsPage.css';
+import './styling/ProjectsPage.css';
 
 export const ProjectsPage = () => {
     return (

@@ -1,0 +1,7 @@
+.my-dropdown-toggle{
+    border: none;
+    background: none !important;
+    box-shadow: none;
+    font-size: 16px;
+    cursor: pointer;
+}

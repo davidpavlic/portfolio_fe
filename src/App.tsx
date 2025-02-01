@@ -1,8 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NavBar } from "./components/organisms/NavBar";
+import { MyNavBar } from "./components/organisms/MyNavBar";
 import HomePage from "./pages/MainPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import PassionsPage from "./pages/PassionsPage";
@@ -13,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="my-app">
-        <NavBar />
+        <MyNavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />

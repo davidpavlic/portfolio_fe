@@ -1,4 +1,4 @@
-import './NewsScraperPage.css';
+import './styling/NewsScraperPage.css';
 
 export const NewsScraperPage = () => {
     return (

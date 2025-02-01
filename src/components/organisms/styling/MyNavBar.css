@@ -1,0 +1,30 @@
+.my-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 5%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.center-nav {
+    display: flex;
+    gap: 50px;
+    margin: auto;
+}
+
+.right-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 20px;
+    white-space: nowrap;
+}

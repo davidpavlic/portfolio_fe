@@ -1,4 +1,4 @@
-import './PassionPage.css';
+import './styling/PassionPage.css';
 
 export const PassionsPage = () => {
   return (
