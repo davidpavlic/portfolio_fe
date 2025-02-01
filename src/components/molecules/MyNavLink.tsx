@@ -1,29 +1,20 @@
 import './styling/MyNavLink.css';
-import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 
 type NavLinkProps = {
     title: string;
     link: string;
-  };
+};
 
-const MyThemeSwitcher = ({title, link}: NavLinkProps) => {
+const MyThemeSwitcher = ({ title, link }: NavLinkProps) => {
 
-    const [activeLink, setActiveLink] = useState<string>("home");
-
-    useEffect(() => {
-        setActiveLink(location.pathname);
-    }, [location]);
-
-    const onUpdateActiveLink = (value: string) => {
-        setActiveLink(value);
-    };
+    const location = useLocation();
 
     return (
         <Nav.Link
             href={link}
-            className={activeLink === link ? "active my-navbar-link" : "my-navbar-link"}
-            onClick={() => onUpdateActiveLink(link)}
+            className={location.pathname === link ? "active my-navbar-link" : "my-navbar-link"}
         >
             {title}
         </Nav.Link>

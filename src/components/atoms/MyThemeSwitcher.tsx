@@ -7,7 +7,7 @@ const MyThemeSwitcher = () => {
     const [darkMode, setDarkMode] = useState<boolean>(false);
 
     return (
-        <button className="icon-button" onClick={() => setDarkMode(!darkMode)}>
+        <button className="my-icon-button" onClick={() => setDarkMode(!darkMode)}>
             {darkMode ? <BsMoon size={20} /> : <BsSun size={20} />}
         </button>
     );

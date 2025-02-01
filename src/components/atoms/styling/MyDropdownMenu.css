@@ -1,0 +1,18 @@
+.my-dropdown-item {
+    border: none;
+    background: none;
+    color: black;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.my-dropdown-item:hover {
+    background-color: #CFCFCF;
+    color: black;
+}
+
+.my-dropdown-item:focus,
+.my-dropdown-item:focus:focus-visible,
+.my-dropdown-item:focus:not(:focus-visible) {
+    background-color: #B5B5B5;
+    color: black;
+}

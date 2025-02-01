@@ -1,4 +1,7 @@
+import './styling/MyDropdownMenu.css'
 import { Dropdown } from "react-bootstrap";
+
+//TODO: Remove the padding on top when having a selection style
 
 type DropdownMenuProps = {
   items: { label: string }[];
@@ -8,8 +11,8 @@ type DropdownMenuProps = {
 const DropdownMenu = ({ items, onSelect }: DropdownMenuProps) => {
   return (
     <Dropdown.Menu>
-      {items.map((item, index) => (
-        <Dropdown.Item key={index} onClick={() => onSelect(item.label)}>
+      {items.map((item) => (
+        <Dropdown.Item className="my-dropdown-item" eventKey={item.label} key={item.label} onClick={() => onSelect(item.label)}>
           {item.label}
         </Dropdown.Item>
       ))}
