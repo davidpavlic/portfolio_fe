@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 10%; 
+    padding: 10px 5%;
     background-color: #D9D9D9;
     display: flex;
     justify-content: space-between;
@@ -11,21 +11,46 @@
     z-index: 100;
 }
 
-.active {
-    border-bottom: solid black 2px;
+/* Center navigation */
+.center-nav {
+    display: flex;
+    gap: 50px;
+    margin: auto;
 }
 
+/* Right icons container */
+.right-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Logo on the left */
 .navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     font-weight: bold;
     font-size: 20px;
     white-space: nowrap;
 }
 
-.left-nav,
-.right-nav {
-    display: flex;
-    gap: 100px; 
+/* Active link */
+.active {
+    border-bottom: solid black 2px;
+}
+
+/* Button icons */
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Remove background color from dropdown buttons */
+#language-dropdown,
+#env-dropdown {
+    border: none;
+    background: none !important;
+    box-shadow: none;
+    font-size: 16px;
+    cursor: pointer;
 }

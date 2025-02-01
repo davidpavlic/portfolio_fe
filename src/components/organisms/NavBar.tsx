@@ -1,12 +1,13 @@
-import './NavBar.css';
+import "./NavBar.css";
 import { useState, useEffect } from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
+import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
+import { BsSun, BsMoon } from "react-icons/bs";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState<string>("home");
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [language, setLanguage] = useState<string>("English");
   const location = useLocation();
 
   useEffect(() => {
@@ -19,8 +20,14 @@ export const NavBar = () => {
 
   return (
     <Navbar expand="sm" className="my-navbar">
-      <Container>
-        <Nav className="left-nav">
+      <Container className="navbar-container">
+        {/* Left: Logo */}
+        <Navbar.Brand href="/" className="navbar-brand">
+          David Pavlic
+        </Navbar.Brand>
+
+        {/* Center: Navigation Links */}
+        <Nav className="center-nav">
           <Nav.Link
             href="/"
             className={activeLink === "/" ? "active my-navbar-link" : "my-navbar-link"}
@@ -35,13 +42,6 @@ export const NavBar = () => {
           >
             Projects
           </Nav.Link>
-        </Nav>
-
-        <Navbar.Brand href="/" className="navbar-brand">
-          David Pavlic
-        </Navbar.Brand>
-
-        <Nav className="right-nav">
           <Nav.Link
             href="/passions"
             className={activeLink === "/passions" ? "active my-navbar-link" : "my-navbar-link"}
@@ -57,6 +57,36 @@ export const NavBar = () => {
             NewsScraper
           </Nav.Link>
         </Nav>
+
+        {/* Right: Dark Mode Toggle, Language Dropdown, and Environment Dropdown */}
+        <div className="right-nav">
+          {/* Theme Toggle */}
+          <button className="icon-button" onClick={() => setDarkMode(!darkMode)}>
+            {darkMode ? <BsMoon size={20} /> : <BsSun size={20} />}
+          </button>
+
+          <Dropdown onSelect={(eventKey) => setLanguage(eventKey || "English")}>
+            <Dropdown.Toggle variant="light" id="language-dropdown">
+              {language}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item eventKey="English">English</Dropdown.Item>
+              <Dropdown.Item eventKey="German">Deutsch</Dropdown.Item>
+              <Dropdown.Item eventKey="French">Français</Dropdown.Item>
+              <Dropdown.Item eventKey="Croatian">Hrvatski</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+
+          <Dropdown>
+            <Dropdown.Toggle variant="light" id="env-dropdown">
+              Env
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/prod">Prod</Dropdown.Item>
+              <Dropdown.Item href="#/test">Test</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
       </Container>
     </Navbar>
   );
