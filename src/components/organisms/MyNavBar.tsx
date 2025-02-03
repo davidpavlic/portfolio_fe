@@ -22,6 +22,7 @@ const navItems = [
 {/* TODO: Dropdown no blue coloring */ }
 {/* TODO: Collapsed Navbar items */}
 {/* TODO: Make Brand look prettier  */}
+{/* TODO: When selecting a page make an animation */}
 export const MyNavBar = () => {
   // Track window width to conditionally render the settings component.
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
