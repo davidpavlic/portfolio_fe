@@ -1,5 +1,5 @@
 import "./styling/MyNavBar.css";
-import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, Dropdown } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import MyEnvDropDown from "../molecules/MyEnvDropDown";
 import MyLanguageDropDown from "../molecules/MyLanguageDropDown";
@@ -15,14 +15,12 @@ const navItems = [
   { link: "/news-scraper", title: "News Scraper" },
 ];
 
-{/* TODO: When the Navbar collapses, the height decreases by a few px */ }
-{/* TODO: When clicking outside of the opened hamburger, close it */}
-{/* TODO: Adjust settings font color */}
-{/* TODO: Dropdown in Dropdown */ }
-{/* TODO: Dropdown no blue coloring */ }
-{/* TODO: Collapsed Navbar items */}
-{/* TODO: Make Brand look prettier  */}
-{/* TODO: When selecting a page make an animation */}
+{/* TODO h: When clicking outside of the opened hamburger, close it */}
+{/* TODO e: Adjust settings font color */}
+{/* TODO h: Dropdown in Dropdown */ }
+{/* TODO e: Dropdown no blue coloring */ }
+{/* TODO m: Collapsed Navbar items */}
+{/* TODO m: When selecting a page make an animation */}
 export const MyNavBar = () => {
   // Track window width to conditionally render the settings component.
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

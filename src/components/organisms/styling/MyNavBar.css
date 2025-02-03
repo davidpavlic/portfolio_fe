@@ -87,3 +87,10 @@
         margin-right: calc(2% + 2cm);
     }
 }
+
+/* Specifically defined to prevent expand="md" breakpoint diffs */
+@media (min-width: 768px) {
+    .my-navbar {
+        height: 56px;
+    }
+}
