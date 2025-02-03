@@ -1,14 +1,18 @@
 .my-navbar {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 5%;
-    background-color: #D9D9D9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 5%;
+  background-color: #d9d9d9;
+  z-index: 100;
+}
+
+/* Ensure the container spans the full width and uses flex layout */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .center-nav {
@@ -18,13 +22,49 @@
 }
 
 .right-nav {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 20px;
-    white-space: nowrap;
+/* Initially hide the right nav toggle for larger screens */
+.right-nav-toggle {
+  margin-left: auto; /* Pushes it to the far right */
+  display: none;
+}
+
+/* Style the settings icon so that its color is black */
+.settings-icon,
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+/* Override the dropdown toggle arrow (caret) to be black */
+.settings-icon::after {
+  /* These properties mimic Bootstrap’s default arrow but in black */
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid black !important;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+
+/* Display the right nav toggle on screens 991 px and below */
+@media (max-width: 991px) {
+  .right-nav-toggle {
+    display: block;
+  }
+}
+
+/* Allow dropdown menus to overflow if needed */
+.right-nav-toggle .dropdown-menu {
+  overflow: visible;
+}
+
+/* If needed, adjust nested dropdown z-index */
+.dropdown-menu .dropdown-menu {
+  z-index: 1050;
 }
