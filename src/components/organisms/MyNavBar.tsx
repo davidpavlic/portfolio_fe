@@ -25,15 +25,15 @@ export const MyNavBar = () => {
 
   return (
     <Navbar expand="md" className="my-navbar">
-      <Container className="navbar-container d-flex justify-content-between align-items-center">
-        <Navbar.Brand href="/" className="navbar-brand">
+      <Container>
+        <Navbar.Brand href="/" className="my-navbar-brand">
           David Pavlic
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="center-nav">
+          <Nav className="my-navbar-center">
             {navItems.map((item) => (
               <MyNavLink key={item.link} title={item.title} link={item.link} />
             ))}
@@ -41,8 +41,8 @@ export const MyNavBar = () => {
         </Navbar.Collapse>
 
         {windowWidth <= 991 ? (
-          <Dropdown className="right-nav-toggle" align="end" autoClose="outside">
-            <Dropdown.Toggle variant="link" className="settings-icon">
+          <Dropdown className="my-navbar-settings-dropdown" align="end" autoClose="outside">
+            <Dropdown.Toggle variant="link" className="my-navbar-settings-icon">
               <FaCog style={{ color: "black" }} />
             </Dropdown.Toggle>
             <Dropdown.Menu>
@@ -66,7 +66,7 @@ export const MyNavBar = () => {
             </Dropdown.Menu>
           </Dropdown>
         ) : (
-          <Nav className="right-nav">
+          <Nav className="my-navbar-settings">
             <MyThemeSwitcher />
             <MyLanguageDropDown />
             <MyEnvDropDown />

@@ -1,70 +1,67 @@
 .my-navbar {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 5%;
-  background-color: #d9d9d9;
-  z-index: 100;
+    /* Makes the navbar stick to the top */
+    position: sticky;                   
+    top: 0;                             
+    /* Defines Background color */
+    background-color: #d9d9d9;        
 }
 
-/* Ensure the container spans the full width and uses flex layout */
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.my-navbar-brand {
+    /* Gradual Margin */
+    position: absolute;
+    left: 2%;
+    /* Makes the logo stick to the top, when burger menu opened */
+    top: 10px;
 }
 
-.center-nav {
-    display: flex;
-    gap: 50px;
+.my-navbar-center {
+    /* Defines the spaces between the pages */
+    gap: 50px;   
+    /* Centers the page elements horizontally */                       
     margin: auto;
 }
 
-.right-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+.my-navbar-settings,
+.my-navbar-settings-dropdown {
+    /* Gradual Margin */
+    position: absolute;
+    right: 2%;
 }
 
-/* Initially hide the right nav toggle for larger screens */
-.right-nav-toggle {
-  margin-left: auto; /* Pushes it to the far right */
-  display: none;
+.my-navbar-settings {
+    /* Defines the spaces between the pages */
+    gap: 20px;
 }
 
-/* Style the settings icon so that its color is black */
-.settings-icon,
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
-  color: black;
+.my-navbar-settings-dropdown {
+    /* Makes the logo stick to the top, when burger menu opened */
+    top: 1px;
 }
 
-/* Override the dropdown toggle arrow (caret) to be black */
-.settings-icon::after {
-  /* These properties mimic Bootstrap’s default arrow but in black */
-  margin-left: 0.255em;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.3em solid black !important;
-  border-right: 0.3em solid transparent;
-  border-left: 0.3em solid transparent;
+/* Before icon generation */
+.my-navbar-settings-icon{
+    /* Specifies the Settings icon size */
+    font-size: 24px;
 }
 
-/* Display the right nav toggle on screens 991 px and below */
-@media (max-width: 991px) {
-  .right-nav-toggle {
-    display: block;
-  }
+/* After icon generation */
+.my-navbar-settings-icon::after {
+    /* Removes the standard arrow of the Bootstrap Dropdown Toggle */
+    border: none;
 }
 
-/* Allow dropdown menus to overflow if needed */
-.right-nav-toggle .dropdown-menu {
-  overflow: visible;
+/* TODO */
+/* Responsiveness for the Burger Menu */
+@media (max-width: 767px) {
+    .navbar-toggler {
+        margin-left: auto;
+        margin-right: 10%;
+    }
 }
 
-/* If needed, adjust nested dropdown z-index */
-.dropdown-menu .dropdown-menu {
-  z-index: 1050;
+@media (max-width: 575px) {
+    .navbar-toggler {
+        margin-left: auto;
+        margin-right: 15%;
+    }
 }
