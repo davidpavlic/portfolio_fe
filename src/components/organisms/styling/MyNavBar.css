@@ -19,6 +19,8 @@
     gap: 50px;
     /* Centers the page elements horizontally */
     margin: auto;
+    /* Distance to the left to not be too close to the logo on smaller screens */
+    padding-left: 4rem;
 }
 
 .my-navbar-settings,
@@ -48,6 +50,7 @@
 .my-navbar-settings-icon {
     /* Specifies the Settings icon size */
     font-size: 24px;
+    /* Settings icon color */
     color: black;
 }
 
@@ -57,13 +60,11 @@
     border: none;
 }
 
-/* TODO */
 /* Responsiveness for the Burger Menu */
-
-
 @media (max-width: 767px) {
     .navbar-toggler {
         margin-left: auto;
-        margin-right: 15%;
+        /* 2% matches the settings container's margin from .my-navbar-settings-dropdown*/
+        margin-right: calc(2% + 2cm);
     }
 }

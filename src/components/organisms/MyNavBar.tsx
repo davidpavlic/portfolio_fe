@@ -17,6 +17,7 @@ const navItems = [
 
 {/* TODO: When the Navbar collapses, the height decreases by a few px */ }
 {/* TODO: When clicking outside of the opened hamburger, close it */}
+{/* TODO: Adjust settings font color */}
 export const MyNavBar = () => {
   // Track window width to conditionally render the settings component.
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -51,7 +52,7 @@ export const MyNavBar = () => {
       </Navbar.Collapse>
 
       {/* If screensize is below 991px (bootstrap lg) */}
-      {windowWidth <= 991 ? (
+      {windowWidth <= 1100 ? (
         <Dropdown className="my-navbar-settings-dropdown">
           <Dropdown.Toggle variant="link" className="my-navbar-settings-icon"> {/* TODO: Remove link and make the button look like hamburger menu */}
             <FaCog className="my-navbar-settings-icon" />
