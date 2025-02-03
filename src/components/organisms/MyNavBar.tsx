@@ -18,6 +18,10 @@ const navItems = [
 {/* TODO: When the Navbar collapses, the height decreases by a few px */ }
 {/* TODO: When clicking outside of the opened hamburger, close it */}
 {/* TODO: Adjust settings font color */}
+{/* TODO: Dropdown in Dropdown */ }
+{/* TODO: Dropdown no blue coloring */ }
+{/* TODO: Collapsed Navbar items */}
+{/* TODO: Make Brand look prettier  */}
 export const MyNavBar = () => {
   // Track window width to conditionally render the settings component.
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
