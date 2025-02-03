@@ -11,7 +11,7 @@
     position: absolute;
     left: 2%;
     /* Makes the logo stick to the top, when burger menu opened */
-    top: 10px;
+    top: 7px;
 }
 
 .my-navbar-center {
@@ -47,17 +47,36 @@
 }
 
 /* Before icon generation */
-.my-navbar-settings-icon {
+.my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
+.my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
+.my-navbar-settings-dropdown .my-navbar-settings-toggle {
     /* Specifies the Settings icon size */
     font-size: 24px;
-    /* Settings icon color */
-    color: black;
+    /* Define your size */
+    height: 40px;
+    width: 56px;
+    /* Define border */
+    border-radius: 0.4rem;
+    border-color: #b9b9b9;
+    /* Overwrite Bootstrap standard */
+    background-color: transparent;
+    /* Align icon vertically */
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
 }
 
 /* After icon generation */
-.my-navbar-settings-icon::after {
+.my-navbar-settings-toggle::after {
     /* Removes the standard arrow of the Bootstrap Dropdown Toggle */
     border: none;
+}
+
+.my-navbar-settings-cog {
+    /* Settings icon color */
+    color: #4f5255;
+    /* Align icon horizontally */
+    padding-left: 6px;
 }
 
 /* Responsiveness for the Burger Menu */

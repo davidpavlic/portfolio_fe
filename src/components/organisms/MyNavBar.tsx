@@ -45,13 +45,15 @@ export const MyNavBar = () => {
       </Navbar.Brand>
 
       {/* Makes the navbar look good, when the menu collapses */}
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />    {/* TODO: what do aria-controls do? */}
+      {/* Connection with aria-controls and id is react standard */}
+      {/* Helps screen readers announce/navigate the relationship. (For people with disability)*/}
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       {/* The id links the collapse to the toggle */}
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="my-navbar-center">
           {navItems.map((item) => (
-            <MyNavLink title={item.title} link={item.link} /> /* Same property two different params? */
+            <MyNavLink title={item.title} link={item.link} /> 
           ))}
         </Nav>
       </Navbar.Collapse>
@@ -59,8 +61,8 @@ export const MyNavBar = () => {
       {/* If screensize is below 991px (bootstrap lg) */}
       {windowWidth <= 1100 ? (
         <Dropdown className="my-navbar-settings-dropdown">
-          <Dropdown.Toggle variant="link" className="my-navbar-settings-icon"> {/* TODO: Remove link and make the button look like hamburger menu */}
-            <FaCog className="my-navbar-settings-icon" />
+          <Dropdown.Toggle className="my-navbar-settings-toggle">
+            <FaCog className="my-navbar-settings-cog" />
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item onClick={(e) => e.stopPropagation()} > {/* e.stopPropagation makes the menu not close when clicked */}
