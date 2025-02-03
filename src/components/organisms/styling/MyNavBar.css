@@ -1,9 +1,9 @@
 .my-navbar {
     /* Makes the navbar stick to the top */
-    position: sticky;                   
-    top: 0;                             
+    position: sticky;
+    top: 0;
     /* Defines Background color */
-    background-color: #d9d9d9;        
+    background-color: #d9d9d9;
 }
 
 .my-navbar-brand {
@@ -16,8 +16,8 @@
 
 .my-navbar-center {
     /* Defines the spaces between the pages */
-    gap: 50px;   
-    /* Centers the page elements horizontally */                       
+    gap: 50px;
+    /* Centers the page elements horizontally */
     margin: auto;
 }
 
@@ -38,10 +38,17 @@
     top: 1px;
 }
 
+.my-navbar-settings-dropdown .dropdown-menu {
+    /* Makes the settings open to the left, instead of right (out of bounds) */
+    right: 0;
+    left: auto;
+}
+
 /* Before icon generation */
-.my-navbar-settings-icon{
+.my-navbar-settings-icon {
     /* Specifies the Settings icon size */
     font-size: 24px;
+    color: black;
 }
 
 /* After icon generation */
@@ -52,14 +59,9 @@
 
 /* TODO */
 /* Responsiveness for the Burger Menu */
-@media (max-width: 767px) {
-    .navbar-toggler {
-        margin-left: auto;
-        margin-right: 10%;
-    }
-}
 
-@media (max-width: 575px) {
+
+@media (max-width: 767px) {
     .navbar-toggler {
         margin-left: auto;
         margin-right: 15%;
