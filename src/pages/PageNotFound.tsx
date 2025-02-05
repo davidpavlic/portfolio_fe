@@ -1,9 +1,11 @@
 import './styling/PageNotFound.css';
+import { useTranslation } from "react-i18next";
 
 export const PageNotFound = () => {
+  const { t } = useTranslation();
     return (
       <nav>
-          Page not found.
+          {t("page_not_found")}
       </nav>
     );
   };

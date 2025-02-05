@@ -1,9 +1,11 @@
 import './styling/PassionPage.css';
+import { useTranslation } from "react-i18next";
 
 export const PassionsPage = () => {
+  const { t } = useTranslation();
   return (
     <nav>
-        This is the PassionsPage.
+        {t("passions_dummy")}
     </nav>
   );
 };

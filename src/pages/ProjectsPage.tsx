@@ -1,9 +1,11 @@
 import './styling/ProjectsPage.css';
+import { useTranslation } from "react-i18next";
 
 export const ProjectsPage = () => {
+  const { t } = useTranslation();
     return (
       <nav>
-          This is the ProjectsPage.
+          {t("projects_dummy")}
       </nav>
     );
   };
