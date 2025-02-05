@@ -6,6 +6,14 @@
     padding-bottom: 5px;
 }
 
+html.dark .my-icon-button {
+    color: white;
+}
+
 .my-icon-button:hover {
     background-color: #CFCFCF;
+}
+
+html.dark .my-icon-button:hover {
+    background-color: #191919;
 }

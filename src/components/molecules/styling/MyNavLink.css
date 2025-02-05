@@ -1,3 +1,16 @@
 .active {
     border-bottom: solid black 2px;
 }
+
+html.dark .active {
+    border-bottom: solid white 2px;
+}
+
+html.dark .my-navbar-link.active {
+    border-bottom: solid white 2px;
+    color: white;
+}
+
+html.dark .my-navbar-link {
+    color: white;
+}

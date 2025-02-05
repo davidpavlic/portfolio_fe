@@ -57,13 +57,13 @@ export const MyNavBar = () => {
             <FaCog className="my-navbar-settings-cog" />
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item onClick={(e) => e.stopPropagation()}>
+            <Dropdown.Item className="my-navbar-settings-dropdown-item" onClick={(e) => e.stopPropagation()}>
               <MyThemeSwitcher />
             </Dropdown.Item>
-            <Dropdown.Item onClick={(e) => e.stopPropagation()}>
+            <Dropdown.Item className="my-navbar-settings-dropdown-item" onClick={(e) => e.stopPropagation()}>
               <MyLanguageDropDown />
             </Dropdown.Item>
-            <Dropdown.Item onClick={(e) => e.stopPropagation()}>
+            <Dropdown.Item className="my-navbar-settings-dropdown-item" onClick={(e) => e.stopPropagation()}>
               <MyEnvDropDown />
             </Dropdown.Item>
           </Dropdown.Menu>

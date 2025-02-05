@@ -10,7 +10,7 @@ type DropdownMenuProps = {
 
 const DropdownMenu = ({ items, onSelect }: DropdownMenuProps) => {
   return (
-    <Dropdown.Menu>
+    <Dropdown.Menu className="my-dropdown-menu">
       {items.map((item) => (
         <Dropdown.Item className="my-dropdown-item" eventKey={item.code} key={item.code} onClick={() => onSelect(item.label)}>
           {item.label}

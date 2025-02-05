@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MyNavBar } from "./components/organisms/MyNavBar";
+import { ThemeProvider } from './config/MyThemeProvider';
 import HomePage from "./pages/MainPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import PassionsPage from "./pages/PassionsPage";
@@ -10,6 +11,7 @@ import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
+    <ThemeProvider>
     <BrowserRouter>
       <div className="my-app">
         <MyNavBar />
@@ -22,6 +24,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

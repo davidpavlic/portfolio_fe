@@ -6,12 +6,36 @@
     background-color: #d9d9d9;
 }
 
+html.dark .my-navbar {
+    /* Defines Background color */
+    background-color: #121212;
+}
+
 .my-navbar-brand {
     /* Gradual Margin */
     position: absolute;
     left: 2%;
     /* Makes the logo stick to the top, when burger menu opened */
     top: 7px;
+}
+
+html.dark .my-navbar-brand {
+    color: white;
+}
+
+/* Collapsed menu container background in dark mode */
+html.dark .navbar-collapse {
+    background-color: #121212;
+}
+
+html.dark .navbar-toggler {
+    border-color: white;
+}
+
+/* Dark mode: change the hamburger icon to white by overriding its background image */
+html.dark .navbar-toggler-icon {
+    /* The background image below is an SVG icon with white strokes */
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .my-navbar-center {
@@ -40,6 +64,10 @@
     top: 1px;
 }
 
+html.dark .my-navbar-settings-dropdown .dropdown-menu {
+    background-color: #121212;
+}
+
 .my-navbar-settings-dropdown .dropdown-menu {
     /* Makes the settings open to the left, instead of right (out of bounds) */
     right: 0;
@@ -66,6 +94,10 @@
     margin-top: 7px;
 }
 
+html.dark .my-navbar-settings-dropdown-item {
+    background-color: #121212;
+}
+
 /* After icon generation */
 .my-navbar-settings-toggle::after {
     /* Removes the standard arrow of the Bootstrap Dropdown Toggle */
@@ -77,6 +109,11 @@
     color: #4f5255;
     /* Align icon horizontally */
     padding-left: 6px;
+}
+
+html.dark .my-navbar-settings-cog {
+    /* Settings icon color */
+    color: white;
 }
 
 /* Responsiveness for the Burger Menu */
