@@ -6,67 +6,11 @@ export const MainPage = () => {
   
   return (
     <nav>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
-        <br/>
-        {t("home_dummy")}
+        {Array.from({ length: 100 }, () => (
+          <div>
+            {t("home_dummy")}<br />
+          </div>
+        ))}
     </nav>
   );
 };
