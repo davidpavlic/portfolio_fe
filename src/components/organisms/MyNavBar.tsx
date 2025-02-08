@@ -9,6 +9,14 @@ import MyThemeSwitcher from "../atoms/MyThemeSwitcher";
 import MyNavLink from "../molecules/MyNavLink";
 
 
+///* TODOS *///
+// TODO: When clicking outside of the opened hamburger, close it
+// TODO: Adjust settings font color
+// TODO: Dropdown in Dropdown 
+// TODO: Dropdown no blue coloring 
+// TODO: Collapsed Navbar items 
+// TODO: When selecting a page make an animation 
+
 ///* CONSTANTS *///
 // Define navbar links with translation keys
 const navItems = [
