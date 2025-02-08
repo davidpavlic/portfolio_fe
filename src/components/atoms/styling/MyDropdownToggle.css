@@ -1,35 +1,35 @@
 /* IDLE DROPDOWN TOGGLE */
 .my-dropdown-toggle {   
-    border: none;                   /* Override bootstraps standard border on idle toggle */
-    background: none;               /* Override bootstraps standard background color on idle toggle */
-    color: black;                 /* Override bootstraps standard white color on idle toggle */
+    border: none;                                   /* Override bootstraps standard border on idle toggle */
+    background: none;                               /* Override bootstraps standard background color on idle toggle */
+    color: var(--lightmode-font-color);             /* Override bootstraps standard white color on idle toggle */
     transition: background-color 0.2s ease-in-out;  /* Fluid Background color change */
 }
 
 html.dark .my-dropdown-toggle {  
-    color: white                  /* Override previously defined black color */
+    color: var(--darkmode-font-color);              /* Override previously defined black color */
 }
 
 /* HOVER DROPDOWN ELEMENT */
 .my-dropdown-toggle:hover{
-    background-color: #CFCFCF;    /* Override bootstraps standard background color on hover toggle */
-    color: black;                 /* Override bootstraps standard white color on hover toggle */
+    background-color: var(--lightmode-lighter);     /* Override bootstraps standard background color on hover toggle */
+    color: var(--lightmode-font-color); ;            /* Override bootstraps standard white color on hover toggle */
 }
 
 html.dark .my-dropdown-toggle:hover{
-    background-color: #181818;    /* Override previously devined background color */
-    color: white;                 /* Override previously devined white color */
+    background-color: var(--darkmode-darkest);      /* Override previously devined background color */
+    color: var(--darkmode-font-color);             /* Override previously devined white color */
 }
 
 /* CLICKED DROPDOWN ELEMENT */
-.my-dropdown-toggle.show,                       /* When holding another button pressed */
-.my-dropdown-toggle:focus:not(:focus-visible)   /* When selected */{ 
-    background-color: #BEBEBE;    /* Override bootstraps standard background color on clicked toggle */
-    color: black;                 /* Override bootstraps standard white color on clicked toggle */
+.my-dropdown-toggle.show,                           /* When holding another button pressed */
+.my-dropdown-toggle:focus:not(:focus-visible)       /* When selected */{ 
+    background-color: var(--lightmode-light);       /* Override bootstraps standard background color on clicked toggle */
+    color: var(--lightmode-font-color); ;            /* Override bootstraps standard white color on clicked toggle */
 }
 
-html.dark .my-dropdown-toggle.show,                         /* When holding another button pressed */
+html.dark .my-dropdown-toggle.show,                 /* When holding another button pressed */
 html.dark  .my-dropdown-toggle:focus:not(:focus-visible)    /* When selected */{ 
-    background-color: #222222;    /* Override previously devined background color */
-    color: white;                 /* Override previously devined white color */
+    background-color: var(--darkmode-darker);       /* Override previously devined background color */
+    color: var(--darkmode-font-color);             /* Override previously devined white color */
 }

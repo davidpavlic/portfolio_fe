@@ -1,21 +1,21 @@
 /* IDLE THEME SWITCHER */
 .my-icon-button {
-    background: none;                 /* Removes standard button background */
-    border: none;                     /* Removes standard button border */
-    border-radius: 5px;               /* Sets rounded corners for the button */
+    background: none;                               /* Removes standard button background */
+    border: none;                                   /* Removes standard button border */
+    border-radius: 5px;                             /* Sets rounded corners for the button */
     transition: background-color 0.2s ease-in-out;  /* Fluid Background color change */
-    padding-bottom: 5px;              /* Centers the icon vertically */
+    padding-bottom: 5px;                            /* Centers the icon vertically */
 }
 
 html.dark .my-icon-button {
-    color: white;                   /* Sets the icon color in dark mode */
+    color: var(--darkmode-font-color);              /* Sets the icon color in dark mode */
 }
 
 /* HOVER THEME SWITCHER */
 .my-icon-button:hover {
-    background-color: #CFCFCF;      /* Sets a hover background color */
+    background-color: var(--lightmode-lighter);     /* Sets a hover background color */
 }
 
 html.dark .my-icon-button:hover {
-    background-color: #191919;      /* Sets a hover background color */
+    background-color: var(--darkmode-darkest);      /* Sets a hover background color */
 }

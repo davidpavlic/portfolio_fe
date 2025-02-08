@@ -1,0 +1,14 @@
+:root {
+    /* Allgemeine Farben */
+    --darkmode-font-color: #FFFFFF;
+    --lightmode-font-color: #000000;
+
+    /* Light Mode */
+    --lightmode-lighter: #CFCFCF;
+    --lightmode-light: #B5B5B5;
+
+    /* Dark Mode */
+    --darkmode-darkest:  #181818;
+    --darkmode-darker:  #222222;
+    --darkmode-dark:   #282828;
+}
