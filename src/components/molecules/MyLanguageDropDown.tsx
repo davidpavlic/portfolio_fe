@@ -49,7 +49,7 @@ const MyLanguageDropDown = () => {
 
   return (
     <Dropdown show={show} onToggle={setShow} onSelect={handleSelect}>
-      <MyDropdownToggle ref={toggleRef} title={currentLanguageLabel} />
+      <MyDropdownToggle inputRef={toggleRef} title={currentLanguageLabel} />
       <MyDropdownMenu
         items={languageItems.map((item) => ({
           code: item.code,

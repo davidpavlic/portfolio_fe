@@ -1,22 +1,32 @@
 import "./styling/MyDropdownToggle.css";
 import { Dropdown } from "react-bootstrap";
-import { forwardRef } from "react";
+import { RefObject } from "react";
 
-//TODO: when clicking on an element outside of the box it should have the hover styling
 
+///* TYPE DEFINITION *///
+// Defines the expected properties for the MyDropdownToggle component.
+// - title: displayed in the dropdown toggle button.
+// - inputRef: A React ref object that should point to an HTMLButtonElement.
+//             This ref is passed from the parent component and allows the parent
+//             to directly access and manipulate the underlying DOM element (the button),
+//             for tasks such as focusing or blurring the button.
 type DropdownToggleProps = {
   title: string;
+  inputRef: RefObject<HTMLButtonElement>;
 };
 
-// Forward ref to access the button inside Dropdown.Toggle
-const MyDropdownToggle = forwardRef<HTMLButtonElement, DropdownToggleProps>(
-  ({ title }, ref) => {
-    return (
-      <Dropdown.Toggle ref={ref} className="my-dropdown-toggle">
-        {title}
-      </Dropdown.Toggle>
-    );
-  }
-);
 
+///* FUNCTIONAL COMPONENT *///
+const MyDropdownToggle = ({ title, inputRef }: DropdownToggleProps) => {
+  return (
+    // The ref is attached to the Dropdown.Toggle component,
+    // allowing parent components to access its underlying DOM element
+    <Dropdown.Toggle ref={inputRef} className="my-dropdown-toggle">
+      {title}
+    </Dropdown.Toggle>
+  );
+};
+
+
+///* EXPORT *///
 export default MyDropdownToggle;

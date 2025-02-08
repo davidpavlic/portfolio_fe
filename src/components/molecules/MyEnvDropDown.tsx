@@ -42,7 +42,7 @@ const MyEnvDropDown = () => {
 
   return (
     <Dropdown show={show} onToggle={setShow} onSelect={handleSelect}>
-      <MyDropdownToggle ref={toggleRef} title={currentEnvLabel} />
+      <MyDropdownToggle inputRef={toggleRef} title={currentEnvLabel} />
       <MyDropdownMenu
         items={envItems.map((item) => ({
           code: item.code,
