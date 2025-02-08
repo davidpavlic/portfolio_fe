@@ -11,14 +11,14 @@ const translations = {
   env_french:  { en: "French",   de: "Französisch", fr: "Francaise",      hr: "Franzuski",      gg: "Globi" },
   env_croatian:{ en: "Croatian", de: "Kroatisch",   fr: "Croate",         hr: "Hrvatski",       gg: "Globi" },
   env_globi:   { en: "Globi",    de: "Globi",       fr: "Globi",          hr: "Globi",          gg: "Globi" },
-  nav_home:    { en: "Home",     de: "Startseite",  fr: "Accueil",        hr: "Početna",        gg: "Globi" },
-  nav_projects:{ en: "Projects", de: "Projekte",    fr: "Projets",        hr: "Projekti",       gg: "Globi" },
-  nav_passions:{ en: "Passions", de: "Leidenschaften", fr: "Passions",    hr: "Strasti",        gg: "Globi" },
+  nav_home:    { en: "Home",     de: "Home",        fr: "Home",           hr: "Home",           gg: "Globi" },
+  nav_projects:{ en: "Projects", de: "Projects",    fr: "Projects",       hr: "Projects",       gg: "Globi" },
+  nav_passions:{ en: "Passions", de: "Passions",    fr: "Passions",       hr: "Passions",       gg: "Globi" },
   nav_newsscraper: {
     en: "News Scraper",
-    de: "Nachrichtensammler",
-    fr: "Scraper d'actualités",
-    hr: "Pretraživač vijesti",
+    de: "News Scraper",
+    fr: "News Scraper",
+    hr: "News Scraper",
     gg: "Globi"
   },
   home_dummy: {

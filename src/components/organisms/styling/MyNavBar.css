@@ -1,133 +1,108 @@
+/* IDLE NAVBAR */
 .my-navbar {
-    /* Makes the navbar stick to the top */
-    position: sticky;
-    top: 0;
-    /* Defines Background color */
-    background-color: #d9d9d9;
+    position: sticky;                           /* Makes the navbar stick to the top */
+    background-color: var(--lightmode-nav);     /* Sets Background color */
 }
 
 html.dark .my-navbar {
-    /* Defines Background color */
-    background-color: #121212;
+    background-color: var(--darkmode-nav);      /* Sets Background color */
 }
 
+/* IDLE NAVBAR BRAND */
 .my-navbar-brand {
-    /* Gradual Margin */
-    position: absolute;
-    left: 2%;
-    /* Makes the logo stick to the top, when burger menu opened */
-    top: 7px;
+    position: absolute;                         /* Position for gradual margin */
+    left: 2%;                                   /* Gradual margin to the left */
+    top: 7px;                                   /* Makes the logo stick to the top, when burger menu opened */
 }
 
 html.dark .my-navbar-brand {
-    color: white;
+    color: var(--darkmode-font-color);          /* Sets the brand white in dark mode */
 }
 
-/* Collapsed menu container background in dark mode */
-html.dark .navbar-collapse {
-    background-color: #121212;
-}
-
+/* COLLAPSED NAV LINKS (BURGER MENU) */
 html.dark .navbar-toggler {
-    border-color: white;
+    border-color: var(--darkmode-font-color);
 }
 
-/* Dark mode: change the hamburger icon to white by overriding its background image */
 html.dark .navbar-toggler-icon {
-    /* The background image below is an SVG icon with white strokes */
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Dark mode: change the hamburger icon to white by overriding its background image */
 }
 
+/* NAV LINKS */
 .my-navbar-center {
-    /* Defines the spaces between the pages */
-    gap: 50px;
-    /* Centers the page elements horizontally */
-    margin: auto;
-    /* Distance to the left to not be too close to the logo on smaller screens */
-    padding-left: 4rem;
+    gap: 50px;                                  /* Sets the spaces between the nav links */
+    margin: auto;                               /* Centers the page elements horizontally */
+    padding-left: 4rem;                         /* Distance to the left to not be too close to the logo on smaller screens */
 }
 
+/* NAV SETTINGS */
 .my-navbar-settings,
 .my-navbar-settings-dropdown {
-    /* Gradual Margin */
-    position: absolute;
-    right: 2%;
-}
-
-.my-navbar-settings {
-    /* Defines the spaces between the pages */
-    gap: 20px;
+    position: absolute;                         /* Position for gradual margin */
+    right: 2%;                                  /* Gradual margin to the right */
+    gap: 20px;                                  /* Sets the spaces between the settings */
 }
 
 .my-navbar-settings-dropdown {
-    /* Makes the logo stick to the top, when burger menu opened */
-    top: 1px;
+    top: 1px;                                   /* Makes the logo stick to the top, when burger menu opened */
 }
 
-html.dark .my-navbar-settings-dropdown .dropdown-menu {
-    background-color: #121212;
+html.dark .dropdown-menu {
+    background-color: var(--darkmode-nav);      /* Sets the background of the opened settings menu */
 }
 
 .my-navbar-settings-dropdown .dropdown-menu {
-    /* Makes the settings open to the left, instead of right (out of bounds) */
-    right: 0;
-    left: auto;
+    right: 0;                                   /* Makes the settings open to the left, instead of right (out of bounds) */          
+    left: auto;                                 /* Makes the settings open to the left, instead of right (out of bounds) */
 }
 
-/* Before icon generation */
 .my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
 .my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
 .my-navbar-settings-dropdown .my-navbar-settings-toggle {
-    /* Specifies the Settings icon size */
-    font-size: 24px;
-    /* Define your size */
-    height: 40px;
-    width: 56px;
-    /* Define border */
-    border-radius: 0.4rem;
-    border-color: #b9b9b9;
-    /* Overwrite Bootstrap standard */
-    background-color: transparent;
-    /* Align icon vertically */
-    display: flex;
-    align-items: center;
-    margin-top: 7px;
+    font-size: 24px;                            /* Sets the settings icon size */
+    height: 40px;                               /* Sets the button height */
+    width: 56px;                                /* Sets the button width */
+    border-radius: 0.4rem;                      /* Sets custom curved button */
+    border-color: var(--bootstrap-button-border); /* Sets button color */
+    background-color: transparent;              /* Remove bootstrap button color (none doesnt work) */
+    display: flex;                              /* Align icon vertically */
+    align-items: center;                        /* Align icon vertically */
+    margin-top: 7px;                            /* Align button vertically */
+}
+
+html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
+html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
+html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle {
+    border-color: var(--darkmode-font-color);   /* Set border color in dark mode */
 }
 
 html.dark .my-navbar-settings-dropdown-item {
-    background-color: #121212;
+    background-color: var(--darkmode-nav);      /* Sets collapsed settings element background */
 }
 
-/* After icon generation */
 .my-navbar-settings-toggle::after {
-    /* Removes the standard arrow of the Bootstrap Dropdown Toggle */
-    border: none;
+    border: none;                               /* Removes the standard arrow of the Bootstrap Dropdown Toggle */
 }
 
 .my-navbar-settings-cog {
-    /* Settings icon color */
-    color: #4f5255;
-    /* Align icon horizontally */
-    padding-left: 6px;
+    color: var(--bootstrap-icon-color);         /* Set settings icon color */
+    padding-left: 6px;                          /* Align icon horizontally */
 }
 
 html.dark .my-navbar-settings-cog {
-    /* Settings icon color */
-    color: white;
+    color: var(--darkmode-font-color);          /* Set settings icon color */
 }
 
-/* Responsiveness for the Burger Menu */
+/* RESPONSIVE SETTINGS */
 @media (max-width: 767px) {
     .navbar-toggler {
-        margin-left: auto;
-        /* 2% matches the settings container's margin from .my-navbar-settings-dropdown*/
-        margin-right: calc(2% + 2cm);
+        margin-right: calc(2% + 2cm);           /* 2% matches the settings container's margin from .my-navbar-settings-dropdown*/
+        margin-left: auto;                      /* Adjust the left margin to the right margin*/
     }
 }
 
-/* Specifically defined to prevent expand="md" breakpoint diffs */
 @media (min-width: 768px) {
     .my-navbar {
-        height: 56px;
+        height: 56px;                           /* Specifically defined to prevent expand="md" breakpoint diffs */
     }
 }
