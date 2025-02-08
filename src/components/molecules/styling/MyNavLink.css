@@ -1,6 +1,6 @@
 /* IDLE NAVBAR ELEMENT */
 .my-navbar-link {
-    color: var(--darkmode-darkest);
+    color: var(--darkmode-background);
 }
 
 html.dark .my-navbar-link {
