@@ -1,16 +1,28 @@
-.active {
-    border-bottom: solid black 2px;
-}
-
-html.dark .active {
-    border-bottom: solid white 2px;
-}
-
-html.dark .my-navbar-link.active {
-    border-bottom: solid white 2px;
-    color: white;
+/* IDLE NAVBAR ELEMENT */
+.my-navbar-link {
+    color: var(--darkmode-darkest);
 }
 
 html.dark .my-navbar-link {
-    color: white;
+    color: var(--lightmode-lighter);
+}
+
+/* HOVER NAVBAR ELEMENT */
+.my-navbar-link:hover {
+    color: var(--lightmode-font-color);             
+}
+
+html.dark .my-navbar-link:hover {
+    color: var(--darkmode-font-color);             
+}
+
+/* SELECTED NAVBAR ELEMENT */
+.my-navbar-link.active {
+    border-bottom: solid var(--lightmode-font-color) 2px;
+    color: var(--lightmode-font-color);
+}
+
+html.dark .my-navbar-link.active {
+    border-bottom: solid var(--darkmode-font-color) 2px;
+    color: var(--darkmode-font-color);
 }
