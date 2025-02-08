@@ -11,19 +11,20 @@ import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
+    /* Responsible for Dark-/Lightmode */
     <ThemeProvider>
-    <BrowserRouter>
-      <div className="my-app">
-        <MyNavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/passions" element={<PassionsPage />} />
-          <Route path="/news-scraper" element={<NewsScraperPage />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+      <BrowserRouter>
+        <div className="my-app">
+          <MyNavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/passions" element={<PassionsPage />} />
+            <Route path="/news-scraper" element={<NewsScraperPage />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

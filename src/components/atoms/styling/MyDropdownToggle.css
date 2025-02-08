@@ -13,23 +13,23 @@ html.dark .my-dropdown-toggle {
 /* HOVER DROPDOWN ELEMENT */
 .my-dropdown-toggle:hover{
     background-color: var(--lightmode-lighter);     /* Override bootstraps standard background color on hover toggle */
-    color: var(--lightmode-font-color); ;            /* Override bootstraps standard white color on hover toggle */
+    color: var(--lightmode-font-color); ;           /* Override bootstraps standard white color on hover toggle */
 }
 
 html.dark .my-dropdown-toggle:hover{
     background-color: var(--darkmode-darkest);      /* Override previously devined background color */
-    color: var(--darkmode-font-color);             /* Override previously devined white color */
+    color: var(--darkmode-font-color);              /* Override previously devined white color */
 }
 
 /* CLICKED DROPDOWN ELEMENT */
 .my-dropdown-toggle.show,                           /* When holding another button pressed */
 .my-dropdown-toggle:focus:not(:focus-visible)       /* When selected */{ 
     background-color: var(--lightmode-light);       /* Override bootstraps standard background color on clicked toggle */
-    color: var(--lightmode-font-color); ;            /* Override bootstraps standard white color on clicked toggle */
+    color: var(--lightmode-font-color); ;           /* Override bootstraps standard white color on clicked toggle */
 }
 
 html.dark .my-dropdown-toggle.show,                 /* When holding another button pressed */
 html.dark  .my-dropdown-toggle:focus:not(:focus-visible)    /* When selected */{ 
     background-color: var(--darkmode-darker);       /* Override previously devined background color */
-    color: var(--darkmode-font-color);             /* Override previously devined white color */
+    color: var(--darkmode-font-color);              /* Override previously devined white color */
 }

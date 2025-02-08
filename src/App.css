@@ -1,11 +1,12 @@
-.my-app{
-    background-color: #EDF2F7;
+/* CONTENT STYLING */
+.my-app {
+    background-color: var(--lightmode-background);
 }
 
-html.dark .my-app{
-    background-color: #2E2E2E;
+html.dark .my-app {
+    background-color: var(--darkmode-background);
 }
 
-html.dark div{
-    color: white
+html.dark div {
+    color: var(--darkmode-font-color)
 }

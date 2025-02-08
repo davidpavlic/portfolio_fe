@@ -7,6 +7,7 @@ import i18n from "../src/config/i18n";
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
+  /* Provides global languages */
   <I18nextProvider i18n={i18n}>
     <StrictMode>
       <App />

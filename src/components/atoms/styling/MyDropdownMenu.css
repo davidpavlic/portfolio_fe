@@ -1,42 +1,42 @@
 
 /* IDLE DROPDOWN MENU */
 html.dark .my-dropdown-menu {
-    background-color: var(--darkmode-darkest);    /* Set the standard background color on dropdown menu */
+    background-color: var(--darkmode-darkest);      /* Set the standard background color on dropdown menu */
 }
 
 /* IDLE DROPDOWN ELEMENT */
 .my-dropdown-item {
-    transition: background-color 0.2s ease-in-out; /* Fluid Background color change */
+    transition: background-color 0.2s ease-in-out;  /* Fluid Background color change */
 }
 
 html.dark .my-dropdown-item {
-    color: var(--darkmode-font-color);                 /* Overrides bootstraps standard black color on idle element */
+    color: var(--darkmode-font-color);              /* Overrides bootstraps standard black color on idle element */
 }
 
 /* SELECTED/HOVER DROPDOWN ELEMENT */
 .my-dropdown-item.active,
 .my-dropdown-item:hover {
-    background-color: var(--lightmode-lighter);;    /* Sets the standard background color on selected element */
-    color: var(--lightmode-font-color);                 /* Overrides bootstraps standard white color on selected element */
-    border-bottom: none;            /* Removes bootstraps standard bottom line on selected element */
+    background-color: var(--lightmode-lighter);    /* Sets the standard background color on selected element */
+    color: var(--lightmode-font-color);             /* Overrides bootstraps standard white color on selected element */
+    border-bottom: none;                            /* Removes bootstraps standard bottom line on selected element */
 }
 
 html.dark .my-dropdown-item.active,
 html.dark .my-dropdown-item:hover {
-    background-color: var(--darkmode-darker);;    /* Sets the standard background color on selected element */
-    border-bottom: none;            /* Removes bootstraps standard bottom line on selected element */
+    background-color: var(--darkmode-darker);      /* Sets the standard background color on selected element */
+    border-bottom: none;                            /* Removes bootstraps standard bottom line on selected element */
 }
 
 /* CLICKED DROPDOWN ELEMENT */
 .my-dropdown-item:focus,
 .my-dropdown-item:focus:focus-visible,
 .my-dropdown-item:focus:not(:focus-visible) {
-    background-color: var(--lightmode-light);;    /* Sets the standard background color on clicked element */
+    background-color: var(--lightmode-light);      /* Sets the standard background color on clicked element */
 }
 
 html.dark .my-dropdown-item:focus,
 html.dark .my-dropdown-item:focus:focus-visible,
 html.dark .my-dropdown-item:focus:not(:focus-visible) {
-    background-color: var(--darkmode-dark);    /* Sets the standard background color on selected element */
-    color: var(--darkmode-font-color);                 /* Overrides bootstraps standard black color on clicked element */
+    background-color: var(--darkmode-dark);         /* Sets the standard background color on selected element */
+    color: var(--darkmode-font-color);              /* Overrides bootstraps standard black color on clicked element */
 }

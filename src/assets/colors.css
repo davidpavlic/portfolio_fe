@@ -1,4 +1,8 @@
 :root {
+    /* Root Background colors */
+    --darkmode-background: #2E2E2E;
+    --lightmode-background: #EDF2F7;
+
     /* Allgemeine Farben */
     --darkmode-font-color: #FFFFFF;
     --lightmode-font-color: #000000;
