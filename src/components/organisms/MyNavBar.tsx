@@ -17,6 +17,7 @@ import MyNavLink from "../molecules/MyNavLink";
 // TODO: Collapsed Navbar items 
 // TODO: When selecting a page make an animation 
 
+
 ///* CONSTANTS *///
 // Define navbar links with translation keys
 const navItems = [

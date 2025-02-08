@@ -50,10 +50,10 @@ const translations = {
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
   page_not_found: {
-    en: "Page not found.",
-    de: "Seite nicht gefunden.",
-    fr: "Page introuvable.",
-    hr: "Stranica nije pronađena.",
+    en: "This URL does not exist.",
+    de: "Diese URL existiert nicht.",
+    fr: "Cette URL n'existe pas.",
+    hr: "Ova URL ne postoji.",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   }
 };
