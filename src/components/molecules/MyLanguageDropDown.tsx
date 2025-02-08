@@ -37,7 +37,7 @@ const MyLanguageDropDown = () => {
     i18n.changeLanguage(eventKey);
     localStorage.setItem("language", eventKey);
     setLanguageCode(eventKey);
-    
+
     // Close dropdown
     setShow(false);
     setTimeout(() => {
@@ -53,9 +53,8 @@ const MyLanguageDropDown = () => {
       <MyDropdownMenu
         items={languageItems.map((item) => ({
           code: item.code,
-          label: t(item.labelKey), // Translate dynamically
+          label: t(item.labelKey),
         }))}
-        onSelect={handleSelect}
       />
     </Dropdown>
   );

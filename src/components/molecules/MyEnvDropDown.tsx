@@ -48,7 +48,6 @@ const MyEnvDropDown = () => {
           code: item.code,
           label: t(item.labelKey),
         }))}
-        onSelect={handleSelect}
       />
     </Dropdown>
   );

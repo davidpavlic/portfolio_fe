@@ -1,39 +1,43 @@
-html.dark .my-dropdown-menu{
-    background-color: #121212;
+
+/* IDLE DROPDOWN MENU */
+html.dark .my-dropdown-menu {
+    background-color: #181818;    /* Set the standard background color on dropdown menu */
 }
 
+/* IDLE DROPDOWN ELEMENT */
 .my-dropdown-item {
-    border: none;
-    background: none;
-    color: black;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out; /* Fluid Background color change */
 }
 
 html.dark .my-dropdown-item {
-    color: white;
-    background: #121212;
+    color: white;                 /* Overrides bootstraps standard black color on idle element */
+    background: #181818;          /* Set the standard background color on idle element */
 }
 
+/* SELECTED/HOVER DROPDOWN ELEMENT */
+.my-dropdown-item.active,
 .my-dropdown-item:hover {
-    background-color: #CFCFCF;
-    color: black;
+    background-color: #CFCFCF;    /* Sets the standard background color on selected element */
+    color: black;                 /* Overrides bootstraps standard white color on selected element */
+    border-bottom: none;            /* Removes bootstraps standard bottom line on selected element */
 }
 
+html.dark .my-dropdown-item.active,
 html.dark .my-dropdown-item:hover {
-    background-color: #181818;
-    color: white;
+    background-color: #222222;    /* Sets the standard background color on selected element */
+    border-bottom: none;            /* Removes bootstraps standard bottom line on selected element */
 }
 
+/* CLICKED DROPDOWN ELEMENT */
 .my-dropdown-item:focus,
 .my-dropdown-item:focus:focus-visible,
 .my-dropdown-item:focus:not(:focus-visible) {
-    background-color: #B5B5B5;
-    color: black;
+    background-color: #B5B5B5;    /* Sets the standard background color on clicked element */
 }
 
 html.dark .my-dropdown-item:focus,
 html.dark .my-dropdown-item:focus:focus-visible,
 html.dark .my-dropdown-item:focus:not(:focus-visible) {
-    background-color: #181818;
-    color: white;
+    background-color: #282828;    /* Sets the standard background color on selected element */
+    color: white;                 /* Overrides bootstraps standard black color on clicked element */
 }
