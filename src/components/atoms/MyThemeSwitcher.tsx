@@ -1,10 +1,13 @@
-// MyThemeSwitcher.jsx
 import "./styling/MyThemeSwitcher.css";
 import { useContext } from "react";
 import { BsSun, BsMoon } from "react-icons/bs";
-import { ThemeContext } from "../../config/MyThemeProvider"; // Adjust the path accordingly
+import { ThemeContext } from "../../config/MyThemeProvider";
 
+
+///* FUNCTIONAL COMPONENT *///
 const MyThemeSwitcher = () => {
+  // useContext is a React hook that lets you subscribe to React context values
+  // without having to manually pass props through every level of your component tree.
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 
   return (
@@ -14,4 +17,6 @@ const MyThemeSwitcher = () => {
   );
 };
 
+
+///* EXPORT *///
 export default MyThemeSwitcher;
