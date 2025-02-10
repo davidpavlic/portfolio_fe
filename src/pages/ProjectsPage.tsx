@@ -54,6 +54,10 @@ export const ProjectsPage = () => {
       });
   };
 
+  const handleDelete = (id: number) => {
+    setProjectcards(prev => prev.filter(card => card.projectcard_id !== id));
+  };
+
   useEffect(() => {
     fetch('http://localhost:8080/projectcard/') // Make sure the endpoint URL matches your backend
       .then(response => {
@@ -103,11 +107,13 @@ export const ProjectsPage = () => {
       {projectscards.map((projectCard, index) => (
         <ProjectCard
           key={projectCard.projectcard_id}
+          projectcard_id={projectCard.projectcard_id}
           title={projectCard.projectcard_title}
           description={projectCard.projectcard_description}
           imageUrl={SchweizImage}
           techStack={["Next.js", "Node.js", "MongoDB", "Stripe"]}
           layout={index % 2 === 0} 
+          onDelete={handleDelete}
           />
       ))}
     </div>
