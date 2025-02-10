@@ -1,6 +1,5 @@
-// ProjectCard.tsx
 import React from "react";
-import styles from "./styling/ProjectCard.module.css";
+import "./styling/ProjectCard.css";
 
 interface ProjectCardProps {
   title: string;
@@ -18,16 +17,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   layout,
 }) => {
   return (
-    <div className={`${styles.cardContainer} ${styles[layout]}`}>
-      <div className={styles.imageContainer}>
-        <img src={imageUrl} alt={title} className={styles.projectImage} />
+<div className={"cardContainer " + layout}>
+<div className="imageContainer">
+        <img src={imageUrl} alt={title} className="projectImage" />
       </div>
-      <div className={styles.contentContainer}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
-        <div className={styles.techStack}>
+      <div className="contentContainer">
+        <h3 className="title">{title}</h3>
+        <p className="description">{description}</p>
+        <div className="techStack">
           {techStack.map((tech, index) => (
-            <span key={index} className={styles.techItem}>
+            <span key={index} className="techItem">
               {tech}
             </span>
           ))}
