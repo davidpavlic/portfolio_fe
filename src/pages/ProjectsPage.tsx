@@ -1,5 +1,4 @@
 import './styling/ProjectsPage.css';
-import { useTranslation } from "react-i18next";
 import ProjectCard from "../components/organisms/ProjectCard";
 import "../components/organisms/styling/ProjectCard.module.css";
 import NoserYoungImage from "../assets/images/NoserYoung.jpeg";
@@ -13,7 +12,6 @@ import ReactImage from "../assets/images/React.png";
 
 
 export const ProjectsPage = () => {
-  const { t } = useTranslation();
   return (
     <div >
       <ProjectCard
