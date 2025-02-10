@@ -60,10 +60,6 @@
   }
   
   /* Alternating layout */
-  .left {
-    flex-direction: row;
-  }
-  
   .right {
     flex-direction: row-reverse;
   }

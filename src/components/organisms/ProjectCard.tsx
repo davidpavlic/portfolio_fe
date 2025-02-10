@@ -6,7 +6,7 @@ interface ProjectCardProps {
   description: string;
   imageUrl: string;
   techStack: string[];
-  layout: "left" | "right";
+  layout: boolean;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   layout,
 }) => {
   return (
-<div className={"cardContainer " + layout}>
+<div className={"cardContainer " + (layout ? "right" : "")}>
 <div className="imageContainer">
         <img src={imageUrl} alt={title} className="projectImage" />
       </div>
