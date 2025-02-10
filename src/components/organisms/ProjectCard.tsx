@@ -8,7 +8,7 @@ interface ProjectCardProps {
   imageUrl: string;
   techStack: string[];
   layout: boolean;
-  onDelete?: (id: number) => void;
+  onDelete: (id: number) => void;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -27,10 +27,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       .then((response) => {
         if (response.ok) {
           console.log("Project card deleted successfully.");
-          // Call the callback if provided.
-          if (onDelete) {
-            onDelete(projectcard_id);
-          }
+          onDelete(projectcard_id);
         } else {
           console.error("Failed to delete project card.");
         }
@@ -50,7 +47,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <p className="description">{description}</p>
         <div className="techStack">
           {techStack.map((tech, index) => (
-            <span key={index} className="techItem">
+            <span key={`${tech}-${index}`} className="techItem">
               {tech}
             </span>
           ))}

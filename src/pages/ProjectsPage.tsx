@@ -6,8 +6,9 @@ import SchweizImage from "../assets/images/Schweiz.png";
 
 interface ProjectCardData {
   projectcard_id: number;
-  projectcard_title: string;
-  projectcard_description: string;
+  title: string;
+  description: string;
+  base64Image?: string;
 }
 
 
@@ -16,23 +17,27 @@ export const ProjectsPage = () => {
   const [projectscards, setProjectcards] = useState<ProjectCardData[]>([]);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [file, setFile] = useState<File | null>(null);
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    // Create an object with title and description only
-    const newProjectCard = { 
-      title: title, 
-      description: description 
-    };
-
+  
+    if (!file) {
+      setMessage('Please select an image.');
+      return;
+    }
+  
+    // Build the form data
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('image', file);
+  
     fetch('http://localhost:8080/projectcard/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newProjectCard)
+      // Do not set Content-Type when using FormData!
+      body: formData,
     })
       .then(response => {
         if (!response.ok) {
@@ -42,10 +47,9 @@ export const ProjectsPage = () => {
       })
       .then(data => {
         setMessage('Project card added successfully!');
-        // Clear the form
         setTitle('');
         setDescription('');
-        // Optionally add the new project card to your state immediately
+        setFile(null);
         setProjectcards(prev => [...prev, data]);
       })
       .catch(error => {
@@ -64,7 +68,7 @@ export const ProjectsPage = () => {
         return response.json(); // Return the parsed JSON promise
       })
       .then(data => {
-        console.log("Fetched data:", data);
+        console.log(data);
         setProjectcards(data);
       })
       .catch(error => console.error("Error fetching project cards:", error));
@@ -100,17 +104,34 @@ export const ProjectsPage = () => {
           />
         </div>
         <br />
+        <div>
+          <label htmlFor="image">Image:</label>
+          <br />
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            onChange={(e) => {
+              if (e.target.files && e.target.files.length > 0) {
+                setFile(e.target.files[0]);
+              }
+            }}
+            required
+          />
+        </div>
+        <br />
         <button type="submit">Add Project Card</button>
       </form>
       {message && <p>{message}</p>}
 
       {projectscards.map((projectCard, index) => (
         <ProjectCard
-          key={projectCard.projectcard_id}
+          key={index}
           projectcard_id={projectCard.projectcard_id}
-          title={projectCard.projectcard_title}
-          description={projectCard.projectcard_description}
-          imageUrl={SchweizImage}
+          title={projectCard.title}
+          description={projectCard.description}
+          imageUrl={projectCard.base64Image ? `data:image/jpeg;base64,${projectCard.base64Image}` : SchweizImage}
           techStack={["Next.js", "Node.js", "MongoDB", "Stripe"]}
           layout={index % 2 === 0} 
           onDelete={handleDelete}
