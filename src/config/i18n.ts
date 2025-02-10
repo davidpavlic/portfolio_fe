@@ -49,6 +49,27 @@ const translations = {
     hr: "Ove je moja Pretraživač vijesti stranica.",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
+  wip_title: {
+    en: "Work in progress",
+    de: "In Bearbeitung",
+    fr: "Travail en cours",
+    hr: "Rad u tijeku",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  wip_under_construction: {
+    en: "This webpage is currently under construction. I'm working hard to bring you something amazing!",
+    de: "Diese Webseite befindet sich derzeit im Aufbau. Ich arbeite hart daran, Ihnen etwas Grossartiges zu präsentieren!",
+    fr: "Cette page est actuellement en construction. Je travaille d'arrache-pied pour vous offrir quelque chose d'incroyable!",
+    hr: "Ova web stranica je trenutno u izradi. Naporno radim kako bih vam ponudio nešto nevjerojatno!",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  wip_see_you_soon: {
+    en: "Check back soon!",
+    de: "Schau bald wieder vorbei!",
+    fr: "Revenez bientôt!",
+    hr: "Vratite se uskoro!",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
   page_not_found: {
     en: "This URL does not exist.",
     de: "Diese URL existiert nicht.",

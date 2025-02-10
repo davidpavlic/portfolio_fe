@@ -4,6 +4,7 @@
     flex-direction: column;              /* Arranges child elements in a vertical column */
     align-items: center;                 /* Centers child elements horizontally within the container */
     justify-content: center;             /* Centers child elements vertically within the container */
+    text-align: center;                  /* Centers the text content inside the container */
 }
 
 .wip-title {                             

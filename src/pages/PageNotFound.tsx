@@ -1,15 +1,21 @@
 import './styling/PageNotFound.css';
 import { useTranslation } from "react-i18next";
 
+
+///* FUNCTINOAL COMPONENT *///
 export const PageNotFound = () => {
   const { t } = useTranslation();
 
   return (
-    <nav className="page-not-found">
-      <h1>404</h1>
-      <p>{t("page_not_found")}</p>
-    </nav>
+    <div className="pnf-container">
+      <div className="pnf-title">
+        404
+      </div>
+      <p className="pnf-message">{t("page_not_found")}</p>
+    </div>
   );
 };
 
+
+///* EXPORT *///
 export default PageNotFound;
