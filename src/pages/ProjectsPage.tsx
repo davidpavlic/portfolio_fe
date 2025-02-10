@@ -1,7 +1,6 @@
 import './styling/ProjectsPage.css';
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/organisms/ProjectCard";
-import SchweizImage from "../assets/images/Schweiz.png";
 
 
 interface ProjectCardData {
@@ -131,7 +130,7 @@ export const ProjectsPage = () => {
           projectcard_id={projectCard.projectcard_id}
           title={projectCard.title}
           description={projectCard.description}
-          imageUrl={projectCard.base64Image ? `data:image/jpeg;base64,${projectCard.base64Image}` : SchweizImage}
+          imageUrl={projectCard.base64Image ? `data:image/jpeg;base64,${projectCard.base64Image}` : ""}
           techStack={["Next.js", "Node.js", "MongoDB", "Stripe"]}
           layout={index % 2 === 0} 
           onDelete={handleDelete}
