@@ -14,9 +14,18 @@
   transition: all 0.3s ease;                        /* Sets the cards design change transition */
 }
 
+html.dark .cardContainer {
+  background-color: var(--darkmode-darker);
+  box-shadow: 0 4px 15px var(--lightmode-light);    /* Sets the cards shadow */
+}
+
 .cardContainer:hover {
   transform: translateY(-5px);                      /* Makes the card come up when hovered */
   box-shadow: 0 8px 30px var(--lightmode-light);    /* Increases the cards shadow when hovered */
+}
+
+html.dark .cardContainer:hover {
+  box-shadow: 0 4px 15px var(--lightmode-lightest); /* Sets the cards shadow */
 }
 
 /* IMAGE CONTAINER */
@@ -57,10 +66,18 @@
   margin: 0;                                        /* Removes any default margin to center the title */
 }
 
+html.dark .title{
+  color: var(--darkmode-font-color);
+}
+
 /* DESCRIPTION TEXT*/
 .description {
   color: var(--lightmode-font-color);               /* Sets the description text color */
   margin-bottom: 3rem;                              /* Adds space between description and tech stack */
+}
+
+html.dark .description{
+  color: var(--darkmode-font-color);
 }
 
 /* TECHSTACK CONTAINER */
@@ -80,9 +97,18 @@
   border: 1px solid var(--lightmode-nav);           /* Sets the tech stack element border */
 }
 
+html.dark .techItem {
+  color: var(--darkmode-font-color);                /* Sets the tech stack element text color*/
+  background: var(--darkmode-darkest);              /* Sets the backgroundcolor of the tech stack elements */
+}
+
 .techItem:hover {
   background: var(--lightmode-lightest);            /* Sets the backgroundcolor of the tech stack elements when hovering */
   transform: translateY(-1px);                      /* Makes the tech stack element come up when hovered */
+}
+
+html.dark .techItem:hover {
+  background: var(--darkmode-dark);                 /* Sets the backgroundcolor of the tech stack elements when hovering */
 }
 
 /* DELETE BUTTON */
@@ -95,6 +121,13 @@
   height: 40px;                                     /* Sets the button size statically */
   transition: all 0.3s ease;                        /* Sets the button design change transition */
   font-size: 20px;                                  /* Sets the icon size */
+  display: flex;                                    /* Make the button a flex container */
+  justify-content: center;                          /* Centers the icon horizontally */
+  align-items: center;                              /* Centers the icon vertically */
+}
+
+html.dark .deleteButton_v1{
+  color: var(--darkmode-font-color);
 }
 
 .deleteButton_v1:hover {
@@ -102,44 +135,41 @@
   transform: scale(1.1);                            /* Increase button size on hover */
 }
 
-
-
-
-
-
-/* TODO Darkmode */
-
-
-
-
-
-
+html.dark .deleteButton_v1:hover {
+  background: var(--bootstrap-icon-color);          /* Change button background color on hover */
+}
 
 /* RESPONSIVENESS */
 @media (max-width: 1100px) {
   .cardContainer {
-    flex-direction: column;               /* Align the cards as columns only when collapsed */
+    flex-direction: column;                         /* Align the cards as columns only when collapsed */
   }
   
   .techStack{
-    justify-content: center;              /* Align the tech stack elements centered only when collapsed */
+    justify-content: center;                        /* Align the tech stack elements centered only when collapsed */
   }
 
   .titleContainer {
-    justify-content: center;              /* Align the title text centered only when collapsed */
+    justify-content: center;                        /* Align the title container centered only when collapsed */
   }
 
   .title{
-    text-align: center;
+    text-align: center;                             /* Align the title text centered only when collapsed */
   }
 
   .description {
-    text-align: center;                   /* Align the description text centered only when collapsed */
+    text-align: center;                             /* Align the description text centered only when collapsed */
+  }
+
+  .imageContainer{
+    display:flex;                                   /* Needed to center image when collapsed */
+    justify-content: center;                        /* Centers image when collapsed */
+    align-items: center;                            /* Centers image when collapsed */
   }
 }
 
 @media (min-width: 1101px) {
   .right {
-    flex-direction: row-reverse;          /* Adjust flex direction only when not collapsed */
+    flex-direction: row-reverse;                    /* Adjust flex direction only when not collapsed */
   }
 }
