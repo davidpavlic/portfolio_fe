@@ -67,7 +67,6 @@ export const ProjectsPage = () => {
         return response.json(); // Return the parsed JSON promise
       })
       .then(data => {
-        console.log(data);
         setProjectcards(data);
       })
       .catch(error => console.error("Error fetching project cards:", error));
@@ -75,7 +74,7 @@ export const ProjectsPage = () => {
 
 
   return (
-    <div>
+    <div>{/* 
       <h2>Add a New Project Card</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -122,7 +121,7 @@ export const ProjectsPage = () => {
         <br />
         <button type="submit">Add Project Card</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p>{message}</p>}*/}
 
       {projectscards.map((projectCard, index) => (
         <ProjectCard

@@ -1,5 +1,6 @@
 import React from "react";
 import "./styling/ProjectCard.css";
+import { BsTrash } from "react-icons/bs";
 
 interface ProjectCardProps {
   projectcard_id: number;
@@ -43,7 +44,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <img src={imageUrl} alt={title} className="projectImage" />
       </div>
       <div className="contentContainer">
-        <h3 className="title">{title}</h3>
+        <div className="titleContainer">
+          <h3 className="title">{title}</h3>
+          <button className="deleteButton_v1" onClick={handleDelete}>
+            <BsTrash/>
+          </button>
+        </div>
         <p className="description">{description}</p>
         <div className="techStack">
           {techStack.map((tech, index) => (
@@ -52,7 +58,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
           ))}
         </div>
-        <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
   );

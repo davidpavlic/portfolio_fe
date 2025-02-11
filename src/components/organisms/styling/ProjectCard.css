@@ -1,96 +1,145 @@
+/* TODO: Put Delete Icon right next to title when multilined */
+/*       I think flex box causes a problem, there is also a out of bounds, when screen gets too small */
+/* CARD CONTAINER*/
 .cardContainer {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 1200px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;                               /* Align the cards on the webpage */
+  display: flex;                                    /* Align the elements in the card */
+  align-items: center;                              /* Center content vertically */
+  margin: 2rem auto;                                /* Center cards horizontally and creates space between them*/
+  padding: 2rem;                                    /* Sets the contents spacing to the top */
+  max-width: 80%;                                   /* Sets the cards width to 80% of the screen width */
+  background: var(--darkmode-font-color);           /* Sets the cards background color */
+  border-radius: 16px;                              /* Sets the cards corner roundness */
+  box-shadow: 0 4px 20px var(--lightmode-lighter);  /* Sets the cards shadow */
+  transition: all 0.3s ease;                        /* Sets the cards design change transition */
+}
+
+.cardContainer:hover {
+  transform: translateY(-5px);                      /* Makes the card come up when hovered */
+  box-shadow: 0 8px 30px var(--lightmode-light);    /* Increases the cards shadow when hovered */
+}
+
+/* IMAGE CONTAINER */
+.imageContainer {
+  width: 300px;                                     /* Sets the image container size statically */
+  height: 300px;                                    /* Sets the image container size statically */
+  transition: all 0s;                               /* Removes gradual size changes when collapsing */
+}
+
+/* IMAGE */
+.projectImage {
+  width: 90%;                                       /* Creates a margin for images that would fill the whole image container */
+  height: 90%;                                      /* Creates a margin for images that would fill the whole image container */
+  transition: transform 0.3s ease;                  /* Sets the image design change transition */
+}
+
+.projectImage:hover {
+  transform: scale(1.05);                           /* Increase the image size when hovering */
+}
+
+/* CARD CONTAINER */
+.contentContainer {
+  flex: 1;                                          /* Necessary for image scaling */
+  padding: 1.5rem;                                  /* Sets the distance to the edges */
+}
+
+/* TITLE CONTAINTER */
+.titleContainer {
+  display: flex;                                    /* Sets the content to align as rows */
+  align-items: center;                              /* Vertically centers the title and trash icon */
+  gap: 1rem;                                        /* Sets the distance between the title container elements */
+  margin-bottom: 1rem;                              /* Adds space between title and description */
+}
+
+/* TITLE TEXT*/
+.title {
+  color: var(--lightmode-font-color);               /* Sets the title text color */
+  margin: 0;                                        /* Removes any default margin to center the title */
+}
+
+/* DESCRIPTION TEXT*/
+.description {
+  color: var(--lightmode-font-color);               /* Sets the description text color */
+  margin-bottom: 3rem;                              /* Adds space between description and tech stack */
+}
+
+/* TECHSTACK CONTAINER */
+.techStack {
+  display: flex;                                    /* Sets the tech stack elements to align as rows */
+  gap: 0.75rem;                                     /* Sets the distance between elements */
+}
+
+/* TECHSTACK ELEMENT */
+.techItem {
+  background: var(--lightmode-lightestest);         /* Sets the backgroundcolor of the tech stack elements */
+  padding: 0.4rem 1rem;                             /* Sets the distance of the tech stack elements to its border*/
+  border-radius: 25px;                              /* Sets the curve of the button */
+  font-size: 0.9rem;                                /* Sets the text size */
+  color: var(--lightmode-font-color);               /* Sets the tech stack element text color*/
+  transition: all 0.2s ease;                        /* Sets the tech stack element design change transition */
+  border: 1px solid var(--lightmode-nav);           /* Sets the tech stack element border */
+}
+
+.techItem:hover {
+  background: var(--lightmode-lightest);            /* Sets the backgroundcolor of the tech stack elements when hovering */
+  transform: translateY(-1px);                      /* Makes the tech stack element come up when hovered */
+}
+
+/* DELETE BUTTON */
+.deleteButton_v1 {
+  color: var(--lightmode-font-color);               /* Sets the delete button color */
+  background: none;                                 /* Removes standard button background */
+  border: none;                                     /* Removes standard button border */
+  border-radius: 50%;                               /* Makes the button circular */
+  width: 40px;                                      /* Sets the button size statically */
+  height: 40px;                                     /* Sets the button size statically */
+  transition: all 0.3s ease;                        /* Sets the button design change transition */
+  font-size: 20px;                                  /* Sets the icon size */
+}
+
+.deleteButton_v1:hover {
+  background: var(--lightmode-lightest);            /* Change button background color on hover */
+  transform: scale(1.1);                            /* Increase button size on hover */
+}
+
+
+
+
+
+
+/* TODO Darkmode */
+
+
+
+
+
+
+
+/* RESPONSIVENESS */
+@media (max-width: 1100px) {
+  .cardContainer {
+    flex-direction: column;               /* Align the cards as columns only when collapsed */
   }
   
-  .imageContainer {
-    flex: 1;
-    overflow: hidden;
-    border-radius: 8px;
-    height: 300px;  /* Set a fixed height for the image container */
+  .techStack{
+    justify-content: center;              /* Align the tech stack elements centered only when collapsed */
   }
-  
-  .projectImage {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+
+  .titleContainer {
+    justify-content: center;              /* Align the title text centered only when collapsed */
   }
-  
-  .projectImage:hover {
-    transform: scale(1.05);
+
+  .title{
+    text-align: center;
   }
-  
-  .contentContainer {
-    flex: 1;
-    padding: 1rem;
-  }
-  
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #2d3436;
-  }
-  
+
   .description {
-    color: #636e72;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    text-align: center;                   /* Align the description text centered only when collapsed */
   }
-  
-  .techStack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .techItem {
-    background: #f8f9fa;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    color: #2d3436;
-  }
-  
-  /* Alternating layout */
+}
+
+@media (min-width: 1101px) {
   .right {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse;          /* Adjust flex direction only when not collapsed */
   }
-  
-  @media (max-width: 768px) {
-    .cardContainer {
-      flex-direction: column;
-      padding: 1rem;
-    }
-    
-    .imageContainer,
-    .contentContainer {
-      width: 100%;
-    }
-  }
-
-  /* Dark mode overrides */
-html.dark .cardContainer {
-  background: #2a2a2a;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-}
-
-html.dark .title {
-  color: #f0f0f0;
-}
-
-html.dark .description {
-  color: #cccccc;
-}
-
-html.dark .techItem {
-  background: #444;
-  color: #f0f0f0;
 }
