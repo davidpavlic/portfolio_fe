@@ -112,7 +112,7 @@ html.dark .techItem:hover {
 }
 
 /* DELETE BUTTON */
-.deleteButton_v1 {
+.deleteButton {
   color: var(--lightmode-font-color);               /* Sets the delete button color */
   background: none;                                 /* Removes standard button background */
   border: none;                                     /* Removes standard button border */
@@ -126,16 +126,16 @@ html.dark .techItem:hover {
   align-items: center;                              /* Centers the icon vertically */
 }
 
-html.dark .deleteButton_v1{
+html.dark .deleteButton{
   color: var(--darkmode-font-color);
 }
 
-.deleteButton_v1:hover {
+.deleteButton:hover {
   background: var(--lightmode-lightest);            /* Change button background color on hover */
   transform: scale(1.1);                            /* Increase button size on hover */
 }
 
-html.dark .deleteButton_v1:hover {
+html.dark .deleteButton:hover {
   background: var(--bootstrap-icon-color);          /* Change button background color on hover */
 }
 
@@ -144,21 +144,10 @@ html.dark .deleteButton_v1:hover {
   .cardContainer {
     flex-direction: column;                         /* Align the cards as columns only when collapsed */
   }
-  
-  .techStack{
-    justify-content: center;                        /* Align the tech stack elements centered only when collapsed */
-  }
 
-  .titleContainer {
-    justify-content: center;                        /* Align the title container centered only when collapsed */
-  }
-
-  .title{
-    text-align: center;                             /* Align the title text centered only when collapsed */
-  }
-
-  .description {
-    text-align: center;                             /* Align the description text centered only when collapsed */
+  .techStack, .titleContainer, .title, .description {
+    justify-content: center;                        /* Align the elements centered only when collapsed */
+    text-align: center;                             /* Align the elements centered only when collapsed */
   }
 
   .imageContainer{

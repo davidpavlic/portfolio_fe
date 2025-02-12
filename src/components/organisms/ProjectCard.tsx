@@ -1,8 +1,14 @@
-import React from "react";
 import "./styling/ProjectCard.css";
 import { BsTrash } from "react-icons/bs";
 
-interface ProjectCardProps {
+
+///* TYPE DEFINTION *///
+// Defines the expected properties for the MyDropdownToggle component.
+// - projectcard_id: references the projectcard for the deletion in the backend.
+// - title, description, imageUrl, techStack represent the data shown in the projectcard.
+// - layout: empty or right for adjusting the card content to the right,
+// - onDelete: executed, when the deletion in the backend works out successfully.
+type ProjectCardProps = {
   projectcard_id: number;
   title: string;
   description: string;
@@ -12,7 +18,9 @@ interface ProjectCardProps {
   onDelete: (id: number) => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+
+///* FUNCTIONAL COMPONENT *///
+const ProjectCard = ({
   projectcard_id,
   title,
   description,
@@ -20,42 +28,35 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   techStack,
   layout,
   onDelete,
-}) => {
-  const handleDelete = () => {
-    fetch(`http://localhost:8080/projectcard/${projectcard_id}`, {
-      method: "DELETE",
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log("Project card deleted successfully.");
-          onDelete(projectcard_id);
-        } else {
-          console.error("Failed to delete project card.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error deleting project card:", error);
-      });
+}: ProjectCardProps) => {
+
+  //Calls the backend to delete the the project card
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`http://localhost:8080/projectcard/${projectcard_id}`, { method: "DELETE" });
+      if (response.ok) 
+        onDelete(projectcard_id);
+    } catch (error) {
+      console.error("Error deleting project card: ", error);
+    }
   };
 
   return (
-    <div className={"cardContainer " + (layout ? "right" : "")}>
+    <div className={"cardContainer " + (layout?"right":"")}>
       <div className="imageContainer">
         <img src={imageUrl} alt={title} className="projectImage" />
       </div>
       <div className="contentContainer">
         <div className="titleContainer">
           <h3 className="title">{title}</h3>
-          <button className="deleteButton_v1" onClick={handleDelete}>
-            <BsTrash/>
+          <button className="deleteButton" onClick={handleDelete}>
+            <BsTrash />
           </button>
         </div>
         <p className="description">{description}</p>
         <div className="techStack">
           {techStack.map((tech, index) => (
-            <span key={`${tech}-${index}`} className="techItem">
-              {tech}
-            </span>
+            <span key={index} className="techItem">{tech}</span>
           ))}
         </div>
       </div>

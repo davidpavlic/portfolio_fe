@@ -2,6 +2,12 @@ import './styling/ProjectsPage.css';
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/organisms/ProjectCard";
 
+//TODO: Refactor
+//TODO: Comment
+//TODO: Add and make add form look good
+//TODO: Add techstack attributes to backend
+//TODO: Password secured CRUD operations
+//TODO: Solve ProjectCard TODO
 
 interface ProjectCardData {
   projectcard_id: number;
@@ -74,7 +80,7 @@ export const ProjectsPage = () => {
 
 
   return (
-    <div>{/* 
+    <div>
       <h2>Add a New Project Card</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -121,7 +127,7 @@ export const ProjectsPage = () => {
         <br />
         <button type="submit">Add Project Card</button>
       </form>
-      {message && <p>{message}</p>}*/}
+      {message && <p>{message}</p>}
 
       {projectscards.map((projectCard, index) => (
         <ProjectCard
