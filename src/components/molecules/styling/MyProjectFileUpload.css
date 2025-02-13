@@ -13,7 +13,7 @@ html.dark .my-project-card-label{
     border: 2px dashed var(--lightmode-nav);                /* Sets the border design */
     border-radius: 12px;                                    /* Sets the corner curveture */
     text-align: center;                                     /* Centers its text */
-    background-color: var(--lightmode-lightestest);         /* Sets its background color */
+    background-color: var(--lightmode-lightestestest);      /* Sets its background color */
     align-items: center;                                    /* Centers its children */
     justify-content: center;                                /* Centers its children */
     display: block;                                         /* Cover the whole area of its parent */

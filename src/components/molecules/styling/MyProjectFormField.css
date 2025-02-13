@@ -12,7 +12,7 @@
     width: 100%;                                            /* Makes the input cover all the space */
     padding: 0.5rem;                                        /* Sets distance to the input text */
     border-radius: 4px;                                     /* Sets the corner curve */
-    background-color: var(--lightmode-lightestest);         /* Sets its background color */
+    background-color: var(--lightmode-lightestestest);      /* Sets its background color */
     border: 1px solid var(--lightmode-nav);                 /* Sets the border design */
 }
 
