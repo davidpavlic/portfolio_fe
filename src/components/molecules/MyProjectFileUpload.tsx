@@ -20,37 +20,37 @@ type FileUploadProps = {
 const FileUpload = ({ file, error, isSubmitting, onFileSelect }: FileUploadProps) => (
     <div>
         <label className="my-project-card-label">Upload Project Image:</label>
+        {/* Drop zone area where users can drag & drop or click to select files */}
         <label
             className={`drop-zone ${error ? 'has-error' : ''} ${file ? 'has-file' : ''}`}
-            onDragEnter={(e) => e.preventDefault()}
-            onDragLeave={(e) => e.preventDefault()}
-            onDragOver={(e) => e.preventDefault()}
+            onDragOver={(e) => e.preventDefault()}                              // Prevents browser from opening the dropped file
             onDrop={(e) => {
-                e.preventDefault();
-                onFileSelect(e.dataTransfer.files?.[0] || null);
+                e.preventDefault();                                             // Prevents browser from opening the dropped file
+                onFileSelect(e.dataTransfer.files?.[0] || null);                // Selects first dropped file
             }}
         >
             <div className="drop-content">
-                <div className="upload-icon-wrapper">
-                    <FaCloudArrowUp className="upload-icon" />
-                </div>
+                {/* Cloud Icon in drop down container */}
+                <FaCloudArrowUp className="upload-icon" />
+                {/* test section in drop down container */}
                 <p>
                     {file ? (
                         <>
                             {file.name} <br /> (Click to change file)
                         </>
-                    ) : (
-                        "Drag & drop your file or browse files"
-                    )}                </p>
+                    ) : ("Drag & drop your file or browse files")}
+                </p>
             </div>
+            {/* Hidden file input element that triggers when user clicks the drop zone */}
             <input
                 type="file"
-                onChange={(e) => onFileSelect(e.target.files?.[0] || null)}
-                disabled={isSubmitting}
-                accept=".pdf,.png,.jpg,.jpeg"
-                hidden
+                onChange={(e) => onFileSelect(e.target.files?.[0] || null)}     // Selects first selected file
+                disabled={isSubmitting}                                         // Disables input when submitting to prevent change
+                accept=".pdf,.png,.jpg,.jpeg"                                   // Restrict file types to these formats
+                hidden                                                          // Hides the default file input UI
             />
         </label>
+        {/* Display error message if the file is invalid */}
         {error && <div className="error-message">{error}</div>}
     </div>
 );

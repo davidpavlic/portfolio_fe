@@ -36,14 +36,11 @@ html.dark .drop-zone{
 }
 
 /* UPLOAD ICON */
-.upload-icon-wrapper {
-    margin-bottom: 1.5rem;                                  /* Distance from upload icon to the text */
-}
-
 .upload-icon {
     width: 48px;                                            /* Sets icon size */
     height: 48px;                                           /* Sets icon size */
     fill: var(--lightmode-light);                           /* Sets icon background */
+    margin-bottom: 1.5rem;                                  /* Distance from upload icon to the text */
 }
 
 .has-error .upload-icon {
