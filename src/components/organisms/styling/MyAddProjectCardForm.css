@@ -7,7 +7,10 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
+}
 
+html.dark .form-container {
+    background-color: var(--darkmode-darker);
 }
 
 .split-layout {
@@ -48,8 +51,8 @@
 .right-column {
     border-left: 2px solid #eee;
     padding-left: 2rem;
-    display: flex;
-    flex-direction: column;
+    display: block;
+    height: 100%;
     gap: 1.5rem;
 }
 

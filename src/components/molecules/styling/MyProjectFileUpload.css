@@ -1,66 +1,66 @@
-.file-section h3 {
-    margin: 0 0 1rem 0;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
+/* UPLOAD LABEL */
+.my-project-card-label{
+    margin-bottom: 0.5rem;                                  /* Margin to the drop down section */
+    font-weight: bold;                                      /* Sets the text to bold */
 }
 
+html.dark .my-project-card-label{
+    color: var(--darkmode-font-color);                      /* Sets the text color to white in darkmode */
+}
+
+/* UPLOAD CONTAINER */
 .drop-zone {
-    border: 2px dashed #cbd5e0;
-    border-radius: 12px;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    transition: all 0.2s ease;
-    background-color: #f7fafc;
-    position: relative;
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 2px dashed var(--lightmode-nav);                /* Sets the border design */
+    border-radius: 12px;                                    /* Sets the corner curveture */
+    text-align: center;                                     /* Centers its text */
+    background-color: var(--lightmode-lightestest);         /* Sets its background color */
+    align-items: center;                                    /* Centers its children */
+    justify-content: center;                                /* Centers its children */
+    display: block;                                         /* Cover the whole area of its parent */
+    padding: 40px;                                          /* Unclean set size */
 }
 
-.drop-zone.drag-active {
-    border-color: #4299e1;
-    background-color: rgba(66, 153, 225, 0.05);
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+html.dark .drop-zone{
+    background-color: var(--darkmode-background);           /* Sets its background color in darkmode */
 }
 
 .drop-zone.has-error {
-    border-color: #f56565;
-    background-color: rgba(245, 101, 101, 0.05);
+    padding: 53px;                                          /* Unclean set size on error */
+    border-color: var(--icon-red);                          /* Turn the border red on error */
+    background-color: var(--icon-light-red);                /* Turn the background light red on error */
 }
 
 .drop-zone.has-file {
-    border-color: #48bb78;
-    background-color: rgba(72, 187, 120, 0.05);
+    border-color: var(--icon-green);                        /* Turn the border green on success */
+    background-color: var(--icon-light-green);              /* Turn the background light green on success */
 }
 
-.drag-active .upload-icon {
-    fill: #4299e1;
-}
-
+/* UPLOAD ICON */
 .upload-icon-wrapper {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;                                  /* Distance from upload icon to the text */
 }
 
 .upload-icon {
-    width: 48px;
-    height: 48px;
-    fill: #cbd5e0;
-    transition: fill 0.2s ease;
+    width: 48px;                                            /* Sets icon size */
+    height: 48px;                                           /* Sets icon size */
+    fill: var(--lightmode-light);                           /* Sets icon background */
 }
 
 .has-error .upload-icon {
-    fill: #f56565;
+    fill: var(--icon-red);                                  /* Sets icon color on error */
 }
 
-.has-file .upload-icon {
-    fill: #48bb78;
+.has-file .upload-icon {    
+    fill: var(--icon-green);                                /* Sets icon color on success */
 }
 
+/* ERROR MESSAGES */
 .error-message {
-    color: #f56565;
-    font-size: 0.875rem;
-    margin-top: 0.75rem;
-    text-align: center;
+    color: var(--icon-red);                                 /* Sets error text color */
+    margin-top: 0.75rem;                                    /* Sets distance to the drop down container */
+    text-align: left;                                       /* Sets the error messages position to the left */
+}
+
+html.dark .error-message {
+    color: var(--icon-red);                                 /* Sets error text color in dark mode*/
 }

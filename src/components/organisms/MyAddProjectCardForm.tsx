@@ -24,7 +24,7 @@ const FormField = ({ id, label, value, error, disabled, isTextArea, onChange }: 
     </div>
 );
 
-const AddProjectCardForm = () => {
+const MyAddProjectCardForm = () => {
     const [formData, setFormData] = useState({ title: '', description: '', file: null as File | null });
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -118,4 +118,4 @@ const AddProjectCardForm = () => {
     );
 };
 
-export default AddProjectCardForm;
+export default MyAddProjectCardForm;
