@@ -1,4 +1,4 @@
-import "./styling/ProjectCard.css";
+import "./styling/MyProjectCard.css";
 import { BsTrash } from "react-icons/bs";
 
 
