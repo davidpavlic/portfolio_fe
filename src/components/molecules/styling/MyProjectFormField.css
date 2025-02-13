@@ -1,0 +1,32 @@
+.form-group {
+    margin-bottom: 1.5rem;                                  /* Sets distance to the element below */
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;                                  /* Sets distance to the input */
+    font-weight: bold;                                      /* Sets the title to be bold */
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;                                            /* Makes the input cover all the space */
+    padding: 0.5rem;                                        /* Sets distance to the input text */
+    border-radius: 4px;                                     /* Sets the corner curve */
+    background-color: var(--lightmode-lightestest);         /* Sets its background color */
+    border: 1px solid var(--lightmode-nav);                 /* Sets the border design */
+}
+
+html.dark .form-group input[type="text"],
+html.dark .form-group textarea {
+    background-color: var(--darkmode-background);           /* Sets its background color */
+}
+
+.form-group textarea {
+    height: 100px;                                          /* Sets the height of a textarea */
+    resize: vertical;                                       /* Enables resizing to the bottom */
+}
+
+.error {
+    color: var(--icon-red);                                 /* Sets the error text color */
+    margin-top: 0.25rem;                                    /* Sets the distance to the input area on top */
+}

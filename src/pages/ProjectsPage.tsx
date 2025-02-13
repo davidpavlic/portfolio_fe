@@ -8,8 +8,11 @@ import AddProjectCardForm from '../components/organisms/MyAddProjectCardForm';
 //Add and make add form look good
 //Add techstack attributes to backend
 //Create Service classes
+//Use global languages
 //Password secured CRUD operations
 //Solve ProjectCard TODO
+//Find a way to add multiple languages on creation
+//Refactor all css namings, to be unique for each component
 
 
 ///* TYPE DEFINITION *///

@@ -1,28 +1,7 @@
 import { useState } from "react";
 import "./styling/MyAddProjectCardForm.css";
 import MyProjectFileUpload from "../molecules/MyProjectFileUpload";
-
-type FormFieldProps = {
-    id: string;
-    label: string;
-    value: string;
-    error?: string;
-    disabled?: boolean;
-    isTextArea?: boolean;
-    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-};
-
-const FormField = ({ id, label, value, error, disabled, isTextArea, onChange }: FormFieldProps) => (
-    <div className="form-group">
-        <label htmlFor={id}>{label}</label>
-        {isTextArea ? (
-            <textarea id={id} value={value} onChange={onChange} disabled={disabled} />
-        ) : (
-            <input type="text" id={id} value={value} onChange={onChange} disabled={disabled} />
-        )}
-        {error && <span className="error">{error}</span>}
-    </div>
-);
+import MyFormField from "../molecules/MyProjectFormField";  
 
 const MyAddProjectCardForm = () => {
     const [formData, setFormData] = useState({ title: '', description: '', file: null as File | null });
@@ -76,7 +55,7 @@ const MyAddProjectCardForm = () => {
             <form onSubmit={handleSubmit}>
                 <div className="split-layout">
                     <div className="left-column">
-                        <FormField
+                        <MyFormField
                             id="title"
                             label="Title:"
                             value={formData.title}
@@ -84,7 +63,7 @@ const MyAddProjectCardForm = () => {
                             error={errors.title}
                             disabled={isSubmitting}
                         />
-                        <FormField
+                        <MyFormField
                             id="description"
                             label="Description:"
                             value={formData.description}
