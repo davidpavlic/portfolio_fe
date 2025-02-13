@@ -3,7 +3,7 @@ import { BsTrash } from "react-icons/bs";
 
 
 ///* TYPE DEFINTION *///
-// Defines the expected properties for the MyDropdownToggle component.
+// Defines the expected properties for the ProjectCard component.
 // - projectcard_id: references the projectcard for the deletion in the backend.
 // - title, description, imageUrl, techStack represent the data shown in the projectcard.
 // - layout: empty or right for adjusting the card content to the right,

@@ -1,0 +1,66 @@
+.file-section h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.drop-zone {
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: all 0.2s ease;
+    background-color: #f7fafc;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drop-zone.drag-active {
+    border-color: #4299e1;
+    background-color: rgba(66, 153, 225, 0.05);
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+}
+
+.drop-zone.has-error {
+    border-color: #f56565;
+    background-color: rgba(245, 101, 101, 0.05);
+}
+
+.drop-zone.has-file {
+    border-color: #48bb78;
+    background-color: rgba(72, 187, 120, 0.05);
+}
+
+.drag-active .upload-icon {
+    fill: #4299e1;
+}
+
+.upload-icon-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.upload-icon {
+    width: 48px;
+    height: 48px;
+    fill: #cbd5e0;
+    transition: fill 0.2s ease;
+}
+
+.has-error .upload-icon {
+    fill: #f56565;
+}
+
+.has-file .upload-icon {
+    fill: #48bb78;
+}
+
+.error-message {
+    color: #f56565;
+    font-size: 0.875rem;
+    margin-top: 0.75rem;
+    text-align: center;
+}
