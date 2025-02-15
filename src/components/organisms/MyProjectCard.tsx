@@ -1,5 +1,6 @@
 import "./styling/MyProjectCard.css";
 import { BsTrash } from "react-icons/bs";
+import { deleteProjectCard } from "../../services/ProjectCardService";
 
 
 ///* TYPE DEFINTION *///
@@ -32,17 +33,12 @@ const ProjectCard = ({
 
   //Calls the backend to delete the the project card
   const handleDelete = async () => {
-    try {
-      const response = await fetch(`http://localhost:8080/projectcard/${projectcard_id}`, { method: "DELETE" });
-      if (response.ok) 
-        onDelete(projectcard_id);
-    } catch (error) {
-      console.error("Error deleting project card: ", error);
-    }
+    const success = await deleteProjectCard(projectcard_id);
+    if (success) onDelete(projectcard_id);
   };
 
   return (
-    <div className={"cardContainer " + (layout?"right":"")}>
+    <div className={"cardContainer " + (layout ? "right" : "")}>
       <div className="imageContainer">
         <img src={imageUrl} alt={title} className="projectImage" />
       </div>

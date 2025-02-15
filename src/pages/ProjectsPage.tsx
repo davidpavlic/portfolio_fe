@@ -2,17 +2,18 @@ import './styling/ProjectsPage.css';
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/organisms/MyProjectCard";
 import AddProjectCardForm from '../components/organisms/MyAddProjectCardForm';
+import { fetchProjectCards } from '../services/ProjectCardService';
 
 
 ///* TODOS *///
 //Add and make add form look good
-//Add techstack attributes to backend
-//Create Service classes
 //Use global languages
+//Add techstack attributes to backend
 //Password secured CRUD operations
 //Solve ProjectCard TODO
 //Find a way to add multiple languages on creation
 //Refactor all css namings, to be unique for each component
+//Git branching
 
 
 ///* TYPE DEFINITION *///
@@ -33,11 +34,12 @@ export const ProjectsPage = () => {
   const [projectscards, setProjectcards] = useState<ProjectCardData[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/projectcard/')
-      .then((res) => res.json())
-      .then((data) => setProjectcards(data))
-      .catch((error) => console.error("Error fetching project cards:", error));
-  }, [projectscards]);
+    const loadProjectCards = async () => {
+      const data = await fetchProjectCards();
+      setProjectcards(data);
+    };
+    loadProjectCards();
+  }, []);
 
   const handleDelete = (id: number) => {
     setProjectcards(prev => prev.filter(card => card.projectcard_id !== id));

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./styling/MyAddProjectCardForm.css";
 import MyProjectFileUpload from "../molecules/MyProjectFileUpload";
 import MyFormField from "../molecules/MyProjectFormField";  
+import { addProjectCard } from "../../services/ProjectCardService";  // Import service
 
 const MyAddProjectCardForm = () => {
     const [formData, setFormData] = useState({ title: '', description: '', file: null as File | null });
@@ -32,21 +33,20 @@ const MyAddProjectCardForm = () => {
 
         setIsSubmitting(true);
         const formPayload = new FormData();
-        formPayload.append('title', formData.title);
-        formPayload.append('description', formData.description);
-        formData.file && formPayload.append('image', formData.file);
+        formPayload.append("title", formData.title);
+        formPayload.append("description", formData.description);
+        formData.file && formPayload.append("image", formData.file);
 
-        try {
-            const response = await fetch('http://localhost:8080/projectcard/', { method: 'POST', body: formPayload });
-            if (!response.ok) throw new Error();
-            setPopupMessage('✅ Project card created successfully!');
-            setFormData({ title: '', description: '', file: null });
-        } catch {
-            setPopupMessage('❌ Error creating project card');
-        } finally {
-            setIsSubmitting(false);
-            setTimeout(() => setPopupMessage(null), 5000);
+        const success = await addProjectCard(formPayload);  // Use extracted service function
+
+        setPopupMessage(success ? "✅ Project card created successfully!" : "❌ Error creating project card");
+
+        if (success) {
+            setFormData({ title: "", description: "", file: null });
         }
+
+        setIsSubmitting(false);
+        setTimeout(() => setPopupMessage(null), 5000);
     };
 
     return (
