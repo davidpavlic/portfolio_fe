@@ -19,7 +19,7 @@ export const fetchProjectCards = async () => {
 // Adds a project card
 export const addProjectCard = async (formData: FormData): Promise<boolean> => {
     try {
-        const response = await fetch(`${API_BASE_URL}/projectcard/`, {
+        const response = await fetch(`${API_BASE_URL}/`, {
             method: "POST",
             body: formData,
         });

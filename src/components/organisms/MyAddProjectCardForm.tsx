@@ -1,52 +1,61 @@
+import "./styling/MyAddProjectCardForm.css"; 
 import { useState } from "react";
-import "./styling/MyAddProjectCardForm.css";
-import MyProjectFileUpload from "../molecules/MyProjectFileUpload";
+import { addProjectCard } from "../../services/ProjectCardService"; 
+import MyProjectFileUpload from "../molecules/MyProjectFileUpload"; 
 import MyFormField from "../molecules/MyProjectFormField";  
-import { addProjectCard } from "../../services/ProjectCardService";  // Import service
 
-const MyAddProjectCardForm = () => {
+///* FUNCTIONAL COMPONENT *///
+const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }) => {
+    // State variables for form data, errors, submission status, and popup message
     const [formData, setFormData] = useState({ title: '', description: '', file: null as File | null });
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [popupMessage, setPopupMessage] = useState<string | null>(null);
 
+    // Function to validate the form
     const validateForm = () => {
-        const newErrors: Record<string, string> = {};
-        if (!formData.title.trim()) newErrors.title = 'Title is required';
-        else if (formData.title.length < 3) newErrors.title = 'Title must be at least 3 characters';
+        const newErrors: Record<string, string> = {
+            ...(formData.title.trim() ? {} : { title: 'Title is required' }),                   // Validate title field
+            ...(formData.description.trim() ? {} : { description: 'Description is required' }), // Validate description field
+            ...(formData.file                                                                   // Validate file
+                ? ['application/pdf', 'image/png', 'image/jpeg'].includes(formData.file.type)
+                    ? {} 
+                    : { file: 'Only PDF, PNG, and JPG files are allowed' }
+                : { file: 'File is required' })
+        };
 
-        if (!formData.description.trim()) newErrors.description = 'Description is required';
-        else if (formData.description.length < 10) newErrors.description = 'Description must be at least 10 characters';
-
-        if (!formData.file) newErrors.file = 'File is required';
-        else if (!['application/pdf', 'image/png', 'image/jpeg'].includes(formData.file.type)) {
-            newErrors.file = 'Only PDF, PNG, and JPG files are allowed';
-        }
-
+        // Set errors in state
         setErrors(newErrors);
-        return !Object.keys(newErrors).length;
+        
+        // Return true if there are no errors, false otherwise
+        return !Object.keys(newErrors).length; // Returns true if object is empty, false if it contains errors
     };
 
+    // Handle form submission
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!validateForm()) return;
+        e.preventDefault();             // Prevent default form submission
+        if (!validateForm()) return;    // Stop submission if validation fails
+        setIsSubmitting(true);          // Set submitting state to true
 
-        setIsSubmitting(true);
+        // Create a FormData object to send the form data
         const formPayload = new FormData();
         formPayload.append("title", formData.title);
         formPayload.append("description", formData.description);
-        formData.file && formPayload.append("image", formData.file);
+        if (formData.file) formPayload.append("image", formData.file);
+        
+        // Call API service to add project card
+        const success = await addProjectCard(formPayload);
 
-        const success = await addProjectCard(formPayload);  // Use extracted service function
-
+        // Show success or error message
         setPopupMessage(success ? "✅ Project card created successfully!" : "❌ Error creating project card");
-
+        
         if (success) {
-            setFormData({ title: "", description: "", file: null });
+            setFormData({ title: "", description: "", file: null });    // Reset form fields if submission is successful
+            onProjectAdded();                                           // Refresh project list after adding
         }
 
-        setIsSubmitting(false);
-        setTimeout(() => setPopupMessage(null), 5000);
+        setIsSubmitting(false);                         // Reset submitting state
+        setTimeout(() => setPopupMessage(null), 5000);  // Hide popup message after 5 seconds
     };
 
     return (
@@ -54,6 +63,7 @@ const MyAddProjectCardForm = () => {
             <h2>Upload Project Card</h2>
             <form onSubmit={handleSubmit}>
                 <div className="split-layout">
+                    {/* Left column for text fields */}
                     <div className="left-column">
                         <MyFormField
                             id="title"
@@ -74,6 +84,7 @@ const MyAddProjectCardForm = () => {
                         />
                     </div>
 
+                    {/* Right column for file upload */}
                     <div className="right-column">
                         <MyProjectFileUpload
                             file={formData.file}
@@ -83,11 +94,14 @@ const MyAddProjectCardForm = () => {
                         />
                     </div>
                 </div>
+                
+                {/* Submit button */}
                 <button type="submit" disabled={isSubmitting} className="submit-button">
                     {isSubmitting ? 'Submitting...' : 'Submit'}
                 </button>
             </form>
 
+            {/* Popup message for feedback */}
             {popupMessage && (
                 <div className="popup-message">
                     {popupMessage}
@@ -97,4 +111,5 @@ const MyAddProjectCardForm = () => {
     );
 };
 
+///* EXPORT *///
 export default MyAddProjectCardForm;

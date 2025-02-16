@@ -1,182 +1,100 @@
+/* FORM CONTAINER */
 .form-container {
-    background-color: white;
-    width: 80%;
-    margin: 2rem auto;
-    padding: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
+    background-color: var(--darkmode-font-color);       /* Sets the forms background color */
+    width: 80%;                                         /* Sets the forms width to 80% of the screen size */
+    margin: 2rem auto;                                  /* Centers the form */
+    padding: 2rem;                                      /* Sets the forms distance from the text */
+    border-radius: 16px;                                /* Sets the forms corner curveture */
+    box-shadow: 0 4px 20px var(--lightmode-lighter);    /* Sets the forms shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Sets the forms design change transition */
+    position: relative;                                 /* Sets the forms position */
 }
 
 html.dark .form-container {
-    background-color: var(--darkmode-darker);
+    background-color: var(--darkmode-darker);           /* Sets the forms background in darkmode */
+    box-shadow: 0 4px 15px var(--lightmode-light);      /* Sets the forms shadow in darkmode */
 }
 
+.form-container:hover {
+    transform: translateY(-5px);                        /* Makes the forms come up when hovered */
+    box-shadow: 0 8px 30px var(--lightmode-light);      /* Increases the forms shadow when hovered */
+}
+
+html.dark .form-container:hover {
+    box-shadow: 0 4px 15px var(--lightmode-lightest);   /* Sets the forms shadow when hovered in darkmode*/
+}
+
+/* GRID LAYOUT */
 .split-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    margin-bottom: 1.5rem;
+    display: grid;                                      /* Specifies the layout as a grid */
+    grid-template-columns: 2fr 1fr;                     /* Sets the column width ratio */
+    gap: 2rem;                                          /* Sets the gap between the left and right column */
+    margin-bottom: 1.5rem;                              /* Sets the distance to the bottom */
 }
 
 .left-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: flex;                                      /* Enables the gap between the element */
+    flex-direction: column;                             /* Sets the direction of the elements */
+    gap: 1.5rem;                                        /* Sets the distance between the elements */
 }
 
-.file-upload-label {
-    display: block;
-    width: 100%;
-    padding: 0.75rem 1.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.2s;
-}
-
-.file-upload-label:hover {
-    background-color: #0056b3;
-}
-
-.file-upload-label input[type="file"] {
-    display: none;
-}
-
-/* Update existing right-column style */
 .right-column {
-    border-left: 2px solid #eee;
-    padding-left: 2rem;
-    display: block;
-    height: 100%;
-    gap: 1.5rem;
+    border-left: 2px solid var(--lightmode-nav);        /* Sets the line between the left and right column */
+    padding-left: 2rem;                                 /* Sets the distance to the separation line */
 }
 
+/* FORM TITLE */
 .form-container h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
+    text-align: center;                                 /* Sets the title to the center */
+    margin-bottom: 1.5rem;                              /* Sets the distance to the form */
 }
 
+/* SUBMIT BUTTON */
 .submit-button {
-    background-color: #007bff;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 100%;
+    background-color: var(--icon-blue);                 /* Sets the buttons background color */
+    color: var(--darkmode-font-color);                  /* Sets the buttons text color */
+    padding: 0.75rem 1.5rem;                            /* Sets the distance from the button border to the text */
+    border: none;                                       /* Removes the button border  */
+    border-radius: 4px;                                 /* Sets the button corner curveture */
+    width: 100%;                                        /* Makes the button cover the whole width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;  /* Sets the buttons design change transition */
 }
 
 .submit-button:disabled {
-    background-color: #6c757d;
-    cursor: not-allowed;
+    background-color: var(--icon-disabled);             /* Sets the background color when submitting */
+    cursor: not-allowed;                                /* Sets the cursor icon when submitting */
 }
 
-/* Updated CSS */
-.upload-heading {
-    font-size: 1.1rem;
-    color: #2d3748;
-    margin-bottom: 1.25rem;
-    font-weight: 600;
+.submit-button:hover{
+    transform: translateY(-5px);                        /* Makes the forms come up when hovered */
+    background-color: var(--icon-dark-blue);            /* Sets the forms background in darkmode */
 }
 
-.upload-text {
-    margin-bottom: 1.5rem;
+/* POP UP MESSAGE */
+.popup-message {
+    position: absolute;                                 /* Sets the position */
+    top: 20px;                                          /* Sets the message to the top */
+    right: 30px;                                        /* Sets the message to the right */
+    background-color: none;                             /* Removes the background */
+    color: var(--lightmode-font-color);                 /* Sets the text color */
 }
 
-.instruction-main {
-    font-size: 1.125rem;
-    color: #2d3748;
-    font-weight: 500;
-    margin-bottom: 0.25rem;
-}
-
-.instruction-sub {
-    color: #718096;
-    font-size: 0.875rem;
-}
-
-.file-name {
-    font-weight: 500;
-    color: #2d3748;
-    margin-bottom: 0.25rem;
-}
-
-.file-instruction {
-    color: #718096;
-    font-size: 0.875rem;
-}
-
-.browse-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.625rem 1.25rem;
-    background-color: #4299e1;
-    color: white;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    border: none;
-    font-size: 0.875rem;
-}
-
-.browse-button:hover {
-    background-color: #3182ce;
-    transform: translateY(-1px);
-}
-
-.browse-button:active {
-    transform: translateY(0);
-}
-
-.file-preview {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    background: #f7fafc;
-    border-radius: 6px;
-    border: 1px solid #e2e8f0;
+html.drak .popup-message {
+    color: var(--darkmode-font-color);                  /* Sets the pop up text color in darkmode */
 }
 
 @media (max-width: 1100px) {
     .split-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;                     /* When collapsed make all elements below each other */
+        gap: 1.5rem;                                    /* Sets the gap between its children */
     }
 
     .right-column {
-        border-left: none;
-        border-top: 2px solid #eee;
-        padding-left: 0;
-        padding-top: 2rem;
+        border: none;                                   /* Removes the separation line */
+        padding-left: 0;                                /* Removes any padding to the card border */
     }
 
-    /* Optional: Adjust form container width for smaller screens */
-    .form-container {
-        width: 80%;
-        padding: 1.5rem;
-    }
-
-    /* Optional: Adjust button spacing */
     .submit-button {
-        margin-top: 1rem;
+        margin-top: 1rem;                               /* Sets the button distance to the file drag'n'drop */
     }
-}
-
-.popup-message {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 1000;
-    opacity: 0.9;
-    transition: opacity 0.3s ease-in-out;
 }

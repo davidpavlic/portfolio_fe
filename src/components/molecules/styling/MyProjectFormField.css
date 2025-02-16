@@ -19,6 +19,7 @@
 html.dark .form-group input[type="text"],
 html.dark .form-group textarea {
     background-color: var(--darkmode-background);           /* Sets its background color */
+    color: var(--darkmode-font-color);                      /* Sets the written text color */
 }
 
 .form-group textarea {

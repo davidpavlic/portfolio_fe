@@ -34,12 +34,13 @@ export const ProjectsPage = () => {
   const [projectscards, setProjectcards] = useState<ProjectCardData[]>([]);
 
   useEffect(() => {
-    const loadProjectCards = async () => {
-      const data = await fetchProjectCards();
-      setProjectcards(data);
-    };
     loadProjectCards();
   }, []);
+
+  const loadProjectCards = async () => {
+    const data = await fetchProjectCards();
+    setProjectcards(data);
+  };
 
   const handleDelete = (id: number) => {
     setProjectcards(prev => prev.filter(card => card.projectcard_id !== id));
@@ -47,7 +48,7 @@ export const ProjectsPage = () => {
 
   return (
     <div>
-      <AddProjectCardForm/>
+      <AddProjectCardForm onProjectAdded={loadProjectCards} />
 
       {projectscards.map((projectCard, index) => (
         <ProjectCard
