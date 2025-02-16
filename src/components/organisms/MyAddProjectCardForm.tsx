@@ -1,12 +1,13 @@
 import "./styling/MyAddProjectCardForm.css"; 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { addProjectCard } from "../../services/ProjectCardService"; 
 import MyProjectFileUpload from "../molecules/MyProjectFileUpload"; 
 import MyFormField from "../molecules/MyProjectFormField";  
 
 ///* FUNCTIONAL COMPONENT *///
 const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }) => {
-    // State variables for form data, errors, submission status, and popup message
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({ title: '', description: '', file: null as File | null });
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,13 +16,13 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
     // Function to validate the form
     const validateForm = () => {
         const newErrors: Record<string, string> = {
-            ...(formData.title.trim() ? {} : { title: 'Title is required' }),                   // Validate title field
-            ...(formData.description.trim() ? {} : { description: 'Description is required' }), // Validate description field
+            ...(formData.title.trim() ? {} : { title: t("projects_form_error_no_title") }),                   // Validate title field
+            ...(formData.description.trim() ? {} : { description: t("projects_form_error_no_description") }), // Validate description field
             ...(formData.file                                                                   // Validate file
                 ? ['application/pdf', 'image/png', 'image/jpeg'].includes(formData.file.type)
                     ? {} 
-                    : { file: 'Only PDF, PNG, and JPG files are allowed' }
-                : { file: 'File is required' })
+                    : { file: t("projects_form_error_invalid_image") }
+                : { file: t("projects_form_error_no_image") })
         };
 
         // Set errors in state
@@ -47,7 +48,7 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
         const success = await addProjectCard(formPayload);
 
         // Show success or error message
-        setPopupMessage(success ? "✅ Project card created successfully!" : "❌ Error creating project card");
+        setPopupMessage(success ? ("✅ " + t("projects_form_success")) : ("❌ " + t("projects_form_fail")));
         
         if (success) {
             setFormData({ title: "", description: "", file: null });    // Reset form fields if submission is successful
@@ -60,14 +61,14 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
 
     return (
         <div className="form-container">
-            <h2>Upload Project Card</h2>
+            <h2>{t('projects_form_title')}</h2>
             <form onSubmit={handleSubmit}>
                 <div className="split-layout">
                     {/* Left column for text fields */}
                     <div className="left-column">
                         <MyFormField
                             id="title"
-                            label="Title:"
+                            label={t("projects_form_card_title")}
                             value={formData.title}
                             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                             error={errors.title}
@@ -75,7 +76,7 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
                         />
                         <MyFormField
                             id="description"
-                            label="Description:"
+                            label={t("projects_form_card_description")}
                             value={formData.description}
                             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                             error={errors.description}
@@ -97,7 +98,7 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
                 
                 {/* Submit button */}
                 <button type="submit" disabled={isSubmitting} className="submit-button">
-                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                    {isSubmitting ? t("projects_form_submitting") : t("projects_form_submit")}
                 </button>
             </form>
 

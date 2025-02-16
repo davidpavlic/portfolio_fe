@@ -6,7 +6,6 @@ import { fetchProjectCards } from '../services/ProjectCardService';
 
 
 ///* TODOS *///
-//Add and make add form look good
 //Use global languages
 //Add techstack attributes to backend
 //Password secured CRUD operations

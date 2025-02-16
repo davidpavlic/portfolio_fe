@@ -1,4 +1,5 @@
 import './styling/MyProjectFileUpload.css';
+import { useTranslation } from "react-i18next";
 import { FaCloudArrowUp } from "react-icons/fa6";
 
 
@@ -17,9 +18,12 @@ type FileUploadProps = {
 
 
 ///* FUNCTIONAL COMPONENT *///
-const FileUpload = ({ file, error, isSubmitting, onFileSelect }: FileUploadProps) => (
+const FileUpload = ({ file, error, isSubmitting, onFileSelect }: FileUploadProps) => {
+    const { t } = useTranslation();
+
+    return (
     <div>
-        <label className="my-project-card-label">Upload Project Image:</label>
+        <label className="my-project-card-label">{t("projects_form_card_image")}</label>
         {/* Drop zone area where users can drag & drop or click to select files */}
         <label
             className={`drop-zone ${error ? 'has-error' : ''} ${file ? 'has-file' : ''}`}
@@ -36,9 +40,9 @@ const FileUpload = ({ file, error, isSubmitting, onFileSelect }: FileUploadProps
                 <p>
                     {file ? (
                         <>
-                            {file.name} <br /> (Click to change file)
+                            {file.name} <br /> ({t("projects_form_card_added_text")})
                         </>
-                    ) : ("Drag & drop your file or browse files")}
+                    ) : t("projects_form_card_initial_text")}
                 </p>
             </div>
             {/* Hidden file input element that triggers when user clicks the drop zone */}
@@ -53,7 +57,7 @@ const FileUpload = ({ file, error, isSubmitting, onFileSelect }: FileUploadProps
         {/* Display error message if the file is invalid */}
         {error && <div className="error-message">{error}</div>}
     </div>
-);
+)};
 
 
 ///* EXPORT *///
