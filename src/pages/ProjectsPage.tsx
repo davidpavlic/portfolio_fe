@@ -6,12 +6,15 @@ import { fetchProjectCards } from '../services/ProjectCardService';
 
 
 ///* TODOS *///
-//Add techstack attributes to backend
-//Password secured CRUD operations
+//Refactor
 //Solve ProjectCard TODO
-//Find a way to add multiple languages on creation
 //Refactor all css namings, to be unique for each component
 //Git branching
+//Password secured CRUD operations
+
+//Find a way to add multiple languages on creation
+//Search Field for techstack
+//Update Cards
 
 
 ///* TYPE DEFINITION *///

@@ -28,39 +28,45 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
             ...(techStack.length > 0 ? {} : { techStack: t("projects_form_error_no_techstack") }),              // Validate tech stack
             ...(formData.file                                                                                   // Validate file
                 ? ['application/pdf', 'image/png', 'image/jpeg'].includes(formData.file.type)
-                    ? {} 
+                    ? {}
                     : { file: t("projects_form_error_invalid_image") }
                 : { file: t("projects_form_error_no_image") })
         };
 
         // Set errors in state
         setErrors(newErrors);
-        
+
         // Return true if there are no errors, false otherwise
         return !Object.keys(newErrors).length; // Returns true if object is empty, false if it contains errors
     };
 
     // Handle form submission
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();             // Prevent default form submission
-        if (!validateForm()) return;    // Stop submission if validation fails
-        setIsSubmitting(true);          // Set submitting state to true
+        e.preventDefault();
+        if (!validateForm()) return;
+        setIsSubmitting(true);
 
-        // Create a FormData object to send the form data
         const formPayload = new FormData();
         formPayload.append("title", formData.title);
         formPayload.append("description", formData.description);
-        //TODO: Techstack payload
-        if (formData.file) formPayload.append("image", formData.file);
 
-        // Call API service to add project card
+        // Append each tech stack entry individually
+        techStack.forEach((tech) => {
+            formPayload.append("techstacks", tech);
+        });
+
+        if (formData.file) {
+            formPayload.append("image", formData.file);
+        }
+
         const success = await addProjectCard(formPayload);
+
 
         // Show success or error message
         setPopupMessage(success ? ("✅ " + t("projects_form_success")) : ("❌ " + t("projects_form_fail")));
 
         if (success) {
-            setFormData({ title: "", description: "", file: null, techStack: ""});    // Reset form fields if submission is successful
+            setFormData({ title: "", description: "", file: null, techStack: "" });    // Reset form fields if submission is successful
             setTechStack([]);                                                         // Reset techstack
             onProjectAdded();                                                         // Refresh project list after adding
         }

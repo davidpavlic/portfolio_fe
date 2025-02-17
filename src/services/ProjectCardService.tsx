@@ -21,15 +21,16 @@ export const addProjectCard = async (formData: FormData): Promise<boolean> => {
     try {
         const response = await fetch(`${API_BASE_URL}/`, {
             method: "POST",
+            // Do NOT set Content-Type header manually - the browser will set it automatically
+            // with the correct boundary parameter for multipart/form-data
             body: formData,
         });
 
         if (!response.ok) throw new Error("Failed to add project card");
-
-        return true; // Success
+        return true;
     } catch (error) {
         console.error("Error adding project card:", error);
-        return false; // Failure
+        return false;
     }
 };
 
