@@ -6,7 +6,6 @@ import { fetchProjectCards } from '../services/ProjectCardService';
 
 
 ///* TODOS *///
-//Use global languages
 //Add techstack attributes to backend
 //Password secured CRUD operations
 //Solve ProjectCard TODO
@@ -24,6 +23,7 @@ type ProjectCardData = {
   title: string;
   description: string;
   base64Image?: string;
+  techStacks: [];
 }
 
 
@@ -56,7 +56,7 @@ export const ProjectsPage = () => {
           title={projectCard.title}
           description={projectCard.description}
           imageUrl={projectCard.base64Image ? `data:image/jpeg;base64,${projectCard.base64Image}` : ""}
-          techStack={["Next.js", "Node.js", "MongoDB", "Stripe"]}
+          techStack={projectCard.techStacks}
           layout={index % 2 === 0}
           onDelete={handleDelete}
         />

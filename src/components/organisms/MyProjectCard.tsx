@@ -14,7 +14,7 @@ type ProjectCardProps = {
   title: string;
   description: string;
   imageUrl: string;
-  techStack: string[];
+  techStack: [];
   layout: boolean;
   onDelete: (id: number) => void;
 }
@@ -30,7 +30,6 @@ const ProjectCard = ({
   layout,
   onDelete,
 }: ProjectCardProps) => {
-
   //Calls the backend to delete the the project card
   const handleDelete = async () => {
     const success = await deleteProjectCard(projectcard_id);
