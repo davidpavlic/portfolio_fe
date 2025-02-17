@@ -51,9 +51,9 @@ const translations = {
   },
   projects_form_card_techstack: {
     en: "Techstack:",
-    de: "Techstack:",
-    fr: "Techstack:",
-    hr: "Techstack:",
+    de: "Tech-Stack:",
+    fr: "Technologies:",
+    hr: "Technologije:",
     gg: "Globi"
   },
   projects_form_card_image: {
@@ -103,6 +103,20 @@ const translations = {
     de: "Beschreibung ist erforderlich",
     fr: "La description est requise",
     hr: "Opis je obavezan",
+    gg: "Globi"
+  },
+  projects_form_error_no_techstack: {
+    en: "At least one tech stack is required",
+    de: "Mindestens ein Tech-Stack ist erforderlich",
+    fr: "Au moins une technologie est requise",
+    hr: "Potrebna je barem jedna tehnologija",
+    gg: "Globi"
+  },
+  projects_form_error_techstack_limit: {
+    en: "Input exceeds maximum of 20 chars",
+    de: "Eingabe überschreitet das Maximum von 20 Zeichen",
+    fr: "L'entrée dépasse le maximum de 20 caractères",
+    hr: "Unos premašuje maksimalno 20 znakova",
     gg: "Globi"
   },
   projects_form_error_no_image: {

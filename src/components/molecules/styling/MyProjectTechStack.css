@@ -1,51 +1,68 @@
-/* Styling the form input container */
+/* TECHSTACK CONTAINER */
 .techstack-input-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
+    display: flex;                                          /* Sets the elements on one row */
 }
 
-/* Set the search field to occupy 25% width */
+/* TECHSTACK INPUT FIELD */
 .techstack-input-container input[type="text"] {
-    width: 25%;
-    padding: 8px;
-    margin-right: 10px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    width: 25%;                                             /* Sets the input field size */
+    margin-right: 10px;                                     /* Sets the distance to the bubbles */
+    border-radius: 4px;                                     /* Sets the corners curvature */
+    border: 1px solid var(--lightmode-nav);                 /* Sets the border design */
+    flex-shrink: 0;                                         /* Makes the input field not shrinked by large bubble list */
 }
 
-/* Styling the tech stack bubbles */
+/* TECHSTACK ELEMENT LIST */
 .techstack-bubbles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: flex;                                          /* Sets the bubbles on one row */
+    gap: 10px;                                              /* Sets the distance between the bubbles */
+    overflow-x: auto;                                       /* Makes the bubbles to be hidden behind right column */   
+    padding-bottom: 8px;                                    /* Sets the distance to the scrollbar */
 }
 
+/* TECHSTACK ELEMENT */
 .techstack-bubble {
-    background-color: #f0f0f0;
-    border-radius: 12px;
-    padding: 6px 12px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-    color: #333;
+    background: var(--lightmode-lightestest);               /* Sets the backgroundcolor of the tech stack elements */
+    padding: 0.4rem 1rem;                                   /* Sets the distance of the tech stack elements to its border*/
+    border-radius: 25px;                                    /* Sets the curve of the button */
+    font-size: 0.9rem;                                      /* Sets the text size */
+    color: var(--lightmode-font-color);                     /* Sets the tech stack element text color */
+    border: 1px solid var(--lightmode-nav);                 /* Sets the tech stack element border */
+    flex-shrink: 0;                                         /* Makes the delete button to be on the same line */
 }
 
-/* Styling the remove button in the bubbles */
+html.dark .techstack-bubble {
+    color: var(--darkmode-font-color);                      /* Sets the tech stack element text color*/
+    background: var(--darkmode-darkest);                    /* Sets the backgroundcolor of the tech stack elements */
+}
+
+/* TECHSTACK ELEMENT LIST SCROLLBAR */
+.techstack-bubbles::-webkit-scrollbar {
+    height: 4px;                                            /* Sets the height of the scrollbar */
+}
+
+.techstack-bubbles::-webkit-scrollbar-thumb {
+    background-color: var(--lightmode-lighter);             /* Sets the background color of the scrollbar */
+    border-radius: 4px;                                     /* Sets the corner curveture of the scrollbar */
+}
+
+.techstack-bubbles::-webkit-scrollbar-track {
+    background: var(--lightmode-lightestest);               /* Sets the color of the active scrollbar */
+}
+
+/* TECHSTACK ELEMENT REMOVE BUTTON */
 .techstack-remove-bubble {
-    background: none;
-    border: none;
-    color: red;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
+    border: none;                                           /* Removes the border of the button */
+    color: var(--lightmode-font-color);                     /* Sets the color of the delete button */
 }
 
-/* Error message styling */
+html.dark .techstack-remove-bubble {
+    background: none;                                       /* Removes the border of the button */
+    color: var(--darkmode-font-color);                      /* Sets the color of the delete button */
+}
+
+/* TECHSTACK ERROR */
 .techstack-error {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
+    color: var( --icon-red);                                /* Sets the text color of the error message */
+    margin-top: 5px;                                        /* Sets the distance to the techstack message */
 }

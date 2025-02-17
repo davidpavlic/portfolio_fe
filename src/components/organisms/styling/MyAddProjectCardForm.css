@@ -36,6 +36,7 @@ html.dark .form-container:hover {
     display: flex;                                      /* Enables the gap between the element */
     flex-direction: column;                             /* Sets the direction of the elements */
     gap: 1.5rem;                                        /* Sets the distance between the elements */
+    min-width: 0;                                       /* Prevents the techstack bubbles to shrink the right column */
 }
 
 .right-column {

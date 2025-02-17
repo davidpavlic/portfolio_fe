@@ -18,7 +18,7 @@ html.dark .my-project-card-label{
     justify-content: center;                                /* Centers its children */
     display: block;                                         /* Cover the whole area of its parent */
     height: 350px;                                          /* Unclean set size */
-    padding-top: 125px;                                      /* Sets distance to border */
+    padding-top: 125px;                                     /* Sets distance to border */
 }
 
 html.dark .drop-zone{
@@ -26,7 +26,8 @@ html.dark .drop-zone{
 }
 
 .drop-zone.has-error {
-    padding: 53px;                                          /* Unclean set size on error */
+    padding-top: 150px;                                     /* Unclean set size on error */
+    padding-bottom: 240px;                                     /* Unclean set size on error */
     border-color: var(--icon-red);                          /* Turn the border red on error */
     background-color: var(--icon-light-red);                /* Turn the background light red on error */
 }
