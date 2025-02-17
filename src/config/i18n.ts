@@ -49,6 +49,13 @@ const translations = {
     hr: "Opis:",
     gg: "Globi"
   },
+  projects_form_card_techstack: {
+    en: "Techstack:",
+    de: "Techstack:",
+    fr: "Techstack:",
+    hr: "Techstack:",
+    gg: "Globi"
+  },
   projects_form_card_image: {
     en: "Upload Project Image:",
     de: "Projektbild hochladen:",

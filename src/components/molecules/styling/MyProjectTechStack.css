@@ -1,0 +1,51 @@
+/* Styling the form input container */
+.techstack-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Set the search field to occupy 25% width */
+.techstack-input-container input[type="text"] {
+    width: 25%;
+    padding: 8px;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Styling the tech stack bubbles */
+.techstack-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.techstack-bubble {
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Styling the remove button in the bubbles */
+.techstack-remove-bubble {
+    background: none;
+    border: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Error message styling */
+.techstack-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

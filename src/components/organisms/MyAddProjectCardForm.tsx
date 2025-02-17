@@ -1,14 +1,21 @@
-import "./styling/MyAddProjectCardForm.css"; 
+import "./styling/MyAddProjectCardForm.css";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { addProjectCard } from "../../services/ProjectCardService"; 
-import MyProjectFileUpload from "../molecules/MyProjectFileUpload"; 
-import MyFormField from "../molecules/MyProjectFormField";  
+import { addProjectCard } from "../../services/ProjectCardService";
+import MyProjectFileUpload from "../molecules/MyProjectFileUpload";
+import MyProjectFormField from "../molecules/MyProjectFormField";
+import MyProjectTechStack from "../molecules/MyProjectTechStack";
 
 ///* FUNCTIONAL COMPONENT *///
 const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }) => {
     const { t } = useTranslation();
-    const [formData, setFormData] = useState({ title: '', description: '', file: null as File | null });
+    const [formData, setFormData] = useState({
+        title: '',
+        description: '',
+        techStack: '',
+        file: null as File | null
+    });
+    const [techStack, setTechStack] = useState<string[]>([]);
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [popupMessage, setPopupMessage] = useState<string | null>(null);
@@ -16,9 +23,10 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
     // Function to validate the form
     const validateForm = () => {
         const newErrors: Record<string, string> = {
-            ...(formData.title.trim() ? {} : { title: t("projects_form_error_no_title") }),                   // Validate title field
-            ...(formData.description.trim() ? {} : { description: t("projects_form_error_no_description") }), // Validate description field
-            ...(formData.file                                                                   // Validate file
+            ...(formData.title.trim() ? {} : { title: t("projects_form_error_no_title") }),                     // Validate title field
+            ...(formData.description.trim() ? {} : { description: t("projects_form_error_no_description") }),   // Validate description field
+            ...(techStack.length > 0 ? {} : { techStack: t("projects_form_error_no_techstack") }),              // Validate tech stack
+            ...(formData.file                                                                                   // Validate file
                 ? ['application/pdf', 'image/png', 'image/jpeg'].includes(formData.file.type)
                     ? {} 
                     : { file: t("projects_form_error_invalid_image") }
@@ -42,17 +50,19 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
         const formPayload = new FormData();
         formPayload.append("title", formData.title);
         formPayload.append("description", formData.description);
+        //TODO: Techstack payload
         if (formData.file) formPayload.append("image", formData.file);
-        
+
         // Call API service to add project card
         const success = await addProjectCard(formPayload);
 
         // Show success or error message
         setPopupMessage(success ? ("✅ " + t("projects_form_success")) : ("❌ " + t("projects_form_fail")));
-        
+
         if (success) {
-            setFormData({ title: "", description: "", file: null });    // Reset form fields if submission is successful
-            onProjectAdded();                                           // Refresh project list after adding
+            setFormData({ title: "", description: "", file: null, techStack: ""});    // Reset form fields if submission is successful
+            setTechStack([]);                                                         // Reset techstack
+            onProjectAdded();                                                         // Refresh project list after adding
         }
 
         setIsSubmitting(false);                         // Reset submitting state
@@ -66,15 +76,20 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
                 <div className="split-layout">
                     {/* Left column for text fields */}
                     <div className="left-column">
-                        <MyFormField
+                        <MyProjectFormField
                             id="title"
                             label={t("projects_form_card_title")}
                             value={formData.title}
                             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                             error={errors.title}
                             disabled={isSubmitting}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault(); // Prevent form submission when pressing Enter in title input
+                                }
+                            }}
                         />
-                        <MyFormField
+                        <MyProjectFormField
                             id="description"
                             label={t("projects_form_card_description")}
                             value={formData.description}
@@ -82,6 +97,16 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
                             error={errors.description}
                             disabled={isSubmitting}
                             isTextArea
+                        />
+                        <MyProjectTechStack
+                            id="techStack"
+                            label={t("projects_form_card_techstack")}
+                            value={formData.techStack}
+                            onChange={(e) => setFormData({ ...formData, techStack: e.target.value })}
+                            error={errors.techStack}
+                            disabled={isSubmitting}
+                            techStack={techStack}
+                            setTechStack={setTechStack}
                         />
                     </div>
 
@@ -95,7 +120,7 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
                         />
                     </div>
                 </div>
-                
+
                 {/* Submit button */}
                 <button type="submit" disabled={isSubmitting} className="submit-button">
                     {isSubmitting ? t("projects_form_submitting") : t("projects_form_submit")}

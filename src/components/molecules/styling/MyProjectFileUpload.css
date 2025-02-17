@@ -17,7 +17,8 @@ html.dark .my-project-card-label{
     align-items: center;                                    /* Centers its children */
     justify-content: center;                                /* Centers its children */
     display: block;                                         /* Cover the whole area of its parent */
-    padding: 40px;                                          /* Unclean set size */
+    height: 350px;                                          /* Unclean set size */
+    padding-top: 125px;                                      /* Sets distance to border */
 }
 
 html.dark .drop-zone{
