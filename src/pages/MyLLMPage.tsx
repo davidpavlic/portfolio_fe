@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import "./styling/MyLLMPage.css";
+import { MyLLMSideBar } from "../components/organisms/llmpage/MyLLMSideBar";
 
 export const MyLLMPage = () => {
   const { t } = useTranslation();
@@ -14,21 +15,21 @@ export const MyLLMPage = () => {
     { id: 3, title: "Recipe brainstorming", date: "2024-03-13" },
     { id: 4, title: "Travel recommendations", date: "2024-03-12" },
     { id: 5, title: "Fitness routine discussion", date: "2024-03-11" },
-    { id: 1, title: "Discussing AI ethics", date: "2024-03-15" },
-    { id: 2, title: "Planning a project", date: "2024-03-14" },
-    { id: 3, title: "Recipe brainstorming", date: "2024-03-13" },
-    { id: 4, title: "Travel recommendations", date: "2024-03-12" },
-    { id: 5, title: "Fitness routine discussion", date: "2024-03-11" },
-    { id: 1, title: "Discussing AI ethics", date: "2024-03-15" },
-    { id: 2, title: "Planning a project", date: "2024-03-14" },
-    { id: 3, title: "Recipe brainstorming", date: "2024-03-13" },
-    { id: 4, title: "Travel recommendations", date: "2024-03-12" },
-    { id: 5, title: "Fitness routine discussion", date: "2024-03-11" },
-    { id: 1, title: "Discussing AI ethics", date: "2024-03-15" },
-    { id: 2, title: "Planning a project", date: "2024-03-14" },
-    { id: 3, title: "Recipe brainstorming", date: "2024-03-13" },
-    { id: 4, title: "Travel recommendations", date: "2024-03-12" },
-    { id: 5, title: "Fitness routine discussion", date: "2024-03-11" }
+    { id: 6, title: "Discussing AI ethics", date: "2024-03-15" },
+    { id: 7, title: "Planning a project", date: "2024-03-14" },
+    { id: 8, title: "Recipe brainstorming", date: "2024-03-13" },
+    { id: 9, title: "Travel recommendations", date: "2024-03-12" },
+    { id: 10, title: "Fitness routine discussion", date: "2024-03-11" },
+    { id: 11, title: "Discussing AI ethics", date: "2024-03-15" },
+    { id: 12, title: "Planning a project", date: "2024-03-14" },
+    { id: 13, title: "Recipe brainstorming", date: "2024-03-13" },
+    { id: 14, title: "Travel recommendations", date: "2024-03-12" },
+    { id: 15, title: "Fitness routine discussion", date: "2024-03-11" },
+    { id: 16, title: "Discussing AI ethics", date: "2024-03-15" },
+    { id: 17, title: "Planning a project", date: "2024-03-14" },
+    { id: 18, title: "Recipe brainstorming", date: "2024-03-13" },
+    { id: 19, title: "Travel recommendations", date: "2024-03-12" },
+    { id: 20, title: "Fitness routine discussion", date: "2024-03-11" }
   ]);
 
 
@@ -161,41 +162,12 @@ export const MyLLMPage = () => {
   return (
     <div className="myllm-container">
       {/* Sidebar */}
-      <div className={`myllm-sidebar ${isSidebarExpanded ? 'expanded' : ''}`}>
-        <div className="myllm-sidebar-content">
-          <h3>LLM CONTROLS</h3>
-        </div>
-        {isSidebarExpanded ? (
-          <button className="myllm-submit-button expanded" onClick={() => setResponse("")}>New Chat</button>
-        ) : (
-          <button className="myllm-submit-button" onClick={() => setResponse("")} title="New Chat">
-            <svg width="24" height="24" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
-            </svg>
-          </button>
-        )}
-        <button
-          className="sidebar-toggle"
-          onClick={toggleSidebar}
-        >
-          {isSidebarExpanded ? '◀' : '▶'}
-        </button>
-        <div className="history-section">
-          <h4 className="myllm-history-title">History</h4>
-          <div className="history-list">
-            {history.map((entry) => (
-              <button
-                key={entry.id}
-                className="history-item"
-                onClick={() => console.log("Load chat", entry.id)}
-              >
-                <span className="history-title">{entry.title}</span>
-                <span className="history-date">{entry.date}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      <MyLLMSideBar
+        isExpanded={isSidebarExpanded}
+        onToggle={toggleSidebar}
+        history={history}
+        onNewChat={() => setResponse("")}
+      />
 
       {/* Mobile overlay */}
       {isMobile && isSidebarExpanded && (

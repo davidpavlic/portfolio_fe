@@ -1,0 +1,67 @@
+.my-llm-history-section {
+    flex: 1;
+    margin-top: 24px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 40px 16px 16px;
+}
+
+.my-llm-history-section h4 {
+    color: #8e8e8e;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.my-llm-sidebar.expanded .my-llm-history-section {
+    opacity: 1;
+    transition: max-height 0.3s ease-in, opacity 0.2s ease 0.1s;
+}
+
+.my-llm-history-item-title {
+    font-size: 13px;
+}
+
+.my-llm-history-title {
+    text-align: center;
+}
+
+.my-llm-history-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.my-llm-history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.my-llm-history-list::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+.my-llm-history-list::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+    border-radius: 3px;
+}
+
+.my-llm-history-item {
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.my-llm-history-item:hover {
+    background: #2d2d2d;
+}
+
+.my-llm-history-item-date {
+    font-size: 11px;
+    color: #8e8e8e;
+}

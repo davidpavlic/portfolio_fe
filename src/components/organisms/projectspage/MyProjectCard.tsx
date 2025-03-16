@@ -1,6 +1,6 @@
-import "./styling/MyProjectCard.css";
+import "../styling/MyProjectCard.css";
 import { BsTrash } from "react-icons/bs";
-import { deleteProjectCard } from "../../services/ProjectCardService";
+import { deleteProjectCard } from "../../../services/ProjectCardService";
 
 
 ///* TYPE DEFINTION *///

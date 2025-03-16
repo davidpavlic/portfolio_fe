@@ -1,7 +1,7 @@
 import './styling/ProjectsPage.css';
 import { useState, useEffect } from "react";
-import ProjectCard from "../components/organisms/MyProjectCard";
-import AddProjectCardForm from '../components/organisms/MyAddProjectCardForm';
+import ProjectCard from "../components/organisms/projectspage/MyProjectCard";
+import AddProjectCardForm from '../components/organisms/projectspage/MyAddProjectCardForm';
 import { fetchProjectCards } from '../services/ProjectCardService';
 
 
