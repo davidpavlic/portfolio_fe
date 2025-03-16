@@ -7,7 +7,7 @@ import { API_BASE_URL } from "../config/backend";
 // Fetches all project cards from the backend.
 export const fetchProjectCards = async () => {
     try {
-        const response = await fetch(`${API_BASE_URL}/`);
+        const response = await fetch(`${API_BASE_URL}/projectcard`);
         if (!response.ok) throw new Error("Failed to fetch project cards");
         return await response.json();
     } catch (error) {
@@ -19,7 +19,7 @@ export const fetchProjectCards = async () => {
 // Adds a project card
 export const addProjectCard = async (formData: FormData): Promise<boolean> => {
     try {
-        const response = await fetch(`${API_BASE_URL}/`, {
+        const response = await fetch(`${API_BASE_URL}/projectcard`, {
             method: "POST",
             // Do NOT set Content-Type header manually - the browser will set it automatically
             // with the correct boundary parameter for multipart/form-data
@@ -37,7 +37,7 @@ export const addProjectCard = async (formData: FormData): Promise<boolean> => {
 // Deletes a project card from the backend based on its id.
 export const deleteProjectCard = async (projectcard_id: number) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/${projectcard_id}`, { method: "DELETE" });
+        const response = await fetch(`${API_BASE_URL}/projectcard/${projectcard_id}`, { method: "DELETE" });
         if (!response.ok) throw new Error("Failed to delete project card");
         return true;
     } catch (error) {

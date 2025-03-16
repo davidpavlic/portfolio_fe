@@ -3,9 +3,13 @@
     flex-direction: column;
     width: 64px;
     height: calc(100vh - 56px);
-    background: #1a1a1a;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--darkmode-font-color);           /* Sets the cards background color */
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+}
+
+html.dark .my-llm-sidebar {
+    background: var(--darkmode-darker);           /* Sets the cards background color */
 }
 
 .my-llm-sidebar.expanded {
@@ -26,10 +30,14 @@
 
 .my-llm-sidebar-content h3 {
     font-size: 14px;
-    color: #8e8e8e;
+    color: var(--lightmode-font-color);
     letter-spacing: 0.5px;
     white-space: nowrap;    
     overflow: hidden;       
+}
+
+html.dark .my-llm-sidebar-content h3 {
+    color: var(--darkmode-font-color);
 }
 
 .my-llm-submit-button {
@@ -58,18 +66,29 @@
     position: absolute;
     right: 16px;
     top: 16px;
-    background: #2d2d2d;
     border: none;
-    color: white;
+    background: var(--darkmode-font-color);
+    color:  var(--lightmode-font-color);
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
-.sidebar-toggle:hover {
-    background: #3d3d3d;
-    transform: scale(1.05);
+.my-llm-sidebar-toggle:hover {
+    background: var(--lightmode-lightest);            /* Change button background color on hover */
+    transform: scale(1.1);                            /* Increase button size on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+html.dark .my-llm-sidebar-toggle{
+    background: var(--darkmode-darker);
+    color: var(--darkmode-font-color);
+}
+
+html.dark .my-llm-sidebar-toggle:hover{
+    background: var(--bootstrap-icon-color);          /* Change button background color on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Mobile styles */
@@ -80,6 +99,7 @@
         top: 0;
         left: 0;
         bottom: 0;
+        height: 100vh;
         transform: translateX(-100%);
         z-index: 1000;
     }

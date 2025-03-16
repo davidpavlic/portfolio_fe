@@ -34,4 +34,8 @@
     --icon-blue: #007bff;
     --icon-dark-blue: 	#006adc;
     --icon-disabled: #6c757d;
+
+    /* Transparency */
+    --transparent-light: #ffffffe6;
+    --transparent-dark: #000000e6;
 }

@@ -1,37 +1,38 @@
 import { useState, useEffect, useRef } from "react";
 //import { useTranslation } from "react-i18next";
+import { fetchLLMChatsByUser } from "../services/MyLLMService.tsx"; // Import your service function
 import "./styling/MyLLMPage.css";
 import { MyLLMSideBar } from "../components/organisms/llmpage/MyLLMSideBar";
 import MyLLMChat from "../components/organisms/llmpage/MyLLMChat";
 
+interface LLMChatHistory {
+  llm_chat_id: number;
+  title: string;
+  updatedAt: string;
+  llm_chat_entries: LLMChatEntry[];
+}
+
+interface LLMChatEntry {
+  llm_entry_id: number;
+  text: string;
+  isUser: boolean;
+  entry_order: number;
+}
+
+interface TransformedHistoryItem {
+  id: number;
+  title: string;
+  date: string;
+}
+
 export const MyLLMPage = () => {
   //const { t } = useTranslation();
+  const [messages, setMessages] = useState<Array<{isUser: 'true' | 'false', content: string}>>([]);
   const [userInput, setUserInput] = useState("");
   const [response, setResponse] = useState("");
   const [llmStatus, setLlmStatus] = useState("checking");
   const [isSidebarExpanded, setSidebarExpanded] = useState(false);
-  const [history] = useState([
-    { id: 1, title: "Discussing AI ethics", date: "2024-03-15" },
-    { id: 2, title: "Planning a project", date: "2024-03-14" },
-    { id: 3, title: "Recipe brainstorming", date: "2024-03-13" },
-    { id: 4, title: "Travel recommendations", date: "2024-03-12" },
-    { id: 5, title: "Fitness routine discussion", date: "2024-03-11" },
-    { id: 6, title: "Discussing AI ethics", date: "2024-03-15" },
-    { id: 7, title: "Planning a project", date: "2024-03-14" },
-    { id: 8, title: "Recipe brainstorming", date: "2024-03-13" },
-    { id: 9, title: "Travel recommendations", date: "2024-03-12" },
-    { id: 10, title: "Fitness routine discussion", date: "2024-03-11" },
-    { id: 11, title: "Discussing AI ethics", date: "2024-03-15" },
-    { id: 12, title: "Planning a project", date: "2024-03-14" },
-    { id: 13, title: "Recipe brainstorming", date: "2024-03-13" },
-    { id: 14, title: "Travel recommendations", date: "2024-03-12" },
-    { id: 15, title: "Fitness routine discussion", date: "2024-03-11" },
-    { id: 16, title: "Discussing AI ethics", date: "2024-03-15" },
-    { id: 17, title: "Planning a project", date: "2024-03-14" },
-    { id: 18, title: "Recipe brainstorming", date: "2024-03-13" },
-    { id: 19, title: "Travel recommendations", date: "2024-03-12" },
-    { id: 20, title: "Fitness routine discussion", date: "2024-03-11" }
-  ]);
+  const [history, setHistory] = useState<Array<{id: number, title: string, date: string}>>([]);
 
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 720);
@@ -55,6 +56,22 @@ export const MyLLMPage = () => {
 
     checkOllamaServer();
 
+    const loadHistory = async () => {
+      try {
+        const chats: LLMChatHistory[] = await fetchLLMChatsByUser();
+        const transformedHistory: TransformedHistoryItem[] = chats.map((chat: LLMChatHistory) => ({
+          id: chat.llm_chat_id,
+          title: chat.title,
+          date: new Date(chat.updatedAt).toISOString().split('T')[0]
+        }));
+        setHistory(transformedHistory);
+      } catch (error) {
+        console.error("Error loading chat history:", error);
+        setHistory([]);
+      }
+    };
+  
+    loadHistory();
 
     const handleResize = () => {
       const newIsMobile = window.innerWidth <= 720;
@@ -89,6 +106,8 @@ export const MyLLMPage = () => {
   const sendMessage = async () => {
     if (!userInput.trim() || llmStatus !== "running") return;
 
+    setMessages(prev => [...prev, { isUser: 'true', content: userInput.trim() }]);
+
     const payload = {
       model: "llama2:latest",
       messages: [{ role: "user", content: userInput }],
@@ -110,6 +129,9 @@ export const MyLLMPage = () => {
       let buffer = "";
 
       try {
+
+        setMessages(prev => [...prev, { isUser: 'false', content: '' }]);
+
         while (true) {
           const { done, value } = await reader.read();
           if (done) break;
@@ -127,6 +149,17 @@ export const MyLLMPage = () => {
               if (data.message?.content) {
                 // Use functional update to ensure latest state
                 setResponse((prev) => prev + data.message.content);
+                if (data.message?.content) {
+                  setMessages(prev => {
+                    const newMessages = [...prev];
+                    const lastMessage = newMessages[newMessages.length - 1];
+                    newMessages[newMessages.length - 1] = {
+                      ...lastMessage,
+                      content: lastMessage.content + data.message.content
+                    };
+                    return newMessages;
+                  });
+                }
               }
             } catch (error) {
               console.error("Error parsing JSON chunk:", error);
@@ -177,7 +210,7 @@ export const MyLLMPage = () => {
         isMobile={isMobile}
         isExpanded={isSidebarExpanded}
         llmStatus={llmStatus}
-        response={response}
+        messages={messages}
         userInput={userInput}
         setUserInput={setUserInput}
         sendMessage={sendMessage}

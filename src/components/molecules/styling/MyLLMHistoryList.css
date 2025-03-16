@@ -7,10 +7,14 @@
 }
 
 .my-llm-history-section h4 {
-    color: #8e8e8e;
+    color: var(--lightmode-font-color);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+}
+
+html.dark .my-llm-history-section h4{
+    color: var(--darkmode-font-color);
 }
 
 .my-llm-sidebar.expanded .my-llm-history-section {
@@ -34,22 +38,19 @@
 }
 
 .my-llm-history-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.my-llm-history-list::-webkit-scrollbar-track {
-    background: #2d2d2d;
+    width: 4px;
 }
 
 .my-llm-history-list::-webkit-scrollbar-thumb {
-    background: #5a5a5a;
+    background: var(--bootstrap-button-border);
     border-radius: 3px;
 }
 
 .my-llm-history-item {
+    border-radius: 12px;
     background: none;
     border: none;
-    color: white;
+    color: var(--lightmode-font-color);
     text-align: left;
     padding: 12px;
     display: flex;
@@ -57,11 +58,23 @@
     gap: 4px;
 }
 
+html.dark .my-llm-history-item {
+    color: var(--darkmode-font-color);
+}
+
 .my-llm-history-item:hover {
-    background: #2d2d2d;
+    background: var(--lightmode-lightest);
+}
+
+html.dark .my-llm-history-item:hover {
+    background: var(--bootstrap-icon-color);
 }
 
 .my-llm-history-item-date {
     font-size: 11px;
-    color: #8e8e8e;
+    color: var(--darkmode-dark);
+}
+
+html.dark .my-llm-history-item-date {
+    color: var(--lightmode-light);
 }
