@@ -1,15 +1,16 @@
 import { useState, useEffect, useRef } from "react";
-import { useTranslation } from "react-i18next";
+//import { useTranslation } from "react-i18next";
 import "./styling/MyLLMPage.css";
 import { MyLLMSideBar } from "../components/organisms/llmpage/MyLLMSideBar";
+import MyLLMChat from "../components/organisms/llmpage/MyLLMChat";
 
 export const MyLLMPage = () => {
-  const { t } = useTranslation();
+  //const { t } = useTranslation();
   const [userInput, setUserInput] = useState("");
   const [response, setResponse] = useState("");
   const [llmStatus, setLlmStatus] = useState("checking");
   const [isSidebarExpanded, setSidebarExpanded] = useState(false);
-  const [history, setHistory] = useState([
+  const [history] = useState([
     { id: 1, title: "Discussing AI ethics", date: "2024-03-15" },
     { id: 2, title: "Planning a project", date: "2024-03-14" },
     { id: 3, title: "Recipe brainstorming", date: "2024-03-13" },
@@ -160,8 +161,7 @@ export const MyLLMPage = () => {
   };
 
   return (
-    <div className="myllm-container">
-      {/* Sidebar */}
+    <div className="my-llm-container">
       <MyLLMSideBar
         isExpanded={isSidebarExpanded}
         onToggle={toggleSidebar}
@@ -169,49 +169,20 @@ export const MyLLMPage = () => {
         onNewChat={() => setResponse("")}
       />
 
-      {/* Mobile overlay */}
       {isMobile && isSidebarExpanded && (
-        <div className="sidebar-overlay" onClick={toggleSidebar} />
+        <div className="my-llm-sidebar-overlay" onClick={toggleSidebar} />
       )}
 
-      {/* Main Content */}
-      <div className="myllm-main-content">
-        {isMobile && !isSidebarExpanded && (
-          <button className="mobile-sidebar-toggle" onClick={toggleSidebar}>
-            ☰
-          </button>
-        )}
-        {llmStatus !== "running" && (
-          <div className="myllm-overlay">
-            <p className="myllm-error">
-              {llmStatus === "checking"
-                ? "Checking LLM status..."
-                : "Error: LLM server is not running"}
-            </p>
-          </div>
-        )}
-
-        <div className="myllm-box">
-          <p className="myllm-response">{response}</p>
-        </div>
-        <div className="myllm-input-container">
-          <input
-            type="text"
-            className="myllm-user-input"
-            placeholder="Type a message..."
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            disabled={llmStatus !== "running"}
-          />
-          <button
-            className="myllm-send-btn"
-            onClick={sendMessage}
-            disabled={llmStatus !== "running"}
-          >
-            Send
-          </button>
-        </div>
-      </div>
+      <MyLLMChat
+        isMobile={isMobile}
+        isExpanded={isSidebarExpanded}
+        llmStatus={llmStatus}
+        response={response}
+        userInput={userInput}
+        setUserInput={setUserInput}
+        sendMessage={sendMessage}
+        toggleSidebar={toggleSidebar}
+      />
     </div>
   );
 };

@@ -14,6 +14,8 @@ type MyLLMSideBarProps = {
     onNewChat: (message: string) => void;
 };
 
+//TODO: Solve the sudden height change in the navbar when changing to mobile screen width due to the position change to fixed.
+
 export const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat}: MyLLMSideBarProps ) => {
     return (
         <div className={`my-llm-sidebar ${isExpanded ? 'expanded' : ''}`}>
