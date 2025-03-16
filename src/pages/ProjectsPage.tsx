@@ -6,14 +6,14 @@ import { fetchProjectCards } from '../services/ProjectCardService';
 
 
 ///* TODOS *///
-//Refactor
 //Solve ProjectCard TODO
-//Refactor all css namings, to be unique for each component
-//Git branching
+//Refactor, all css namings, to be unique for each component
 //Password secured CRUD operations
+//Git branching
 
-//Find a way to add multiple languages on creation
 //Search Field for techstack
+//AddForm foldable
+//Find a way to add multiple languages on creation
 //Update Cards
 
 

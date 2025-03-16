@@ -7,6 +7,7 @@ import MainPage from "./pages/MainPage";
 import ProjectsPage from "./pages/ProjectsPage";
 //import PassionsPage from "./pages/PassionsPage";
 //import NewsScraperPage from "./pages/NewsScraperPage";
+import MyLLMPage from "./pages/MyLLMPage";
 import PageNotFound from "./pages/PageNotFound";
 import WorkInProgressPage from './pages/WorkInProgressPage';
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/passions" element={<WorkInProgressPage />} />
             <Route path="/news-scraper" element={<WorkInProgressPage />} />
+            <Route path="/my-llm" element={<MyLLMPage />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </div>

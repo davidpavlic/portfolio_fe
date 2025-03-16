@@ -25,6 +25,7 @@ const navItems = [
   { link: "/projects", title: "nav_projects" },
   { link: "/passions", title: "nav_passions" },
   { link: "/news-scraper", title: "nav_newsscraper" },
+  { link: "/my-llm", title: "nav_llm" },
 ];
 // Define settings components along with a unique key for each.
 const settingsComponents = [
