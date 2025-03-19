@@ -13,13 +13,20 @@
     letter-spacing: 0.5px;
 }
 
-html.dark .my-llm-history-section h4{
+html.dark .my-llm-history-section h4 {
     color: var(--darkmode-font-color);
 }
 
 .my-llm-sidebar.expanded .my-llm-history-section {
     opacity: 1;
     transition: max-height 0.3s ease-in, opacity 0.2s ease 0.1s;
+}
+
+.my-llm-history-item-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
 }
 
 .my-llm-history-item-title {
@@ -47,15 +54,34 @@ html.dark .my-llm-history-section h4{
 }
 
 .my-llm-history-item {
+    flex: 1;
     border-radius: 12px;
     background: none;
     border: none;
     color: var(--lightmode-font-color);
     text-align: left;
-    padding: 12px;
+    padding: 12px 40px 12px 12px;
+    /* Increased right padding */
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.my-llm-history-delete-btn {
+    position: absolute;
+    right: 8px;
+    transform: translateY(-50%);
+    background-color: var(--icon-red);
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 html.dark .my-llm-history-item {

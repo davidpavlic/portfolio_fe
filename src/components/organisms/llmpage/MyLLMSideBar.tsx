@@ -12,11 +12,13 @@ type MyLLMSideBarProps = {
     onToggle: () => void;
     history: HistoryEntry[];
     onNewChat: (message: string) => void;
+    onLoadChat: (id: number) => void;
+    onDeleteChat: (id: number) => void;
 };
 
 //TODO: Solve the sudden height change in the navbar when changing to mobile screen width due to the position change to fixed.
 
-export const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat}: MyLLMSideBarProps ) => {
+export const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat, onLoadChat, onDeleteChat}: MyLLMSideBarProps ) => {
     return (
         <div className={`my-llm-sidebar ${isExpanded ? 'expanded' : ''}`}>
         <div className={`my-llm-sidebar-content ${isExpanded ? 'expanded' : ''}`}>
@@ -40,6 +42,8 @@ export const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat}: MyLLMS
         
         <MyHistoryList
             history={history}
+            onLoadChat={onLoadChat}
+            onDeleteChat={onDeleteChat}
         />
 
       </div>

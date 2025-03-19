@@ -1,11 +1,12 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import "../styling/MyLLMChat.css";
 
 interface MyLLMChatProps {
     isMobile: boolean;
     isExpanded: boolean;
     llmStatus: string;
-    messages: Array<{ isUser: 'true' | 'false', content: string }>;
+    messages: Array<{ isUser: boolean, content: string }>;
     userInput: string;
     setUserInput: (value: string) => void;
     sendMessage: () => void;
@@ -45,10 +46,11 @@ const MyLLMChat: React.FC<MyLLMChatProps> = ({
                     {messages.map((message, index) => (
                         <div
                             key={index}
-                            className={`message-bubble ${message.isUser === 'true' ? 'user-message' : 'assistant-message'
-                                }`}
+                            className={`message-bubble ${message.isUser === true ? 'user-message' : 'assistant-message'}`}
                         >
-                            {message.content}
+                            <ReactMarkdown>
+                                {message.content}
+                            </ReactMarkdown>
                         </div>
                     ))}
                 </div>

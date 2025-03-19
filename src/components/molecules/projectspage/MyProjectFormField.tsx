@@ -1,4 +1,4 @@
-import './styling/MyProjectFormField.css';
+import '../styling/MyProjectFormField.css';
 
 
 ///* TYPE DEFINITION *///

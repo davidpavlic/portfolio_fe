@@ -2,9 +2,9 @@ import "../styling/MyAddProjectCardForm.css";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { addProjectCard } from "../../../services/ProjectCardService";
-import MyProjectFileUpload from "../../molecules/MyProjectFileUpload";
-import MyProjectFormField from "../../molecules/MyProjectFormField";
-import MyProjectTechStack from "../../molecules/MyProjectTechStack";
+import MyProjectFileUpload from "../../molecules/projectspage/MyProjectFileUpload";
+import MyProjectFormField from "../../molecules/projectspage/MyProjectFormField";
+import MyProjectTechStack from "../../molecules/projectspage/MyProjectTechStack";
 
 ///* FUNCTIONAL COMPONENT *///
 const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }) => {

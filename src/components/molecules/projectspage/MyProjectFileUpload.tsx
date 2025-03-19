@@ -1,4 +1,4 @@
-import './styling/MyProjectFileUpload.css';
+import '../styling/MyProjectFileUpload.css';
 import { useTranslation } from "react-i18next";
 import { FaCloudArrowUp } from "react-icons/fa6";
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 //import { useTranslation } from "react-i18next";
-import { fetchLLMChatsByUser } from "../services/MyLLMService.tsx"; // Import your service function
+import { fetchAIResponse, fetchLLMChatsByUser, fetchLLMEntriesByChat, createChatEntry, deleteLLMChat, createChatUser } from "../services/MyLLMService.tsx"; // Import your service function
 import "./styling/MyLLMPage.css";
 import { MyLLMSideBar } from "../components/organisms/llmpage/MyLLMSideBar";
 import MyLLMChat from "../components/organisms/llmpage/MyLLMChat";
@@ -25,20 +25,82 @@ interface TransformedHistoryItem {
   date: string;
 }
 
+interface Message {
+  isUser: boolean;
+  content: string;
+}
+
 export const MyLLMPage = () => {
   //const { t } = useTranslation();
-  const [messages, setMessages] = useState<Array<{isUser: 'true' | 'false', content: string}>>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [userInput, setUserInput] = useState("");
   const [response, setResponse] = useState("");
   const [llmStatus, setLlmStatus] = useState("checking");
   const [isSidebarExpanded, setSidebarExpanded] = useState(false);
-  const [history, setHistory] = useState<Array<{id: number, title: string, date: string}>>([]);
+  const [history, setHistory] = useState<Array<{ id: number, title: string, date: string }>>([]);
 
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 720);
   const sidebarExpandedRef = useRef(isSidebarExpanded);
   sidebarExpandedRef.current = isSidebarExpanded;
+  const [selectedChatId, setSelectedChatId] = useState<number | null>(null);
 
+  const handleDeleteChat = async (chatId: number) => {
+    const success = await deleteLLMChat(chatId);
+    if (success) {
+      setHistory(prev => prev.filter(entry => entry.id !== chatId));
+      if (selectedChatId === chatId) {
+        setMessages([]);
+        setSelectedChatId(null);
+      }
+    }
+  };
+
+  // Add this function to load chat entries
+  const loadChatEntries = async (id: number) => {
+    try {
+      // First get the full chat data
+      const chatData: LLMChatHistory = await fetchLLMEntriesByChat(id);
+
+      // Extract the entries array from the chat object
+      const entries = chatData.llm_chat_entries || [];
+
+      // Now we can safely sort
+      const sortedEntries = entries.sort((a, b) => a.entry_order - b.entry_order);
+
+      const transformedMessages = sortedEntries.map(entry => ({
+        isUser: entry.isUser,
+        content: entry.text
+      }));
+
+      setMessages(transformedMessages);
+      setSelectedChatId(id);
+    } catch (error) {
+      console.error("Error loading chat entries:", error);
+    }
+  };
+
+  // Update onNewChat handler
+  const handleNewChat = () => {
+    setMessages([]);
+    setSelectedChatId(null);
+    setResponse("");
+  };
+
+  const loadHistory = async () => {
+    try {
+      const chats: LLMChatHistory[] = await fetchLLMChatsByUser();
+      const transformedHistory: TransformedHistoryItem[] = chats.map((chat: LLMChatHistory) => ({
+        id: chat.llm_chat_id,
+        title: chat.title,
+        date: new Date(chat.updatedAt).toISOString().split('T')[0]
+      }));
+      setHistory(transformedHistory);
+    } catch (error) {
+      console.error("Error loading chat history:", error);
+      setHistory([]);
+    }
+  };
 
   useEffect(() => {
     const checkOllamaServer = async () => {
@@ -56,21 +118,6 @@ export const MyLLMPage = () => {
 
     checkOllamaServer();
 
-    const loadHistory = async () => {
-      try {
-        const chats: LLMChatHistory[] = await fetchLLMChatsByUser();
-        const transformedHistory: TransformedHistoryItem[] = chats.map((chat: LLMChatHistory) => ({
-          id: chat.llm_chat_id,
-          title: chat.title,
-          date: new Date(chat.updatedAt).toISOString().split('T')[0]
-        }));
-        setHistory(transformedHistory);
-      } catch (error) {
-        console.error("Error loading chat history:", error);
-        setHistory([]);
-      }
-    };
-  
     loadHistory();
 
     const handleResize = () => {
@@ -106,31 +153,125 @@ export const MyLLMPage = () => {
   const sendMessage = async () => {
     if (!userInput.trim() || llmStatus !== "running") return;
 
-    setMessages(prev => [...prev, { isUser: 'true', content: userInput.trim() }]);
-
-    const payload = {
-      model: "llama2:latest",
-      messages: [{ role: "user", content: userInput }],
-      stream: true,
-    };
-
     try {
-      const res = await fetch("http://localhost:11434/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      // Create temporary user message
+      const userMessage: Message = {
+        isUser: true,
+        content: userInput.trim()
+      };
 
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      if (!res.body) throw new Error("No response body");
+      // Optimistically add user message
+      setMessages(prev => [...prev, userMessage]);
 
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
+      // Calculate entry order for user message
+      const entryOrderUser = messages.length + 1;
 
+      // Get AI response with streaming
+      let aiPrompt = userInput.trim();
+      if(messages.length > 0){
+        const historyString = messages
+          .map(msg => `${msg.isUser ? "User" : "AI"}: ${msg.content}`)
+          .join("\n");
+
+        aiPrompt = "Chat history (for context only):\n"
+          + historyString
+          + "\nNew message:\n"
+          + userInput.trim()
+      }
+
+      console.log(aiPrompt);
+      const aiContent = await fetchStreamingAIResponse(aiPrompt);
+
+      // Calculate entry order for AI message
+      const entryOrderAI = entryOrderUser + 1;
+
+      let chatId = selectedChatId;
+
+      if (!selectedChatId) {
+        const payload = {
+          model: "llama2:latest",
+          messages: [{ role: "user", content: "Create a short fitting title for a Chatprompt"
+            + "Do not make an intro text, just print the generated title, ready to fit into the database"
+            + "Do not give multiple recommendations, just one"
+            + "Keep it at around 3 to 5 words"
+            + "This is the prompt:"
+            + "\nUserinput: " + userInput + "\nResponse: " + aiContent}],
+          stream: false,
+        };
+
+        const titleResponse = await fetch("http://localhost:11434/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!titleResponse.ok) throw new Error(`HTTP error! status: ${titleResponse.status}`);
+        if (!titleResponse.body) throw new Error("No response body");
+
+        const titleData = await titleResponse.json();
+        let titleString = titleData.message?.content || "New Chat";
+
+        if(titleString.indexOf(":") != -1){
+          titleString = titleString.slice(titleString.indexOf(":") + 1);
+        }
+        titleString.replace(/["']/g, '');
+
+        let chatUser = await createChatUser(titleString);
+        chatId = chatUser.llm_chat_id;
+        setSelectedChatId(chatUser.llm_chat_id);
+      }
+      if (!chatId) return;
+
+      // Save user message to backend
+      await createChatEntry(
+        chatId,
+        userInput.trim(),
+        true,
+        entryOrderUser
+      )
+
+      // Save AI message to backend
+      await createChatEntry(
+        chatId,
+        aiContent,
+        false,
+        entryOrderAI
+      );
+
+      loadHistory();
+    } catch (error) {
+      console.error("Error processing message:", error);
+      // Remove user message if error occurs
+      setMessages(prev => prev.slice(0, -1));
+    }
+
+    setUserInput("");
+  };
+
+  // Modified streaming function that returns complete content
+  const fetchStreamingAIResponse = async (prompt: string): Promise<string> => {
+    return new Promise(async (resolve, reject) => {
       try {
+        const payload = {
+          model: "llama2:latest",
+          messages: [{ role: "user", content: prompt }],
+          stream: true,
+        };
 
-        setMessages(prev => [...prev, { isUser: 'false', content: '' }]);
+        const res = await fetch("http://localhost:11434/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        if (!res.body) throw new Error("No response body");
+
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = "";
+        let aiContent = "";
+        let aiMessageId = -1; // Track the position of the AI message
 
         while (true) {
           const { done, value } = await reader.read();
@@ -138,8 +279,6 @@ export const MyLLMPage = () => {
 
           buffer += decoder.decode(value, { stream: true });
           const lines = buffer.split("\n");
-
-          // Save incomplete line for next chunk
           buffer = lines.pop() || "";
 
           for (const line of lines) {
@@ -147,19 +286,25 @@ export const MyLLMPage = () => {
             try {
               const data = JSON.parse(line);
               if (data.message?.content) {
-                // Use functional update to ensure latest state
-                setResponse((prev) => prev + data.message.content);
-                if (data.message?.content) {
-                  setMessages(prev => {
-                    const newMessages = [...prev];
-                    const lastMessage = newMessages[newMessages.length - 1];
-                    newMessages[newMessages.length - 1] = {
-                      ...lastMessage,
-                      content: lastMessage.content + data.message.content
-                    };
-                    return newMessages;
-                  });
-                }
+                aiContent += data.message.content;
+
+                setMessages(prev => {
+                  // Create new AI message if needed
+                  if (prev[prev.length - 1]?.isUser) {
+                    aiMessageId = prev.length;
+                    return [...prev, {
+                      isUser: false,
+                      content: data.message.content
+                    }];
+                  }
+
+                  // Update existing AI message
+                  return prev.map((msg, index) =>
+                    index === aiMessageId
+                      ? { ...msg, content: msg.content + data.message.content }
+                      : msg
+                  );
+                });
               }
             } catch (error) {
               console.error("Error parsing JSON chunk:", error);
@@ -167,26 +312,23 @@ export const MyLLMPage = () => {
           }
         }
 
-        // Process any remaining content after stream ends
+        // Process any remaining buffer
         if (buffer.trim()) {
           try {
             const data = JSON.parse(buffer);
             if (data.message?.content) {
-              setResponse((prev) => prev + data.message.content);
+              aiContent += data.message.content;
             }
           } catch (error) {
             console.error("Error parsing final chunk:", error);
           }
         }
-      } finally {
-        reader.releaseLock();
-      }
-    } catch (error) {
-      console.error("Error fetching LLM response:", error);
-      setResponse((prev) => prev + "\nError communicating with LLM.");
-    }
 
-    setUserInput("");
+        resolve(aiContent);
+      } catch (error) {
+        reject(error);
+      }
+    });
   };
 
   const toggleSidebar = () => {
@@ -199,7 +341,9 @@ export const MyLLMPage = () => {
         isExpanded={isSidebarExpanded}
         onToggle={toggleSidebar}
         history={history}
-        onNewChat={() => setResponse("")}
+        onNewChat={handleNewChat}
+        onLoadChat={loadChatEntries}
+        onDeleteChat={handleDeleteChat}
       />
 
       {isMobile && isSidebarExpanded && (

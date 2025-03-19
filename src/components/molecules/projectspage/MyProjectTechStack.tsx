@@ -1,5 +1,5 @@
 // Import necessary dependencies
-import './styling/MyProjectTechStack.css'; // Import CSS styles
+import '../styling/MyProjectTechStack.css'; // Import CSS styles
 import { useTranslation } from "react-i18next"; // For i18n translation support
 import { useState, useEffect } from "react"; // Import React hooks for state and side effects
 
