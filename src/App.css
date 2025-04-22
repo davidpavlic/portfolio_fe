@@ -10,3 +10,7 @@ html.dark .my-app {
 html.dark div {
     color: var(--darkmode-font-color)
 }
+
+.no-transition * {
+    transition: none !important;
+}

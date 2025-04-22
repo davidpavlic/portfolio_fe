@@ -34,7 +34,7 @@ export const fetchLLMChatsByUser = async () => {
     }
 };
 
-export const fetchLLMEntriesByChat = async (id: number) => {
+export const fetchLLMEntriesByChat = async (id: string) => {
     try {
         const response = await fetch(`${API_BASE_URL}/llmchatuser/${id}`);
         if (!response.ok) throw new Error("Failed to fetch user chats");
@@ -64,18 +64,19 @@ export const createChatUser = async (chatTitle: string) => {
     }
 }
 
-export const createChatEntry = async (chatId: number, text: string, isUser: boolean, order: number) => {
+export const createChatEntry = async (llmChatUserId: string, text: string, fromUser: boolean, entryOrder: number) => {
     try {
+      console.log(llmChatUserId, text, fromUser, entryOrder);
       const response = await fetch(`${API_BASE_URL}/llmchatentry`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          llmChatUserId: chatId,
+          llmChatUserId,
           text,
-          isUser,
-          entry_order: order
+          fromUser,
+          entryOrder
         }),
       });
       if (!response.ok) throw new Error("Failed to create chat entry");
@@ -86,7 +87,7 @@ export const createChatEntry = async (chatId: number, text: string, isUser: bool
     }
   };
 
-export const deleteLLMChat = async (llm_chat_id: number) => {
+export const deleteLLMChat = async (llm_chat_id: string) => {
     try {
         const response = await fetch(`${API_BASE_URL}/llmchatuser/${llm_chat_id}`, { method: "DELETE" });
         if (!response.ok) throw new Error("Failed to delete llm chat");

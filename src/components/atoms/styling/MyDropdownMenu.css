@@ -1,4 +1,8 @@
 /* IDLE DROPDOWN MENU */
+.my-dropdown-menu{
+    padding: 0px;                                   /* Removes the automatic padding from the bootstrap component */
+}
+
 html.dark .my-dropdown-menu {
     background-color: var(--darkmode-darkest);      /* Set the standard background color on dropdown menu */
 }

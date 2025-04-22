@@ -2,7 +2,7 @@ import "../styling/MyLLMSideBar.css";
 import MyHistoryList from "../../molecules/llmpage/MyLLMHistoryList";
 
 type HistoryEntry = {
-    id: number;
+    id: string;
     title: string;
     date: string;
 };
@@ -12,8 +12,8 @@ type MyLLMSideBarProps = {
     onToggle: () => void;
     history: HistoryEntry[];
     onNewChat: (message: string) => void;
-    onLoadChat: (id: number) => void;
-    onDeleteChat: (id: number) => void;
+    onLoadChat: (id: string) => void;
+    onDeleteChat: (id: string) => void;
 };
 
 //TODO: Solve the sudden height change in the navbar when changing to mobile screen width due to the position change to fixed.

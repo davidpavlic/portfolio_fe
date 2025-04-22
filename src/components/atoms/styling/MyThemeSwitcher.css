@@ -1,5 +1,5 @@
 /* IDLE THEME SWITCHER */
-.my-icon-button {
+.my-theme-switcher-icon-button {
     background: none;                               /* Removes standard button background */
     border: none;                                   /* Removes standard button border */
     border-radius: 5px;                             /* Sets rounded corners for the button */
@@ -8,15 +8,15 @@
     margin-top: 3px;                                /* Centers the button vertically */
 }
 
-html.dark .my-icon-button {
+html.dark .my-theme-switcher-icon-button {
     color: var(--darkmode-font-color);              /* Sets the icon color in dark mode */
 }
 
 /* HOVER THEME SWITCHER */
-.my-icon-button:hover {
+.my-theme-switcher-icon-button:hover {
     background-color: var(--lightmode-lighter);     /* Sets a hover background color */
 }
 
-html.dark .my-icon-button:hover {
+html.dark .my-theme-switcher-icon-button:hover {
     background-color: var(--darkmode-darkest);      /* Sets a hover background color */
 }

@@ -21,7 +21,6 @@ function App() {
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/passions" element={<WorkInProgressPage />} />
             <Route path="/news-scraper" element={<WorkInProgressPage />} />
             <Route path="/my-llm" element={<MyLLMPage />} />
             <Route path="*" element={<PageNotFound />} />

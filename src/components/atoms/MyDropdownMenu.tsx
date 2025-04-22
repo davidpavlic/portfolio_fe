@@ -2,10 +2,6 @@ import './styling/MyDropdownMenu.css'
 import { Dropdown } from "react-bootstrap";
 
 
-///* TODO *///
-// Remove the padding on top when having a selection style.
-
-
 ///* TYPE DEFINITION *///
 // Defines the expected properties for the MyDropdownMenu component.
 // - items: an object array containing a 'code' and a display 'label'.

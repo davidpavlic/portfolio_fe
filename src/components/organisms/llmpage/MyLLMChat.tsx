@@ -6,7 +6,7 @@ interface MyLLMChatProps {
     isMobile: boolean;
     isExpanded: boolean;
     llmStatus: string;
-    messages: Array<{ isUser: boolean, content: string }>;
+    messages: Array<{ fromUser: boolean, content: string }>;
     userInput: string;
     setUserInput: (value: string) => void;
     sendMessage: () => void;
@@ -46,7 +46,7 @@ const MyLLMChat: React.FC<MyLLMChatProps> = ({
                     {messages.map((message, index) => (
                         <div
                             key={index}
-                            className={`message-bubble ${message.isUser === true ? 'user-message' : 'assistant-message'}`}
+                            className={`message-bubble ${message.fromUser === true ? 'user-message' : 'assistant-message'}`}
                         >
                             <ReactMarkdown>
                                 {message.content}

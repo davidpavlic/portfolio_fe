@@ -1,15 +1,15 @@
 import "../styling/MyLLMHistoryList.css";
 
 type HistoryEntry = {
-  id: number;
+  id: string;
   title: string;
   date: string;
 };
 
 type HistoryListProps = {
   history: HistoryEntry[];
-  onLoadChat: (id: number) => void;
-  onDeleteChat: (id: number) => void;
+  onLoadChat: (id: string) => void;
+  onDeleteChat: (id: string) => void;
 };
 
 export const MyHistoryList = ({ history, onLoadChat, onDeleteChat }: HistoryListProps) => {
@@ -26,6 +26,7 @@ export const MyHistoryList = ({ history, onLoadChat, onDeleteChat }: HistoryList
               <span className="my-llm-history-item-title">{entry.title}</span>
               <span className="my-llm-history-item-date">{entry.date}</span>
             </button>
+            
             <button
               className="my-llm-history-delete-btn"
               onClick={(e) => {

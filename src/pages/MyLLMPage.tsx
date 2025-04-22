@@ -6,27 +6,27 @@ import { MyLLMSideBar } from "../components/organisms/llmpage/MyLLMSideBar";
 import MyLLMChat from "../components/organisms/llmpage/MyLLMChat";
 
 interface LLMChatHistory {
-  llm_chat_id: number;
+  id: string;
   title: string;
   updatedAt: string;
-  llm_chat_entries: LLMChatEntry[];
+  llmChatEntries: LLMChatEntry[];
 }
 
 interface LLMChatEntry {
-  llm_entry_id: number;
+  id: string;
   text: string;
-  isUser: boolean;
-  entry_order: number;
+  fromUser: boolean;
+  entryOrder: number;
 }
 
 interface TransformedHistoryItem {
-  id: number;
+  id: string;
   title: string;
   date: string;
 }
 
 interface Message {
-  isUser: boolean;
+  fromUser: boolean;
   content: string;
 }
 
@@ -37,15 +37,15 @@ export const MyLLMPage = () => {
   const [response, setResponse] = useState("");
   const [llmStatus, setLlmStatus] = useState("checking");
   const [isSidebarExpanded, setSidebarExpanded] = useState(false);
-  const [history, setHistory] = useState<Array<{ id: number, title: string, date: string }>>([]);
+  const [history, setHistory] = useState<Array<{ id: string, title: string, date: string }>>([]);
 
 
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 720);
   const sidebarExpandedRef = useRef(isSidebarExpanded);
   sidebarExpandedRef.current = isSidebarExpanded;
-  const [selectedChatId, setSelectedChatId] = useState<number | null>(null);
+  const [selectedChatId, setSelectedChatId] = useState<string | null>(null);
 
-  const handleDeleteChat = async (chatId: number) => {
+  const handleDeleteChat = async (chatId: string) => {
     const success = await deleteLLMChat(chatId);
     if (success) {
       setHistory(prev => prev.filter(entry => entry.id !== chatId));
@@ -57,19 +57,17 @@ export const MyLLMPage = () => {
   };
 
   // Add this function to load chat entries
-  const loadChatEntries = async (id: number) => {
+  const loadChatEntries = async (id: string) => {
     try {
       // First get the full chat data
       const chatData: LLMChatHistory = await fetchLLMEntriesByChat(id);
-
       // Extract the entries array from the chat object
-      const entries = chatData.llm_chat_entries || [];
-
+      const entries = chatData.llmChatEntries || [];
       // Now we can safely sort
-      const sortedEntries = entries.sort((a, b) => a.entry_order - b.entry_order);
+      const sortedEntries = entries.sort((a, b) => a.entryOrder - b.entryOrder);
 
       const transformedMessages = sortedEntries.map(entry => ({
-        isUser: entry.isUser,
+        fromUser: entry.fromUser,
         content: entry.text
       }));
 
@@ -91,7 +89,7 @@ export const MyLLMPage = () => {
     try {
       const chats: LLMChatHistory[] = await fetchLLMChatsByUser();
       const transformedHistory: TransformedHistoryItem[] = chats.map((chat: LLMChatHistory) => ({
-        id: chat.llm_chat_id,
+        id: chat.id,
         title: chat.title,
         date: new Date(chat.updatedAt).toISOString().split('T')[0]
       }));
@@ -156,7 +154,7 @@ export const MyLLMPage = () => {
     try {
       // Create temporary user message
       const userMessage: Message = {
-        isUser: true,
+        fromUser: true,
         content: userInput.trim()
       };
 
@@ -170,7 +168,7 @@ export const MyLLMPage = () => {
       let aiPrompt = userInput.trim();
       if(messages.length > 0){
         const historyString = messages
-          .map(msg => `${msg.isUser ? "User" : "AI"}: ${msg.content}`)
+          .map(msg => `${msg.fromUser ? "User" : "AI"}: ${msg.content}`)
           .join("\n");
 
         aiPrompt = "Chat history (for context only):\n"
@@ -217,8 +215,8 @@ export const MyLLMPage = () => {
         titleString.replace(/["']/g, '');
 
         let chatUser = await createChatUser(titleString);
-        chatId = chatUser.llm_chat_id;
-        setSelectedChatId(chatUser.llm_chat_id);
+        chatId = chatUser.id;
+        setSelectedChatId(chatUser.id);
       }
       if (!chatId) return;
 
@@ -290,10 +288,10 @@ export const MyLLMPage = () => {
 
                 setMessages(prev => {
                   // Create new AI message if needed
-                  if (prev[prev.length - 1]?.isUser) {
+                  if (prev[prev.length - 1]?.fromUser) {
                     aiMessageId = prev.length;
                     return [...prev, {
-                      isUser: false,
+                      fromUser: false,
                       content: data.message.content
                     }];
                   }

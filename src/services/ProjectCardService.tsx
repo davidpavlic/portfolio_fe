@@ -35,8 +35,9 @@ export const addProjectCard = async (formData: FormData): Promise<boolean> => {
 };
 
 // Deletes a project card from the backend based on its id.
-export const deleteProjectCard = async (projectcard_id: number) => {
+export const deleteProjectCard = async (projectcard_id: string) => {
     try {
+        console.log(projectcard_id);
         const response = await fetch(`${API_BASE_URL}/projectcard/${projectcard_id}`, { method: "DELETE" });
         if (!response.ok) throw new Error("Failed to delete project card");
         return true;

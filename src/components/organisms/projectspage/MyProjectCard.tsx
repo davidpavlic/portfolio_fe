@@ -10,19 +10,19 @@ import { deleteProjectCard } from "../../../services/ProjectCardService";
 // - layout: empty or right for adjusting the card content to the right,
 // - onDelete: executed, when the deletion in the backend works out successfully.
 type ProjectCardProps = {
-  projectcard_id: number;
+  id: string;
   title: string;
   description: string;
   imageUrl: string;
   techStack: [];
   layout: boolean;
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void;
 }
 
 
 ///* FUNCTIONAL COMPONENT *///
 const ProjectCard = ({
-  projectcard_id,
+  id,
   title,
   description,
   imageUrl,
@@ -32,8 +32,8 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   //Calls the backend to delete the the project card
   const handleDelete = async () => {
-    const success = await deleteProjectCard(projectcard_id);
-    if (success) onDelete(projectcard_id);
+    const success = await deleteProjectCard(id);
+    if (success) onDelete(id);
   };
 
   return (

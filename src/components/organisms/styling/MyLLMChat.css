@@ -136,3 +136,7 @@ html.dark .my-llm-overlay {
 html.dark .assistant-message {
     background: var(--bootstrap-icon-color);
 }
+
+html.dark .my-llm-mobile-sidebar-toggle{
+    color: var(--darkmode-font-color)
+}

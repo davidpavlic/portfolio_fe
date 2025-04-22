@@ -22,7 +22,7 @@ import { fetchProjectCards } from '../services/ProjectCardService';
 // - projectcard_id: references the projectcard for the deletion in the backend.
 // - title, description, base64Image represent the data shown in the projectcard.
 type ProjectCardData = {
-  projectcard_id: number;
+  id: string;
   title: string;
   description: string;
   base64Image?: string;
@@ -44,8 +44,9 @@ export const ProjectsPage = () => {
     setProjectcards(data);
   };
 
-  const handleDelete = (id: number) => {
-    setProjectcards(prev => prev.filter(card => card.projectcard_id !== id));
+  const handleDelete = (id: string) => {
+    console.log(projectscards)
+    setProjectcards(prev => prev.filter(card => card.id !== id));
   };
 
   return (
@@ -55,7 +56,7 @@ export const ProjectsPage = () => {
       {projectscards.map((projectCard, index) => (
         <ProjectCard
           key={index}
-          projectcard_id={projectCard.projectcard_id}
+          id={projectCard.id}
           title={projectCard.title}
           description={projectCard.description}
           imageUrl={projectCard.base64Image ? `data:image/jpeg;base64,${projectCard.base64Image}` : ""}

@@ -23,7 +23,6 @@ import MyNavLink from "../molecules/MyNavLink";
 const navItems = [
   { link: "/", title: "nav_home" },
   { link: "/projects", title: "nav_projects" },
-  { link: "/passions", title: "nav_passions" },
   { link: "/news-scraper", title: "nav_newsscraper" },
   { link: "/my-llm", title: "nav_llm" },
 ];

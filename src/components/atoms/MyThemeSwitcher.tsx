@@ -10,8 +10,19 @@ const MyThemeSwitcher = () => {
   // without having to manually pass props through every level of your component tree.
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
 
+  const handleThemeSwitch = () => {
+    // Add transition-disable class synchronously
+    document.documentElement.classList.add('no-transition');
+    // Toggle theme state
+    setIsDarkMode(prev => !prev);
+    // Remove transition-disable class after timeout
+    setTimeout(() => {
+      document.documentElement.classList.remove('no-transition');
+    }, 50);
+  };
+
   return (
-    <button className="my-icon-button" onClick={() => setIsDarkMode(prev => !prev)}>
+    <button className="my-theme-switcher-icon-button" onClick={() => handleThemeSwitch()}>
       {isDarkMode ? <BsMoon size={20} /> : <BsSun size={20} />}
     </button>
   );
