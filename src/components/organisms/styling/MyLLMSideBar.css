@@ -3,13 +3,13 @@
     flex-direction: column;
     width: 64px;
     height: calc(100vh - 56px);
-    background: var(--darkmode-font-color);           /* Sets the cards background color */
+    background: var(--pfc-white);           /* Sets the cards background color */
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
 
 html.dark .my-llm-sidebar {
-    background: var(--darkmode-darker);           /* Sets the cards background color */
+    background: var(--pfc-black-dark);           /* Sets the cards background color */
 }
 
 .my-llm-sidebar.expanded {
@@ -30,19 +30,19 @@ html.dark .my-llm-sidebar {
 
 .my-llm-sidebar-content h3 {
     font-size: 14px;
-    color: var(--lightmode-font-color);
+    color: var(--pfc-black);
     letter-spacing: 0.5px;
     white-space: nowrap;    
     overflow: hidden;       
 }
 
 html.dark .my-llm-sidebar-content h3 {
-    color: var(--darkmode-font-color);
+    color: var(--pfc-white);
 }
 
 .my-llm-submit-button {
-    background-color: var(--icon-blue);
-    color: var(--darkmode-font-color);
+    background-color: var(--pfc-blue);
+    color: var(--pfc-white);
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -67,8 +67,8 @@ html.dark .my-llm-sidebar-content h3 {
     right: 16px;
     top: 16px;
     border: none;
-    background: var(--darkmode-font-color);
-    color:  var(--lightmode-font-color);
+    background: var(--pfc-white);
+    color:  var(--pfc-black);
     border-radius: 50%;
     width: 32px;
     height: 32px;
@@ -76,18 +76,18 @@ html.dark .my-llm-sidebar-content h3 {
 }
 
 .my-llm-sidebar-toggle:hover {
-    background: var(--lightmode-lightest);            /* Change button background color on hover */
+    background: var(--pfc-white-dark);            /* Change button background color on hover */
     transform: scale(1.1);                            /* Increase button size on hover */
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 html.dark .my-llm-sidebar-toggle{
-    background: var(--darkmode-darker);
-    color: var(--darkmode-font-color);
+    background: var(--pfc-black-dark);
+    color: var(--pfc-white);
 }
 
 html.dark .my-llm-sidebar-toggle:hover{
-    background: var(--bootstrap-icon-color);          /* Change button background color on hover */
+    background: var(--pfc-black-lightest);          /* Change button background color on hover */
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 

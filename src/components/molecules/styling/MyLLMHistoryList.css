@@ -7,14 +7,14 @@
 }
 
 .my-llm-history-section h4 {
-    color: var(--lightmode-font-color);
+    color: var(--pfc-black);
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 html.dark .my-llm-history-section h4 {
-    color: var(--darkmode-font-color);
+    color: var(--pfc-white);
 }
 
 .my-llm-sidebar.expanded .my-llm-history-section {
@@ -49,7 +49,7 @@ html.dark .my-llm-history-section h4 {
 }
 
 .my-llm-history-list::-webkit-scrollbar-thumb {
-    background: var(--bootstrap-button-border);
+    background: var(--pfc-gray-light);
     border-radius: 3px;
 }
 
@@ -58,7 +58,7 @@ html.dark .my-llm-history-section h4 {
     border-radius: 12px;
     background: none;
     border: none;
-    color: var(--lightmode-font-color);
+    color: var(--pfc-black);
     text-align: left;
     padding: 12px 40px 12px 12px;
     /* Increased right padding */
@@ -71,7 +71,7 @@ html.dark .my-llm-history-section h4 {
     position: absolute;
     right: 8px;
     transform: translateY(-50%);
-    background-color: var(--icon-red);
+    background-color: var(--pfc-red);
     color: white;
     border: none;
     width: 24px;
@@ -85,22 +85,22 @@ html.dark .my-llm-history-section h4 {
 }
 
 html.dark .my-llm-history-item {
-    color: var(--darkmode-font-color);
+    color: var(--pfc-white);
 }
 
 .my-llm-history-item:hover {
-    background: var(--lightmode-lightest);
+    background: var(--pfc-white-dark);
 }
 
 html.dark .my-llm-history-item:hover {
-    background: var(--bootstrap-icon-color);
+    background: var(--pfc-black-lightest);
 }
 
 .my-llm-history-item-date {
     font-size: 11px;
-    color: var(--darkmode-dark);
+    color: var(--pfc-black-light);
 }
 
 html.dark .my-llm-history-item-date {
-    color: var(--lightmode-light);
+    color: var(--pfc-gray);
 }

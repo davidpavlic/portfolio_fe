@@ -1,11 +1,11 @@
 /* GLOBAL STYLING */
 html, body {
-    background-color: var(--lightmode-background);
+    background-color: var(--pfc-white-light);
 }
 
 html.dark, html.dark body {
-    background-color: var(--darkmode-background);
-    color: var(--darkmode-font-color)
+    background-color: var(--pfc-black-lighter);
+    color: var(--pfc-white)
 }
 
 .no-transition * {

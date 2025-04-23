@@ -1,28 +1,28 @@
 /* IDLE NAVBAR ELEMENT */
 .my-navbar-link {
-    color: var(--darkmode-background);
+    color: var(--pfc-black-lighter);
 }
 
 html.dark .my-navbar-link {
-    color: var(--lightmode-lighter);
+    color: var(--pfc-white-darkest);
 }
 
 /* HOVER NAVBAR ELEMENT */
 .my-navbar-link:hover {
-    color: var(--lightmode-font-color);             
+    color: var(--pfc-black);             
 }
 
 html.dark .my-navbar-link:hover {
-    color: var(--darkmode-font-color);             
+    color: var(--pfc-white);             
 }
 
 /* SELECTED NAVBAR ELEMENT */
 .my-navbar-link.active {
-    border-bottom: solid var(--lightmode-font-color) 2px;
-    color: var(--lightmode-font-color);
+    border-bottom: solid var(--pfc-black) 2px;
+    color: var(--pfc-black);
 }
 
 html.dark .my-navbar-link.active {
-    border-bottom: solid var(--darkmode-font-color) 2px;
-    color: var(--darkmode-font-color);
+    border-bottom: solid var(--pfc-white) 2px;
+    color: var(--pfc-white);
 }

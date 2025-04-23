@@ -8,24 +8,24 @@
   margin: 2rem auto;                                /* Center cards horizontally and creates space between them*/
   padding: 2rem;                                    /* Sets the contents spacing to the top */
   max-width: 80%;                                   /* Sets the cards width to 80% of the screen width */
-  background: var(--darkmode-font-color);           /* Sets the cards background color */
+  background: var(--pfc-white);           /* Sets the cards background color */
   border-radius: 16px;                              /* Sets the cards corner roundness */
-  box-shadow: 0 4px 20px var(--lightmode-lighter);  /* Sets the cards shadow */
+  box-shadow: 0 4px 20px var(--pfc-white-darkest);  /* Sets the cards shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Sets the cards design change transition */
 }
 
 html.dark .cardContainer {
-  background-color: var(--darkmode-darker);
-  box-shadow: 0 4px 15px var(--lightmode-light);    /* Sets the cards shadow */
+  background-color: var(--pfc-black-dark);
+  box-shadow: 0 4px 15px var(--pfc-gray);    /* Sets the cards shadow */
 }
 
 .cardContainer:hover {
   transform: translateY(-5px);                      /* Makes the card come up when hovered */
-  box-shadow: 0 8px 30px var(--lightmode-light);    /* Increases the cards shadow when hovered */
+  box-shadow: 0 8px 30px var(--pfc-gray);    /* Increases the cards shadow when hovered */
 }
 
 html.dark .cardContainer:hover {
-  box-shadow: 0 4px 15px var(--lightmode-lightest); /* Sets the cards shadow */
+  box-shadow: 0 4px 15px var(--pfc-white-dark); /* Sets the cards shadow */
 }
 
 /* IMAGE CONTAINER */
@@ -62,22 +62,22 @@ html.dark .cardContainer:hover {
 
 /* TITLE TEXT*/
 .title {
-  color: var(--lightmode-font-color);               /* Sets the title text color */
+  color: var(--pfc-black);               /* Sets the title text color */
   margin: 0;                                        /* Removes any default margin to center the title */
 }
 
 html.dark .title{
-  color: var(--darkmode-font-color);
+  color: var(--pfc-white);
 }
 
 /* DESCRIPTION TEXT*/
 .description {
-  color: var(--lightmode-font-color);               /* Sets the description text color */
+  color: var(--pfc-black);               /* Sets the description text color */
   margin-bottom: 3rem;                              /* Adds space between description and tech stack */
 }
 
 html.dark .description{
-  color: var(--darkmode-font-color);
+  color: var(--pfc-white);
 }
 
 /* TECHSTACK CONTAINER */
@@ -88,32 +88,32 @@ html.dark .description{
 
 /* TECHSTACK ELEMENT */
 .techItem {
-  background: var(--lightmode-lightestest);         /* Sets the backgroundcolor of the tech stack elements */
+  background: var(--pfc-white-lighter);         /* Sets the backgroundcolor of the tech stack elements */
   padding: 0.4rem 1rem;                             /* Sets the distance of the tech stack elements to its border*/
   border-radius: 25px;                              /* Sets the curve of the button */
   font-size: 0.9rem;                                /* Sets the text size */
-  color: var(--lightmode-font-color);               /* Sets the tech stack element text color*/
+  color: var(--pfc-black);               /* Sets the tech stack element text color*/
   transition: all 0.2s ease;                        /* Sets the tech stack element design change transition */
-  border: 1px solid var(--lightmode-nav);           /* Sets the tech stack element border */
+  border: 1px solid var(--pfc-white-darker);           /* Sets the tech stack element border */
 }
 
 html.dark .techItem {
-  color: var(--darkmode-font-color);                /* Sets the tech stack element text color*/
-  background: var(--darkmode-darkest);              /* Sets the backgroundcolor of the tech stack elements */
+  color: var(--pfc-white);                /* Sets the tech stack element text color*/
+  background: var(--pfc-black-darker);              /* Sets the backgroundcolor of the tech stack elements */
 }
 
 .techItem:hover {
-  background: var(--lightmode-lightest);            /* Sets the backgroundcolor of the tech stack elements when hovering */
+  background: var(--pfc-white-dark);            /* Sets the backgroundcolor of the tech stack elements when hovering */
   transform: translateY(-1px);                      /* Makes the tech stack element come up when hovered */
 }
 
 html.dark .techItem:hover {
-  background: var(--darkmode-dark);                 /* Sets the backgroundcolor of the tech stack elements when hovering */
+  background: var(--pfc-black-light);                 /* Sets the backgroundcolor of the tech stack elements when hovering */
 }
 
 /* DELETE BUTTON */
 .deleteButton {
-  color: var(--lightmode-font-color);               /* Sets the delete button color */
+  color: var(--pfc-black);               /* Sets the delete button color */
   background: none;                                 /* Removes standard button background */
   border: none;                                     /* Removes standard button border */
   border-radius: 50%;                               /* Makes the button circular */
@@ -127,16 +127,16 @@ html.dark .techItem:hover {
 }
 
 html.dark .deleteButton{
-  color: var(--darkmode-font-color);
+  color: var(--pfc-white);
 }
 
 .deleteButton:hover {
-  background: var(--lightmode-lightest);            /* Change button background color on hover */
+  background: var(--pfc-white-dark);            /* Change button background color on hover */
   transform: scale(1.1);                            /* Increase button size on hover */
 }
 
 html.dark .deleteButton:hover {
-  background: var(--bootstrap-icon-color);          /* Change button background color on hover */
+  background: var(--pfc-black-lightest);          /* Change button background color on hover */
 }
 
 /* RESPONSIVENESS */

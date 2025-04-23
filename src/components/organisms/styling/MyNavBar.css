@@ -2,12 +2,12 @@
 .my-navbar {
     position: sticky;                           /* Makes the navbar stick to the top */
     top: 0;                                     /* Sets distrance from the top to stick */
-    background-color: var(--lightmode-nav);     /* Sets Background color */
+    background-color: var(--pfc-white-darker);     /* Sets Background color */
     z-index: 10;                                /* Keep the navbar in front */
 }
 
 html.dark .my-navbar {
-    background-color: var(--darkmode-nav);      /* Sets Background color */
+    background-color: var(--pfc-black-darkest);      /* Sets Background color */
 }
 
 /* IDLE NAVBAR BRAND */
@@ -18,12 +18,12 @@ html.dark .my-navbar {
 }
 
 html.dark .my-navbar-brand {
-    color: var(--darkmode-font-color);          /* Sets the brand white in dark mode */
+    color: var(--pfc-white);          /* Sets the brand white in dark mode */
 }
 
 /* COLLAPSED NAV LINKS (BURGER MENU) */
 html.dark .navbar-toggler {
-    border-color: var(--darkmode-font-color);
+    border-color: var(--pfc-white);
 }
 
 html.dark .navbar-toggler-icon {
@@ -50,7 +50,7 @@ html.dark .navbar-toggler-icon {
 }
 
 html.dark .dropdown-menu {
-    background-color: var(--darkmode-nav);      /* Sets the background of the opened settings menu */
+    background-color: var(--pfc-black-darkest);      /* Sets the background of the opened settings menu */
 }
 
 .my-navbar-settings-dropdown .dropdown-menu {
@@ -65,7 +65,7 @@ html.dark .dropdown-menu {
     height: 40px;                               /* Sets the button height */
     width: 56px;                                /* Sets the button width */
     border-radius: 0.4rem;                      /* Sets custom curved button */
-    border-color: var(--bootstrap-button-border); /* Sets button color */
+    border-color: var(--pfc-gray-light); /* Sets button color */
     background-color: transparent;              /* Remove bootstrap button color (none doesnt work) */
     display: flex;                              /* Align icon vertically */
     align-items: center;                        /* Align icon vertically */
@@ -75,11 +75,11 @@ html.dark .dropdown-menu {
 html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
 html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
 html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle {
-    border-color: var(--darkmode-font-color);   /* Set border color in dark mode */
+    border-color: var(--pfc-white);   /* Set border color in dark mode */
 }
 
 html.dark .my-navbar-settings-dropdown-item {
-    background-color: var(--darkmode-nav);      /* Sets collapsed settings element background */
+    background-color: var(--pfc-black-darkest);      /* Sets collapsed settings element background */
 }
 
 .my-navbar-settings-toggle::after {
@@ -87,12 +87,12 @@ html.dark .my-navbar-settings-dropdown-item {
 }
 
 .my-navbar-settings-cog {
-    color: var(--bootstrap-icon-color);         /* Set settings icon color */
+    color: var(--pfc-black-lightest);         /* Set settings icon color */
     padding-left: 6px;                          /* Align icon horizontally */
 }
 
 html.dark .my-navbar-settings-cog {
-    color: var(--darkmode-font-color);          /* Set settings icon color */
+    color: var(--pfc-white);          /* Set settings icon color */
 }
 
 /* RESPONSIVE SETTINGS */

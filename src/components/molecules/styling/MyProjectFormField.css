@@ -12,14 +12,14 @@
     width: 100%;                                            /* Makes the input cover all the space */
     padding: 0.5rem;                                        /* Sets distance to the input text */
     border-radius: 4px;                                     /* Sets the corner curve */
-    background-color: var(--lightmode-lightestestest);      /* Sets its background color */
-    border: 1px solid var(--lightmode-nav);                 /* Sets the border design */
+    background-color: var(--pfc-white-lightest);      /* Sets its background color */
+    border: 1px solid var(--pfc-white-darker);                 /* Sets the border design */
 }
 
 html.dark .form-group input[type="text"],
 html.dark .form-group textarea {
-    background-color: var(--darkmode-background);           /* Sets its background color */
-    color: var(--darkmode-font-color);                      /* Sets the written text color */
+    background-color: var(--pfc-black-lighter);           /* Sets its background color */
+    color: var(--pfc-white);                      /* Sets the written text color */
 }
 
 .form-group textarea {
@@ -28,6 +28,6 @@ html.dark .form-group textarea {
 }
 
 .error {
-    color: var(--icon-red);                                 /* Sets the error text color */
+    color: var(--pfc-red);                                 /* Sets the error text color */
     margin-top: 0.25rem;                                    /* Sets the distance to the input area on top */
 }

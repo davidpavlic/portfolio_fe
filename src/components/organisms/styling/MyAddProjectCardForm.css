@@ -1,27 +1,27 @@
 /* FORM CONTAINER */
 .form-container {
-    background-color: var(--darkmode-font-color);       /* Sets the forms background color */
+    background-color: var(--pfc-white);       /* Sets the forms background color */
     width: 80%;                                         /* Sets the forms width to 80% of the screen size */
     margin: 2rem auto;                                  /* Centers the form */
     padding: 2rem;                                      /* Sets the forms distance from the text */
     border-radius: 16px;                                /* Sets the forms corner curveture */
-    box-shadow: 0 4px 20px var(--lightmode-lighter);    /* Sets the forms shadow */
+    box-shadow: 0 4px 20px var(--pfc-white-darkest);    /* Sets the forms shadow */
     transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Sets the forms design change transition */
     position: relative;                                 /* Sets the forms position */
 }
 
 html.dark .form-container {
-    background-color: var(--darkmode-darker);           /* Sets the forms background in darkmode */
-    box-shadow: 0 4px 15px var(--lightmode-light);      /* Sets the forms shadow in darkmode */
+    background-color: var(--pfc-black-dark);           /* Sets the forms background in darkmode */
+    box-shadow: 0 4px 15px var(--pfc-gray);      /* Sets the forms shadow in darkmode */
 }
 
 .form-container:hover {
     transform: translateY(-5px);                        /* Makes the forms come up when hovered */
-    box-shadow: 0 8px 30px var(--lightmode-light);      /* Increases the forms shadow when hovered */
+    box-shadow: 0 8px 30px var(--pfc-gray);      /* Increases the forms shadow when hovered */
 }
 
 html.dark .form-container:hover {
-    box-shadow: 0 4px 15px var(--lightmode-lightest);   /* Sets the forms shadow when hovered in darkmode*/
+    box-shadow: 0 4px 15px var(--pfc-white-dark);   /* Sets the forms shadow when hovered in darkmode*/
 }
 
 /* GRID LAYOUT */
@@ -40,7 +40,7 @@ html.dark .form-container:hover {
 }
 
 .right-column {
-    border-left: 2px solid var(--lightmode-nav);        /* Sets the line between the left and right column */
+    border-left: 2px solid var(--pfc-white-darker);        /* Sets the line between the left and right column */
     padding-left: 2rem;                                 /* Sets the distance to the separation line */
 }
 
@@ -52,8 +52,8 @@ html.dark .form-container:hover {
 
 /* SUBMIT BUTTON */
 .submit-button {
-    background-color: var(--icon-blue);                 /* Sets the buttons background color */
-    color: var(--darkmode-font-color);                  /* Sets the buttons text color */
+    background-color: var(--pfc-blue);                 /* Sets the buttons background color */
+    color: var(--pfc-white);                  /* Sets the buttons text color */
     padding: 0.75rem 1.5rem;                            /* Sets the distance from the button border to the text */
     border: none;                                       /* Removes the button border  */
     border-radius: 4px;                                 /* Sets the button corner curveture */
@@ -62,13 +62,13 @@ html.dark .form-container:hover {
 }
 
 .submit-button:disabled {
-    background-color: var(--icon-disabled);             /* Sets the background color when submitting */
+    background-color: var(--pfc-gray-darker);             /* Sets the background color when submitting */
     cursor: not-allowed;                                /* Sets the cursor icon when submitting */
 }
 
 .submit-button:hover{
     transform: translateY(-5px);                        /* Makes the forms come up when hovered */
-    background-color: var(--icon-dark-blue);            /* Sets the forms background in darkmode */
+    background-color: var(--pfc-dark-blue);            /* Sets the forms background in darkmode */
 }
 
 /* POP UP MESSAGE */
@@ -77,11 +77,11 @@ html.dark .form-container:hover {
     top: 20px;                                          /* Sets the message to the top */
     right: 30px;                                        /* Sets the message to the right */
     background-color: none;                             /* Removes the background */
-    color: var(--lightmode-font-color);                 /* Sets the text color */
+    color: var(--pfc-black);                 /* Sets the text color */
 }
 
 html.drak .popup-message {
-    color: var(--darkmode-font-color);                  /* Sets the pop up text color in darkmode */
+    color: var(--pfc-white);                  /* Sets the pop up text color in darkmode */
 }
 
 @media (max-width: 1100px) {

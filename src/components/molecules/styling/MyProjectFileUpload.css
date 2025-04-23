@@ -5,15 +5,15 @@
 }
 
 html.dark .my-project-card-label{
-    color: var(--darkmode-font-color);                      /* Sets the text color to white in darkmode */
+    color: var(--pfc-white);                      /* Sets the text color to white in darkmode */
 }
 
 /* UPLOAD CONTAINER */
 .drop-zone {
-    border: 2px dashed var(--lightmode-nav);                /* Sets the border design */
+    border: 2px dashed var(--pfc-white-darker);                /* Sets the border design */
     border-radius: 12px;                                    /* Sets the corner curveture */
     text-align: center;                                     /* Centers its text */
-    background-color: var(--lightmode-lightestestest);      /* Sets its background color */
+    background-color: var(--pfc-white-lightest);      /* Sets its background color */
     align-items: center;                                    /* Centers its children */
     justify-content: center;                                /* Centers its children */
     display: block;                                         /* Cover the whole area of its parent */
@@ -22,44 +22,44 @@ html.dark .my-project-card-label{
 }
 
 html.dark .drop-zone{
-    background-color: var(--darkmode-background);           /* Sets its background color in darkmode */
+    background-color: var(--pfc-black-lighter);           /* Sets its background color in darkmode */
 }
 
 .drop-zone.has-error {
     padding-top: 150px;                                     /* Unclean set size on error */
-    padding-bottom: 240px;                                     /* Unclean set size on error */
-    border-color: var(--icon-red);                          /* Turn the border red on error */
-    background-color: var(--icon-light-red);                /* Turn the background light red on error */
+    padding-bottom: 240px;                                  /* Unclean set size on error */
+    border-color: var(--pfc-red);                          /* Turn the border red on error */
+    background-color: var(--pfc-transparent-red);                /* Turn the background light red on error */
 }
 
 .drop-zone.has-file {
-    border-color: var(--icon-green);                        /* Turn the border green on success */
-    background-color: var(--icon-light-green);              /* Turn the background light green on success */
+    border-color: var(--pfc-green);                        /* Turn the border green on success */
+    background-color: var(--pfc-transparent-green);         /* Turn the background transparent green on success */
 }
 
 /* UPLOAD ICON */
 .upload-icon {
     width: 48px;                                            /* Sets icon size */
     height: 48px;                                           /* Sets icon size */
-    fill: var(--lightmode-light);                           /* Sets icon background */
+    fill: var(--pfc-gray);                           /* Sets icon background */
     margin-bottom: 1.5rem;                                  /* Distance from upload icon to the text */
 }
 
 .has-error .upload-icon {
-    fill: var(--icon-red);                                  /* Sets icon color on error */
+    fill: var(--pfc-red);                                  /* Sets icon color on error */
 }
 
 .has-file .upload-icon {    
-    fill: var(--icon-green);                                /* Sets icon color on success */
+    fill: var(--pfc-green);                                /* Sets icon color on success */
 }
 
 /* ERROR MESSAGES */
 .error-message {
-    color: var(--icon-red);                                 /* Sets error text color */
+    color: var(--pfc-red);                                 /* Sets error text color */
     margin-top: 0.75rem;                                    /* Sets distance to the drop down container */
     text-align: left;                                       /* Sets the error messages position to the left */
 }
 
 html.dark .error-message {
-    color: var(--icon-red);                                 /* Sets error text color in dark mode*/
+    color: var(--pfc-red);                                 /* Sets error text color in dark mode*/
 }

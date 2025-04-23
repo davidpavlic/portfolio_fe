@@ -8,13 +8,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: var(--lightmode-lightest);
+    background: var(--pfc-white-dark);
     height: calc(100vh - 56px);
     position: relative;
 }
 
 html.dark .my-llm-main-content {
-    background: var(--lightmode-font-color);
+    background: var(--pfc-black);
 }
 
 /* Chat Content Container */
@@ -23,14 +23,14 @@ html.dark .my-llm-main-content {
     display: flex;
     flex-direction: column;
     margin: 24px;
-    background: var(--darkmode-font-color);
+    background: var(--pfc-white);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     overflow: hidden; /* Ensures child doesn't overflow */
 }
 
 html.dark .my-llm-box {
-    background: var(--darkmode-darker);
+    background: var(--pfc-black-dark);
 }
 
 /* Chat Messages Area */
@@ -66,13 +66,13 @@ html.dark .my-llm-box {
 }
 
 html.dark .my-llm-user-input {
-    background-color: var(--darkmode-darker);
-    color: var(--darkmode-font-color);
+    background-color: var(--pfc-black-dark);
+    color: var(--pfc-white);
 }
 
 .my-llm-send-btn {
-    background: var(--icon-blue);
-    color: var(--darkmode-font-color);
+    background: var(--pfc-blue);
+    color: var(--pfc-white);
     border: none;
     border-radius: 12px;
     font-size: 14px;
@@ -82,7 +82,7 @@ html.dark .my-llm-user-input {
 }
 
 .my-llm-send-btn:hover {
-    background: var(--icon-dark-blue);
+    background: var(--pfc-dark-blue);
     transform: translateY(-1px);
 }
 
@@ -92,7 +92,7 @@ html.dark .my-llm-user-input {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--transparent-light);
+    background: var(--pfc-transparent-light);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,11 +100,11 @@ html.dark .my-llm-user-input {
 }
 
 html.dark .my-llm-overlay {
-    background: var(--transparent-dark);
+    background: var(--pfc-transparent-dark);
 }
 
 .my-llm-error {
-    color: var(--icon-red);
+    color: var(--pfc-red);
     padding: 16px 24px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -120,23 +120,23 @@ html.dark .my-llm-overlay {
 }
 
 .user-message {
-    background: var(--icon-blue);
-    color: var(--darkmode-font-color);
+    background: var(--pfc-blue);
+    color: var(--pfc-white);
     align-self: flex-end;
     border-bottom-right-radius: 4px;
 }
 
 .assistant-message {
-    background: var(--lightmode-lightest);
-    color: var(--lightmode-font-color);
+    background: var(--pfc-white-dark);
+    color: var(--pfc-black);
     align-self: flex-start;
     border-bottom-left-radius: 4px;
 }
 
 html.dark .assistant-message {
-    background: var(--bootstrap-icon-color);
+    background: var(--pfc-black-lightest);
 }
 
 html.dark .my-llm-mobile-sidebar-toggle{
-    color: var(--darkmode-font-color)
+    color: var(--pfc-white)
 }

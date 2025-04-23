@@ -9,14 +9,14 @@
 }
 
 html.dark .my-theme-switcher-icon-button {
-    color: var(--darkmode-font-color);              /* Sets the icon color in dark mode */
+    color: var(--pfc-white);              /* Sets the icon color in dark mode */
 }
 
 /* HOVER THEME SWITCHER */
 .my-theme-switcher-icon-button:hover {
-    background-color: var(--lightmode-lighter);     /* Sets a hover background color */
+    background-color: var(--pfc-white-darkest);     /* Sets a hover background color */
 }
 
 html.dark .my-theme-switcher-icon-button:hover {
-    background-color: var(--darkmode-darkest);      /* Sets a hover background color */
+    background-color: var(--pfc-black-darker);      /* Sets a hover background color */
 }
