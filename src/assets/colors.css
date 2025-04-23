@@ -3,25 +3,25 @@
     --pfc-white: #ffffff;
     --pfc-white-lightest: #f9f9f9;
     --pfc-white-lighter: #f2f2f2;
-    --pfc-white-light: #EDF2F7;                 
-    --pfc-white-dark: #e7e7e7;         
-    --pfc-white-darker: #d9d9d9;              
-    --pfc-white-darkest: #CFCFCF;                 
+    --pfc-white-light: #edf2f7;
+    --pfc-white-dark: #e7e7e7;
+    --pfc-white-darker: #d9d9d9;
+    --pfc-white-darkest: #cfcfcf;
 
-    --pfc-gray-light: #B9B9B9;
-    --pfc-gray: #B5B5B5;
+    --pfc-gray-light: #b9b9b9;
+    --pfc-gray: #b5b5b5;
     --pfc-gray-darker: #6c757d;
 
     --pfc-black-lightest: #4f5255;
-    --pfc-black-lighter: #2E2E2E;
-    --pfc-black-light:   #282828;
-    --pfc-black-dark:  #222222;
-    --pfc-black-darker:  #181818;
+    --pfc-black-lighter: #2e2e2e;
+    --pfc-black-light: #282828;
+    --pfc-black-dark: #222222;
+    --pfc-black-darker: #181818;
     --pfc-black-darkest: #121212;
     --pfc-black: #000000;
 
     /* Colors */
-    --pfc-red: #FF4444;
+    --pfc-red: #ff4444;
     --pfc-green: #48bb78;
     --pfc-blue: #007bff;
     --pfc-dark-blue: #006adc;
