@@ -21,10 +21,8 @@ type ThemeContextType = {
 // 2. If not, it uses the system's color scheme preference via a media query.
 const getInitialDarkMode = (): boolean => {
   const storedPref = localStorage.getItem('darkMode');
-  // converting storedpref to a boolean in the compare
-  if (storedPref !== null) return storedPref === 'true';
-  // uses the browser's matchMedia API to check the user's system setting.
-  return window.matchMedia('(prefers-color-scheme: dark)').matches; 
+  // converting storedpref to a boolean in the compare and using the browser's matchMedia API to check the user's system setting.
+  return storedPref !== null ? storedPref === 'true' : window.matchMedia('(prefers-color-scheme: dark)').matches;
 };
 
 // Create the ThemeContext with default values.
