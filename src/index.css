@@ -1,13 +1,10 @@
-/* CONTENT STYLING */
-.my-app {
+/* GLOBAL STYLING */
+html, body {
     background-color: var(--lightmode-background);
 }
 
-html.dark .my-app {
+html.dark, html.dark body {
     background-color: var(--darkmode-background);
-}
-
-html.dark div {
     color: var(--darkmode-font-color)
 }
 

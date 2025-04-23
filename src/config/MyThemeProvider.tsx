@@ -36,7 +36,7 @@ export const ThemeContext = createContext<ThemeContextType>({
 
 // The ThemeProvider component wraps its children and provides them with dark mode state.
 // It manages the state and synchronizes it with both the DOM and localStorage.
-export function ThemeProvider({ children }: ThemeProviderProps) {
+export function MyThemeProvider({ children }: ThemeProviderProps) {
   const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
 
   // useEffect hook to apply side effects whenever 'isDarkMode' changes.
