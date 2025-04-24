@@ -4,17 +4,20 @@ import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { FaCog } from 'react-icons/fa';
 import MyEnvDropDown from '../molecules/MyEnvDropDown';
+import MyDropdownList from '../atoms/MyDropdownList';
 import MyLanguageDropDown from '../molecules/MyLanguageDropDown';
 import MyThemeSwitcher from '../atoms/MyThemeSwitcher';
 import MyNavLink from '../molecules/MyNavLink';
+import MyDropdownToggle from '../atoms/MyDropdownToggle';
 
 
 ///* TODOS *///
-// TODO: Adjust settings font color
-// TODO: Dropdown in Dropdown 
-// TODO: Dropdown no blue coloring 
-// TODO: Collapsed Navbar items 
 // TODO: When selecting a page make an animation 
+//
+// TODO: Dropdown in Dropdown
+//       - https://www.youtube.com/watch?v=IF6k0uZuypA (7:37-16:51)
+//       - Make MyDropDownList & MyDropDownToggle generic for the my-navbar-settings-dropdown section.
+// TODO: Collapsed Nav Dropdown Menu Design. 
 
 
 ///* CONSTANTS *///
@@ -27,9 +30,9 @@ const NAV_ITEMS = [
 ];
 // Define settings components along with a unique key for each.
 const SETTING_COMPONENTS = [
-  { key: 'theme', component: <MyThemeSwitcher /> },
-  { key: 'language', component: <MyLanguageDropDown /> },
-  { key: 'env', component: <MyEnvDropDown /> },
+  { code: 'theme', component: <MyThemeSwitcher /> },
+  { code: 'language', component: <MyLanguageDropDown /> },
+  { code: 'env', component: <MyEnvDropDown /> },
 ];
 
 
@@ -84,27 +87,18 @@ export const MyNavBar = () => {
       {windowWidth <= 1100 ? (
         <Dropdown className='my-navbar-settings-dropdown'>
           {/* Dropdown toggle that displays a gear icon. */}
-          <Dropdown.Toggle className='my-navbar-settings-toggle'>
+          <MyDropdownToggle className='my-navbar-settings-toggle'>
             <FaCog className='my-navbar-settings-cog' />
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {/* Iterate over settingsComponents defined in constants section */}
-            {SETTING_COMPONENTS.map(({ key, component }) => (
-              <Dropdown.Item
-                key={key}
-                className='my-navbar-settings-dropdown-item'
-                onClick={(e) => e.stopPropagation()}
-              >
-                {component}
-              </Dropdown.Item>
-            ))}
-          </Dropdown.Menu>
+          </MyDropdownToggle>
+          <MyDropdownList
+            items={SETTING_COMPONENTS}
+            onClick={(e) => e.stopPropagation()}/>
         </Dropdown>
       ) : (
         // If the window width is greater than 1100 pixels, display settings inline.
         <Nav className='my-navbar-settings'>
-          {SETTING_COMPONENTS.map(({ key, component }) => (
-            <div key={key}>{component}</div>
+          {SETTING_COMPONENTS.map(({ code, component }) => (
+            <div key={code}>{component}</div>
           ))}
         </Nav>
       )}

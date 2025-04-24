@@ -51,9 +51,9 @@ const MyGenericDropDown = ({ items, storageKey, defaultCode, onSelect }: MyGener
 
     return (
         <Dropdown show={show} onToggle={setShow} onSelect={handleSelect}>
-        <MyDropdownToggle inputRef={toggleRef} title={currentLabel} />
-        <MyDropdownList items={items.map(i => ({ code: i.code, label: t(i.labelKey) }))} />
-      </Dropdown>
+            <MyDropdownToggle inputRef={toggleRef} children={currentLabel} />
+            <MyDropdownList items={items.map(i => ({ code: i.code, component: t(i.labelKey) }))} />
+        </Dropdown>
     );
 };
 
