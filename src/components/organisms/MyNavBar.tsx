@@ -11,13 +11,6 @@ import MyNavLink from '../molecules/MyNavLink';
 import MyDropdownToggle from '../atoms/MyDropdownToggle';
 
 
-///* TODOS *///
-// TODO: Dropdown in Dropdown
-//       - https://www.youtube.com/watch?v=IF6k0uZuypA (7:37-16:51)
-//       - Make MyDropDownList & MyDropDownToggle generic for the my-navbar-settings-dropdown section.
-// TODO: Collapsed Nav Dropdown Menu Design. 
-
-
 ///* CONSTANTS *///
 // Define navbar links with translation keys
 const NAV_ITEMS = [

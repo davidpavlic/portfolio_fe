@@ -1,9 +1,13 @@
-MyNavBar.tsx
 MyProjectCard.css
 ProjectsPage.tsx
 MyLLMHistoryList.tsx
 MyLLMSideBar.tsx
 
 
-MyEnvDropDown.tsx (Change Environments)
+MyEnvDropDown.tsx 
+    - Actually change Environments
 MyNavBar.tsx
+    - Dropdown in Dropdown
+        - https://www.youtube.com/watch?v=IF6k0uZuypA (7:37-16:51)
+        - Make MyDropDownList & MyDropDownToggle generic for the my-navbar-settings-dropdown section.
+    - Collapsed Nav Dropdown Menu Design. 
