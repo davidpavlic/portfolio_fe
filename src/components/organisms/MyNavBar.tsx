@@ -1,5 +1,5 @@
 import './styling/MyNavBar.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { FaCog } from 'react-icons/fa';
@@ -10,7 +10,6 @@ import MyNavLink from '../molecules/MyNavLink';
 
 
 ///* TODOS *///
-// TODO: When clicking outside of the opened hamburger, close it
 // TODO: Adjust settings font color
 // TODO: Dropdown in Dropdown 
 // TODO: Dropdown no blue coloring 
@@ -38,26 +37,41 @@ const SETTING_COMPONENTS = [
 export const MyNavBar = () => {
   const { t } = useTranslation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);   // Track window width to conditionally render the settings component.
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State to control dropdown visibility.
+  const dropdownRef = useRef<HTMLButtonElement | null>(null); // Reference to the dropdown menu
+
+  const handleOpenNavDropdown = (event: MouseEvent) => {
+    if (!dropdownRef.current) return;
+    if (dropdownOpen === false && dropdownRef.current.contains(event.target as Node)) {
+      // Toggle dropdown open/close on click inside the dropdown
+      setDropdownOpen(true);
+    } else {
+      // Close dropdown when clicking outside
+      setDropdownOpen(false);
+    }
+
+  };
 
   // Update window width on resize.
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize); //listen to window resizes
+    document.addEventListener('click', handleOpenNavDropdown); //listen to clicks on the document
     return () => window.removeEventListener('resize', handleResize); //remove on unmount to prevent memory leaks
   }, []);
 
   return (
     // Expand md makes it collapse below 767px.
-    <Navbar expand='md' className='my-navbar'>
+    <Navbar expand='md' className='my-navbar' >
       {/* Navbar brand that links to the homepage. */}
       <Navbar.Brand href='/' className='my-navbar-brand'>
         David Pavlic
       </Navbar.Brand>
 
       {/* Toggle button for collapsing/expanding the navigation items on smaller screens. */}
-      <Navbar.Toggle aria-controls='basic-navbar-nav' />
+      <Navbar.Toggle aria-controls='basic-navbar-nav' ref={dropdownRef}/>
       {/* Collapsible section that contains the navigation links. */}
-      <Navbar.Collapse id='basic-navbar-nav'>
+      <Navbar.Collapse id='basic-navbar-nav' in={dropdownOpen}>
         <Nav className='my-navbar-center'>
           {/* Iterate over navItems defined in constants section */}
           {NAV_ITEMS.map(({ link, title }) => (
