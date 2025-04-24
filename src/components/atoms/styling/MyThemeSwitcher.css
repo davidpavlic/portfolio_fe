@@ -1,15 +1,15 @@
 /* IDLE THEME SWITCHER */
 .my-theme-switcher-icon-button {
-    background: none;                               /* Removes standard button background */
+    margin-top: 0.1875rem;                          /* Centers the button vertically */
+    padding-bottom: 0.3125rem;                      /* Centers the icon vertically */
     border: none;                                   /* Removes standard button border */
-    border-radius: 5px;                             /* Sets rounded corners for the button */
+    border-radius: 0.3125rem;                       /* Sets rounded corners for the button */
+    background: none;                               /* Removes standard button background */
     transition: background-color 0.2s ease-in-out;  /* Fluid Background color change */
-    padding-bottom: 5px;                            /* Centers the icon vertically */
-    margin-top: 3px;                                /* Centers the button vertically */
 }
 
 html.dark .my-theme-switcher-icon-button {
-    color: var(--pfc-white);              /* Sets the icon color in dark mode */
+    color: var(--pfc-white);                        /* Sets the icon color in dark mode */
 }
 
 /* HOVER THEME SWITCHER */

@@ -1,6 +1,6 @@
 /* IDLE DROPDOWN MENU */
 .my-dropdown-menu{
-    padding: 0px;                                       /* Removes the automatic padding from the bootstrap component */
+    padding: 0rem;                                      /* Removes the automatic padding from the bootstrap component */
 }
 
 html.dark .my-dropdown-menu {
@@ -19,15 +19,15 @@ html.dark .my-dropdown-menu-item {
 /* SELECTED/HOVER DROPDOWN ELEMENT */
 .my-dropdown-menu-item.active,
 .my-dropdown-menu-item:hover {
+    border-bottom: none;                                /* Removes bootstraps standard bottom line on selected element */
     background-color: var(--pfc-white-darkest);         /* Sets the standard background color on selected element */
     color: var(--pfc-black);                            /* Overrides bootstraps standard white color on selected element */
-    border-bottom: none;                                /* Removes bootstraps standard bottom line on selected element */
 }
 
 html.dark .my-dropdown-menu-item.active,
 html.dark .my-dropdown-menu-item:hover {
-    background-color: var(--pfc-black-dark);            /* Sets the standard background color on selected element */
     border-bottom: none;                                /* Removes bootstraps standard bottom line on selected element */
+    background-color: var(--pfc-black-dark);            /* Sets the standard background color on selected element */
 }
 
 /* CLICKED DROPDOWN ELEMENT */
