@@ -1,45 +1,45 @@
 /* IDLE DROPDOWN MENU */
 .my-dropdown-menu{
-    padding: 0px;                                   /* Removes the automatic padding from the bootstrap component */
+    padding: 0px;                                       /* Removes the automatic padding from the bootstrap component */
 }
 
 html.dark .my-dropdown-menu {
-    background-color: var(--pfc-black-darker);      /* Set the standard background color on dropdown menu */
+    background-color: var(--pfc-black-darker);          /* Set the standard background color on dropdown menu */
 }
 
 /* IDLE DROPDOWN ELEMENT */
-.my-dropdown-item {
-    transition: background-color 0.2s ease-in-out;  /* Fluid Background color change */
+.my-dropdown-menu-item {
+    transition: background-color 0.2s ease-in-out;      /* Fluid Background color change */
 }
 
-html.dark .my-dropdown-item {
-    color: var(--pfc-white);              /* Overrides bootstraps standard black color on idle element */
+html.dark .my-dropdown-menu-item {
+    color: var(--pfc-white);                            /* Overrides bootstraps standard black color on idle element */
 }
 
 /* SELECTED/HOVER DROPDOWN ELEMENT */
-.my-dropdown-item.active,
-.my-dropdown-item:hover {
-    background-color: var(--pfc-white-darkest);    /* Sets the standard background color on selected element */
-    color: var(--pfc-black);             /* Overrides bootstraps standard white color on selected element */
-    border-bottom: none;                            /* Removes bootstraps standard bottom line on selected element */
+.my-dropdown-menu-item.active,
+.my-dropdown-menu-item:hover {
+    background-color: var(--pfc-white-darkest);         /* Sets the standard background color on selected element */
+    color: var(--pfc-black);                            /* Overrides bootstraps standard white color on selected element */
+    border-bottom: none;                                /* Removes bootstraps standard bottom line on selected element */
 }
 
-html.dark .my-dropdown-item.active,
-html.dark .my-dropdown-item:hover {
-    background-color: var(--pfc-black-dark);      /* Sets the standard background color on selected element */
-    border-bottom: none;                            /* Removes bootstraps standard bottom line on selected element */
+html.dark .my-dropdown-menu-item.active,
+html.dark .my-dropdown-menu-item:hover {
+    background-color: var(--pfc-black-dark);            /* Sets the standard background color on selected element */
+    border-bottom: none;                                /* Removes bootstraps standard bottom line on selected element */
 }
 
 /* CLICKED DROPDOWN ELEMENT */
-.my-dropdown-item:focus,
-.my-dropdown-item:focus:focus-visible,
-.my-dropdown-item:focus:not(:focus-visible) {
-    background-color: var(--pfc-gray);      /* Sets the standard background color on clicked element */
+.my-dropdown-menu-item:focus,
+.my-dropdown-menu-item:focus:focus-visible,
+.my-dropdown-menu-item:focus:not(:focus-visible) {
+    background-color: var(--pfc-gray);                  /* Sets the standard background color on clicked element */
 }
 
-html.dark .my-dropdown-item:focus,
-html.dark .my-dropdown-item:focus:focus-visible,
-html.dark .my-dropdown-item:focus:not(:focus-visible) {
-    background-color: var(--pfc-black-light);         /* Sets the standard background color on selected element */
-    color: var(--pfc-white);              /* Overrides bootstraps standard black color on clicked element */
+html.dark .my-dropdown-menu-item:focus,
+html.dark .my-dropdown-menu-item:focus:focus-visible,
+html.dark .my-dropdown-menu-item:focus:not(:focus-visible) {
+    background-color: var(--pfc-black-light);           /* Sets the standard background color on selected element */
+    color: var(--pfc-white);                            /* Overrides bootstraps standard black color on clicked element */
 }
