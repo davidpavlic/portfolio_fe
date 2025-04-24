@@ -12,8 +12,6 @@ import MyDropdownToggle from '../atoms/MyDropdownToggle';
 
 
 ///* TODOS *///
-// TODO: When selecting a page make an animation 
-//
 // TODO: Dropdown in Dropdown
 //       - https://www.youtube.com/watch?v=IF6k0uZuypA (7:37-16:51)
 //       - Make MyDropDownList & MyDropDownToggle generic for the my-navbar-settings-dropdown section.
