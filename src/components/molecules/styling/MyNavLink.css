@@ -27,3 +27,37 @@ html.dark .my-navbar-link.active {
     border-bottom: solid var(--pfc-white) 2px;      /* Sets an underline below the active element, without using the text-decoration property */
     color: var(--pfc-white);                        /* Overrides bootstraps standard black color on active element */
 }
+
+/* Animation for the bottom border disappearing */
+@keyframes disappearBorder {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+/* Animation for the bottom border appearing */
+@keyframes appearBorder {
+    0% {
+        width: 0;
+        left: 0;
+    }
+
+    100% {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.my-navbar-link.active::after {
+    animation: appearBorder 0.3s forwards; /* Animation for the appearing border */
+}
+
+/* Inactive Navbar Link */
+.my-navbar-link.inactive::after {
+    animation: disappearBorder 0.3s forwards; /* Animation for the disappearing border */
+}

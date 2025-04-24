@@ -19,7 +19,7 @@ const MyNavLink = ({ title, link }: NavLinkProps) => (
         to={link}
         //ensures that the link is only considered active if the current URL matches exactly.
         end
-        className={({ isActive }) => isActive ? 'my-navbar-link active' : 'my-navbar-link'}
+        className={({ isActive }) => `my-navbar-link ${isActive ? 'active' : 'inactive'}`}    
     >
         {title}
     </NavLink>
