@@ -28,8 +28,8 @@ const MyEnvDropDown = () => {
   const handleSelect = (eventKey: string | null) => {
     if (!eventKey) return;
 
-    //Change the environment
-    //TODO: Change environment
+    // Change the environment
+    // TODO: Change environment
 
     // Update localStorage and state with the selected environment code.
     localStorage.setItem('env', eventKey);
