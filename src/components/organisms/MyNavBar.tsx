@@ -60,7 +60,10 @@ export const MyNavBar = () => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize); //listen to window resizes
     document.addEventListener('click', handleOpenNavDropdown); //listen to clicks on the document
-    return () => window.removeEventListener('resize', handleResize); //remove on unmount to prevent memory leaks
+    return () => {
+      window.removeEventListener('resize', handleResize); //remove on unmount to prevent memory leaks
+      document.removeEventListener('click', handleOpenNavDropdown); //listen to clicks on the document
+    }
   }, []);
 
   return (
