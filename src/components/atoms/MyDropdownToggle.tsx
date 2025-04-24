@@ -22,7 +22,7 @@ const MyDropdownToggle = ({ title, inputRef }: MyDropdownToggleProps) => (
   // allowing parent components to access its underlying DOM element
   <Dropdown.Toggle
     ref={inputRef}
-    className="my-dropdown-toggle"
+    className='my-dropdown-toggle'
   >
     {title}
   </Dropdown.Toggle>

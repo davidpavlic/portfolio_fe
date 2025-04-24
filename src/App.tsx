@@ -13,11 +13,11 @@ function App() {
     <main>
       <MyNavBar />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/news-scraper" element={<WorkInProgressPage />} />
-        <Route path="/my-llm" element={<MyLLMPage />} />
-        <Route path="*" element={<PageNotFound />} />
+        <Route path='/' element={<MainPage />} />
+        <Route path='/projects' element={<ProjectsPage />} />
+        <Route path='/news-scraper' element={<WorkInProgressPage />} />
+        <Route path='/my-llm' element={<MyLLMPage />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </main>
   );

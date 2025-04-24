@@ -4,14 +4,16 @@ import { BsSun, BsMoon } from 'react-icons/bs';
 import { ThemeContext } from '../../config/MyThemeProvider';
 
 
+//* CONSTANTS *///
+const ICON_SIZE = 20;
+const TRANSITION_DISABLE_DURATION = 50;
+
+
 ///* FUNCTIONAL COMPONENT *///
 const MyThemeSwitcher = () => {
   // useContext is a React hook that lets you subscribe to React context values
   // without having to manually pass props through every level of your component tree.
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
-
-  const ICON_SIZE = 20;
-  const TRANSITION_DISABLE_DURATION = 50;
 
   const handleThemeSwitch = () => {
     // Add transition-disable class synchronously
@@ -26,7 +28,7 @@ const MyThemeSwitcher = () => {
 
   return (
     <button
-      className="my-theme-switcher-icon-button"
+      className='my-theme-switcher-icon-button'
       onClick={handleThemeSwitch}
     >
       {isDarkMode ? <BsMoon size={ICON_SIZE} /> : <BsSun size={ICON_SIZE} />}

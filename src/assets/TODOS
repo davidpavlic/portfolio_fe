@@ -1,7 +1,9 @@
 MyDropdownMenu.tsx
-MyEnvDropDown.tsx
 MyNavBar.tsx
 MyProjectCard.css
 ProjectsPage.tsx
 MyLLMHistoryList.tsx
 MyLLMSideBar.tsx
+
+
+MyEnvDropDown.tsx (Change Environments)

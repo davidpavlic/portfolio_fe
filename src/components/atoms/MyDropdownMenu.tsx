@@ -12,12 +12,12 @@ type MyDropdownMenuProps = {
 
 ///* FUNCTIONAL COMPONENT *///
 const MyDropdownMenu = ({ items }: MyDropdownMenuProps) => (
-  <Dropdown.Menu className="my-dropdown-menu">
+  <Dropdown.Menu className='my-dropdown-menu'>
     {items.map(({ code, label }) => (
       // For each item in the 'items' array, create a Dropdown.Item.
       // The eventkey is passed to the function specified in the parents onSelect property.
       <Dropdown.Item
-        className="my-dropdown-menu-item"
+        className='my-dropdown-menu-item'
         eventKey={code}
         key={code}
       >
