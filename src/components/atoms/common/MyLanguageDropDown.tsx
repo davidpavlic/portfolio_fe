@@ -1,4 +1,4 @@
-import MyGenericDropDown from './MyGenericDropDown';
+import MyGenericDropDown from '../../molecules/common/MyGenericDropDown';
 import { useTranslation } from 'react-i18next';
 
 

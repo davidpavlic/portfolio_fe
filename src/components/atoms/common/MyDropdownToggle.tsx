@@ -1,4 +1,4 @@
-import './styling/MyDropdownToggle.css';
+import '../styling/MyDropdownToggle.css';
 import { RefObject } from 'react';
 import { Dropdown } from 'react-bootstrap';
 

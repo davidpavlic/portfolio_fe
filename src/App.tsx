@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
-import { MyNavBar } from './components/organisms/MyNavBar';
+import { MyNavBar } from './components/organisms/common/MyNavBar';
 import MainPage from './pages/MainPage';
 import ProjectsPage from './pages/ProjectsPage';
 import MyLLMPage from './pages/MyLLMPage';

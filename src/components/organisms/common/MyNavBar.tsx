@@ -1,8 +1,8 @@
-import './styling/MyNavBar.css';
+import '../styling/MyNavBar.css';
 import { useState, useEffect, useRef } from 'react';
 import { Navbar } from 'react-bootstrap';
-import MyNavLinks from '../molecules/MyNavLinks';
-import MySettingsMenu from '../molecules/MySettingsMenu';
+import MyNavLinks from '../../molecules/common/MyNavLinks';
+import MySettingsMenu from '../../molecules/common/MySettingsMenu';
 
 
 ///* FUNCTIONAL COMPONENT *///

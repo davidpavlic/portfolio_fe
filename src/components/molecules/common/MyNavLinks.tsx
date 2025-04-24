@@ -1,7 +1,7 @@
-import './styling/MyNavLinks.css';
+import '../styling/MyNavLinks.css';
 import { Nav } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import MyNavLink from '../molecules/MyNavLink';
+import MyNavLink from '../../atoms/common/MyNavLink';
 
 
 ///* CONSTANTS *///

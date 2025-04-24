@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import MyDropdownToggle from '../atoms/MyDropdownToggle';
-import MyDropdownList from '../atoms/MyDropdownList';
+import MyDropdownToggle from '../../atoms/common/MyDropdownToggle';
+import MyDropdownList from '../../atoms/common/MyDropdownList';
 
 
 //* TYPE DEFINITIONS *///

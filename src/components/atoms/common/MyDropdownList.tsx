@@ -1,4 +1,4 @@
-import './styling/MyDropdownMenu.css';
+import '../styling/MyDropdownList.css';
 import { Dropdown } from 'react-bootstrap';
 
 

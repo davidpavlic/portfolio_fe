@@ -1,4 +1,4 @@
-import './styling/MyNavLink.css';
+import '../styling/MyNavLink.css';
 import { NavLink } from 'react-router-dom';
 
 

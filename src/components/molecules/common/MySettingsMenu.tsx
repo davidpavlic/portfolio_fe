@@ -1,12 +1,12 @@
-import './styling/MySettingsMenu.css';
+import '../styling/MySettingsMenu.css';
 import { useState, useEffect } from 'react';
 import { Dropdown, Nav } from 'react-bootstrap';
 import { FaCog } from 'react-icons/fa';
-import MyEnvDropDown from '../molecules/MyEnvDropDown';
-import MyLanguageDropDown from '../molecules/MyLanguageDropDown';
-import MyThemeSwitcher from '../atoms/MyThemeSwitcher';
-import MyDropdownList from '../atoms/MyDropdownList';
-import MyDropdownToggle from '../atoms/MyDropdownToggle';
+import MyEnvDropDown from '../../atoms/common/MyEnvDropDown';
+import MyLanguageDropDown from '../../atoms/common/MyLanguageDropDown';
+import MyThemeSwitcher from '../../atoms/common/MyThemeSwitcher';
+import MyDropdownList from '../../atoms/common/MyDropdownList';
+import MyDropdownToggle from '../../atoms/common/MyDropdownToggle';
 
 
 //* CONSTANTS *///
