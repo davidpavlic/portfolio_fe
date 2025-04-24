@@ -1,7 +1,7 @@
-import "./styling/MyThemeSwitcher.css";
-import { useContext } from "react";
-import { BsSun, BsMoon } from "react-icons/bs";
-import { ThemeContext } from "../../config/MyThemeProvider";
+import './styling/MyThemeSwitcher.css';
+import { useContext } from 'react';
+import { BsSun, BsMoon } from 'react-icons/bs';
+import { ThemeContext } from '../../config/MyThemeProvider';
 
 
 ///* FUNCTIONAL COMPONENT *///

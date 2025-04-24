@@ -1,28 +1,29 @@
 /* IDLE NAVBAR ELEMENT */
 .my-navbar-link {
-    color: var(--pfc-black-lighter);
+    color: var(--pfc-black-lighter);                /* Overrides bootstraps standard black color on idle element */
+    text-decoration: none;                          /* Overrides bootstraps standard underline on idle element */
 }
 
 html.dark .my-navbar-link {
-    color: var(--pfc-white-darkest);
+    color: var(--pfc-white-darkest);                /* Overrides bootstraps standard black color on idle element */
 }
 
 /* HOVER NAVBAR ELEMENT */
 .my-navbar-link:hover {
-    color: var(--pfc-black);             
+    color: var(--pfc-black);                        /* Overrides bootstraps standard black color on hover element */
 }
 
 html.dark .my-navbar-link:hover {
-    color: var(--pfc-white);             
+    color: var(--pfc-white);                        /* Overrides bootstraps standard black color on hover element */
 }
 
 /* SELECTED NAVBAR ELEMENT */
 .my-navbar-link.active {
-    border-bottom: solid var(--pfc-black) 2px;
-    color: var(--pfc-black);
+    border-bottom: solid var(--pfc-black) 2px;      /* Sets an underline below the active element, without using the text-decoration property */
+    color: var(--pfc-black);                        /* Overrides bootstraps standard black color on active element */
 }
 
 html.dark .my-navbar-link.active {
-    border-bottom: solid var(--pfc-white) 2px;
-    color: var(--pfc-white);
+    border-bottom: solid var(--pfc-white) 2px;      /* Sets an underline below the active element, without using the text-decoration property */
+    color: var(--pfc-white);                        /* Overrides bootstraps standard black color on active element */
 }

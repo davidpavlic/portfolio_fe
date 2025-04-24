@@ -1,10 +1,9 @@
 import './styling/MyNavLink.css';
-import { useLocation } from "react-router-dom";
-import { Nav } from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
 
 
 ///* TYPE DEFINITION *///
-// Defines the expected properties for the MyDropdownMenu component.
+// Defines the expected properties for the MyNavLink component.
 // - title: displayed text in nav element
 // - link: link to the url when clicked
 type NavLinkProps = {
@@ -14,20 +13,19 @@ type NavLinkProps = {
 
 
 ///* FUNCTIONAL COMPONENT *///
-const MyThemeSwitcher = ({ title, link }: NavLinkProps) => {
-    const location = useLocation();
+const MyNavLink = ({ title, link }: NavLinkProps) => (
+    <NavLink
+        //if the url is equal to the given link, the nav element is active
+        to={link}
+        //ensures that the link is only considered active if the current URL matches exactly.
+        end
+        className={({ isActive }) => isActive ? "my-navbar-link active" : "my-navbar-link"}
+    >
+        {title}
+    </NavLink>
+);
 
-    return (
-        <Nav.Link
-            href={link}
-            //if the url is equal to the given link, the nav element is active
-            className={location.pathname === link ? "active my-navbar-link" : "my-navbar-link"}
-        >
-            {title}
-        </Nav.Link>
-    );
-};
 
 
 ///* EXPORT *///
-export default MyThemeSwitcher;
+export default MyNavLink;
