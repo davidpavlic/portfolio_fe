@@ -16,7 +16,7 @@ const MyEnvDropDown = () => {
       items={ENV_ITEMS}
       storageKey='env'
       defaultCode='p'
-      onSelect={(code) => {
+      onSelect={(_) => {
         // TODO: switch environment logic
       }}
     />
