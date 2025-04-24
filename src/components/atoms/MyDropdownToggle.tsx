@@ -1,6 +1,6 @@
-import "./styling/MyDropdownToggle.css";
-import { Dropdown } from "react-bootstrap";
-import { RefObject } from "react";
+import './styling/MyDropdownToggle.css';
+import { RefObject } from 'react';
+import { Dropdown } from 'react-bootstrap';
 
 
 ///* TYPE DEFINITION *///
@@ -10,22 +10,20 @@ import { RefObject } from "react";
 //             This ref is passed from the parent component and allows the parent
 //             to directly access and manipulate the underlying DOM element (the button),
 //             for tasks such as focusing or blurring the button.
-type DropdownToggleProps = {
+type MyDropdownToggleProps = {
   title: string;
   inputRef: RefObject<HTMLButtonElement>;
 };
 
 
 ///* FUNCTIONAL COMPONENT *///
-const MyDropdownToggle = ({ title, inputRef }: DropdownToggleProps) => {
-  return (
-    // The ref is attached to the Dropdown.Toggle component,
-    // allowing parent components to access its underlying DOM element
-    <Dropdown.Toggle ref={inputRef} className="my-dropdown-toggle">
-      {title}
-    </Dropdown.Toggle>
-  );
-};
+const MyDropdownToggle = ({ title, inputRef }: MyDropdownToggleProps) => (
+  // The ref is attached to the Dropdown.Toggle component,
+  // allowing parent components to access its underlying DOM element
+  <Dropdown.Toggle ref={inputRef} className="my-dropdown-toggle">
+    {title}
+  </Dropdown.Toggle>
+);
 
 
 ///* EXPORT *///

@@ -1,35 +1,35 @@
 /* IDLE DROPDOWN TOGGLE */
 .my-dropdown-toggle {   
-    border: none;                                   /* Override bootstraps standard border on idle toggle */
-    background: none;                               /* Override bootstraps standard background color on idle toggle */
-    color: var(--pfc-black);             /* Override bootstraps standard white color on idle toggle */
-    transition: background-color 0.2s ease-in-out;  /* Fluid Background color change */
+    border: none;                                           /* Override bootstraps standard border on idle toggle */
+    background: none;                                       /* Override bootstraps standard background color on idle toggle */
+    color: var(--pfc-black);                                /* Override bootstraps standard white color on idle toggle */
+    transition: background-color 0.2s ease-in-out;          /* Fluid Background color change */
 }
 
 html.dark .my-dropdown-toggle {  
-    color: var(--pfc-white);              /* Override previously defined black color */
+    color: var(--pfc-white);                                /* Override previously defined black color */
 }
 
 /* HOVER DROPDOWN ELEMENT */
 .my-dropdown-toggle:hover{
-    background-color: var(--pfc-white-darkest);     /* Override bootstraps standard background color on hover toggle */
-    color: var(--pfc-black); ;           /* Override bootstraps standard white color on hover toggle */
+    background-color: var(--pfc-white-darkest);             /* Override bootstraps standard background color on hover toggle */
+    color: var(--pfc-black);                                /* Override bootstraps standard white color on hover toggle */
 }
 
 html.dark .my-dropdown-toggle:hover{
-    background-color: var(--pfc-black-darker);      /* Override previously devined background color */
-    color: var(--pfc-white);              /* Override previously devined white color */
+    background-color: var(--pfc-black-darker);              /* Override previously defined background color */
+    color: var(--pfc-white);                                /* Override previously defined white color */
 }
 
 /* CLICKED DROPDOWN ELEMENT */
-.my-dropdown-toggle.show,                           /* When holding another button pressed */
-.my-dropdown-toggle:focus:not(:focus-visible)       /* When selected */{ 
-    background-color: var(--pfc-gray);       /* Override bootstraps standard background color on clicked toggle */
-    color: var(--pfc-black); ;           /* Override bootstraps standard white color on clicked toggle */
+.my-dropdown-toggle.show,                                   /* When holding another button pressed */
+.my-dropdown-toggle:focus:not(:focus-visible){              /* When selected */ 
+    background-color: var(--pfc-gray);                      /* Override bootstraps standard background color on clicked toggle */
+    color: var(--pfc-black); ;                              /* Override bootstraps standard white color on clicked toggle */
 }
 
-html.dark .my-dropdown-toggle.show,                 /* When holding another button pressed */
-html.dark  .my-dropdown-toggle:focus:not(:focus-visible)    /* When selected */{ 
-    background-color: var(--pfc-black-dark);       /* Override previously devined background color */
-    color: var(--pfc-white);              /* Override previously devined white color */
+html.dark .my-dropdown-toggle.show,                         /* When holding another button pressed */
+html.dark  .my-dropdown-toggle:focus:not(:focus-visible){   /* When selected */ 
+    background-color: var(--pfc-black-dark);                /* Override previously defined background color */
+    color: var(--pfc-white);                                /* Override previously defined white color */
 }
