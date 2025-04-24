@@ -3,15 +3,15 @@ import { Dropdown } from 'react-bootstrap';
 
 
 ///* TYPE DEFINITION *///
-// Defines the expected properties for the MyDropdownMenu component.
+// Defines the expected properties for the MyDropdownList component.
 // - items: an object array containing a 'code' and a display 'label'.
-type MyDropdownMenuProps = {
+type MyDropdownListProps = {
   items: { code: string; label: string }[];
 };
 
 
 ///* FUNCTIONAL COMPONENT *///
-const MyDropdownMenu = ({ items }: MyDropdownMenuProps) => (
+const MyDropdownList = ({ items }: MyDropdownListProps) => (
   <Dropdown.Menu className='my-dropdown-menu'>
     {items.map(({ code, label }) => (
       // For each item in the 'items' array, create a Dropdown.Item.
@@ -29,4 +29,4 @@ const MyDropdownMenu = ({ items }: MyDropdownMenuProps) => (
 
 
 ///* EXPORT *///
-export default MyDropdownMenu;
+export default MyDropdownList;
