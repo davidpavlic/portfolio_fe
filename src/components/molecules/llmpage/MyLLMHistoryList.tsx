@@ -1,34 +1,43 @@
-import "../styling/MyLLMHistoryList.css";
-import MyLLMHistoryItem from "../../atoms/llmpage/MyLLMHistoryItem";
+import '../styling/MyLLMHistoryList.css';
+import MyLLMHistoryItem from '../../atoms/llmpage/MyLLMHistoryItem';
 
+
+//* TYPE DEFINITIONS *///
+// - id: string - Unique identifier for the history entry.
+// - title: string - Title of the history entry.
+// - date: string - Date when the history entry was created.
 type HistoryEntry = {
   id: string;
   title: string;
   date: string;
 };
-
+// - history: an array of history entries.
+// - onLoadChat: a function to load a chat by its ID.
+// - onDeleteChat: a function to delete a chat by its ID.
 type HistoryListProps = {
   history: HistoryEntry[];
   onLoadChat: (id: string) => void;
   onDeleteChat: (id: string) => void;
 };
 
-export const MyHistoryList = ({ history, onLoadChat, onDeleteChat }: HistoryListProps) => {
-  return (
-    <div className="my-llm-history-section">
-      <h4 className="my-llm-history-title">History</h4>
-      <div className="my-llm-history-list">
-        {history.map((entry) => (
-          <MyLLMHistoryItem
-            key={entry.id}
-            entry={entry}
-            onLoadChat={onLoadChat}
-            onDelete={onDeleteChat}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
 
+///* FUNCTIONAL COMPONENT *///
+const MyHistoryList = ({ history, onLoadChat, onDeleteChat }: HistoryListProps) => (
+  <div className='my-llm-history-section'>
+    <h4 className='my-llm-history-title'>History</h4>
+    <div className='my-llm-history-list'>
+      {history.map((entry) => (
+        <MyLLMHistoryItem
+          key={entry.id}
+          entry={entry}
+          onLoadChat={onLoadChat}
+          onDelete={onDeleteChat}
+        />
+      ))}
+    </div>
+  </div>
+);
+
+
+///* EXPORT *///
 export default MyHistoryList;

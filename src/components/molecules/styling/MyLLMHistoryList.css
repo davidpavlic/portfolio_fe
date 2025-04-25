@@ -1,60 +1,40 @@
 .my-llm-history-section {
-    flex: 1;
-    margin-top: 24px;
-    opacity: 0;
-    overflow: hidden;
-    padding: 40px 16px 16px;
-}
-
-.my-llm-history-section h4 {
-    color: var(--pfc-black);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-html.dark .my-llm-history-section h4 {
-    color: var(--pfc-white);
+    flex: 1;                                        /* Take available vertical space */
+    margin-top: 1.5rem;                             /* Space from top element */
+    padding: 2.5rem 1rem 1rem;                      /* Top-heavy padding for layout spacing */
+    overflow: hidden;                               /* Prevents content overflow */
+    opacity: 0;                                     /* Hidden by default, shown when sidebar expands */
 }
 
 .my-llm-sidebar.expanded .my-llm-history-section {
-    opacity: 1;
-    transition: max-height 0.3s ease-in, opacity 0.2s ease 0.1s;
+    opacity: 1;                                     /* Show when sidebar is expanded */   
+    transition: max-height 0.3s ease-in, opacity 0.2s ease 0.1s; /* Smooth transition for max-height and opacity */
 }
 
-.my-llm-history-title {
-    text-align: center;
+.my-llm-history-title {    
+    text-align: center;                             /* Centered text for title */
+    font-size: 0.75rem;                             /* Font size for section title */
+    color: var(--pfc-black);                        /* Default color for section title */
+    text-transform: uppercase;                      /* Uppercase text for section title */
+    letter-spacing: 0.031rem;                       /* Letter spacing for section title */
+}
+
+html.dark .my-llm-history-title {
+    color: var(--pfc-white);                        /* Color for section title in dark mode */
 }
 
 .my-llm-history-list {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
+    display: flex;                                  /* Flexbox for layout */
+    flex-direction: column;                         /* Column layout for list items */
+    height: 100%;                                   /* Full height for the list */
+    overflow-y: auto;                               /* Vertical scroll for overflow */
 }
 
 .my-llm-history-list::-webkit-scrollbar {
-    width: 4px;
+    width: 0.25rem;                                 /* Width of the scrollbar */
 }
 
 .my-llm-history-list::-webkit-scrollbar-thumb {
-    background: var(--pfc-gray-light);
-    border-radius: 3px;
-}
-
-.my-llm-history-delete-btn {
-    position: absolute;
-    right: 8px;
-    transform: translateY(-50%);
-    background-color: var(--pfc-red);
-    color: white;
-    border: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 0.188rem;                        /* Rounded corners for scrollbar thumb */
+    background: var(--pfc-gray-light);              /* Color for scrollbar thumb */
 }

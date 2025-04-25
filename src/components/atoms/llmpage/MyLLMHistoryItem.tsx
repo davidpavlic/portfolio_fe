@@ -3,6 +3,9 @@ import MyDeleteButton from '../common/MyDeleteButton';
 
 
 ///* TYPE DEFINITIONS *///
+// - entry: object containing id, title, and date of the chat history
+// - onLoadChat: function to load the chat when the item is clicked
+// - onDelete: function to delete the chat when the delete button is clicked
 type MyLLMHistoryItemProps = {
     entry: { id: string, title: string, date: string };
     onLoadChat: (id: string) => void;
