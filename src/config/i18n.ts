@@ -183,7 +183,7 @@ const translations = {
     hr: "Vratite se uskoro!",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
-  page_not_found: {
+  pnf_page_not_found: {
     en: "This URL does not exist.",
     de: "Diese URL existiert nicht.",
     fr: "Cette URL n'existe pas.",

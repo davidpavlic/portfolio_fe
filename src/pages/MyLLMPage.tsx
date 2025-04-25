@@ -177,7 +177,6 @@ export const MyLLMPage = () => {
           + userInput.trim()
       }
 
-      console.log(aiPrompt);
       const aiContent = await fetchStreamingAIResponse(aiPrompt);
 
       // Calculate entry order for AI message

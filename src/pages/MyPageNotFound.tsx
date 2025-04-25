@@ -8,10 +8,8 @@ export const PageNotFound = () => {
 
   return (
     <div className='pnf-container'>
-      <div className='pnf-title'>
-        404
-      </div>
-      <p className='pnf-message'>{t('page_not_found')}</p>
+      <h1 className='pnf-title'>404</h1>
+      <p className='pnf-message'>{t('pnf_page_not_found')}</p>
     </div>
   );
 };

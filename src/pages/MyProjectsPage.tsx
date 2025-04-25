@@ -2,7 +2,7 @@ import './styling/MyProjectsPage.css';
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/organisms/projectspage/MyProjectCard";
 import AddProjectCardForm from '../components/organisms/projectspage/MyAddProjectCardForm';
-import { fetchProjectCards } from '../services/ProjectCardService';
+import { fetchProjectCards } from '../services/MyProjectCardService';
 
 
 ///* TODOS *///

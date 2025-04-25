@@ -1,99 +1,64 @@
-import { API_BASE_URL } from "../config/backend";
+import { API_BASE_URL } from '../config/backend';
 
 
-///* SERVICE FUNCTIONS *///
-export const fetchAIResponse = async (prompt: string) => {
-    try {
-      const response = await fetch("http://localhost:11434/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "llama2:latest",
-          messages: [{ role: "user", content: prompt }],
-          stream: false,
-        }),
-      });
-  
-      if (!response.ok) throw new Error("AI response failed");
-      const data = await response.json();
-      return data.message?.content || "No response from AI";
-    } catch (error) {
-      console.error("Error fetching AI response:", error);
-      return "Error getting AI response";
-    }
-  };
-
-export const fetchLLMChatsByUser = async () => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/llmchatuser`);
-        if (!response.ok) throw new Error("Failed to fetch user chats");
-        return await response.json();
-    } catch (error) {
-        console.error("Error fetching user chats", error);
-        return [];
-    }
+///* API URLS *///
+// Define the base URLs for the different APIs
+const API_URLS = {
+  AI_URL: "http://localhost:11434/api/chat",
+  CHAT_USER_URL: `${API_BASE_URL}/llmchatuser`,
+  CHAT_ENTRY_URL: `${API_BASE_URL}/llmchatentry`,
 };
 
-export const fetchLLMEntriesByChat = async (id: string) => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/llmchatuser/${id}`);
-        if (!response.ok) throw new Error("Failed to fetch user chats");
-        return await response.json();
-    } catch (error) {
-        console.error("Error fetching user chats", error);
-        return [];
-    }
+
+///* API SERVICE *///
+// Function to fetch data from a given URL with optional request options
+// returns the JSON response if successful, or throws an error if not
+const fetchFromAPI = async (url: string, options?: RequestInit) => {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error(`Failed to fetch ${url} with status: ${response.status} and message: ${response.statusText}`);
+    return response.status !== 204 ? await response.json() : null;
+  } catch (error) {
+    console.error(`Error fetching from ${url}:`, error);
+    throw error;
+  }
+};
+
+// Function to create POST request options with JSON body
+const createPostOptions = (body: object): RequestInit => ({
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(body),
+});
+
+
+///* PUBLIC API METHODS *///
+export const fetchAIResponse = async (prompt: string) => {
+  const data = await fetchFromAPI(API_URLS.AI_URL, createPostOptions({ model: 'llama2:latest', messages: [{ role: 'user', content: prompt }], stream: false }));
+  return data.message?.content || 'No response from AI';
+};
+
+export const fetchLLMChatsByUser = async () => {
+  return await fetchFromAPI(API_URLS.CHAT_USER_URL);
 };
 
 export const createChatUser = async (chatTitle: string) => {
-    try{
-        const response = await fetch(`${API_BASE_URL}/llmchatuser`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              title: chatTitle
-            }),
-          });
-          if (!response.ok) throw new Error("Failed to create chat user");
-          return await response.json();
-    }catch (error) {
-      console.error("Error creating chat user:", error);
-      throw error;
-    }
-}
-
-export const createChatEntry = async (llmChatUserId: string, text: string, fromUser: boolean, entryOrder: number) => {
-    try {
-      console.log(llmChatUserId, text, fromUser, entryOrder);
-      const response = await fetch(`${API_BASE_URL}/llmchatentry`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          llmChatUserId,
-          text,
-          fromUser,
-          entryOrder
-        }),
-      });
-      if (!response.ok) throw new Error("Failed to create chat entry");
-      return await response.json();
-    } catch (error) {
-      console.error("Error creating chat entry:", error);
-      throw error;
-    }
-  };
+  return await fetchFromAPI(API_URLS.CHAT_USER_URL, createPostOptions({ title: chatTitle }));
+};
 
 export const deleteLLMChat = async (llm_chat_id: string) => {
-    try {
-        const response = await fetch(`${API_BASE_URL}/llmchatuser/${llm_chat_id}`, { method: "DELETE" });
-        if (!response.ok) throw new Error("Failed to delete llm chat");
-        return true;
-    } catch (error) {
-        console.error("Error deleting llm chat:", error);
-        return false;
-    }
+  try {
+    await fetchFromAPI(`${API_URLS.CHAT_USER_URL}/${llm_chat_id}`, { method: "DELETE" });
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
+
+export const fetchLLMEntriesByChat = async (id: string) => {
+  return await fetchFromAPI(`${API_URLS.CHAT_USER_URL}/${id}`);
+};
+
+export const createChatEntry = async (llmChatUserId: string, text: string, fromUser: boolean, entryOrder: number) => {
+  return await fetchFromAPI(API_URLS.CHAT_ENTRY_URL, createPostOptions({ llmChatUserId, text, fromUser, entryOrder }));
 };

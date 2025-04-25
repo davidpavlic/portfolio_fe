@@ -1,7 +1,7 @@
 import "../styling/MyAddProjectCardForm.css";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { addProjectCard } from "../../../services/ProjectCardService";
+import { addProjectCard } from "../../../services/MyProjectCardService";
 import MyProjectFileUpload from "../../molecules/projectspage/MyProjectFileUpload";
 import MyProjectFormField from "../../molecules/projectspage/MyProjectFormField";
 import MyProjectTechStack from "../../molecules/projectspage/MyProjectTechStack";
