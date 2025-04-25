@@ -1,0 +1,52 @@
+/* CHAT MESSAGE CONTAINER */
+.my-llm-chat-messages {
+    display: flex;                                  /* Ensures it uses flexbox */
+    flex: 1;                                        /* Ensures it takes up available space */
+    flex-direction: column;                         /* Ensures children are stacked vertically */
+    overflow: hidden;                               /* Ensures child doesn't overflow */
+    margin: 24px;                                   /* Margin around the chat messages */
+    border-radius: 12px;                            /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);    /* Subtle shadow */
+    background: var(--pfc-white);                   /* Light background */
+}
+
+html.dark .my-llm-chat-messages {
+    background: var(--pfc-black-dark);              /* Dark background */
+}
+
+/* CHAT MESSAGE AREA */
+.my-llm-chat-messages-area {
+    display: flex;                                  /* Ensures it uses flexbox */
+    flex-direction: column;                         /* Ensures children are stacked vertically */
+    flex: 1;                                        /* Takes up all available space */
+    overflow-y: auto;                               /* Enables vertical scrolling */
+    padding: 24px;                                  /* Padding around the messages */
+    gap: 12px;                                      /* Space between messages */
+}
+
+/* CHAT MESSAGE */
+.my-llm-chat-messages-bubble { 
+    margin: 8px 16px;                               /* Margin around each message */
+    padding: 12px 16px;                             /* Padding inside each message */
+    border-radius: 20px;                            /* Rounded corners */
+    max-width: 70%;                                 /* Ensures messages don't stretch too wide */
+    word-wrap: break-word;                          /* Allows long words to break */
+}
+
+.my-llm-chat-messages-user-message {
+    align-self: flex-end;                           /* Aligns user messages to the right */
+    border-bottom-right-radius: 4px;                /* Rounded bottom right corner */
+    background: var(--pfc-blue);                    /* User message background */
+    color: var(--pfc-white);                        /* User message text color */
+}
+
+.my-llm-chat-messages-assistant-message {
+    align-self: flex-start;                         /* Aligns assistant messages to the left */
+    border-bottom-left-radius: 4px;                 /* Rounded bottom left corner */
+    background: var(--pfc-white-dark);              /* Assistant message background */
+    color: var(--pfc-black);                        /* Assistant message text color */
+}
+
+html.dark .my-llm-chat-messages-assistant-message {
+    background: var(--pfc-black-lightest);          /* Dark mode assistant message background */
+}

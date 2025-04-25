@@ -1,142 +1,16 @@
-/* Container Styles */
-.my-llm-container {
-    display: flex;
+.my-llm-chat-content {
+    position: relative;                 /* Positioning the main content */
+    height: calc(100vh - 3.75rem);      /* Full height minus header */
+    display: flex;                      /* Using flexbox for layout */
+    flex: 1;                            /* Allowing flex growth */ 
+    flex-direction: column;             /* Column layout */
+    background: var(--pfc-white-dark);  /* Background color */
 }
 
-/* Main Content */
-.my-llm-main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    background: var(--pfc-white-dark);
-    height: calc(100vh - 56px);
-    position: relative;
+html.dark .my-llm-chat-content {
+    background: var(--pfc-black);       /* Dark mode background */
 }
 
-html.dark .my-llm-main-content {
-    background: var(--pfc-black);
-}
-
-/* Chat Content Container */
-.my-llm-box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin: 24px;
-    background: var(--pfc-white);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* Ensures child doesn't overflow */
-}
-
-html.dark .my-llm-box {
-    background: var(--pfc-black-dark);
-}
-
-/* Chat Messages Area */
-.my-llm-chat-messages {
-    flex: 1;
-    overflow-y: auto; /* Enables vertical scrolling */
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* Input Container */
-.my-llm-input-container {
-    display: flex;
-    gap: 8px;
-    margin: 0 24px 24px 24px; /* Matches the chat box margins */
-    align-items: center;
-}
-
-/* Rest of your existing styles remain unchanged */
-.my-llm-response {
-    font-size: 15px;
-}
-
-.my-llm-user-input {
-    flex: 1;
-    padding: 16px 24px;
-    border-radius: 12px;
-    border: none;
-    font-size: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-html.dark .my-llm-user-input {
-    background-color: var(--pfc-black-dark);
-    color: var(--pfc-white);
-}
-
-.my-llm-send-btn {
-    background: var(--pfc-blue);
-    color: var(--pfc-white);
-    border: none;
-    border-radius: 12px;
-    font-size: 14px;
-    transition: all 0.2s ease;
-    height: 48px;
-    width: 48px;
-}
-
-.my-llm-send-btn:hover {
-    background: var(--pfc-dark-blue);
-    transform: translateY(-1px);
-}
-
-.my-llm-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--pfc-transparent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(2px);
-}
-
-html.dark .my-llm-overlay {
-    background: var(--pfc-transparent-dark);
-}
-
-.my-llm-error {
-    color: var(--pfc-red);
-    padding: 16px 24px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ffe0e0;
-}
-
-.message-bubble {
-    max-width: 70%;
-    margin: 8px 16px;
-    padding: 12px 16px;
-    border-radius: 20px;
-    word-wrap: break-word;
-}
-
-.user-message {
-    background: var(--pfc-blue);
-    color: var(--pfc-white);
-    align-self: flex-end;
-    border-bottom-right-radius: 4px;
-}
-
-.assistant-message {
-    background: var(--pfc-white-dark);
-    color: var(--pfc-black);
-    align-self: flex-start;
-    border-bottom-left-radius: 4px;
-}
-
-html.dark .assistant-message {
-    background: var(--pfc-black-lightest);
-}
-
-html.dark .my-llm-mobile-sidebar-toggle{
-    color: var(--pfc-white)
+html.dark .my-llm-chat-mobile-sidebar-toggle{
+    color: var(--pfc-white)             /* Dark mode text color */
 }

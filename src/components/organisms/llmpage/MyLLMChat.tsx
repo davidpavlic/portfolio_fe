@@ -1,8 +1,20 @@
+import '../styling/MyLLMChat.css';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import "../styling/MyLLMChat.css";
+import MyLLMChatStatusOverlay from '../../atoms/llmpage/MyLLMChatStatusOverlay';
+import MyLLMChatMessages from '../../atoms/llmpage/MyLLMChatMessages';
+import MyLLMChatInput from '../../atoms/llmpage/MyLLMChatInput';
 
-interface MyLLMChatProps {
+
+//* TYPE DEFINITIONS *///
+// - isMobile: boolean indicating if the view is mobile.
+// - isExpanded: boolean indicating if the chat is expanded.
+// - llmStatus: string representing the status of the LLM.
+// - messages: array of message objects with fromUser and content properties.
+// - userInput: string representing the user's input.
+// - setUserInput: function to set the user input.
+// - sendMessage: function to send the message.
+// - toggleSidebar: function to toggle the sidebar.
+type MyLLMChatProps = {
     isMobile: boolean;
     isExpanded: boolean;
     llmStatus: string;
@@ -13,6 +25,8 @@ interface MyLLMChatProps {
     toggleSidebar: () => void;
 }
 
+
+//* FUNCTIONAL COMPONENT *///
 const MyLLMChat: React.FC<MyLLMChatProps> = ({
     isMobile,
     isExpanded,
@@ -22,59 +36,28 @@ const MyLLMChat: React.FC<MyLLMChatProps> = ({
     setUserInput,
     sendMessage,
     toggleSidebar
-}) => {
-    return (
-        <div className="my-llm-main-content">
-            {isMobile && !isExpanded && (
-                <button className="my-llm-mobile-sidebar-toggle" onClick={toggleSidebar}>
-                    ☰
-                </button>
-            )}
+}: MyLLMChatProps) => (
+    <div className='my-llm-chat-content'>
 
-            {llmStatus !== "running" && (
-                <div className="my-llm-overlay">
-                    <p className="my-llm-error">
-                        {llmStatus === "checking"
-                            ? "Checking LLM status..."
-                            : "Error: LLM server is not running"}
-                    </p>
-                </div>
-            )}
+        {isMobile && !isExpanded && (
+            <button className='my-llm-chat-mobile-sidebar-toggle' onClick={toggleSidebar}>
+                ☰
+            </button>
+        )}
 
-            <div className="my-llm-box">
-                <div className="my-llm-chat-messages">
-                    {messages.map((message, index) => (
-                        <div
-                            key={index}
-                            className={`message-bubble ${message.fromUser === true ? 'user-message' : 'assistant-message'}`}
-                        >
-                            <ReactMarkdown>
-                                {message.content}
-                            </ReactMarkdown>
-                        </div>
-                    ))}
-                </div>
-            </div>
+        {llmStatus !== 'running' ? <MyLLMChatStatusOverlay llmStatus={llmStatus} /> : null}
 
-            <div className="my-llm-input-container">
-                <input
-                    type="text"
-                    className="my-llm-user-input"
-                    placeholder="Type a message..."
-                    value={userInput}
-                    onChange={(e) => setUserInput(e.target.value)}
-                    disabled={llmStatus !== "running"}
-                />
-                <button
-                    className="my-llm-send-btn"
-                    onClick={sendMessage}
-                    disabled={llmStatus !== "running"}
-                >
-                    Send
-                </button>
-            </div>
-        </div>
-    );
-};
+        <MyLLMChatMessages messages={messages} />
 
+        <MyLLMChatInput
+            userInput={userInput}
+            setUserInput={setUserInput}
+            sendMessage={sendMessage}
+            llmStatus={llmStatus}
+        />
+    </div>
+);
+
+
+//* EXPORT *///
 export default MyLLMChat;

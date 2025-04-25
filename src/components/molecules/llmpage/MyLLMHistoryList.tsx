@@ -23,9 +23,9 @@ type HistoryListProps = {
 
 ///* FUNCTIONAL COMPONENT *///
 const MyHistoryList = ({ history, onLoadChat, onDeleteChat }: HistoryListProps) => (
-  <div className='my-llm-history-section'>
-    <h4 className='my-llm-history-title'>History</h4>
-    <div className='my-llm-history-list'>
+  <div className='my-llm-history-list'>
+    <h4 className='my-llm-history-list-title'>History</h4>
+    <div className='my-llm-history-list-element'>
       {history.map((entry) => (
         <MyLLMHistoryItem
           key={entry.id}
