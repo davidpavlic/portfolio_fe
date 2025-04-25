@@ -211,7 +211,7 @@ export const MyLLMPage = () => {
         if(titleString.indexOf(":") != -1){
           titleString = titleString.slice(titleString.indexOf(":") + 1);
         }
-        titleString.replace(/["']/g, '');
+        titleString.replace(/["']/g, ''); //Doesnt work correctly I think
 
         let chatUser = await createChatUser(titleString);
         chatId = chatUser.id;

@@ -1,0 +1,24 @@
+.my-delete-button {
+    display: flex;                                    /* Make the button a flex container */
+    justify-content: center;                          /* Centers the icon horizontally */
+    align-items: center;                              /* Centers the icon vertically */
+    border: none;                                     /* Removes standard button border */
+    border-radius: 50%;                               /* Makes the button circular */
+    background: none;                                 /* Removes standard button background */
+    font-size: 1.25rem;                               /* Sets the icon size */
+    color: var(--pfc-black);                          /* Sets the delete button color */
+    transition: transform 0.3s ease, background-color 0.3s ease;  /* Sets the button design change transition */
+}
+  
+html.dark .my-delete-button{
+    color: var(--pfc-white);                          /* Sets the delete button color in dark mode */
+}
+  
+.my-delete-button:hover {
+    transform: scale(1.1);                            /* Increase button size on hover */
+    background-color: var(--pfc-white-dark);          /* Change button background color on hover */
+}
+  
+html.dark .my-delete-button:hover {
+    background-color: var(--pfc-black-lightest);      /* Change button background color on hover */
+}

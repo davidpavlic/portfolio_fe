@@ -1,5 +1,5 @@
 import "../styling/MyProjectCard.css";
-import { BsTrash } from "react-icons/bs";
+import MyDeleteButton from "../../atoms/common/MyDeleteButton";
 import { deleteProjectCard } from "../../../services/MyProjectCardService";
 
 
@@ -44,9 +44,7 @@ const ProjectCard = ({
       <div className="contentContainer">
         <div className="titleContainer">
           <h3 className="title">{title}</h3>
-          <button className="deleteButton" onClick={handleDelete}>
-            <BsTrash />
-          </button>
+          <MyDeleteButton onClick={handleDelete} className="my-project-card-deletebutton"/>
         </div>
         <p className="description">{description}</p>
         <div className="techStack">

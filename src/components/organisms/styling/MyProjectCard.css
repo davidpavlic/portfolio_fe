@@ -111,32 +111,9 @@ html.dark .techItem:hover {
   background: var(--pfc-black-light);                 /* Sets the backgroundcolor of the tech stack elements when hovering */
 }
 
-/* DELETE BUTTON */
-.deleteButton {
-  color: var(--pfc-black);               /* Sets the delete button color */
-  background: none;                                 /* Removes standard button background */
-  border: none;                                     /* Removes standard button border */
-  border-radius: 50%;                               /* Makes the button circular */
-  width: 40px;                                      /* Sets the button size statically */
-  height: 40px;                                     /* Sets the button size statically */
-  transition: transform 0.3s ease, background-color 0.3s ease;  /* Sets the button design change transition */
-  font-size: 20px;                                  /* Sets the icon size */
-  display: flex;                                    /* Make the button a flex container */
-  justify-content: center;                          /* Centers the icon horizontally */
-  align-items: center;                              /* Centers the icon vertically */
-}
-
-html.dark .deleteButton{
-  color: var(--pfc-white);
-}
-
-.deleteButton:hover {
-  background: var(--pfc-white-dark);            /* Change button background color on hover */
-  transform: scale(1.1);                            /* Increase button size on hover */
-}
-
-html.dark .deleteButton:hover {
-  background: var(--pfc-black-lightest);          /* Change button background color on hover */
+.my-project-card-deletebutton {
+  width: 2.5rem;                                  /* Sets the button size statically */
+  height: 2.5rem;                                   /* Sets the button size statically */
 }
 
 /* RESPONSIVENESS */

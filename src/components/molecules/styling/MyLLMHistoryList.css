@@ -22,17 +22,6 @@ html.dark .my-llm-history-section h4 {
     transition: max-height 0.3s ease-in, opacity 0.2s ease 0.1s;
 }
 
-.my-llm-history-item-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 4px;
-}
-
-.my-llm-history-item-title {
-    font-size: 13px;
-}
-
 .my-llm-history-title {
     text-align: center;
 }
@@ -53,20 +42,6 @@ html.dark .my-llm-history-section h4 {
     border-radius: 3px;
 }
 
-.my-llm-history-item {
-    flex: 1;
-    border-radius: 12px;
-    background: none;
-    border: none;
-    color: var(--pfc-black);
-    text-align: left;
-    padding: 12px 40px 12px 12px;
-    /* Increased right padding */
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
 .my-llm-history-delete-btn {
     position: absolute;
     right: 8px;
@@ -82,25 +57,4 @@ html.dark .my-llm-history-section h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-html.dark .my-llm-history-item {
-    color: var(--pfc-white);
-}
-
-.my-llm-history-item:hover {
-    background: var(--pfc-white-dark);
-}
-
-html.dark .my-llm-history-item:hover {
-    background: var(--pfc-black-lightest);
-}
-
-.my-llm-history-item-date {
-    font-size: 11px;
-    color: var(--pfc-black-light);
-}
-
-html.dark .my-llm-history-item-date {
-    color: var(--pfc-gray);
 }

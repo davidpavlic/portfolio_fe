@@ -4,7 +4,7 @@ import { API_BASE_URL } from '../config/backend';
 ///* API URLS *///
 // Define the base URLs for the different APIs
 const API_URLS = {
-  AI_URL: "http://localhost:11434/api/chat",
+  AI_URL: 'http://localhost:11434/api/chat',
   CHAT_USER_URL: `${API_BASE_URL}/llmchatuser`,
   CHAT_ENTRY_URL: `${API_BASE_URL}/llmchatentry`,
 };
@@ -26,8 +26,8 @@ const fetchFromAPI = async (url: string, options?: RequestInit) => {
 
 // Function to create POST request options with JSON body
 const createPostOptions = (body: object): RequestInit => ({
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(body),
 });
 
@@ -48,7 +48,7 @@ export const createChatUser = async (chatTitle: string) => {
 
 export const deleteLLMChat = async (llm_chat_id: string) => {
   try {
-    await fetchFromAPI(`${API_URLS.CHAT_USER_URL}/${llm_chat_id}`, { method: "DELETE" });
+    await fetchFromAPI(`${API_URLS.CHAT_USER_URL}/${llm_chat_id}`, { method: 'DELETE' });
     return true;
   } catch (error) {
     return false;
