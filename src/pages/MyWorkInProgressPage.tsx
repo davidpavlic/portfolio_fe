@@ -1,4 +1,4 @@
-import "./styling/WorkInProgressPage.css";
+import "./styling/MyWorkInProgressPage.css";
 import { useTranslation } from "react-i18next";
 
 

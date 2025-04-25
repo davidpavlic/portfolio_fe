@@ -1,4 +1,4 @@
-import './styling/NewsScraperPage.css';
+import './styling/MyNewsScraperPage.css';
 import { useTranslation } from "react-i18next";
 
 export const NewsScraperPage = () => {

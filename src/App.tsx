@@ -1,11 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route } from 'react-router-dom';
 import { MyNavBar } from './components/organisms/common/MyNavBar';
-import MainPage from './pages/MainPage';
-import ProjectsPage from './pages/ProjectsPage';
+import MainPage from './pages/MyMainPage';
+import ProjectsPage from './pages/MyProjectsPage';
 import MyLLMPage from './pages/MyLLMPage';
-import PageNotFound from './pages/PageNotFound';
-import WorkInProgressPage from './pages/WorkInProgressPage';
+import PageNotFound from './pages/MyPageNotFound';
+import WorkInProgressPage from './pages/MyWorkInProgressPage';
 //import NewsScraperPage from './pages/NewsScraperPage';
 
 function App() {

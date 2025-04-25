@@ -1,4 +1,4 @@
-import './styling/ProjectsPage.css';
+import './styling/MyProjectsPage.css';
 import { useState, useEffect } from "react";
 import ProjectCard from "../components/organisms/projectspage/MyProjectCard";
 import AddProjectCardForm from '../components/organisms/projectspage/MyAddProjectCardForm';

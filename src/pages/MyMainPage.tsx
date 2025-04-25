@@ -1,4 +1,4 @@
-import './styling/MainPage.css';
+import './styling/MyMainPage.css';
 import { useTranslation } from "react-i18next";
 
 export const MainPage = () => {
