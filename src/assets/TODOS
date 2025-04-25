@@ -1,7 +1,6 @@
+MyLLMSideBar.tsx
 MyProjectCard.css
 MyProjectsPage.tsx
-MyLLMSideBar.tsx
-
 
 MyEnvDropDown.tsx 
     - Actually change Environments

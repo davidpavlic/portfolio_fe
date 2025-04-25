@@ -56,7 +56,7 @@ html.dark .my-llm-sidebar-content h3 {
 
 .my-llm-submit-button.expanded {
     white-space: nowrap;    
-    overflow: hidden;       
+    overflow: hidden;    
     width: 80%;
     margin-right: 24px;
     justify-content: center;
@@ -114,15 +114,5 @@ html.dark .my-llm-sidebar-toggle:hover{
 
     .my-llm-sidebar.expanded {
         transform: translateX(0);
-    }
-
-    .my-llm-mobile-sidebar-toggle {
-        position: relative;
-        left: 16px;
-        top: 16px;
-        background: none;
-        border: none;
-        width: 32px;
-        height: 32px;
     }
 }

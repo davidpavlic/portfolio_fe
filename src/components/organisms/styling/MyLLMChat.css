@@ -14,3 +14,16 @@ html.dark .my-llm-chat-content {
 html.dark .my-llm-chat-mobile-sidebar-toggle{
     color: var(--pfc-white)             /* Dark mode text color */
 }
+
+/* MOBILE STYLES */
+@media (max-width: 720px) {
+    .my-llm-chat-mobile-sidebar-toggle {
+        position: relative;             /* Positioning the toggle button */
+        left: 1rem;                     /* Left alignment */
+        top: 0.625rem;                  /* Top alignment */
+        background: none;               /* No background */   
+        border: none;                   /* No border */
+        width: 2rem;                    /* Width of the button */
+        height: 2rem;                   /* Height of the button */
+    }
+}

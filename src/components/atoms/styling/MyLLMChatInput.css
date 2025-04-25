@@ -21,13 +21,13 @@ html.dark .my-llm-chat-user-input {
 }
 
 .my-llm-chat-send-button {
-    height: 3rem;                                       /* Button height */
-    width: 3rem;                                        /* Button width */
+    height: 3.25rem;                                    /* Button height */
+    width: 3.25rem;                                     /* Button width */
     border: none;                                       /* No border */
     border-radius: 0.75rem;                             /* Rounded corners */
     background-color: var(--pfc-blue);                  /* Button background */
     color: var(--pfc-white);                            /* Button text color */ 
-    font-size: 0.125rem;                                /* Font size */
+    font-size: 0.938rem;                                /* Font size */
     transition: all 0.2s ease;                          /* Smooth transition */
 }
 
