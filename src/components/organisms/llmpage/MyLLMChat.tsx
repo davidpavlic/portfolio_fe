@@ -27,16 +27,7 @@ type MyLLMChatProps = {
 
 
 //* FUNCTIONAL COMPONENT *///
-const MyLLMChat: React.FC<MyLLMChatProps> = ({
-    isMobile,
-    isExpanded,
-    llmStatus,
-    messages,
-    userInput,
-    setUserInput,
-    sendMessage,
-    toggleSidebar
-}: MyLLMChatProps) => (
+const MyLLMChat: React.FC<MyLLMChatProps> = ({isMobile, isExpanded, llmStatus, messages, userInput, setUserInput, sendMessage, toggleSidebar}: MyLLMChatProps) => (
     <div className='my-llm-chat-content'>
 
         {isMobile && !isExpanded && (

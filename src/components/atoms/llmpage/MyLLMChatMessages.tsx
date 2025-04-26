@@ -16,11 +16,12 @@ const MyLLMChatMessages = ({ messages }: MyLLMChatMessagesProps) => (
             {messages.map((message, index) => (
                 <div
                     key={index}
-                    className={`my-llm-chat-messages-bubble ${message.fromUser === true ? 'my-llm-chat-messages-user-message' : 'my-llm-chat-messages-assistant-message'}`}
+                    className={`my-llm-chat-messages-bubble ${message.fromUser ?
+                        'my-llm-chat-messages-user-message' :
+                        'my-llm-chat-messages-assistant-message'
+                    }`}
                 >
-                    <ReactMarkdown>
-                        {message.content}
-                    </ReactMarkdown>
+                    <ReactMarkdown>{message.content}</ReactMarkdown>
                 </div>
             ))}
         </div>

@@ -1,10 +1,7 @@
 .my-llm-overlay {
     position: absolute;                                     /* Positioning the overlay */
     display: flex;                                          /* Using flexbox for centering */
-    top: 0;                                                 /* Aligning to the top */
-    left: 0;                                                /* Aligning to the left */
-    right: 0;                                               /* Aligning to the right */
-    bottom: 0;                                              /* Aligning to the bottom */
+    inset: 0;                                               /* Aligning to the top, left, right & bottom */
     align-items: center;                                    /* Centering vertically */
     justify-content: center;                                /* Centering horizontally */
     background: var(--pfc-transparent-light);               /* Background color */

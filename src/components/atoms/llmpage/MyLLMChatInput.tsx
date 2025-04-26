@@ -15,26 +15,36 @@ type MyLLMChatInputProps = {
 
 
 ///* FUNCTIONAL COMPONENT *///
-const MyLLMChatInput = ({userInput, setUserInput, sendMessage, llmStatus}: MyLLMChatInputProps) => (
-    <div className='my-llm-chat-input'>
-        <input
-            type='text'
-            className='my-llm-chat-user-input'
-            placeholder='Type a message...'
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            disabled={llmStatus !== 'running'}
-        />
-        <button
-            className='my-llm-chat-send-button'
-            onClick={sendMessage}
-            disabled={llmStatus !== 'running'}
-        >
-            Send
-        </button>
-    </div>
-);
+const MyLLMChatInput = ({ userInput, setUserInput, sendMessage, llmStatus }: MyLLMChatInputProps) => {
+    const isDisabled = llmStatus !== 'running';
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter' && !isDisabled) {
+            sendMessage();
+        }
+    };
+
+    return (
+        <div className='my-llm-chat-input'>
+            <input
+                type='text'
+                className='my-llm-chat-user-input'
+                placeholder='Type a message...'
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                disabled={isDisabled}
+            />
+            <button
+                className='my-llm-chat-send-button'
+                onClick={sendMessage}
+                disabled={isDisabled}
+            >
+                Send
+            </button>
+        </div>
+    );
+};
 
 ///* EXPORT *///
 export default MyLLMChatInput;
