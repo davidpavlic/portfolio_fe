@@ -20,9 +20,12 @@ type MyLLMSideBarProps = {
 //TODO: Collapse Navbar when selecting a chat or outside of the sidebar additionally
 
 const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat, onLoadChat, onDeleteChat }: MyLLMSideBarProps) => {
+  
+  const expandedClass = isExpanded ? 'expanded' : '';
+
   return (
-    <div className={`my-llm-sidebar ${isExpanded ? 'expanded' : ''}`}>
-      <div className={`my-llm-sidebar-content ${isExpanded ? 'expanded' : ''}`}>
+    <div className={`my-llm-sidebar ${expandedClass}`}>
+      <div className={`my-llm-sidebar-content ${expandedClass}`}>
         <h3>LLM CONTROLS</h3>
       </div>
 

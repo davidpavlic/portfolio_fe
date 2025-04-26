@@ -10,7 +10,7 @@
     display: flex;                          /* Use flexbox for layout */    
     flex-direction: column;                 /* Stack children vertically */
     padding: 0.75rem 2.5rem 0.75rem 0.75rem;/* Padding around the item */
-    gap: 4px;                               /* Space between children */
+    gap: 0.25rem;                           /* Space between children */
     border-radius: 0.75rem;                 /* Rounded corners */  
     border: none;                           /* Removes standard button border */
     background: none;                       /* Removes standard button background */   
