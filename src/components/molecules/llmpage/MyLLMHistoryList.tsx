@@ -6,7 +6,7 @@ import MyLLMHistoryItem from '../../atoms/llmpage/MyLLMHistoryItem';
 // - id: string - Unique identifier for the history entry.
 // - title: string - Title of the history entry.
 // - date: string - Date when the history entry was created.
-type HistoryEntry = {
+type LLMHistoryEntry = {
   id: string;
   title: string;
   date: string;
@@ -14,15 +14,15 @@ type HistoryEntry = {
 // - history: an array of history entries.
 // - onLoadChat: a function to load a chat by its ID.
 // - onDeleteChat: a function to delete a chat by its ID.
-type HistoryListProps = {
-  history: HistoryEntry[];
+type LLMHistoryListProps = {
+  history: LLMHistoryEntry[];
   onLoadChat: (id: string) => void;
   onDeleteChat: (id: string) => void;
 };
 
 
 ///* FUNCTIONAL COMPONENT *///
-const MyHistoryList = ({ history, onLoadChat, onDeleteChat }: HistoryListProps) => (
+const MyLLMHistoryList = ({ history, onLoadChat, onDeleteChat }: LLMHistoryListProps) => (
   <div className='my-llm-history-list'>
     <h4 className='my-llm-history-list-title'>History</h4>
     <div className='my-llm-history-list-element'>
@@ -40,4 +40,4 @@ const MyHistoryList = ({ history, onLoadChat, onDeleteChat }: HistoryListProps) 
 
 
 ///* EXPORT *///
-export default MyHistoryList;
+export default MyLLMHistoryList;

@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 //import { useTranslation } from "react-i18next";
-import { fetchAIResponse, fetchLLMChatsByUser, fetchLLMEntriesByChat, createChatEntry, deleteLLMChat, createChatUser } from "../services/MyLLMService.tsx"; // Import your service function
+import { fetchLLMChatsByUser, fetchLLMEntriesByChat, createChatEntry, deleteLLMChat, createChatUser } from "../services/MyLLMService.tsx"; // Import your service function
 import "./styling/MyLLMPage.css";
-import { MyLLMSideBar } from "../components/organisms/llmpage/MyLLMSideBar";
+import MyLLMSideBar from "../components/organisms/llmpage/MyLLMSideBar";
 import MyLLMChat from "../components/organisms/llmpage/MyLLMChat";
 
 interface LLMChatHistory {
@@ -73,6 +73,7 @@ export const MyLLMPage = () => {
 
       setMessages(transformedMessages);
       setSelectedChatId(id);
+      collapseSidebarInMobile();
     } catch (error) {
       console.error("Error loading chat entries:", error);
     }
@@ -83,6 +84,7 @@ export const MyLLMPage = () => {
     setMessages([]);
     setSelectedChatId(null);
     setResponse("");
+    collapseSidebarInMobile();
   };
 
   const loadHistory = async () => {
@@ -327,6 +329,10 @@ export const MyLLMPage = () => {
       }
     });
   };
+
+  const collapseSidebarInMobile = () => {
+    isMobile ? setSidebarExpanded(false) : null;
+  }
 
   const toggleSidebar = () => {
     setSidebarExpanded(!isSidebarExpanded);

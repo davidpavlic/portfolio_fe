@@ -4,7 +4,7 @@
     width: 64px;
     height: calc(100vh - 56px);
     background: var(--pfc-white);           /* Sets the cards background color */
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), all 0.3s ease;
     position: relative;
 }
 
@@ -38,28 +38,6 @@ html.dark .my-llm-sidebar {
 
 html.dark .my-llm-sidebar-content h3 {
     color: var(--pfc-white);
-}
-
-.my-llm-submit-button {
-    background-color: var(--pfc-blue);
-    color: var(--pfc-white);
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    margin-right: 16px;
-    margin-left: auto;
-    height: 30px;
-    width: 30px;
-    border: none;
-    transition: all 0.3s ease-in-out;
-}
-
-.my-llm-submit-button.expanded {
-    white-space: nowrap;    
-    overflow: hidden;    
-    width: 80%;
-    margin-right: 24px;
-    justify-content: center;
 }
 
 .my-llm-sidebar-toggle {
@@ -96,7 +74,6 @@ html.dark .my-llm-sidebar-toggle:hover{
 
     .my-llm-sidebar {
         position: fixed;
-        top: 0;
         left: 0;
         bottom: 0;
         height: 100vh;

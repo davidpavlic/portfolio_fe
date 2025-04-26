@@ -1,5 +1,6 @@
 import '../styling/MyLLMSideBar.css';
-import MyHistoryList from '../../molecules/llmpage/MyLLMHistoryList';
+import MyLLMHistoryList from '../../molecules/llmpage/MyLLMHistoryList';
+import MyLLMSideBarNewChatButton from '../../atoms/llmpage/MyLLMSideBarNewChatButton';
 
 type HistoryEntry = {
   id: string;
@@ -16,31 +17,25 @@ type MyLLMSideBarProps = {
   onDeleteChat: (id: string) => void;
 };
 
-//TODO: Solve the sudden height change in the navbar when changing to mobile screen width due to the position change to fixed.
+//TODO: Collapse Navbar when selecting a chat or outside of the sidebar additionally
 
-export const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat, onLoadChat, onDeleteChat }: MyLLMSideBarProps) => {
+const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat, onLoadChat, onDeleteChat }: MyLLMSideBarProps) => {
   return (
     <div className={`my-llm-sidebar ${isExpanded ? 'expanded' : ''}`}>
       <div className={`my-llm-sidebar-content ${isExpanded ? 'expanded' : ''}`}>
         <h3>LLM CONTROLS</h3>
       </div>
-      {isExpanded ? (
-        <button className='my-llm-submit-button expanded' onClick={() => onNewChat('')}>New Chat</button>
-      ) : (
-        <button className='my-llm-submit-button' onClick={() => onNewChat('')} title='New Chat'>
-          <svg width='24' height='24' viewBox='0 0 24 24'>
-            <path fill='currentColor' d='M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z' />
-          </svg>
-        </button>
-      )}
-      <button
-        className='my-llm-sidebar-toggle'
-        onClick={onToggle}
-      >
+
+      <MyLLMSideBarNewChatButton
+        isExpanded={isExpanded}
+        onNewChat={onNewChat}
+      />
+
+      <button className='my-llm-sidebar-toggle' onClick={onToggle}>
         {isExpanded ? '◀' : '▶'}
       </button>
 
-      <MyHistoryList
+      <MyLLMHistoryList
         history={history}
         onLoadChat={onLoadChat}
         onDeleteChat={onDeleteChat}
