@@ -1,4 +1,5 @@
 import '../styling/MyLLMHistoryList.css';
+import { useTranslation } from "react-i18next";
 import MyLLMHistoryItem from '../../atoms/llmpage/MyLLMHistoryItem';
 
 
@@ -22,21 +23,25 @@ type LLMHistoryListProps = {
 
 
 ///* FUNCTIONAL COMPONENT *///
-const MyLLMHistoryList = ({ history, onLoadChat, onDeleteChat }: LLMHistoryListProps) => (
-  <div className='my-llm-history-list'>
-    <h4 className='my-llm-history-list-title'>History</h4>
-    <div className='my-llm-history-list-element'>
-      {history.map((entry) => (
-        <MyLLMHistoryItem
-          key={entry.id}
-          entry={entry}
-          onLoadChat={onLoadChat}
-          onDelete={onDeleteChat}
-        />
-      ))}
+const MyLLMHistoryList = ({ history, onLoadChat, onDeleteChat }: LLMHistoryListProps) => {
+  const { t } = useTranslation();
+
+  return (
+    <div className='my-llm-history-list'>
+      <h4 className='my-llm-history-list-title'>{t('llm_history')}</h4> {/* TODO: i18n */}
+      <div className='my-llm-history-list-element'>
+        {history.map((entry) => (
+          <MyLLMHistoryItem
+            key={entry.id}
+            entry={entry}
+            onLoadChat={onLoadChat}
+            onDelete={onDeleteChat}
+          />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 
 ///* EXPORT *///

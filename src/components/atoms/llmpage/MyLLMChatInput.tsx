@@ -1,4 +1,5 @@
 import '../styling/MyLLMChatInput.css';
+import { useTranslation } from "react-i18next";
 
 
 ///* TYPE DEFINITIONS *///
@@ -16,6 +17,7 @@ type MyLLMChatInputProps = {
 
 ///* FUNCTIONAL COMPONENT *///
 const MyLLMChatInput = ({ userInput, setUserInput, sendMessage, llmStatus }: MyLLMChatInputProps) => {
+    const { t } = useTranslation();
     const isDisabled = llmStatus !== 'running';
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -29,7 +31,7 @@ const MyLLMChatInput = ({ userInput, setUserInput, sendMessage, llmStatus }: MyL
             <input
                 type='text'
                 className='my-llm-chat-user-input'
-                placeholder='Type a message...'
+                placeholder={t('llm_type_message')}
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={handleKeyDown}
@@ -40,7 +42,7 @@ const MyLLMChatInput = ({ userInput, setUserInput, sendMessage, llmStatus }: MyL
                 onClick={sendMessage}
                 disabled={isDisabled}
             >
-                Send
+                {t('llm_send')}
             </button>
         </div>
     );

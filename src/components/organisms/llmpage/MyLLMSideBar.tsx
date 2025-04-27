@@ -1,4 +1,5 @@
 import '../styling/MyLLMSideBar.css';
+import { useTranslation } from "react-i18next";
 import MyLLMHistoryList from '../../molecules/llmpage/MyLLMHistoryList';
 import MyLLMSideBarNewChatButton from '../../atoms/llmpage/MyLLMSideBarNewChatButton';
 
@@ -20,13 +21,13 @@ type MyLLMSideBarProps = {
 //TODO: Collapse Navbar when selecting a chat or outside of the sidebar additionally
 
 const MyLLMSideBar = ({ isExpanded, onToggle, history, onNewChat, onLoadChat, onDeleteChat }: MyLLMSideBarProps) => {
-  
+  const { t } = useTranslation();
   const expandedClass = isExpanded ? 'expanded' : '';
 
   return (
     <div className={`my-llm-sidebar ${expandedClass}`}>
       <div className={`my-llm-sidebar-content ${expandedClass}`}>
-        <h3>LLM CONTROLS</h3>
+        <h3>{t('llm_controls')}</h3>
       </div>
 
       <MyLLMSideBarNewChatButton
