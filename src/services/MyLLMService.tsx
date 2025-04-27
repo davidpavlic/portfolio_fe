@@ -25,7 +25,7 @@ const fetchFromAPI = async (url: string, options?: RequestInit) => {
 };
 
 // Function to create POST request options with JSON body
-const createPostOptions = (body: object): RequestInit => ({
+export const createPostOptions = (body: object): RequestInit => ({
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(body),
@@ -35,7 +35,7 @@ const createPostOptions = (body: object): RequestInit => ({
 ///* PUBLIC API METHODS *///
 export const fetchAIResponse = async (prompt: string) => {
   const data = await fetchFromAPI(API_URLS.AI_URL, createPostOptions({ model: 'llama2:latest', messages: [{ role: 'user', content: prompt }], stream: false }));
-  return data.message?.content || 'No response from AI';
+  return data.message?.content ? data : 'No response from AI';
 };
 
 export const fetchLLMChatsByUser = async () => {
