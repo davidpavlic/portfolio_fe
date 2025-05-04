@@ -1,9 +1,9 @@
 /* GLOBAL STYLING */
-html, body {
+html, body, #root {
     background-color: var(--pfc-white-light);
 }
 
-html.dark, html.dark body {
+html.dark, html.dark body, html.dark #root {
     background-color: var(--pfc-black-lighter);
     color: var(--pfc-white)
 }

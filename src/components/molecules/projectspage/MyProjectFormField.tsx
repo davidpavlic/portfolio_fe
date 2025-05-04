@@ -34,16 +34,16 @@ const MyProjectFormField = ({
     onChange,
     onKeyDown,
 }: MyProjectFormFieldProps) => (
-    <div className="form-group">
+    <div className='my-project-form-field-group'>
         <label htmlFor={id}>{label}</label>
         {/* Conditionally renders either a text area or input field based on isTextArea prop */}
         {isTextArea ? (
             <textarea id={id} value={value} onChange={onChange} disabled={disabled} onKeyDown={onKeyDown} />
         ) : (
-            <input type="text" id={id} value={value} onChange={onChange} disabled={disabled} onKeyDown={onKeyDown} />
+            <input type='text' id={id} value={value} onChange={onChange} disabled={disabled} onKeyDown={onKeyDown} />
         )}
         {/* Conditionally render error message if an error exists */}
-        {error && <span className="error">{error}</span>}
+        {error && <span className='my-project-form-field-error'>{error}</span>}
     </div>
 );
 

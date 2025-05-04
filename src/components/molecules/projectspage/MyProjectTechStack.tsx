@@ -1,7 +1,7 @@
-// Import necessary dependencies
-import '../styling/MyProjectTechStack.css'; // Import CSS styles
-import { useTranslation } from "react-i18next"; // For i18n translation support
-import { useState, useEffect } from "react"; // Import React hooks for state and side effects
+import '../styling/MyProjectTechStack.css';
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import TechStackBubbles from "../../atoms/projectspage/MyProjectTechStackBubbles";
 
 ///* TYPE DEFINITION *///
 // Defines the expected properties for the MyProjectFormFieldProps component.
@@ -40,23 +40,24 @@ const MyProjectFormField = ({
 }: MyProjectFormFieldProps) => {
 
     const { t } = useTranslation();
-    const [errorMessage, setErrorMessage] = useState(error);
+    const [localError, setLocalError] = useState<string>("");
+    const MAX_TECH_STACK_LENGTH = 20;
 
     // Handler to add tech stack item when the Enter key is pressed
     const handleTechStackAdd = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        // Check if the Enter key is pressed
-        if (e.key === 'Enter') {
-            // Only add the tech if it's not already in the stack, and it's within the character limit
-            if (value.trim() && !techStack.includes(value.trim()) && value.trim().length <= 20) {
-                setTechStack([...techStack, value.trim()]);                                 // Add to tech stack
-                onChange({ target: { value: '' } } as React.ChangeEvent<HTMLInputElement>); // Clear the input
-                setErrorMessage("");                                                        // Clear the error message
-            } else if (value.trim().length > 20) {
-                // If the tech stack entry exceeds the length limit, set an error message
-                setErrorMessage(t("projects_form_error_techstack_limit"));
-            }
-            e.preventDefault(); // Prevent the default behavior of the Enter key
+        e.preventDefault();                                                         
+        const trimmedValue = value.trim();
+
+        if (e.key !== 'Enter' || !trimmedValue || techStack.includes(trimmedValue)) 
+            return;
+        if (trimmedValue.length > MAX_TECH_STACK_LENGTH){
+            setLocalError(t("projects_form_error_techstack_limit"));
+            return;
         }
+
+        setTechStack([...techStack, trimmedValue]);                                 // Add to tech stack
+        onChange({ target: { value: '' } } as React.ChangeEvent<HTMLInputElement>); // Clear the input
+        setLocalError("");                                                          // Clear the error message
     };
 
     // Handler to remove a tech stack item when its corresponding "✕" button is clicked
@@ -65,18 +66,15 @@ const MyProjectFormField = ({
         setTechStack(techStack.filter((item) => item !== tech));    // Filter out the tech item from the stack and update the state
     };
 
-    // Update error message when the 'error' prop changes
-    useEffect(() => setErrorMessage(error), [error]);
-
     return (
-        <div className="form-group">
+        <div className="my-project-form-field-group">
             {/* Label for the form field */}
             <label htmlFor={id}>{label}</label>
-            
-            <div className="techstack-input-container">
+
+            <div className="my-project-techstack-input-container">
                 {/* Input field for tech stack */}
                 <input
-                    className="techstack-input"
+                    className="my-project-techstack-input"
                     type="text"
                     id={id}
                     value={value} // Bind the input value to the component's state
@@ -84,21 +82,15 @@ const MyProjectFormField = ({
                     onKeyDown={handleTechStackAdd} // Listen for the Enter key
                     disabled={disabled} // Disable input if specified
                 />
-                
-                {/* Display tech stack bubbles */}
-                <div className="techstack-bubbles">
-                    {techStack.map((tech, index) => (
-                        <div key={index} className="techstack-bubble">
-                            {tech}
-                            {/* Remove button for each tech stack item */}
-                            <button className="techstack-remove-bubble" onClick={(e) => handleTechStackRemove(tech, e)}> ✕</button>
-                        </div>
-                    ))}
-                </div>
+
+                <TechStackBubbles
+                    techStack={techStack}
+                    onRemove={handleTechStackRemove}
+                />
             </div>
-            
+
             {/* Display error message if there's an error */}
-            {errorMessage && <span className="techstack-error">{errorMessage}</span>}
+            {(error || localError) && <span className="my-project-techstack-error">{error || localError}</span>}
         </div>
     );
 };

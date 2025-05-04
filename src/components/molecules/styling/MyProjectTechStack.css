@@ -1,68 +1,19 @@
 /* TECHSTACK CONTAINER */
-.techstack-input-container {
-    display: flex;                                          /* Sets the elements on one row */
+.my-project-techstack-input-container {
+    display: flex;                                  /* Sets the elements on one row */
 }
 
 /* TECHSTACK INPUT FIELD */
-.techstack-input-container input[type="text"] {
-    width: 25%;                                             /* Sets the input field size */
-    margin-right: 10px;                                     /* Sets the distance to the bubbles */
-    border-radius: 4px;                                     /* Sets the corners curvature */
-    border: 1px solid var(--pfc-white-darker);                 /* Sets the border design */
-    flex-shrink: 0;                                         /* Makes the input field not shrinked by large bubble list */
-}
-
-/* TECHSTACK ELEMENT LIST */
-.techstack-bubbles {
-    display: flex;                                          /* Sets the bubbles on one row */
-    gap: 10px;                                              /* Sets the distance between the bubbles */
-    overflow-x: auto;                                       /* Makes the bubbles to be hidden behind right column */   
-    padding-bottom: 8px;                                    /* Sets the distance to the scrollbar */
-}
-
-/* TECHSTACK ELEMENT */
-.techstack-bubble {
-    background: var(--pfc-white-lighter);               /* Sets the backgroundcolor of the tech stack elements */
-    padding: 0.4rem 1rem;                                   /* Sets the distance of the tech stack elements to its border*/
-    border-radius: 25px;                                    /* Sets the curve of the button */
-    font-size: 0.9rem;                                      /* Sets the text size */
-    color: var(--pfc-black);                     /* Sets the tech stack element text color */
-    border: 1px solid var(--pfc-white-darker);                 /* Sets the tech stack element border */
-    flex-shrink: 0;                                         /* Makes the delete button to be on the same line */
-}
-
-html.dark .techstack-bubble {
-    color: var(--pfc-white);                      /* Sets the tech stack element text color*/
-    background: var(--pfc-black-darker);                    /* Sets the backgroundcolor of the tech stack elements */
-}
-
-/* TECHSTACK ELEMENT LIST SCROLLBAR */
-.techstack-bubbles::-webkit-scrollbar {
-    height: 4px;                                            /* Sets the height of the scrollbar */
-}
-
-.techstack-bubbles::-webkit-scrollbar-thumb {
-    background-color: var(--pfc-white-darkest);             /* Sets the background color of the scrollbar */
-    border-radius: 4px;                                     /* Sets the corner curveture of the scrollbar */
-}
-
-.techstack-bubbles::-webkit-scrollbar-track {
-    background: var(--pfc-white-lighter);               /* Sets the color of the active scrollbar */
-}
-
-/* TECHSTACK ELEMENT REMOVE BUTTON */
-.techstack-remove-bubble {
-    border: none;                                           /* Removes the border of the button */
-    color: var(--pfc-black);                     /* Sets the color of the delete button */
-}
-
-html.dark .techstack-remove-bubble {
-    background: none;                                       /* Removes the border of the button */
-    color: var(--pfc-white);                      /* Sets the color of the delete button */
+.my-project-techstack-input-container input[type="text"] {
+    width: 25%;                                     /* Sets the input field size */
+    margin-right: 0.625rem;                         /* Sets the distance to the bubbles */
+    border: 0.063rem solid var(--pfc-white-darker); /* Sets the border design */
+    border-radius: 0.25rem;                         /* Sets the corners curvature */
+    flex-shrink: 0;                                 /* Makes the input field not shrinked by large bubble list */
 }
 
 /* TECHSTACK ERROR */
-.techstack-error {
-    color: var( --pfc-red);                                /* Sets the text color of the error message */
-    margin-top: 5px;                                        /* Sets the distance to the techstack message */
+.my-project-techstack-error {
+    margin-top: 0.313rem;                           /* Sets the distance to the techstack message */
+    color: var( --pfc-red);                         /* Sets the text color of the error message */
 }

@@ -1,4 +1,5 @@
 import { API_BASE_URL } from '../config/backend';
+import { fetchFromAPI } from "./MyAPIService";
 
 
 ///* API URLS *///
@@ -10,20 +11,7 @@ const API_URLS = {
 };
 
 
-///* API SERVICE *///
-// Function to fetch data from a given URL with optional request options
-// returns the JSON response if successful, or throws an error if not
-const fetchFromAPI = async (url: string, options?: RequestInit) => {
-  try {
-    const response = await fetch(url, options);
-    if (!response.ok) throw new Error(`Failed to fetch ${url} with status: ${response.status} and message: ${response.statusText}`);
-    return response.status !== 204 ? await response.json() : null;
-  } catch (error) {
-    console.error(`Error fetching from ${url}:`, error);
-    throw error;
-  }
-};
-
+///* HELPER FUNCTIONS *///
 // Function to create POST request options with JSON body
 export const createPostOptions = (body: object): RequestInit => ({
   method: 'POST',
