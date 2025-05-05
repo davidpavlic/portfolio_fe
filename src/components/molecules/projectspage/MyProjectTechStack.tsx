@@ -45,10 +45,13 @@ const MyProjectTechStack = ({
 
     // Handler to add tech stack item when the Enter key is pressed
     const handleTechStackAdd = (e: React.KeyboardEvent<HTMLInputElement>) => {
+
+        if (e.key !== "Enter") return; 
+
         e.preventDefault();                                                         
         const trimmedValue = value.trim();
 
-        if (e.key !== 'Enter' || !trimmedValue || techStack.includes(trimmedValue)) 
+        if (!trimmedValue || techStack.includes(trimmedValue)) 
             return;
         if (trimmedValue.length > MAX_TECH_STACK_LENGTH){
             setLocalError(t("projects_form_error_techstack_limit"));
