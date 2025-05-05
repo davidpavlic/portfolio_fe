@@ -1,10 +1,10 @@
 import '../styling/MyProjectTechStack.css';
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import TechStackBubbles from "../../atoms/projectspage/MyProjectTechStackBubbles";
+import MyProjectTechStackBubbles from "../../atoms/projectspage/MyProjectTechStackBubbles";
 
 ///* TYPE DEFINITION *///
-// Defines the expected properties for the MyProjectFormFieldProps component.
+// Defines the expected properties for the MyProjectTechStackProps component.
 // - id: Unique identifier for the form field
 // - label: The label text for the form field
 // - value: The current value of the form field
@@ -14,7 +14,7 @@ import TechStackBubbles from "../../atoms/projectspage/MyProjectTechStackBubbles
 // - onChange: Function to handle value changes in the form field
 // - techStack: The list of technologies in the tech stack
 // - setTechStack: Function to update the tech stack array
-type MyProjectFormFieldProps = {
+type MyProjectTechStackProps = {
     id: string;
     label: string;
     value: string;
@@ -28,7 +28,7 @@ type MyProjectFormFieldProps = {
 
 
 ///* FUNCTIONAL COMPONENT *///
-const MyProjectFormField = ({
+const MyProjectTechStack = ({
     id,
     label,
     value,
@@ -37,7 +37,7 @@ const MyProjectFormField = ({
     onChange,
     techStack,
     setTechStack,
-}: MyProjectFormFieldProps) => {
+}: MyProjectTechStackProps) => {
 
     const { t } = useTranslation();
     const [localError, setLocalError] = useState<string>("");
@@ -83,7 +83,7 @@ const MyProjectFormField = ({
                     disabled={disabled} // Disable input if specified
                 />
 
-                <TechStackBubbles
+                <MyProjectTechStackBubbles
                     techStack={techStack}
                     onRemove={handleTechStackRemove}
                 />
@@ -97,4 +97,4 @@ const MyProjectFormField = ({
 
 
 ///* EXPORT *///
-export default MyProjectFormField;
+export default MyProjectTechStack;

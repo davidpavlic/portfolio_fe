@@ -4,14 +4,14 @@ import '../styling/MyProjectTechStackBubbles.css';
 ///* TYPE DEFINITION *///
 // - techStack: Array of strings representing the technologies in the stack
 // - onRemove: Function to handle the removal of a technology from the stack
-type TechStackBubblesProps = {
+type MyProjectTechStackBubblesProps = {
     techStack: string[];
     onRemove: (tech: string, e: React.MouseEvent) => void;
 };
 
 
 ///* FUNCTIONAL COMPONENT *///
-const TechStackBubbles = ({ techStack, onRemove }: TechStackBubblesProps) => (
+const MyProjectTechStackBubbles = ({ techStack, onRemove }: MyProjectTechStackBubblesProps) => (
     <div className="my-project-techstack-bubbles">
         {techStack.map((tech, index) => (
             <div key={index} className="my-project-techstack-bubble">
@@ -31,4 +31,4 @@ const TechStackBubbles = ({ techStack, onRemove }: TechStackBubblesProps) => (
 
 
 ///* EXPORT *///
-export default TechStackBubbles;
+export default MyProjectTechStackBubbles;

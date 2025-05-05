@@ -9,7 +9,7 @@ import { FaCloudArrowUp } from 'react-icons/fa6';
 // - error: An optional error message string to display if there's an issue with the file upload.
 // - isSubmitting: A boolean indicating whether the form submission is in progress (disables file input).
 // - onFileSelect: A callback function that handles file selection, accepting a File object or null.
-type FileUploadProps = {
+type MyProjectFileUploadProps = {
     file: File | null;
     error?: string;
     isSubmitting: boolean;
@@ -18,7 +18,7 @@ type FileUploadProps = {
 
 
 ///* FUNCTIONAL COMPONENT *///
-const FileUpload = ({ file, error, isSubmitting, onFileSelect }: FileUploadProps) => {
+const MyProjectFileUpload = ({ file, error, isSubmitting, onFileSelect }: MyProjectFileUploadProps) => {
     const { t } = useTranslation();
 
     return (
@@ -62,4 +62,4 @@ const FileUpload = ({ file, error, isSubmitting, onFileSelect }: FileUploadProps
 
 
 ///* EXPORT *///
-export default FileUpload;
+export default MyProjectFileUpload;
