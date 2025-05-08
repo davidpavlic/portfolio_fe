@@ -1,6 +1,6 @@
 import './styling/MyProjectsPage.css';
 import { useState, useEffect } from "react";
-import ProjectCard from "../components/organisms/projectspage/MyProjectCard";
+import MyProjectCard from "../components/organisms/projectspage/MyProjectCard";
 import AddProjectCardForm from '../components/organisms/projectspage/MyAddProjectCardForm';
 import { fetchProjectCards } from '../services/MyProjectCardService';
 
@@ -54,7 +54,7 @@ export const ProjectsPage = () => {
       <AddProjectCardForm onProjectAdded={loadProjectCards} />
 
       {projectscards.map((projectCard, index) => (
-        <ProjectCard
+        <MyProjectCard
           key={index}
           id={projectCard.id}
           title={projectCard.title}

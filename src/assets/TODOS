@@ -8,3 +8,6 @@ MyNavBar.tsx
         - https://www.youtube.com/watch?v=IF6k0uZuypA (7:37-16:51)
         - Make MyDropDownList & MyDropDownToggle generic for the my-navbar-settings-dropdown section.
     - Collapsed Nav Dropdown Menu Design. 
+MyProjectCard.tsx
+    - When the title becomes multilined, the div takes the complete remaining space -> Deletebutton not right next to it.
+    - The deletebutton become an ellipse when the screen becomes too small
