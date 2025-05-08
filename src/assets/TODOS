@@ -11,3 +11,9 @@ MyNavBar.tsx
 MyProjectCard.tsx
     - When the title becomes multilined, the div takes the complete remaining space -> Deletebutton not right next to it.
     - The deletebutton become an ellipse when the screen becomes too small
+MyProjectsPage.tsx
+    - Password secured CRUD operations
+    - Search Field for techstack
+    - AddForm foldable
+    - Find a way to add multiple languages on creation
+    - Update Cards
