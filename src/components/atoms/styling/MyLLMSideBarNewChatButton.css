@@ -1,0 +1,20 @@
+.my-llm-submit-button {
+    display: flex;                          /* Aligns the button content */
+    align-items: center;                    /* Centers the button content vertically */
+    height: 1.875rem;                       /* Sets the button height */
+    width: 1.875rem;                        /* Sets the button width */
+    margin-left: 1rem;                      /* Sets the button left margin */
+    border: none;                           /* Removes the button border */
+    border-radius: 3.125rem;                /* Sets the button border radius */
+    background-color: var(--pfc-blue);      /* Sets the button background color */
+    color: var(--pfc-white);                /* Sets the button text color */
+    transition: all 0.3s ease-in-out;       /* Sets the button transition */
+}
+
+.my-llm-submit-button.expanded {
+    width: 80%;                             /* Sets the button width when expanded */
+    margin-left: 1.5rem;                    /* Sets the button right margin when expanded */
+    justify-content: center;                /* Centers the button content when expanded */
+    overflow: hidden;                       /* Hides the overflow content */
+    white-space: nowrap;                    /* Prevents text wrapping */
+}

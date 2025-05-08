@@ -1,0 +1,48 @@
+/* TECHSTACK ELEMENT LIST */
+.my-project-techstack-bubbles {
+    display: flex;                                  /* Sets the bubbles on one row */   
+    padding-bottom: 0.5rem;                         /* Sets the distance to the scrollbar */
+    gap: 0.625rem;                                  /* Sets the distance between the bubbles */
+    overflow-x: auto;                               /* Makes the bubbles to be hidden behind right column */
+}
+
+/* TECHSTACK ELEMENT LIST SCROLLBAR */
+.my-project-techstack-bubbles::-webkit-scrollbar {
+    height: 0.25rem;                                /* Sets the height of the scrollbar */
+}
+
+.my-project-techstack-bubbles::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;                         /* Sets the corner curveture of the scrollbar */
+    background-color: var(--pfc-white-darkest);     /* Sets the background color of the scrollbar */
+}
+
+.my-project-techstack-bubbles::-webkit-scrollbar-track {
+    background: var(--pfc-white-lighter);           /* Sets the color of the active scrollbar */
+}
+
+/* TECHSTACK ELEMENT */
+.my-project-techstack-bubble {
+    padding: 0.4rem 1rem;                           /* Sets the distance of the tech stack elements to its border*/
+    border: 0.063rem solid var(--pfc-white-darker); /* Sets the tech stack element border */
+    border-radius: 1.563rem;                        /* Sets the curve of the button */
+    background: var(--pfc-white-lighter);           /* Sets the backgroundcolor of the tech stack elements */
+    font-size: 0.9rem;                              /* Sets the text size */
+    color: var(--pfc-black);                        /* Sets the tech stack element text color */
+    flex-shrink: 0;                                 /* Makes the delete button to be on the same line */
+}
+
+html.dark .my-project-techstack-bubble {
+    background: var(--pfc-black-darker);            /* Sets the backgroundcolor of the tech stack elements */
+    color: var(--pfc-white);                        /* Sets the tech stack element text color*/
+}
+
+/* TECHSTACK ELEMENT REMOVE BUTTON */
+.my-project-techstack-remove-bubble {
+    border: none;                                   /* Removes the border of the button */
+    color: var(--pfc-black);                        /* Sets the color of the delete button */
+}
+
+html.dark .my-project-techstack-remove-bubble {
+    background: none;                               /* Removes the border of the button */
+    color: var(--pfc-white);                        /* Sets the color of the delete button */
+}

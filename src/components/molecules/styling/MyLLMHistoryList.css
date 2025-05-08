@@ -1,0 +1,40 @@
+.my-llm-history-list {
+    flex: 1;                                        /* Take available vertical space */
+    margin-top: 1.5rem;                             /* Space from top element */
+    padding: 2.5rem 1rem 1rem;                      /* Top-heavy padding for layout spacing */
+    overflow: hidden;                               /* Prevents content overflow */
+    opacity: 0;                                     /* Hidden by default, shown when sidebar expands */
+}
+
+.my-llm-sidebar.expanded .my-llm-history-list {
+    opacity: 1;                                     /* Show when sidebar is expanded */   
+    transition: max-height 0.3s ease-in, opacity 0.2s ease 0.1s; /* Smooth transition for max-height and opacity */
+}
+
+.my-llm-history-list-title {    
+    text-align: center;                             /* Centered text for title */
+    font-size: 0.75rem;                             /* Font size for section title */
+    color: var(--pfc-black);                        /* Default color for section title */
+    text-transform: uppercase;                      /* Uppercase text for section title */
+    letter-spacing: 0.031rem;                       /* Letter spacing for section title */
+}
+
+html.dark .my-llm-history-list-title {
+    color: var(--pfc-white);                        /* Color for section title in dark mode */
+}
+
+.my-llm-history-list-element {
+    display: flex;                                  /* Flexbox for layout */
+    flex-direction: column;                         /* Column layout for list items */
+    height: 100%;                                   /* Full height for the list */
+    overflow-y: auto;                               /* Vertical scroll for overflow */
+}
+
+.my-llm-history-list-element::-webkit-scrollbar {
+    width: 0.25rem;                                 /* Width of the scrollbar */
+}
+
+.my-llm-history-list-element::-webkit-scrollbar-thumb {
+    border-radius: 0.188rem;                        /* Rounded corners for scrollbar thumb */
+    background: var(--pfc-gray-light);              /* Color for scrollbar thumb */
+}

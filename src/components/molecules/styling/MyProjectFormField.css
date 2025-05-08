@@ -1,33 +1,33 @@
-.form-group {
-    margin-bottom: 1.5rem;                                  /* Sets distance to the element below */
+.my-project-form-field-group {
+    margin-bottom: 1.5rem;                              /* Sets distance to the element below */
 }
 
-.form-group label {
-    margin-bottom: 0.5rem;                                  /* Sets distance to the input */
-    font-weight: bold;                                      /* Sets the title to be bold */
+.my-project-form-field-group label {
+    margin-bottom: 0.5rem;                              /* Sets distance to the input */
+    font-weight: bold;                                  /* Sets the title to be bold */
 }
 
-.form-group input[type="text"],
-.form-group textarea {
-    width: 100%;                                            /* Makes the input cover all the space */
-    padding: 0.5rem;                                        /* Sets distance to the input text */
-    border-radius: 4px;                                     /* Sets the corner curve */
-    background-color: var(--lightmode-lightestestest);      /* Sets its background color */
-    border: 1px solid var(--lightmode-nav);                 /* Sets the border design */
+.my-project-form-field-group input[type="text"],
+.my-project-form-field-group textarea {
+    width: 100%;                                        /* Makes the input cover all the space */
+    padding: 0.5rem;                                    /* Sets distance to the input text */
+    border: 0.063rem solid var(--pfc-white-darker);     /* Sets the border design */
+    border-radius: 0.25rem;                             /* Sets the corner curve */
+    background-color: var(--pfc-white-lightest);        /* Sets its background color */
 }
 
-html.dark .form-group input[type="text"],
-html.dark .form-group textarea {
-    background-color: var(--darkmode-background);           /* Sets its background color */
-    color: var(--darkmode-font-color);                      /* Sets the written text color */
+html.dark .my-project-form-field-group input[type="text"],
+html.dark .my-project-form-field-group textarea {
+    background-color: var(--pfc-black-lighter);         /* Sets its background color */
+    color: var(--pfc-white);                            /* Sets the written text color */
 }
 
-.form-group textarea {
-    height: 100px;                                          /* Sets the height of a textarea */
-    resize: vertical;                                       /* Enables resizing to the bottom */
+.my-project-form-field-group textarea {
+    height: 6.25rem;                                    /* Sets the height of a textarea */
+    resize: vertical;                                   /* Enables resizing to the bottom */
 }
 
-.error {
-    color: var(--icon-red);                                 /* Sets the error text color */
-    margin-top: 0.25rem;                                    /* Sets the distance to the input area on top */
+.my-project-form-field-error {
+    margin-top: 0.25rem;                                /* Sets the distance to the input area on top */
+    color: var(--pfc-red);                              /* Sets the error text color */
 }

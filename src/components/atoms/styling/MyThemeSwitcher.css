@@ -1,22 +1,22 @@
 /* IDLE THEME SWITCHER */
-.my-icon-button {
-    background: none;                               /* Removes standard button background */
+.my-theme-switcher-icon-button {
+    margin-top: 0.1875rem;                          /* Centers the button vertically */
+    padding-bottom: 0.3125rem;                      /* Centers the icon vertically */
     border: none;                                   /* Removes standard button border */
-    border-radius: 5px;                             /* Sets rounded corners for the button */
+    border-radius: 0.3125rem;                       /* Sets rounded corners for the button */
+    background: none;                               /* Removes standard button background */
     transition: background-color 0.2s ease-in-out;  /* Fluid Background color change */
-    padding-bottom: 5px;                            /* Centers the icon vertically */
-    margin-top: 3px;                                /* Centers the button vertically */
 }
 
-html.dark .my-icon-button {
-    color: var(--darkmode-font-color);              /* Sets the icon color in dark mode */
+html.dark .my-theme-switcher-icon-button {
+    color: var(--pfc-white);                        /* Sets the icon color in dark mode */
 }
 
 /* HOVER THEME SWITCHER */
-.my-icon-button:hover {
-    background-color: var(--lightmode-lighter);     /* Sets a hover background color */
+.my-theme-switcher-icon-button:hover {
+    background-color: var(--pfc-white-darkest);     /* Sets a hover background color */
 }
 
-html.dark .my-icon-button:hover {
-    background-color: var(--darkmode-darkest);      /* Sets a hover background color */
+html.dark .my-theme-switcher-icon-button:hover {
+    background-color: var(--pfc-black-darker);      /* Sets a hover background color */
 }

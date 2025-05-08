@@ -1,8 +1,0 @@
-/* GLOBAL STYLING */
-html {
-    background-color: var(--lightmode-background);
-}
-
-html.dark {
-    background-color: var(--darkmode-background);
-}

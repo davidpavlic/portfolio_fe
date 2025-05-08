@@ -1,0 +1,22 @@
+.my-nav-links {
+    gap: 50px;                                  /* Sets the spaces between the nav links */
+    margin: auto;                               /* Centers the page elements horizontally */
+    padding-left: 4rem;                         /* Distance to the left to not be too close to the logo on smaller screens */
+}
+
+/* COLLAPSED NAV LINKS (BURGER MENU) */
+html.dark .navbar-toggler {
+    border-color: var(--pfc-white);             /* Sets the borders color in dark mode */
+}
+
+html.dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Dark mode: change the hamburger icon to white by overriding its background image */
+}
+
+/* RESPONSIVE SETTINGS */
+@media (max-width: 767px) {
+    .navbar-toggler {
+        margin-right: calc(2% + 4.5rem);           /* 2% matches the settings container's margin from .my-navbar-settings-dropdown*/
+        margin-left: auto;                      /* Adjust the left margin to the right margin*/
+    }
+}

@@ -1,33 +1,26 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { MyNavBar } from "./components/organisms/MyNavBar";
-import { ThemeProvider } from './config/MyThemeProvider';
-import MainPage from "./pages/MainPage";
-import ProjectsPage from "./pages/ProjectsPage";
-//import PassionsPage from "./pages/PassionsPage";
-//import NewsScraperPage from "./pages/NewsScraperPage";
-import PageNotFound from "./pages/PageNotFound";
-import WorkInProgressPage from './pages/WorkInProgressPage';
+import { Routes, Route } from 'react-router-dom';
+import { MyNavBar } from './components/organisms/common/MyNavBar';
+import MainPage from './pages/MyMainPage';
+import ProjectsPage from './pages/MyProjectsPage';
+import MyLLMPage from './pages/MyLLMPage';
+import PageNotFound from './pages/MyPageNotFound';
+import WorkInProgressPage from './pages/MyWorkInProgressPage';
+//import NewsScraperPage from './pages/NewsScraperPage';
 
 function App() {
   return (
-    /* Responsible for Dark-/Lightmode */
-    <ThemeProvider>
-      <BrowserRouter>
-        <div className="my-app">
-          <MyNavBar />
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/passions" element={<WorkInProgressPage />} />
-            <Route path="/news-scraper" element={<WorkInProgressPage />} />
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </ThemeProvider>
+    <main>
+      <MyNavBar />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/projects' element={<ProjectsPage />} />
+        <Route path='/news-scraper' element={<WorkInProgressPage />} />
+        <Route path='/my-llm' element={<MyLLMPage />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
+    </main>
   );
-}
+};
 
 export default App;

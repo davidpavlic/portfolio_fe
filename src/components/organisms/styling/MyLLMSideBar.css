@@ -1,0 +1,78 @@
+.my-llm-sidebar {
+    position: relative;                                                         /* Positions the sidebar relative to its parent */  
+    height: calc(100vh - 3.5rem);                                               /* Sets sidebar height minus top bar */
+    width: 4rem;                                                                /* Sets collapsed sidebar width */
+    background: var(--pfc-white);                                               /* Sets sidebar background color */
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s ease;   /* Smooth width and transform transitions */
+}
+
+html.dark .my-llm-sidebar {
+    background: var(--pfc-black-dark);                                          /* Sets sidebar background color for dark mode */
+}
+
+.my-llm-sidebar.expanded {
+    width: 15rem;                                                               /* Sets expanded sidebar width */
+}
+
+/* SIDEBAR CONTENT */
+.my-llm-sidebar-content {
+    padding: 1.625rem;                                                          /* Sets padding inside sidebar */
+}
+
+.my-llm-sidebar-content h3 {
+    overflow: hidden;                                                           /* Hides overflow text */
+    white-space: nowrap;                                                        /* Prevents text wrapping to next line */
+    color: var(--pfc-black);                                                    /* Sets title text color */
+    font-size: 0.875rem;                                                        /* Sets title font size */
+}
+
+html.dark .my-llm-sidebar-content h3 {
+    color: var(--pfc-white);                                                    /* Sets title text color for dark mode */
+}
+
+/* SIDEBAR TOGGLE */
+.my-llm-sidebar-toggle {
+    position: absolute;                                                         /* Positions the toggle button */
+    width: 2rem;                                                                /* Sets toggle button width */
+    height: 2rem;                                                               /* Sets toggle button height */  
+    right: 1rem;                                                                /* Positions toggle button to the right */
+    top: 1rem;                                                                  /* Positions toggle button to the top */
+    border: none;                                                               /* Removes border from toggle button */
+    border-radius: 50%;                                                         /* Makes toggle button circular */
+    background: var(--pfc-white);                                               /* Sets toggle button background color */
+    color:  var(--pfc-black);                                                   /* Sets toggle button text color */
+    transition: none;                                                           /* No transition for toggle button */
+}
+
+html.dark .my-llm-sidebar-toggle{
+    background: var(--pfc-black-dark);                                          /* Sets toggle button background color for dark mode */
+    color: var(--pfc-white);                                                    /* Sets toggle button text color for dark mode */
+}
+
+.my-llm-sidebar-toggle:hover {
+    transform: scale(1.1);                                                      /* Scales toggle button on hover */
+    background: var(--pfc-white-dark);                                          /* Sets hover background color */
+    transition: transform 0.3s ease, background-color 0.3s ease;                /* Smooth transition for hover effect */
+}
+
+html.dark .my-llm-sidebar-toggle:hover{
+    background: var(--pfc-black-lightest);                                      /* Sets hover background color for dark mode */ 
+    transition: transform 0.3s ease, background-color 0.3s ease;                /* Smooth transition for hover effect */
+}
+
+/* MOBILE STYLES */
+@media (max-width: 720px) {
+
+    .my-llm-sidebar {
+        position: fixed;                                                        /* Fixes sidebar position on mobile */  
+        left: 0;                                                                /* Positions sidebar to the left */
+        bottom: 0;                                                              /* Positions sidebar to the bottom */   
+        height: 100vh;                                                          /* Sets sidebar height to full viewport height */
+        transform: translateX(-100%);                                           /* Hides sidebar off-screen */
+        z-index: 1000;                                                          /* Sets z-index for sidebar */
+    }
+
+    .my-llm-sidebar.expanded {
+        transform: translateX(0);                                               /* Shows sidebar on screen */
+    }
+}

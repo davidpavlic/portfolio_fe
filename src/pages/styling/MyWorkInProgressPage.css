@@ -1,0 +1,18 @@
+.wip-container {                         
+    display: flex;                       /* Enables Flexbox layout for aligning child elements */
+    min-height: 100vh;                   /* Sets the container's minimum height to the full viewport height (centers the elements vertically) */
+    flex-direction: column;              /* Arranges child elements in a vertical column */
+    align-items: center;                 /* Centers child elements horizontally within the container */
+    justify-content: center;             /* Centers child elements vertically within the container */
+    text-align: center;                  /* Centers the text content inside the container */
+}
+
+.wip-title {                             
+    font-size: 2.5rem;                   /* Sets the title's font size */
+    font-weight: bold;                   /* Makes the title text bold */
+}
+
+.wip-message {                           
+    font-size: 1.25rem;                  /* Sets the message's font size */
+    max-width: 37.5rem;                  /* Limits the maximum width of the message */
+}

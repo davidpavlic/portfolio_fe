@@ -1,0 +1,21 @@
+.my-llm-overlay {
+    position: absolute;                                     /* Positioning the overlay */
+    display: flex;                                          /* Using flexbox for centering */
+    inset: 0;                                               /* Aligning to the top, left, right & bottom */
+    align-items: center;                                    /* Centering vertically */
+    justify-content: center;                                /* Centering horizontally */
+    background: var(--pfc-transparent-light);               /* Background color */
+    backdrop-filter: blur(2px);                             /* Blurring the background */
+}
+
+html.dark .my-llm-overlay {
+    background: var(--pfc-transparent-dark);                /* Dark mode background */
+}
+
+.my-llm-error {
+    padding: 1rem 1.5rem;                                   /* Padding for the error message */   
+    border-radius: 0.5rem;                                  /* Rounded corners */
+    border: 0.063rem solid #ffe0e0;                       /* Border color */
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);     /* Shadow effect */
+    color: var(--pfc-red);                                  /* Error text color */
+}

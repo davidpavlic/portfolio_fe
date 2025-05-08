@@ -1,37 +1,34 @@
-/* TODO: Clean up usage */
 :root {
-    /* Root Background colors */
-    --darkmode-background: #2E2E2E;
-    --darkmode-nav: #121212;
-    --lightmode-background: #EDF2F7;
-    --lightmode-nav: #d9d9d9;
+    /* Black and White */
+    --pfc-white: #ffffff;
+    --pfc-white-lightest: #f9f9f9;
+    --pfc-white-lighter: #f2f2f2;
+    --pfc-white-light: #edf2f7;
+    --pfc-white-dark: #e7e7e7;
+    --pfc-white-darker: #d9d9d9;
+    --pfc-white-darkest: #cfcfcf;
 
-    /* Allgemeine Farben */
-    --darkmode-font-color: #FFFFFF;
-    --lightmode-font-color: #000000;
+    --pfc-gray-light: #b9b9b9;
+    --pfc-gray: #b5b5b5;
+    --pfc-gray-darker: #6c757d;
 
-    /* Light Mode */
-    --lightmode-lightestestest: #F9F9F9;
-    --lightmode-lightestest: #F2F2F2;
-    --lightmode-lightest: #E7E7E7;
-    --lightmode-lighter: #CFCFCF;
-    --lightmode-light: #B5B5B5;
+    --pfc-black-lightest: #4f5255;
+    --pfc-black-lighter: #2e2e2e;
+    --pfc-black-light: #282828;
+    --pfc-black-dark: #222222;
+    --pfc-black-darker: #181818;
+    --pfc-black-darkest: #121212;
+    --pfc-black: #000000;
 
-    /* Dark Mode */
-    --darkmode-darkest:  #181818;
-    --darkmode-darker:  #222222;
-    --darkmode-dark:   #282828;
+    /* Colors */
+    --pfc-red: #ff4444;
+    --pfc-green: #48bb78;
+    --pfc-blue: #007bff;
+    --pfc-dark-blue: #006adc;
 
-    /* Bootstrap Colors */
-    --bootstrap-button-border: #B9B9B9;
-    --bootstrap-icon-color: #4f5255;
-
-    /* Icon Colors */
-    --icon-red: #FF4444;
-    --icon-light-red: #f565650d;
-    --icon-green: #48bb78;
-    --icon-light-green: #48bb780d;
-    --icon-blue: #007bff;
-    --icon-dark-blue: 	#006adc;
-    --icon-disabled: #6c757d;
+    /* Transparent Colors */
+    --pfc-transparent-light: #ffffffe6;
+    --pfc-transparent-dark: #000000e6;
+    --pfc-transparent-green: #48bb780d;
+    --pfc-transparent-red: #ff44440d;
 }

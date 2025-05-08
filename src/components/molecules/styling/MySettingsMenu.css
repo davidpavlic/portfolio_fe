@@ -1,0 +1,51 @@
+/* NAV SETTINGS */
+.my-navbar-settings,
+.my-navbar-settings-dropdown {
+    position: absolute;                         /* Position for gradual margin */
+    right: 2%;                                  /* Gradual margin to the right */
+    gap: 20px;                                  /* Sets the spaces between the settings */
+}
+
+.my-navbar-settings-dropdown {
+    top: 1px;                                   /* Makes the logo stick to the top, when burger menu opened */
+}
+
+.my-navbar-settings-dropdown .dropdown-menu {
+    right: 0;                                   /* Makes the settings open to the left, instead of right (out of bounds) */          
+    left: auto;                                 /* Makes the settings open to the left, instead of right (out of bounds) */
+}
+
+/* NAV TOGGLE SETTINGS */
+.my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
+.my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
+.my-navbar-settings-dropdown .my-navbar-settings-toggle {
+    font-size: 24px;                            /* Sets the settings icon size */
+    height: 40px;                               /* Sets the button height */
+    width: 56px;                                /* Sets the button width */
+    border-radius: 0.4rem;                      /* Sets custom curved button */
+    border-color: var(--pfc-gray-light);        /* Sets button color */
+    background-color: transparent;              /* Remove bootstrap button color (none doesnt work) */
+    display: flex;                              /* Align icon vertically */
+    align-items: center;                        /* Align icon vertically */
+    margin-top: 7px;                            /* Align button vertically */
+}
+
+html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
+html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
+html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle {
+    border-color: var(--pfc-white);             /* Set border color in dark mode */
+}
+
+.my-navbar-settings-toggle::after {
+    border: none;                               /* Removes the standard arrow of the Bootstrap Dropdown Toggle */
+}
+
+/* NAV COG SETTINGS */
+.my-navbar-settings-cog {
+    color: var(--pfc-black-lightest);           /* Set settings icon color */
+    padding-left: 6px;                          /* Align icon horizontally */
+}
+
+html.dark .my-navbar-settings-cog {
+    color: var(--pfc-white);                    /* Set settings icon color */
+}

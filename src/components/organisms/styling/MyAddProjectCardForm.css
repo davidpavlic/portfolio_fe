@@ -1,101 +1,101 @@
 /* FORM CONTAINER */
-.form-container {
-    background-color: var(--darkmode-font-color);       /* Sets the forms background color */
-    width: 80%;                                         /* Sets the forms width to 80% of the screen size */
-    margin: 2rem auto;                                  /* Centers the form */
-    padding: 2rem;                                      /* Sets the forms distance from the text */
-    border-radius: 16px;                                /* Sets the forms corner curveture */
-    box-shadow: 0 4px 20px var(--lightmode-lighter);    /* Sets the forms shadow */
+.my-project-card-form-container {
+    position: relative;                                     /* Sets the forms position */
+    width: 80%;                                             /* Sets the forms width to 80% of the screen size */
+    margin: 2rem auto;                                      /* Centers the form */
+    padding: 2rem;                                          /* Sets the forms distance from the text */
+    border-radius: 1rem;                                    /* Sets the forms corner curveture */
+    box-shadow: 0 0.25rem 1.25rem var(--pfc-white-darkest);                 /* Sets the forms shadow */
+    background-color: var(--pfc-white);                     /* Sets the forms background color */
     transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Sets the forms design change transition */
-    position: relative;                                 /* Sets the forms position */
 }
 
-html.dark .form-container {
-    background-color: var(--darkmode-darker);           /* Sets the forms background in darkmode */
-    box-shadow: 0 4px 15px var(--lightmode-light);      /* Sets the forms shadow in darkmode */
+html.dark .my-project-card-form-container {
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-gray);         /* Sets the forms shadow in darkmode */
+    background-color: var(--pfc-black-dark);                /* Sets the forms background in darkmode */
 }
 
-.form-container:hover {
-    transform: translateY(-5px);                        /* Makes the forms come up when hovered */
-    box-shadow: 0 8px 30px var(--lightmode-light);      /* Increases the forms shadow when hovered */
+.my-project-card-form-container:hover {
+    transform: translateY(-5px);                            /* Makes the forms come up when hovered */
+    box-shadow: 0 0.5rem 1.875rem var(--pfc-gray);          /* Increases the forms shadow when hovered */
 }
 
-html.dark .form-container:hover {
-    box-shadow: 0 4px 15px var(--lightmode-lightest);   /* Sets the forms shadow when hovered in darkmode*/
+html.dark .my-project-card-form-container:hover {
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-white-dark);   /* Sets the forms shadow when hovered in darkmode*/
 }
 
 /* GRID LAYOUT */
-.split-layout {
-    display: grid;                                      /* Specifies the layout as a grid */
-    grid-template-columns: 2fr 1fr;                     /* Sets the column width ratio */
-    gap: 2rem;                                          /* Sets the gap between the left and right column */
-    margin-bottom: 1.5rem;                              /* Sets the distance to the bottom */
+.my-project-card-split-layout {
+    display: grid;                                          /* Specifies the layout as a grid */
+    grid-template-columns: 2fr 1fr;                         /* Sets the column width ratio */
+    gap: 2rem;                                              /* Sets the gap between the left and right column */
+    margin-bottom: 1.5rem;                                  /* Sets the distance to the bottom */
 }
 
-.left-column {
-    display: flex;                                      /* Enables the gap between the element */
-    flex-direction: column;                             /* Sets the direction of the elements */
-    gap: 1.5rem;                                        /* Sets the distance between the elements */
-    min-width: 0;                                       /* Prevents the techstack bubbles to shrink the right column */
+.my-project-card-left-column {
+    display: flex;                                          /* Enables the gap between the element */
+    flex-direction: column;                                 /* Sets the direction of the elements */
+    gap: 1.5rem;                                            /* Sets the distance between the elements */
+    min-width: 0;                                           /* Prevents the techstack bubbles to shrink the right column */
 }
 
-.right-column {
-    border-left: 2px solid var(--lightmode-nav);        /* Sets the line between the left and right column */
-    padding-left: 2rem;                                 /* Sets the distance to the separation line */
+.my-project-card-right-column {
+    padding-left: 2rem;                                     /* Sets the distance to the separation line */
+    border-left: 0.125rem solid var(--pfc-white-darker);    /* Sets the line between the left and right column */
 }
 
 /* FORM TITLE */
 .form-container h2 {
-    text-align: center;                                 /* Sets the title to the center */
-    margin-bottom: 1.5rem;                              /* Sets the distance to the form */
+    margin-bottom: 1.5rem;                                  /* Sets the distance to the form */
+    text-align: center;                                     /* Sets the title to the center */
 }
 
 /* SUBMIT BUTTON */
-.submit-button {
-    background-color: var(--icon-blue);                 /* Sets the buttons background color */
-    color: var(--darkmode-font-color);                  /* Sets the buttons text color */
-    padding: 0.75rem 1.5rem;                            /* Sets the distance from the button border to the text */
-    border: none;                                       /* Removes the button border  */
-    border-radius: 4px;                                 /* Sets the button corner curveture */
-    width: 100%;                                        /* Makes the button cover the whole width */
+.my-project-card-submit-button {
+    width: 100%;                                            /* Makes the button cover the whole width */
+    padding: 0.75rem 1.5rem;                                /* Sets the distance from the button border to the text */
+    border: none;                                           /* Removes the button border  */
+    border-radius: 0.25rem;                                 /* Sets the button corner curveture */
+    background-color: var(--pfc-blue);                      /* Sets the buttons background color */
+    color: var(--pfc-white);                                /* Sets the buttons text color */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;  /* Sets the buttons design change transition */
 }
 
-.submit-button:disabled {
-    background-color: var(--icon-disabled);             /* Sets the background color when submitting */
-    cursor: not-allowed;                                /* Sets the cursor icon when submitting */
+.my-project-card-submit-button:disabled {
+    background-color: var(--pfc-gray-darker);               /* Sets the background color when submitting */
+    cursor: not-allowed;                                    /* Sets the cursor icon when submitting */
 }
 
-.submit-button:hover{
-    transform: translateY(-5px);                        /* Makes the forms come up when hovered */
-    background-color: var(--icon-dark-blue);            /* Sets the forms background in darkmode */
+.my-project-card-submit-button:hover{
+    transform: translateY(-5px);                            /* Makes the forms come up when hovered */
+    background-color: var(--pfc-dark-blue);                 /* Sets the forms background in darkmode */
 }
 
 /* POP UP MESSAGE */
-.popup-message {
-    position: absolute;                                 /* Sets the position */
-    top: 20px;                                          /* Sets the message to the top */
-    right: 30px;                                        /* Sets the message to the right */
-    background-color: none;                             /* Removes the background */
-    color: var(--lightmode-font-color);                 /* Sets the text color */
+.my-project-card-popup-message {
+    position: absolute;                                     /* Sets the position */
+    top: 1.25rem;                                           /* Sets the message to the top */
+    right: 1.875rem;                                        /* Sets the message to the right */
+    background-color: none;                                 /* Removes the background */
+    color: var(--pfc-black);                                /* Sets the text color */
 }
 
-html.drak .popup-message {
-    color: var(--darkmode-font-color);                  /* Sets the pop up text color in darkmode */
+html.drak .my-project-card-popup-message {
+    color: var(--pfc-white);                                /* Sets the pop up text color in darkmode */
 }
 
 @media (max-width: 1100px) {
-    .split-layout {
-        grid-template-columns: 1fr;                     /* When collapsed make all elements below each other */
-        gap: 1.5rem;                                    /* Sets the gap between its children */
+    .my-project-card-split-layout {
+        grid-template-columns: 1fr;                         /* When collapsed make all elements below each other */
+        gap: 1.5rem;                                        /* Sets the gap between its children */
     }
 
-    .right-column {
-        border: none;                                   /* Removes the separation line */
-        padding-left: 0;                                /* Removes any padding to the card border */
+    .my-project-card-right-column {
+        padding-left: 0;                                    /* Removes any padding to the card border */
+        border: none;                                       /* Removes the separation line */
     }
 
-    .submit-button {
-        margin-top: 1rem;                               /* Sets the button distance to the file drag'n'drop */
+    .my-project-card-submit-button {
+        margin-top: 1rem;                                   /* Sets the button distance to the file drag'n'drop */
     }
 }

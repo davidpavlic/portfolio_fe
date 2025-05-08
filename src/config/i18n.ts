@@ -14,6 +14,7 @@ const translations = {
   nav_home:    { en: "Home",     de: "Home",        fr: "Home",           hr: "Home",           gg: "Globi" },
   nav_projects:{ en: "Projects", de: "Projects",    fr: "Projects",       hr: "Projects",       gg: "Globi" },
   nav_passions:{ en: "Passions", de: "Passions",    fr: "Passions",       hr: "Passions",       gg: "Globi" },
+  nav_llm:     { en: "My LLM",   de: "Mein LLM",    fr: "Mon LLM",        hr: "Moj LLM",        gg: "Globi" },
   nav_newsscraper: {
     en: "News Scraper",
     de: "News Scraper",
@@ -26,6 +27,13 @@ const translations = {
     de: "Das ist the HomePage.",
     fr: "Ceci est la page d'accueil.",
     hr: "Ove je moja Početna stranica.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  news_dummy: {
+    en: "This is the News Scraper Page.",
+    de: "Das ist the Nachrichten Seite.",
+    fr: "Ceci est la page de scraper d'actualités.",
+    hr: "Ove je moja Pretraživač vijesti stranica.",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
   projects_form_title: {
@@ -147,19 +155,40 @@ const translations = {
     hr: "Greška pri kreiranju projektne kartice",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
-  passions_dummy: {
-    en: "This is the PassionsPage.",
-    de: "Das ist the Leidenschaften Seite.",
-    fr: "Ceci est la page de passions.",
-    hr: "Ove je moja Strasti stranica.",
-    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  llm_new_chat: {
+    en: "New Chat",
+    de: "Neuer Chat",
+    fr: "Nouveau Chat",
+    hr: "Novi Chat",
+    gg: "Globi"
   },
-  news_dummy: {
-    en: "This is the News Scraper Page.",
-    de: "Das ist the Nachrichten Seite.",
-    fr: "Ceci est la page de scraper d'actualités.",
-    hr: "Ove je moja Pretraživač vijesti stranica.",
-    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  llm_controls: {
+    en: "LLM CONTROLS",
+    de: "LLM STEUERUNG",
+    fr: "LLM CONTROLS",
+    hr: "LLM UPRAVLJANJE",
+    gg: "Globi"
+  },
+  llm_history: {
+    en: "History",
+    de: "Verlauf",
+    fr: "Historique",
+    hr: "Povijest",
+    gg: "Globi"
+  },
+  llm_send: {
+    en: "Send",
+    de: "Send",
+    fr: "Send",
+    hr: "Send",
+    gg: "Globi"
+  },
+  llm_type_message: {
+    en: "Type a message...",
+    de: "Nachricht eingeben...",
+    fr: "Tapez un message...",
+    hr: "Unesite poruku...",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf..."
   },
   wip_title: {
     en: "Work in progress",
@@ -182,7 +211,7 @@ const translations = {
     hr: "Vratite se uskoro!",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
-  page_not_found: {
+  pnf_page_not_found: {
     en: "This URL does not exist.",
     de: "Diese URL existiert nicht.",
     fr: "Cette URL n'existe pas.",

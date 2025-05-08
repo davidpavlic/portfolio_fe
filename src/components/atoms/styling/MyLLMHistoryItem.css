@@ -1,0 +1,51 @@
+.my-llm-history-item-container {
+    position: relative;                     /* Position relative to allow absolute positioning of children */
+    display: flex;                          /* Use flexbox for layout */    
+    align-items: center;                    /* Center items vertically */  
+    margin-bottom: 0.25rem;                 /* Space between items */   
+}
+
+.my-llm-history-item {
+    flex: 1;                                /* Allow the item to grow and fill available space */    
+    display: flex;                          /* Use flexbox for layout */    
+    flex-direction: column;                 /* Stack children vertically */
+    padding: 0.75rem 2.5rem 0.75rem 0.75rem;/* Padding around the item */
+    gap: 0.25rem;                           /* Space between children */
+    border-radius: 0.75rem;                 /* Rounded corners */  
+    border: none;                           /* Removes standard button border */
+    background: none;                       /* Removes standard button background */   
+    text-align: left;                       /* Align text to the left */
+    color: var(--pfc-black);                /* Sets the button color */
+    transition: background-color 0.3s ease; /* Sets the button design change transition */
+}
+
+html.dark .my-llm-history-item {
+    color: var(--pfc-white);                /* Sets the button color in dark mode */
+}
+
+.my-llm-history-item:hover {
+    background: var(--pfc-white-dark);      /* Change button background color on hover */
+}
+
+html.dark .my-llm-history-item:hover {
+    background: var(--pfc-black-lightest);  /* Change button background color on hover */
+}
+
+.my-llm-history-item-title {
+    font-size: 0.813rem;                    /* Sets the title font size */
+}
+
+.my-llm-history-item-date {
+    font-size: 0.688rem;                    /* Sets the date font size */
+    color: var(--pfc-black-light);          /* Sets the date color */
+}
+
+html.dark .my-llm-history-item-date {
+    color: var(--pfc-gray);                 /* Sets the date color in dark mode */
+}
+
+.my-llm-history-item-deletebutton {
+    width: 2rem;                            /* Sets the button size statically */
+    height: 2rem;                           /* Sets the button size statically */
+    margin-right: 0.125rem;                 /* Space between the button and the item */
+}

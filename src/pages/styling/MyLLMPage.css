@@ -1,0 +1,11 @@
+.my-llm-container {
+    display: flex;                          /* Flexbox layout for the container */
+}
+
+.my-llm-sidebar-overlay {
+    position: fixed;                        /* Fixed position for the sidebar overlay */
+    inset: 0;                               /* Cover the entire viewport */
+    background: rgba(0, 0, 0, 0.5);       /* Semi-transparent background */
+    z-index: 999;                           /* High z-index to overlay other elements */
+    transition: opacity 0.3s ease;          /* Smooth transition for opacity */
+}
