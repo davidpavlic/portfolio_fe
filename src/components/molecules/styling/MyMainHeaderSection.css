@@ -1,178 +1,163 @@
-.portfolio-header {
-    padding: 4rem 0;
+.my-main-header-container {
+    padding: 4rem 0;                                                /* Top and bottom padding */
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-    padding: 0 2rem;
+.my-main-header-content {
+    max-width: 75rem;                                               /* Maximum width of the content */
+    display: flex;                                                  /* Flexbox for layout */
+    align-items: center;                                            /* Center items vertically */
+    justify-content: center;                                        /* Center items horizontally */
+    margin: 0 auto;                                                 /* Center the content */
+    gap: 5rem;                                                      /* Space between image and text */  
 }
 
-.profile-image-container {
-    flex: 0 0 15rem;
+.my-main-header-image-container {
+    flex: 0 0 15rem;                                                /* Fixed width for the image container */
 }
 
-.profile-image {
-    width: 100%;
-    border-radius: 50%;
-    border: 5px solid white;
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.my-main-header-image {
+    width: 100%;                                                    /* Full width of the container */  
+    border-radius: 50%;                                             /* Circular image */
+    border: 0.313rem solid var(--pfc-white);                        /* White border around the image */
+    box-shadow: 0 0.938rem 1.875rem var(--pfc-transparent-dark);    /* Shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;          /* Smooth transition for hover effect */
 }
 
-.profile-image:hover {
-    transform: scale(1.02);
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.15),
-        0 0 0 1px rgba(0, 0, 0, 0.05);
+html.dark .my-main-header-image {
+    box-shadow: 0 0.938rem 1.875rem var(--pfc-transparent-light);   /* Dark mode shadow */
 }
 
-.name {
-    font-size: 2.8rem;
-    margin: 0 0 0.5rem 0;
-    color: #1a1a1a;
-    font-weight: 700;
-    line-height: 1.2;
+.my-main-header-image:hover {
+    transform: scale(1.02);                                         /* Scale effect on hover */
 }
 
-.title {
-    font-size: 1.5rem;
-    margin: 0 0 1.75rem 0;
-    color: #3498db;
-    font-weight: 500;
-    position: relative;
-    display: inline-block;
+.my-main-header-name {
+    margin: 0 0 0.5rem 0;                                           /* Margin below the name */
+    font-size: 2.5rem;                                              /* Font size for the name */
+    font-weight: 700;                                               /* Font weight for the name */
 }
 
-.title::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: #3498db;
-    border-radius: 3px;
+.my-main-header-title {
+    position: relative;                                             /* Position relative for the title */
+    margin: 0 0 1.75rem 0;                                          /* Margin below the title */
+    font-size: 1.5rem;                                              /* Font size for the title */  
+    font-weight: 500;                                               /* Font weight for the title */ 
+    color: var(--pfc-light-blue);                                   /* Color for the title */
 }
 
-.summary {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #4a4a4a;
-    margin-bottom: 1.5rem;
-    max-width: 700px;
-    position: relative;
+.my-main-header-title::after {
+    content: '';                                                    /* Empty content for the pseudo-element */
+    position: absolute;                                             /* Absolute positioning to the title */
+    bottom: -0.5rem;                                                /* Positioning below the title */
+    left: 0;                                                        /* Align to the left */
+    width: 3.125rem;                                                /* Width of the line */
+    height: 0.188rem;                                               /* Height of the line */
+    background: var(--pfc-light-blue);                              /* Color of the line */
+    border-radius: 0.188rem;                                        /* Rounded corners for the line */
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
+.my-main-header-summary {
+    position: relative;                                             /* Position relative for the summary */
+    max-width: 43.75rem;                                            /* Maximum width for the summary */
+    margin-bottom: 1.5rem;                                          /* Margin below the summary */
+    line-height: 1.7;                                               /* Spacing between lines */
+    font-size: 1.15rem;                                             /* Font size for the summary */
 }
 
-.social-link {
-    text-decoration: none;
-    color: white;
-    background-color: #2c3e50;
-    padding: 0.7rem 1.5rem;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.my-main-header-social-links {
+    display: flex;                                                  /* Flexbox for layout */
+    gap: 1rem;                                                      /* Space between social links */
+    margin-top: 2rem;                                               /* Margin above the social links */
 }
 
-.social-link:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+.my-main-header-social-link {
+    display: inline-flex;                                           /* Inline flex for layout */
+    align-items: center;                                            /* Center items vertically */
+    gap: 0.5rem;                                                    /* Space between icon and text */
+    padding: 0.7rem 1.5rem;                                         /* Padding for the links */
+    border-radius: 3.125rem;                                        /* Rounded corners for the links */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);            /* Shadow effect */
+    font-weight: 500;                                               /* Font weight for the links */
+    text-decoration: none;                                          /* No underline for links */
+    color: var(--pfc-white);                                        /* Text color for links */
+    transition: all 0.3s ease;                                      /* Smooth transition for hover effect */
 }
 
-.social-link:nth-child(1) {
-    background: #00a0dc;
+.my-main-header-social-link:hover {
+    transform: translateY(-0.125rem);                               /* Lift effect on hover */
 }
 
-.social-link:nth-child(1):hover {
-    background: #0086cf;
+.my-main-header-linkedin {
+    background: var(--pfc-linkedin);                                /* LinkedIn background color */
 }
 
-.social-link:nth-child(2) {
-    background: #6e5494;
+.my-main-header-linkedin:hover {
+    background: var(--pfc-linkedin-darker);                         /* LinkedIn hover color */
 }
 
-.social-link:nth-child(2):hover {
-    background: #333;
+.my-main-header-github {
+    background: var(--pfc-github);                                  /* GitHub background color */
 }
 
-/* Responsive adjustments */
+.my-main-header-github:hover {
+    background: var(--pfc-github-darker);                           /* GitHub hover color */
+}
+
+
 @media (max-width: 1200px) {
-    .header-content {
-        gap: 4rem;
+    .my-main-header-content {
+        gap: 4rem;                                                  /* Reduce gap between image and text */
     }
 }
 
 @media (max-width: 992px) {
-    .header-content {
-        gap: 3rem;
-    }
-
-    .profile-image-container {
-        flex: 0 0 200px;
-    }
-
-    .name {
-        font-size: 2.5rem;
+    .my-main-header-content {
+        gap: 3rem;                                                  /* Further reduce gap between image and text */
     }
 }
 
 @media (max-width: 768px) {
-    .portfolio-header {
-        padding: 3rem 0;
+    .my-main-header-container {
+        padding: 3rem 0;                                            /* Reduce top and bottom padding */ 
     }
 
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 2.5rem;
+    .my-main-header-content {
+        flex-direction: column;                                     /* Stack image and text vertically */
+        text-align: center;                                         /* Center text alignment */
+        gap: 2.5rem;                                                /* Space between image and text */
     }
 
-    .profile-image-container {
-        flex: 0 0 180px;
+    .my-main-header-name {
+        font-size: 2.2rem;                                          /* Reduce font size for the name */
     }
 
-    .title::after {
-        left: 50%;
-        transform: translateX(-50%);
+    .my-main-header-image-container {
+        flex: 0 0 11.25rem;                                         /* Fixed width for the image container */
     }
 
-    .social-links {
-        justify-content: center;
+    .my-main-header-title {
+        font-size: 1.3rem;                                          /* Reduce font size for the title */
+    }
+
+    .my-main-header-title::after {
+        left: 50%;                                                  /* Center the line under the title */
+        transform: translateX(-50%);                                /* Center the line */
+    }
+
+    .my-main-header-social-links {
+        justify-content: center;                                    /* Center social links */
     }
 }
 
 @media (max-width: 576px) {
-    .name {
-        font-size: 2.2rem;
+
+    .my-main-header-social-links {
+        flex-direction: column;                                     /* Stack social links vertically */
+        align-items: center;                                        /* Center items vertically */
     }
 
-    .title {
-        font-size: 1.3rem;
-    }
-
-    .social-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .social-link {
-        width: 180px;
-        justify-content: center;
+    .my-main-header-social-link {
+        width: 11.25rem;                                            /* Fixed width for social links */
+        justify-content: center;                                    /* Center items in the link */
     }
 }

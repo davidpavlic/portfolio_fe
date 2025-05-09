@@ -22,19 +22,26 @@ const translations = {
     hr: "News Scraper",
     gg: "Globi"
   },
-  home_dummy: {
-    en: "This is the HomePage.",
-    de: "Das ist the HomePage.",
-    fr: "Ceci est la page d'accueil.",
-    hr: "Ove je moja Početna stranica.",
-    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
-  },
   news_dummy: {
     en: "This is the News Scraper Page.",
     de: "Das ist the Nachrichten Seite.",
     fr: "Ceci est la page de scraper d'actualités.",
     hr: "Ove je moja Pretraživač vijesti stranica.",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_header_title: {
+    en: "Full Stack Software Engineer",
+    de: "Full Stack Software Engineer",
+    fr: "Développeur full stack",
+    hr: "Full stack softverski inženjer",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_header_summary: {
+    en: "With 5+ years of programming experience in software engineering, I combine technical expertise in full-stack development with strong client relationship skills. Currently pursuing my Bachelor's in Computer Science at ZHAW while working as a Fullstack Engineer.",
+    de: "Mit über 5 Jahren Programmiererfahrung in der Softwareentwicklung kombiniere ich technische Expertise in der Full-Stack-Entwicklung mit starken Fähigkeiten im Kundenbeziehungsmanagement. Derzeit verfolge ich meinen Bachelor in Informatik an der ZHAW und arbeite als Fullstack Engineer.",
+    fr: "Avec plus de 5 ans d'expérience en programmation dans le domaine de l'ingénierie logicielle, je combine une expertise technique en développement full-stack avec de solides compétences en relations clients. Actuellement, je poursuis mon Bachelor en informatique à la ZHAW tout en travaillant comme ingénieur fullstack.",
+    hr: "S više od 5 godina iskustva u programiranju u softverskom inženjerstvu, kombiniram tehničku stručnost u razvoju punog stoga s jakim vještinama odnosa s klijentima. Trenutno pohađam svoj Bachelor iz računalnih znanosti na ZHAW-u dok radim kao Fullstack inženjer.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf. Nach all dem Trubel tut es gut, still über Felsschluchten und Baumwipfel zu schweben. Der pralle Heliumfisch sieht nicht nur  super aus, er steigt auch viel schneller auf als die Ballone. "
   },
   projects_form_title: {
     en: "Upload Project Card",

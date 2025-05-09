@@ -4,12 +4,12 @@
     inset: 0;                                               /* Aligning to the top, left, right & bottom */
     align-items: center;                                    /* Centering vertically */
     justify-content: center;                                /* Centering horizontally */
-    background: var(--pfc-transparent-light);               /* Background color */
+    background: var(--pfc-transparent-lighter);             /* Background color */
     backdrop-filter: blur(2px);                             /* Blurring the background */
 }
 
 html.dark .my-llm-overlay {
-    background: var(--pfc-transparent-dark);                /* Dark mode background */
+    background: var(--pfc-transparent-darker);              /* Dark mode background */
 }
 
 .my-llm-error {
