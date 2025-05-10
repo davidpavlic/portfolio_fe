@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import '../styling/MyMainSkillsSection.css';
 
 type SkillItem = {
   name: string;
   level: number;
+  icon?: string;
 };
 
 type SkillCategory = {
@@ -11,78 +13,132 @@ type SkillCategory = {
   skills: SkillItem[];
 };
 
+const skillCategories: SkillCategory[] = [
+  {
+    title: "Programming Languages",
+    icon: "💻",
+    skills: [
+      { name: "Java", level: 90, icon: "☕" },
+      { name: "TypeScript", level: 80, icon: "📘" },
+      { name: "Python", level: 60, icon: "🐍" },
+      { name: "C", level: 50, icon: "🔤" },
+      { name: "C#", level: 40, icon: "🎯" }
+    ]
+  },
+  {
+    title: "Frontend Development",
+    icon: "🎨",
+    skills: [
+      { name: "React", level: 90, icon: "⚛️" },
+      { name: "HTML", level: 80, icon: "🌐" },
+      { name: "CSS", level: 80, icon: "🖥️" },
+    ]
+  },
+  {
+    title: "Backend & Databases",
+    icon: "⚙️",
+    skills: [
+      { name: "SQL", level: 95, icon: "🧮" },
+      { name: "SpringBoot", level: 80, icon: "🌱" },
+      { name: "PowerBuilder", level: 80, icon: "🏗️" }
+    ]
+  },
+  {
+    title: "DevOps & Tools",
+    icon: "🔧",
+    skills: [
+      { name: "Git", level: 90, icon: "🌿" },
+      { name: "Selenium", level: 80, icon: "🪲" },
+      { name: "Docker", level: 60, icon: "🐳" },
+      { name: "Jenkins", level: 40, icon: "🤖" },
+      { name: "Azure", level: 20, icon: "☁️" }
+    ]
+  },
+  {
+    title: "Interests",
+    icon: "🌍",
+    skills: [
+      { name: "Martial Arts", level: 80, icon: "🥋" },
+      { name: "Cooking", level: 60, icon: "🍳" },
+      { name: "Travel", level: 50, icon: "✈️" },
+      { name: "Hiking", level: 40, icon: "🥾" },
+      { name: "Gaming", level: 30, icon: "🎮" },
+      { name: "Reading", level: 20, icon: "📚" },
+    ]
+  }
+];
+
 const MyMainSkillsSection = () => {
-  const skillCategories: SkillCategory[] = [
-    {
-      title: "Programming Languages",
-      icon: "💻",
-      skills: [
-        { name: "Java", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "C#", level: 75 },
-        { name: "Bash", level: 70 }
-      ]
-    },
-    {
-      title: "Frontend Development",
-      icon: "🎨",
-      skills: [
-        { name: "React", level: 88 },
-        { name: "HTML/CSS", level: 85 },
-        { name: "JavaScript", level: 80 }
-      ]
-    },
-    {
-      title: "Backend & Databases",
-      icon: "⚙️",
-      skills: [
-        { name: "Spring API", level: 85 },
-        { name: "SQL", level: 90 },
-        { name: "PowerBuilder", level: 80 }
-      ]
-    },
-    {
-      title: "DevOps & Tools",
-      icon: "🔧",
-      skills: [
-        { name: "Git", level: 85 },
-        { name: "Docker", level: 80 },
-        { name: "Azure", level: 75 },
-        { name: "Jenkins", level: 80 },
-        { name: "Selenium", level: 85 }
-      ]
-    }
-  ];
+  const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
+
+  const toggleCategory = (index: number) => {
+    setExpandedCategory(expandedCategory === index ? null : index);
+  };
 
   return (
-    <section className="skills-section">
-      <div className="section-container">
-        <h2 className="section-title">Technical Expertise</h2>
-        <p className="section-subtitle">Languages, frameworks, and tools I work with</p>
-        
-        <div className="skills-grid">
-          {skillCategories.map((category, index) => (
-            <div className="skill-category" key={index}>
-              <h3 className="category-title">
-                <span className="category-icon">{category.icon}</span>
-                {category.title}
-              </h3>
-              <div className="skills-list">
-                {category.skills.map((skill, skillIndex) => (
-                  <div className="skill-item" key={skillIndex}>
-                    <div className="skill-progress">
-                      <div 
-                        className="progress-bar" 
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                    <span>{skill.name}</span>
+    <section className="my-main-header-container">
+      <div className="my-main-skills-wrapper">
+        <div className="my-main-skills-content">
+          <div>
+            <header className="my-main-skills-title">
+              <h1 className="my-main-header-name">My Skills & Interests</h1>
+            </header>
+            <h2 className="my-main-header-title">Every Day is a New Opportunity to: </h2>
+            <ul className="my-main-skills-text-list">
+              <li>Finally finish that one project laying around</li>
+              <li>Stare at a bug for an hour and fix it in five seconds</li>
+              <li>Write code that works... and then wonder why</li>
+              <li>Stay curious and dive into something new</li>
+              <li>Teach something you didn’t know six months ago</li>
+              <li>Work with people who challenge your thinking</li>
+              <li>Take a few hits in MMA and still show up smiling</li>
+              <li>Experiment in the kitchen even if it turns out weird</li>
+              <li>To live life pursuing what you love</li>
+            </ul>
+          </div>
+
+          <div className="my-main-skills-category-wrapper">
+            <div className="my-main-skills-category-grid">
+              {skillCategories.map((category, index) => (
+                <div
+                  className={`my-main-skills-category ${expandedCategory === index ? 'expanded' : ''}`}
+                  key={index}
+                  onClick={() => toggleCategory(index)}
+                >
+                  <div className="my-main-skills-category-header">
+                    <h3 className="my-main-skills-category-title">
+                      <span className="my-main-skills-category-icon">{category.icon}</span>
+                      {category.title}
+                    </h3>
+                    <span className="my-main-skills-category-toggle-icon">
+                      {expandedCategory === index ? '−' : '+'}
+                    </span>
                   </div>
-                ))}
-              </div>
+
+                  <div className="my-main-skills-list">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div className="my-main-skills-item" key={skillIndex}>
+                        <div className="my-main-skills-item-info">
+                          {skill.icon && <span>{skill.icon}</span>}
+                          <span className="my-main-skills-item-name">{skill.name}</span>
+                          <span className="my-main-skills-item-level">{skill.level}%</span>
+                        </div>
+                        <div className="my-main-skills-item-progress">
+                          <div
+                            className="my-main-skills-item-progress-bar"
+                            style={{ width: `${skill.level}%` }}
+                            aria-valuenow={skill.level}
+                            aria-valuemin={0}
+                            aria-valuemax={100}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

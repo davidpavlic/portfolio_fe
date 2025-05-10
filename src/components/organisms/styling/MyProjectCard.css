@@ -14,7 +14,7 @@
 
 html.dark .my_project_card_container {
   background-color: var(--pfc-black-dark);              /* Sets the cards background color */
-  box-shadow: 0 0.25rem 0.938rem var(--pfc-gray);       /* Sets the cards shadow */
+  box-shadow: 0 0.25rem 0.938rem var(--pfc-black-lightest);               /* Sets the cards shadow */
 }
 
 .my_project_card_container:hover {
@@ -23,7 +23,7 @@ html.dark .my_project_card_container {
 }
 
 html.dark .my_project_card_container:hover {
-  box-shadow: 0 0.25rem 0.938rem var(--pfc-white-dark); /* Sets the cards shadow */
+  box-shadow: 0 0.25rem 0.938rem var(--pfc-gray-darker);/* Sets the cards shadow */
 }
 
 /* IMAGE CONTAINER */
