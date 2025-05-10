@@ -65,6 +65,17 @@ const skillCategories: SkillCategory[] = [
       { name: "Gaming", level: 30, icon: "🎮" },
       { name: "Reading", level: 20, icon: "📚" },
     ]
+  },
+  {
+    title: "Languages",
+    icon: "🗣️",
+    skills: [
+      { name: "German", level: 100, icon: "🇩🇪" },
+      { name: "English", level: 90, icon: "🇬🇧" },
+      { name: "Croatian", level: 60, icon: "🇭🇷" },
+      { name: "French", level: 40, icon: "🇫🇷" },
+      { name: "Spanish", level: 10, icon: "🇪🇸" },
+    ]
   }
 ];
 
@@ -83,18 +94,20 @@ const MyMainSkillsSection = () => {
             <header className="my-main-skills-title">
               <h1 className="my-main-header-name">My Skills & Interests</h1>
             </header>
-            <h2 className="my-main-header-title">Every Day is a New Opportunity to: </h2>
-            <ul className="my-main-skills-text-list">
-              <li>Finally finish that one project laying around</li>
-              <li>Stare at a bug for an hour and fix it in five seconds</li>
-              <li>Write code that works... and then wonder why</li>
-              <li>Stay curious and dive into something new</li>
-              <li>Teach something you didn’t know six months ago</li>
-              <li>Work with people who challenge your thinking</li>
-              <li>Take a few hits in MMA and still show up smiling</li>
-              <li>Experiment in the kitchen even if it turns out weird</li>
-              <li>To live life pursuing what you love</li>
-            </ul>
+            <div className="my-main-skills-text">
+              <h2 className="my-main-header-title">Every Day is a New Opportunity to: </h2>
+              <ul className="my-main-skills-text-list">
+                <li>Finally finish that one project laying around</li>
+                <li>Stare at a bug for an hour and fix it in five seconds</li>
+                <li>Write code that works... and then wonder why</li>
+                <li>Stay curious and dive into something new</li>
+                <li>Teach something you didn’t know six months ago</li>
+                <li>Work with people who challenge your thinking</li>
+                <li>Take a few hits in MMA and still show up smiling</li>
+                <li>Experiment in the kitchen even if it turns out weird</li>
+                <li>To live life pursuing what you love</li>
+              </ul>
+            </div>
           </div>
 
           <div className="my-main-skills-category-wrapper">

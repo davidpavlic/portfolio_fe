@@ -1,4 +1,3 @@
-/* TODO: Mobile Responsiveness */
 /* GENERAL */
 .my-main-skills-wrapper {
     max-width: 75rem;                                           /* Sets the maximum width of the wrapper */
@@ -151,4 +150,68 @@ html.dark .my-main-skills-category.expanded {
             rgba(255, 255, 255, 0.2) 0%,
             rgba(255, 255, 255, 0) 50%,
             rgba(255, 255, 255, 0.2) 100%);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1240px) {
+    .my-main-skills-text-list li {
+        font-size: 1rem;                                        /* Sets the font size of the list items */
+    }   
+}
+
+@media (max-width: 1170px) {
+    .my-main-skills-text-list li {
+        font-size: 0.9rem;                                      /* Sets the font size of the list items */
+    }
+}
+
+@media (max-width: 1110px) {
+    .my-main-skills-text{
+        display: none;                                          /* Hides the text on smaller screens */ 
+    }
+
+    .my-main-skills-title{
+        margin: 0;                                              /* Resets margin for the title */
+    }
+
+    .my-main-skills-content {
+        grid-template-columns: 1fr;                             /* Changes to a single column layout */
+        gap: 2rem;                                              /* Adjusts the gap between columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .my-main-skills-title {
+        text-align: center;                                     /* Centers the title text */ 
+    }
+
+    .my-main-skills-wrapper {
+        padding: 0 0.5rem;                                      /* Adds padding to the wrapper */ 
+    }
+}
+
+@media (max-width: 480px) {
+    .my-main-skills-category-wrapper {
+        padding: 1rem;                                          /* Adjusts padding for smaller screens */
+    }
+    
+    .my-main-skills-category-grid {
+        gap: 1rem;                                              /* Adjusts gap between categories */ 
+    }
+    
+    .my-main-skills-category-title {
+        font-size: 1rem;                                        /* Sets the font size of the category title */
+    }
+    
+    .my-main-skills-category-icon {
+        font-size: 1.1rem;                                      /* Sets the font size of the category icon */
+    }
+    
+    .my-main-skills-item-name {
+        font-size: 0.9rem;                                      /* Sets the font size of the skill name */
+    }
+    
+    .my-main-skills-item-level {
+        font-size: 0.8rem;                                      /* Sets the font size of the skill level */
+    }
 }
