@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import '../styling/MyMainSkillsSection.css';
+import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
+
 
 type SkillItem = {
   name: string;
@@ -15,7 +18,7 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Programming Languages",
+    title: i18n.t('main_skills_programming_languages'),
     icon: "💻",
     skills: [
       { name: "Java", level: 90, icon: "☕" },
@@ -26,7 +29,7 @@ const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    title: "Frontend Development",
+    title: i18n.t('main_skills_fontend_development'),
     icon: "🎨",
     skills: [
       { name: "React", level: 90, icon: "⚛️" },
@@ -35,7 +38,7 @@ const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    title: "Backend & Databases",
+    title: i18n.t('main_skills_backend_databases'),
     icon: "⚙️",
     skills: [
       { name: "SQL", level: 95, icon: "🧮" },
@@ -44,7 +47,7 @@ const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    title: "DevOps & Tools",
+    title: i18n.t('main_skills_devops_tools'),
     icon: "🔧",
     skills: [
       { name: "Git", level: 90, icon: "🌿" },
@@ -55,32 +58,33 @@ const skillCategories: SkillCategory[] = [
     ]
   },
   {
-    title: "Interests",
+    title: i18n.t('main_skills_interests'),
     icon: "🌍",
     skills: [
-      { name: "Martial Arts", level: 80, icon: "🥋" },
-      { name: "Cooking", level: 60, icon: "🍳" },
-      { name: "Travel", level: 50, icon: "✈️" },
-      { name: "Hiking", level: 40, icon: "🥾" },
-      { name: "Gaming", level: 30, icon: "🎮" },
-      { name: "Reading", level: 20, icon: "📚" },
+      { name: i18n.t('main_skills_martial_arts'), level: 80, icon: "🥋" },
+      { name: i18n.t('main_skills_cooking'), level: 60, icon: "🍳" },
+      { name: i18n.t('main_skills_travel'), level: 50, icon: "✈️" },
+      { name: i18n.t('main_skills_hiking'), level: 40, icon: "🥾" },
+      { name: i18n.t('main_skills_gaming'), level: 30, icon: "🎮" },
+      { name: i18n.t('main_skills_reading'), level: 20, icon: "📚" },
     ]
   },
   {
-    title: "Languages",
+    title: i18n.t('main_skills_languages'),
     icon: "🗣️",
     skills: [
-      { name: "German", level: 100, icon: "🇩🇪" },
-      { name: "English", level: 90, icon: "🇬🇧" },
-      { name: "Croatian", level: 60, icon: "🇭🇷" },
-      { name: "French", level: 40, icon: "🇫🇷" },
-      { name: "Spanish", level: 10, icon: "🇪🇸" },
+      { name: i18n.t('env_german'), level: 100, icon: "🇩🇪" },
+      { name: i18n.t('env_english'), level: 90, icon: "🇬🇧" },
+      { name: i18n.t('env_croatian'), level: 60, icon: "🇭🇷" },
+      { name: i18n.t('env_french'), level: 40, icon: "🇫🇷" },
+      { name: i18n.t('main_skills_spanish'), level: 10, icon: "🇪🇸" },
     ]
   }
 ];
 
 const MyMainSkillsSection = () => {
   const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
+  const { t } = useTranslation();
 
   const toggleCategory = (index: number) => {
     setExpandedCategory(expandedCategory === index ? null : index);
@@ -92,20 +96,20 @@ const MyMainSkillsSection = () => {
         <div className="my-main-skills-content">
           <div>
             <header className="my-main-skills-title">
-              <h1 className="my-main-header-name">My Skills & Interests</h1>
+              <h1 className="my-main-header-name">{t('main_skills_title')}</h1>
             </header>
             <div className="my-main-skills-text">
-              <h2 className="my-main-header-title">Every Day is a New Opportunity to: </h2>
+              <h2 className="my-main-header-title">{t('main_skills_subtitle')}</h2>
               <ul className="my-main-skills-text-list">
-                <li>Finally finish that one project laying around</li>
-                <li>Stare at a bug for an hour and fix it in five seconds</li>
-                <li>Write code that works... and then wonder why</li>
-                <li>Stay curious and dive into something new</li>
-                <li>Teach something you didn’t know six months ago</li>
-                <li>Work with people who challenge your thinking</li>
-                <li>Take a few hits in MMA and still show up smiling</li>
-                <li>Experiment in the kitchen even if it turns out weird</li>
-                <li>To live life pursuing what you love</li>
+                <li>{t('main_skills_text_entry_1')}</li>
+                <li>{t('main_skills_text_entry_2')}</li>
+                <li>{t('main_skills_text_entry_3')}</li>
+                <li>{t('main_skills_text_entry_4')}</li>
+                <li>{t('main_skills_text_entry_5')}</li>
+                <li>{t('main_skills_text_entry_6')}</li>
+                <li>{t('main_skills_text_entry_7')}</li>
+                <li>{t('main_skills_text_entry_8')}</li>
+                <li>{t('main_skills_text_entry_9')}</li>
               </ul>
             </div>
           </div>

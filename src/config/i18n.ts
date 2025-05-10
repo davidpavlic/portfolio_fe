@@ -43,6 +43,174 @@ const translations = {
     hr: "S više od 5 godina iskustva u programiranju u softverskom inženjerstvu, kombiniram tehničku stručnost u razvoju punog stoga s jakim vještinama odnosa s klijentima. Trenutno pohađam svoj Bachelor iz računalnih znanosti na ZHAW-u dok radim kao Fullstack inženjer.",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf. Nach all dem Trubel tut es gut, still über Felsschluchten und Baumwipfel zu schweben. Der pralle Heliumfisch sieht nicht nur  super aus, er steigt auch viel schneller auf als die Ballone. "
   },
+  main_skills_programming_languages: {
+    en: "Programming Languages",
+    de: "Programmiersprachen",
+    fr: "Langages de programmation",
+    hr: "Programski jezici",
+    gg: "Globi und Sophia"
+  },
+  main_skills_fontend_development: {
+    en: "Frontend Development",
+    de: "Frontend-Entwicklung",
+    fr: "Développement Frontend",
+    hr: "Frontend razvoj",
+    gg: "Globi und Sophia"
+  },
+  main_skills_backend_databases: {
+    en: "Backend & Databases",
+    de: "Backend & Datenbanken",
+    fr: "Backend & Bases de données",
+    hr: "Backend i baze podataka",
+    gg: "Globi und Sophia"
+  },
+  main_skills_devops_tools: {
+    en: "DevOps & Tools",
+    de: "DevOps & Tools",
+    fr: "DevOps & Outils",
+    hr: "DevOps i alati",
+    gg: "Globi und Sophia"
+  },
+  main_skills_interests: {
+    en: "Interests",
+    de: "Interessen",
+    fr: "Intérêts",
+    hr: "Interesi",
+    gg: "Globi und Sophia"
+  },
+  main_skills_martial_arts: {
+    en: "Martial Arts",
+    de: "Kampfsport",
+    fr: "Arts martiaux",
+    hr: "Borilačke vještine",
+    gg: "Globi und Sophia"
+  },
+  main_skills_cooking: {
+    en: "Cooking",
+    de: "Kochen",
+    fr: "Cuisine",
+    hr: "Kuhanje",
+    gg: "Globi und Sophia"
+  },
+  main_skills_travel: {
+    en: "Travel",
+    de: "Reisen",
+    fr: "Voyager",
+    hr: "Putovanja",
+    gg: "Globi und Sophia"
+  },
+  main_skills_hiking: {
+    en: "Hiking",
+    de: "Wandern",
+    fr: "Randonnée",
+    hr: "Planinarenje",
+    gg: "Globi und Sophia"
+  },
+  main_skills_gaming: {
+    en: "Gaming",
+    de: "Gaming",
+    fr: "Jeux vidéo",
+    hr: "Igranje igara",
+    gg: "Globi und Sophia"
+  },
+  main_skills_reading: {
+    en: "Reading",
+    de: "Lesen",
+    fr: "Lecture",
+    hr: "Čitanje",
+    gg: "Globi und Sophia"
+  },
+  main_skills_languages: {
+    en: "Languages",
+    de: "Sprachen",
+    fr: "Langues",
+    hr: "Jezici",
+    gg: "Globi und Sophia"
+  },
+  main_skills_spanish: {
+    en: "Spanish",
+    de: "Spanisch",
+    fr: "Espagnol",
+    hr: "Španjolski",
+    gg: "Globi"
+  },
+  main_skills_title: {
+    en: "My Skills & Interests",
+    de: "Skills & Interessen",
+    fr: "Compétences & intérêts",
+    hr: "Vještine i interesi",
+    gg: "Globi und Sophia"
+  },
+  main_skills_subtitle: {
+    en: "Every Day is a New Opportunity to:",
+    de: "Jeder Tag bietet neue Chancen um:",
+    fr: "Chaque jour est une nouvelle occasion de:",
+    hr: "Svaki dan je nova prilika za:",
+    gg: "Globi und Sophia fliegen"
+  },
+  main_skills_text_entry_1: {
+    en: "Finally finish that one project laying around",
+    de: "Endlich das eine Projekt ab zu schliessen",
+    fr: "Terminer enfin ce projet en attente",
+    hr: "Završiti konačno taj jedan projekt",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_2: {
+    en: "Stare at a bug for an hour and fix it in five seconds",
+    de: "Einen Bug nach einer Stunde in 5 Sekunden lösen",
+    fr: "Fixer un bug 1h et corriger en 5s",
+    hr: "Sat vremena bugljiti u bug, i rješit u 5 sekundi",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_3: {
+    en: "Write code that works... and then wonder why",
+    de: "Laufenden code schreiben... und nicht verstehen",
+    fr: "Écrire du code qui fonctionne... puis se demander pourquoi",
+    hr: "Napisati kod koji radi... i onda se pitati zašto",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_4: {
+    en: "Stay curious and dive into something new",
+    de: "Neugierig bleiben und in Neues eintauchen",
+    fr: "Rester curieux et plonger dans quelque chose de nouveau",
+    hr: "Ostati znatiželjan i zaroniti u nešto novo",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_5: {
+    en: "Teach something you didn’t know six months ago",
+    de: "Etwas lehren, das man kürzlich nicht wusste",
+    fr: "Enseigner quelque chose qu’on ne connaissait pas il y a six mois",
+    hr: "Poučavati nešto što nisi znao prije šest mjeseci",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_6: {
+    en: "Work with people who challenge your thinking",
+    de: "Mit Leuten arbeiten, die meine Denkweise fordern",
+    fr: "Travailler avec des personnes qui stimulent votre pensée",
+    hr: "Raditi s ljudima koji izazivaju tvoje razmišljanje",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_7: {
+    en: "Take a few hits in MMA and still show up smiling",
+    de: "Paar Treffer im MMA kassieren und weiter lächeln",
+    fr: "Prendre quelques coups en MMA et continuer à sourire",
+    hr: "Primiti udarce u MMA-u i i dalje se smijati",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_8: {
+    en: "Experiment in the kitchen even if it turns out weird",
+    de: "In der Küche experimentieren egal wie es wird",
+    fr: "Expérimenter en cuisine même si c’est bizarre",
+    hr: "Eksperimentirati u kuhinji čak i ako ispadne čudno",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_skills_text_entry_9: {
+    en: "To live life pursuing what you love",
+    de: "Das im Leben zu verfolgen, was man liebt",
+    fr: "Vivre une vie en poursuivant ce que vous aimez",
+    hr: "Živjeti život slijedeći ono što voliš",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
   projects_form_title: {
     en: "Upload Project Card",
     de: "Projektkarte hochladen",
