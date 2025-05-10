@@ -1,0 +1,38 @@
+.my-main-skills-title {
+    margin-bottom: 3rem;                                        /* Adds space below the title */
+}
+
+.my-main-skills-text-list li {
+    margin-bottom: 1rem;                                        /* Adds space below each list item */
+    font-size: 1.1rem;                                          /* Sets the font size of the list items */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1240px) {
+    .my-main-skills-text-list li {
+        font-size: 1rem;                                        /* Sets the font size of the list items */
+    }   
+}
+
+@media (max-width: 1170px) {
+    .my-main-skills-text-list li {
+        font-size: 0.9rem;                                      /* Sets the font size of the list items */
+    }
+}
+
+@media (max-width: 1110px) {
+    .my-main-skills-title{
+        margin: 0;                                              /* Resets margin for the title */
+    }
+    
+    .my-main-skills-text{
+        display: none;                                          /* Hides the text on smaller screens */ 
+    }
+}
+
+@media (max-width: 768px) {
+    .my-main-skills-title {
+        text-align: center;                                     /* Centers the title text */ 
+    }
+}
+

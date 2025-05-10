@@ -1,0 +1,74 @@
+
+
+/* ENTRY */
+.my-main-skills-category {
+    padding: 1.25rem;                                           /* Adds padding inside the category */
+    border: 0.125rem solid rgba(0, 0, 0, 0.03);               /* Adds a light border around the category */
+    border-radius: 0.75rem;                                     /* Rounds the corners of the category */
+    cursor: pointer;                                            /* Changes the cursor to a pointer when hovering over the category */
+    transition: all 0.3s ease;                                  /* Adds a smooth transition effect for hover and active states */
+}
+
+html.dark .my-main-skills-category {
+    border: 0.125rem solid rgba(255, 255, 255, 0.1);          /* Adds a light border for dark mode */
+    background-color: var(--pfc-black-dark);                    /* Sets the background color for dark mode */
+}
+
+.my-main-skills-category:hover,
+.my-main-skills-category.expanded {
+    box-shadow: 0 5px 15px var(--pfc-white-lightest);           /* Adds a shadow effect on hover and expansion */
+}
+
+html.dark .my-main-skills-category:hover,
+html.dark .my-main-skills-category.expanded {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);                /* Adds a shadow effect on hover and expansion in dark mode */
+}
+
+.my-main-skills-category-header {
+    display: flex;                                              /* Creates a flexbox layout for the category header */
+    justify-content: space-between;                             /* Aligns items to the edges of the header */
+}
+
+.my-main-skills-category-title {
+    display: flex;                                              /* Creates a flexbox layout for the category title */
+    margin: 0;                                                  /* Resets margin for the title */
+    gap: 0.75rem;                                               /* Adds space between the title and icon */
+    font-size: 1.2rem;                                          /* Sets the font size of the title */
+}
+
+.my-main-skills-category-icon {
+    font-size: 1.3rem;                                          /* Sets the font size of the category icon */
+}
+
+.my-main-skills-category-toggle-icon {
+    font-size: 1.1rem;                                          /* Sets the font size of the toggle icon */
+    font-weight: bold;                                          /* Makes the toggle icon bold */
+    color: var(--pfc-gray-darker);                              /* Sets the color of the toggle icon */
+}
+
+/* SUBENTRY */
+.my-main-skills-list {
+    display: flex;                                              /* Creates a flexbox layout for the skills list */
+    flex-direction: column;                                     /* Arranges the skills in a column */
+    gap: 1rem;                                                  /* Adds space between the skills */
+    max-height: 0;                                              /* Sets the maximum height to 0 for collapsed state */
+    overflow: hidden;                                           /* Hides overflow content */
+    transition: all 0.5s ease;                                  /* Adds a smooth transition effect for height changes */
+}
+
+.my-main-skills-category.expanded .my-main-skills-list {
+    max-height: 32rem;                                          /* Sets the maximum height for expanded state */
+    padding-top: 1rem;                                          /* Adds padding at the top of the list */
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 480px) {
+    
+    .my-main-skills-category-title {
+        font-size: 1rem;                                        /* Sets the font size of the category title */
+    }
+    
+    .my-main-skills-category-icon {
+        font-size: 1.1rem;                                      /* Sets the font size of the category icon */
+    }
+}

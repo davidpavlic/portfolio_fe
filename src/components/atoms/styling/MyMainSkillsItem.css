@@ -1,0 +1,62 @@
+.my-main-skills-item {
+    display: flex;                                              /* Creates a flexbox layout for each skill item */
+    flex-direction: column;                                     /* Arranges the skill item in a column */
+    gap: 0.5rem;                                                /* Adds space between the skill item elements */
+}
+
+.my-main-skills-item-info {
+    display: flex;                                              /* Creates a flexbox layout for the skill item info */
+    align-items: center;                                        /* Centers items vertically */
+    gap: 0.75rem;                                               /* Adds space between the icon and text */
+}
+
+.my-main-skills-item-name {
+    font-size: 0.95rem;                                         /* Sets the font size of the skill name */
+    font-weight: 500;                                           /* Makes the skill name semi-bold */
+    flex-grow: 1;                                               /* Allows the skill name to grow and fill available space */
+}
+
+.my-main-skills-item-level {
+    font-size: 0.85rem;                                         /* Sets the font size of the skill level */
+    font-weight: 500;                                           /* Makes the skill level semi-bold */
+}
+
+/* PROGRESS BAR */
+.my-main-skills-item-progress {
+    height: 8px;                                                /* Sets the height of the progress bar */
+    border-radius: 4px;                                         /* Rounds the corners of the progress bar */
+    background: var(--pfc-white-dark);                          /* Sets the background color of the progress bar */
+}
+
+.my-main-skills-item-progress-bar {
+    position: relative;                                         /* Positions the progress bar relative to its parent */
+    height: 100%;                                               /* Sets the height of the progress bar to fill its parent */
+    border-radius: 4px;                                         /* Rounds the corners of the progress bar */ 
+    background: var(--pfc-blue);                                /* Sets the background color of the progress bar */
+}
+
+/* PROGRESS BAR DECORATION */
+.my-main-skills-item-progress-bar::after {
+    position: absolute;                                         /* Positions the pseudo-element absolutely within the progress bar */
+    content: '';                                                /* Creates an empty content for the pseudo-element */
+    top: 0;                                                     /* Aligns the pseudo-element to the top of the progress bar */              
+    left: 0;                                                    /* Aligns the pseudo-element to the left of the progress bar */
+    right: 0;                                                   /* Aligns the pseudo-element to the right of the progress bar */    
+    bottom: 0;                                                  /* Aligns the pseudo-element to the bottom of the progress bar */  
+    border-radius: 4px;                                         /* Rounds the corners of the pseudo-element */
+    background: linear-gradient(90deg,                          /* Creates a linear gradient background */  
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(255, 255, 255, 0.2) 100%);
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 480px) {
+    .my-main-skills-item-name {
+        font-size: 0.9rem;                                      /* Sets the font size of the skill name */
+    }
+    
+    .my-main-skills-item-level {
+        font-size: 0.8rem;                                      /* Sets the font size of the skill level */
+    }
+}
