@@ -1,0 +1,135 @@
+/* Timeline Card */
+.timeline-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 12px;
+    background: var(--pfc-white-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html.dark .timeline-card {
+    background: var(--pfc-black-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-card.experience {
+    border-left: 4px solid var(--pfc-blue);
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -10px;
+    top: 2rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--pfc-blue);
+}
+
+/* Card Content */
+.card-period {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--pfc-blue);
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--pfc-black);
+}
+
+html.dark .card-title {
+    color: var(--pfc-white);
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: var(--pfc-gray-darker);
+    margin-bottom: 1.5rem;
+}
+
+.card-description {
+    margin-bottom: 1.5rem;
+}
+
+.card-description li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.bullet {
+    position: absolute;
+    left: 0;
+    color: var(--pfc-blue);
+}
+
+/* Tags & Achievements */
+.card-tags,
+.card-achievements {
+    margin-top: 1.5rem;
+}
+
+.tags-title,
+.achievements-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--pfc-blue);
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--pfc-blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .timeline-card {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-card {
+        padding: 1.5rem;
+    }
+  
+    .card-title {
+      font-size: 1.2rem;
+    }
+}
+@media (max-width: 480px) {
+    .card-description li {
+      font-size: 0.95rem;
+    }
+    
+    .tags-container {
+      gap: 0.3rem;
+    }
+    
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }

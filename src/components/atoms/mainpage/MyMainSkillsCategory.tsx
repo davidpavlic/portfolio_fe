@@ -22,16 +22,16 @@ type MyMainSkillsCategoryProps = {
 const MyMainSkillsCategory = ({ title, icon, skills, expanded, onToggle }: MyMainSkillsCategoryProps) => {
     return (
         <div className={`my-main-skills-category ${expanded ? 'expanded' : ''}`} onClick={onToggle}>
-            <div className="my-main-skills-category-header">
-                <h3 className="my-main-skills-category-title">
-                    <span className="my-main-skills-category-icon">{icon}</span>
+            <div className='my-main-skills-category-header'>
+                <h3 className='my-main-skills-category-title'>
+                    <span className='my-main-skills-category-icon'>{icon}</span>
                     {title}
                 </h3>
-                <span className="my-main-skills-category-toggle-icon">{expanded ? '-' : '+'}</span>
+                <span className='my-main-skills-category-toggle-icon'>{expanded ? '-' : '+'}</span>
             </div>
 
             <div className={`my-main-skills-list-wrapper ${expanded ? 'expanded' : ''}`}>
-                <div className="my-main-skills-list">
+                <div className='my-main-skills-list'>
                     {skills.map((skill, index) => (
                         <MyMainSkillsItem key={index} {...skill} />
                     ))}

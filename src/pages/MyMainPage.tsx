@@ -1,8 +1,7 @@
 import './styling/MyMainPage.css';
 import MyMainHeaderSection from '../components/molecules/mainpage/MyMainHeaderSection';
 import MyMainSkillsSection from '../components/molecules/mainpage/MyMainSkillsSection';
-import MyMainWorkSection from '../components/molecules/mainpage/MyMainWorkSection';
-import MyMainEducationSection from '../components/molecules/mainpage/MyMainEducationSection';
+import MyMainJourneySection from '../components/molecules/mainpage/MyMainJourneySection';
 import MyMainReferencesSection from '../components/molecules/mainpage/MyMainReferencesSection';
 import MyMainContactSection from '../components/molecules/mainpage/MyMainContactSection';
 
@@ -11,8 +10,7 @@ export const MainPage = () => {
       <div>
         <MyMainHeaderSection/>
         <MyMainSkillsSection/>
-        <MyMainWorkSection/>
-        <MyMainEducationSection/>
+        <MyMainJourneySection/>
         <MyMainReferencesSection/>
         <MyMainContactSection/>
       </div>

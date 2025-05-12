@@ -4,17 +4,17 @@ import { initReactI18next } from "react-i18next";
 
 ///* TRANSLATIONS *///
 const translations = {
-  env_test:    { en: "Test",     de: "Test",        fr: "Test",           hr: "Test",           gg: "Globi" },
-  env_prod:    { en: "Prod",     de: "Prod",        fr: "Prod",           hr: "Prod",           gg: "Globi" },
-  env_english: { en: "English",  de: "Englisch",    fr: "Anglais",        hr: "Engleski",       gg: "Globi" },
-  env_german:  { en: "German",   de: "Deutsch",     fr: "Allemand",       hr: "Njemacki",       gg: "Globi" },
-  env_french:  { en: "French",   de: "Französisch", fr: "Francaise",      hr: "Franzuski",      gg: "Globi" },
-  env_croatian:{ en: "Croatian", de: "Kroatisch",   fr: "Croate",         hr: "Hrvatski",       gg: "Globi" },
-  env_globi:   { en: "Globi",    de: "Globi",       fr: "Globi",          hr: "Globi",          gg: "Globi" },
-  nav_home:    { en: "Home",     de: "Home",        fr: "Home",           hr: "Home",           gg: "Globi" },
-  nav_projects:{ en: "Projects", de: "Projects",    fr: "Projects",       hr: "Projects",       gg: "Globi" },
-  nav_passions:{ en: "Passions", de: "Passions",    fr: "Passions",       hr: "Passions",       gg: "Globi" },
-  nav_llm:     { en: "My LLM",   de: "Mein LLM",    fr: "Mon LLM",        hr: "Moj LLM",        gg: "Globi" },
+  env_test: { en: "Test", de: "Test", fr: "Test", hr: "Test", gg: "Globi" },
+  env_prod: { en: "Prod", de: "Prod", fr: "Prod", hr: "Prod", gg: "Globi" },
+  env_english: { en: "English", de: "Englisch", fr: "Anglais", hr: "Engleski", gg: "Globi" },
+  env_german: { en: "German", de: "Deutsch", fr: "Allemand", hr: "Njemacki", gg: "Globi" },
+  env_french: { en: "French", de: "Französisch", fr: "Francaise", hr: "Franzuski", gg: "Globi" },
+  env_croatian: { en: "Croatian", de: "Kroatisch", fr: "Croate", hr: "Hrvatski", gg: "Globi" },
+  env_globi: { en: "Globi", de: "Globi", fr: "Globi", hr: "Globi", gg: "Globi" },
+  nav_home: { en: "Home", de: "Home", fr: "Home", hr: "Home", gg: "Globi" },
+  nav_projects: { en: "Projects", de: "Projects", fr: "Projects", hr: "Projects", gg: "Globi" },
+  nav_passions: { en: "Passions", de: "Passions", fr: "Passions", hr: "Passions", gg: "Globi" },
+  nav_llm: { en: "My LLM", de: "Mein LLM", fr: "Mon LLM", hr: "Moj LLM", gg: "Globi" },
   nav_newsscraper: {
     en: "News Scraper",
     de: "News Scraper",
@@ -46,7 +46,7 @@ const translations = {
   main_skills_programming_languages: {
     en: "Programming Languages",
     de: "Programmiersprachen",
-    fr: "Langages de programmation",
+    fr: "Languages de programmation",
     hr: "Programski jezici",
     gg: "Globi und Sophia"
   },
@@ -92,6 +92,13 @@ const translations = {
     hr: "Kuhanje",
     gg: "Globi und Sophia"
   },
+  main_skills_diving: {
+    en: "Diving",
+    de: "Tauchen",
+    fr: "Plongée",
+    hr: "Ronjenje",
+    gg: "Globi und Sophia"
+  },
   main_skills_travel: {
     en: "Travel",
     de: "Reisen",
@@ -111,13 +118,6 @@ const translations = {
     de: "Gaming",
     fr: "Jeux vidéo",
     hr: "Igranje igara",
-    gg: "Globi und Sophia"
-  },
-  main_skills_reading: {
-    en: "Reading",
-    de: "Lesen",
-    fr: "Lecture",
-    hr: "Čitanje",
     gg: "Globi und Sophia"
   },
   main_skills_languages: {
@@ -210,6 +210,286 @@ const translations = {
     fr: "Vivre une vie en poursuivant ce que vous aimez",
     hr: "Živjeti život slijedeći ono što voliš",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_journey_title: {
+    en: "My Journey",
+    de: "Mein Weg",
+    fr: "Mon parcours",
+    hr: "Moje putovanje",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_journey_subtitle: {
+    en: "Where I've been and what I've accomplished",
+    de: "Wo ich war und was ich erreicht habe",
+    fr: "Où j'ai été et ce que j'ai accompli",
+    hr: "Gdje sam bio i što sam postigao",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_journey_experience: {
+    en: "Experience",
+    de: "Erfahrung",
+    fr: "Expérience",
+    hr: "Iskustvo",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education: {
+    en: "Education",
+    de: "Ausbildung",
+    fr: "Éducation",
+    hr: "Obrazovanje",
+    gg: "Globi und Sophia"
+  },
+  main_journey_notable_achievements: {
+    en: "Notable Achievements: ",
+    de: "Bemerkenswerte Leistungen: ",
+    fr: "Réalisations notables: ",
+    hr: "Značajna postignuća: ",
+    gg: "Globi und Sophia"
+  },
+  main_journey_technologies: {
+    en: "Technologies: ",
+    de: "Technologien: ",
+    fr: "Technologies: ",
+    hr: "Tehnologije: ",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_1_name: {
+    en: "Fullstack Software Engineer",
+    de: "Fullstack Software Engineer",
+    fr: "Ingénieur logiciel Fullstack",
+    hr: "Fullstack softverski inženjer",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_zurich: {
+    en: "Zurich",
+    de: "Zürich",
+    fr: "Zurich",
+    hr: "Zürich",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_1_description_1: {
+    en: "Organized and implemented solutions for Informaticon client ZAKU AG",
+    de: "Organisierte und implementierte Lösungen für den Informaticon-Kunden ZAKU AG",
+    fr: "Organisé et mis en œuvre des solutions pour le client Informaticon ZAKU AG",
+    hr: "Organizirali i implementirali rješenja za Informaticon klijenta ZAKU AG",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_1_description_2: {
+    en: "Enhanced customer interactions and PowerBuilder development",
+    de: "Verbesserte Kundeninteraktionen und PowerBuilder-Entwicklung",
+    fr: "Amélioration des interactions avec les clients et du développement PowerBuilder",
+    hr: "Poboljšana interakcija s kupcima i razvoj PowerBuildera",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_1_description_3: {
+    en: "Conducted framework updates for various clients",
+    de: "Durchgeführte Framework-Updates für verschiedene Kunden",
+    fr: "Mise à jour du cadre pour divers clients",
+    hr: "Provedena ažuriranja okvira za razne klijente",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_1_description_4: {
+    en: "Analyzed SQL Anywhere databases and Powerbuilder frameworks",
+    de: "Analysierte SQL Anywhere-Datenbanken und Powerbuilder-Frameworks",
+    fr: "Analyse des bases de données SQL Anywhere et des frameworks Powerbuilder",
+    hr: "Analizirane SQL Anywhere baze podataka i Powerbuilder okviri",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_1_description_5: {
+    en: "Developed interfaces for data synchronization between APIs and local systems",
+    de: "Entwicklung von Schnittstellen zur Datensynchronisation zwischen APIs und lokalen Systemen",
+    fr: "Développement d'interfaces pour la synchronisation des données entre les API et les systèmes locaux",
+    hr: "Razvijene sučelja za sinkronizaciju podataka između API-ja i lokalnih sustava",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_2_name: {
+    en: "Apprenticeship: Test Automation Engineer",
+    de: "Lehre: Testautomatisierungsingenieur",
+    fr: "Apprentissage: Ingénieur en automatisation des tests",
+    hr: "Učenje: Inženjer automatizacije testiranja",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_2_description_1: {
+    en: "Created internal test automation for Accenture's apprentice management system",
+    de: "Erstellung interner Testautomatisierung für das Lehrlingsmanagementsystem von Accenture",
+    fr: "Création d'une automatisation des tests internes pour le système de gestion des apprentis d'Accenture",
+    hr: "Izradili internu automatizaciju testiranja za sustav upravljanja učenicima Accenturea",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_2_description_2: {
+    en: "Worked on CI/CD pipeline testing for client projects",
+    de: "Arbeitete an der CI/CD-Pipeline-Tests für Kundenprojekte",
+    fr: "Travaillé sur les tests de pipeline CI/CD pour des projets clients",
+    hr: "Radio na CI/CD testiranju cjevovoda za klijentske projekte",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_2_description_3: {
+    en: "Developed Selenium test cases",
+    de: "Entwicklung von Selenium-Testfällen",
+    fr: "Développement de cas de test Selenium",
+    hr: "Razvijeni Selenium testni slučajevi",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_2_description_4: {
+    en: "Improved adaptability across different work environments",
+    de: "Verbesserte Anpassungsfähigkeit in verschiedenen Arbeitsumgebungen",
+    fr: "Amélioration de l'adaptabilité dans différents environnements de travail",
+    hr: "Poboljšana prilagodljivost u različitim radnim okruženjima",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_3_name: {
+    en: "Apprenticeship: Fullstack Engineer",
+    de: "Lehre: Fullstack Engineer",
+    fr: "Apprentissage: Ingénieur Fullstack",
+    hr: "Učenje: Fullstack inženjer",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_3_description_1: {
+    en: "Trained in Python, C, JavaScript, and Java",
+    de: "Ausbildung in Python, C, JavaScript und Java",
+    fr: "Formation en Python, C, JavaScript et Java",
+    hr: "Obrazovanje u Pythonu, C, JavaScriptu i Javi",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_3_description_2: {
+    en: "Gained practical experience with React/Spring applications",
+    de: "Praktische Erfahrung mit React/Spring-Anwendungen",
+    fr: "Acquis une expérience pratique avec des applications React/Spring",
+    hr: "Stečeno praktično iskustvo s React/Spring aplikacijama",
+    gg: "Globi und Sophia"
+  },
+  main_journey_experience_entry_3_description_3: {
+    en: "Worked in SCRUM teams using MS Teams and Slack",
+    de: "Arbeitete in SCRUM-Teams mit MS Teams und Slack",
+    fr: "Travaillé dans des équipes SCRUM utilisant MS Teams et Slack",
+    hr: "Radio u SCRUM timovima koristeći MS Teams i Slack",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_expected: {
+    en: "(Expected)",
+    de: "(Erwartet)",
+    fr: "(Prévu)",
+    hr: "(Očekivano)",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_1_name: {
+    en: "Bachelor of Science in Computer Science",
+    de: "Bachelor of Science in Informatik",
+    fr: "Bachelor of Science en Informatique",
+    hr: "Bachelor of Science u računalnim znanostima",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_location_winterthur: {
+    en: "Winterthur, Switzerland",
+    de: "Winterthur, Schweiz",
+    fr: "Winterthur, Suisse",
+    hr: "Winterthur, Švicarska",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_1_description_1: {
+    en: "Current grade average of 5.5/6",
+    de: "Aktueller Notenschnitt von 5.5/6",
+    fr: "Moyenne actuelle de 5.5/6",
+    hr: "Trenutni prosjek 5.5/6",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_1_description_2: {
+    en: "Relevant coursework: Algorithms, Data Structures, Software Engineering, Database Systems",
+    de: "Relevante Kurse: Algorithmen, Datenstrukturen, Software Engineering, Datenbanksysteme",
+    fr: "Cours pertinents : Algorithmes, Structures de données, Ingénierie logicielle, Systèmes de bases de données",
+    hr: "Relevantni kolegiji: Algoritmi, Strukture podataka, Softversko inženjerstvo, Sustavi baza podataka",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_1_description_3: {
+    en: "University project: Receipt splitter application using Microsoft Services to extract data and split receipts between friends (unfortunately also using JavaFX)",
+    de: "Universitätsprojekt: Quittungsaufteilungsanwendung mit Microsoft Services zur Datenextraktion und Aufteilung von Quittungen zwischen Freunden (leider auch mit JavaFX)",
+    fr: "Projet universitaire : Application de séparation de reçus utilisant les services Microsoft pour extraire des données et diviser les reçus entre amis (malheureusement aussi en JavaFX)",
+    hr: "Sveučilišni projekt: Aplikacija za dijeljenje računa koja koristi Microsoftove usluge za vađenje podataka i dijeljenje računa između prijatelja (nažalost također koristeći JavaFX)",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_2_name: {
+    en: "Military as Security Soldier",
+    de: "Militär als Sicherungssoldat",
+    fr: "Militaire en tant que soldat de sécurité",
+    hr: "Vojska kao vojnik sigurnosti",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_location_valais: {
+    en: "Valais, Switzerland",
+    de: "Wallis, Schweiz",
+    fr: "Valais, Suisse",
+    hr: "Wallis, Švicarska",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_2_description_1: {
+    en: "Strengthening skills in work ethic, discipline, and attention.",
+    de: "Stärkung der Fähigkeiten in Arbeitsmoral, Disziplin und Aufmerksamkeit.",
+    fr: "Renforcement des compétences en éthique de travail, discipline et attention.",
+    hr: "Jačanje vještina u radnoj etici, disciplini i pažnji.",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_2_description_2: {
+    en: "Simply a cool time with new people and experiences.",
+    de: "Einfach eine geile Zeit mit neuen Menschen und Erfahrungen.",
+    fr: "Tout simplement un bon moment avec de nouvelles personnes et expériences.",
+    hr: "Jednostavno dobro vrijeme s novim ljudima i iskustvima.",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_3_name: {
+    en: "EFZ in Apprenticeship in Application Development",
+    de: "EFZ in der Lehre zur Applikationsentwicklung",
+    fr: "EFZ en apprentissage en développement d'applications",
+    hr: "EFZ u učenju u razvoju aplikacija",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_3_description_1: {
+    en: 'Graduated with a grade average of 5.5/6',
+    de: 'Abschluss mit einem Notenschnitt von 5.5/6',
+    fr: 'Diplômé avec un moyenne scolaire de 5.5/6',
+    hr: 'Diplomirao s prosjekom 5.5/6',
+    gg: 'Globi und Sophia'
+  },
+  main_journey_education_entry_3_description_2: {
+    en: 'Focus on Java, Python, web development and test automation',
+    de: 'Fokus auf Java, Python, Webentwicklung und Testautomatisierung',
+    fr: 'Concentration sur Java, Python, développement web et automatisation des tests',
+    hr: 'Fokus na Java, Python, web razvoj i automatizaciju testiranja',
+    gg: 'Globi und Sophia'
+  },
+  main_journey_education_entry_3_description_3: {
+    en: "Developed a test automation system with Selenium and Gherkin for an apprentice management system as final project",
+    de: "Entwicklung eines Testautomatisierungssystems für ein Lehrlingsmanagement-System mit Selenium und Gherkin als Abschlussprojekt",
+    fr: "Développement d'un système d'automatisation des tests pour un système de gestion des apprentis avec Selenium et Gherkin comme projet final",
+    hr: "Razvijen sustav automatizacije testiranja za sustav upravljanja učenicima s Seleniumom i Gherkinom kao završni projekt",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_location_zurich: {
+    en: "Zurich, Switzerland",
+    de: "Zürich, Schweiz",
+    fr: "Zurich, Suisse",
+    hr: "Zürich, Švicarska",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_4_name: {
+    en: "Technical Vocational Baccalaureate",
+    de: "Technische Berufsmaturität",
+    fr: "Baccalauréat Technique Professionnel",
+    hr: "Tehnička Stručna Matura",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_4_description_1: {
+    en: "Graduated with a grade average of 5.2/6",
+    de: "Abschluss mit einem Notenschnitt von 5.2/6",
+    fr: "Diplômé avec un moyenne scolaire de 5.2/6",
+    hr: "Diplomirao s prosjekom 5.2/6",
+    gg: "Globi und Sophia"
+  },
+  main_journey_education_entry_4_description_2: {
+    en: "Excellent performance in Mathematics, Physics, and English",
+    de: "Hervorragende Leistungen in Mathematik, Physik und Englisch",
+    fr: "Excellente performance en Mathématiques, Physique et Anglais",
+    hr: "Izvrsno postignuće iz matematike, fizike i engleskog",
+    gg: "Globi und Sophia"
   },
   projects_form_title: {
     en: "Upload Project Card",

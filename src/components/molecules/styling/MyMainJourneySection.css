@@ -1,0 +1,89 @@
+/* Base Styles */
+.journey-section {
+  padding: 4rem 0;
+}
+
+.journey-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.journey-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.my-main-journey-title {
+    position: relative;                                             /* Position relative for the title */
+    margin: 0 0 1.75rem 0;                                          /* Margin below the title */
+    font-size: 1.5rem;                                              /* Font size for the title */  
+    font-weight: 500;                                               /* Font weight for the title */ 
+    color: var(--pfc-light-blue);                                   /* Color for the title */
+}
+
+/* Timeline Layout */
+.journey-timeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  position: relative;
+}
+
+.timeline-column {
+  position: relative;
+}
+
+.timeline-category {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--pfc-light-blue);
+  color: var(--pfc-light-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .journey-timeline {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .timeline-column {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .journey-header {
+    margin-bottom: 2rem;
+  }
+  
+  .journey-title {
+    font-size: 2rem;
+  }
+  
+  .journey-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .timeline-category {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-section {
+    padding: 3rem 0;
+  }
+  
+  .journey-container {
+    padding: 0 1rem;
+  }
+  
+  .journey-title {
+    font-size: 1.8rem;
+  }
+}
