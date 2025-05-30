@@ -17,3 +17,5 @@ MyProjectsPage.tsx
     - AddForm foldable
     - Find a way to add multiple languages on creation
     - Update Cards
+MyMainContactSection.tsx
+    - Repetition of form fields could be extracted

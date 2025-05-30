@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useExperiences, useEducation } from '../../../pages/MyMainPageData';
 import MyMainJourneyCardList from '../../atoms/mainpage/MyMainJourneyCardList';
 
+
+///* FUNCTIONAL COMPONENT *///
 const MyMainJourneySection = () => {
 
   const { t } = useTranslation();
@@ -33,4 +35,6 @@ const MyMainJourneySection = () => {
   );
 };
 
+
+///* EXPORT *///
 export default MyMainJourneySection;

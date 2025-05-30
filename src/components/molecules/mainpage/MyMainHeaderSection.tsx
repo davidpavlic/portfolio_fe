@@ -2,6 +2,8 @@ import '../styling/MyMainHeaderSection.css';
 import profileImage from '../../../assets/DavidPavlicImage.jpeg';
 import { useTranslation } from 'react-i18next';
 
+
+///* FUNCTIONAL COMPONENT *///
 export const MyMainHeaderSection = () => {
 
   const { t } = useTranslation();
@@ -30,4 +32,6 @@ export const MyMainHeaderSection = () => {
   )
 };
 
+
+///* EXPORT *///
 export default MyMainHeaderSection;

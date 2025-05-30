@@ -491,6 +491,83 @@ const translations = {
     hr: "Izvrsno postignuće iz matematike, fizike i engleskog",
     gg: "Globi und Sophia"
   },
+  main_contact_title: {
+    en: "Get In Touch",
+    de: "Kontaktiere Mich",
+    fr: "Contactez-moi",
+    hr: "Kontaktirajte me",
+    gg: "Globi und Sophia"
+  },
+  main_contact_subtitle: {
+    en: "Feel free to reach out using the form below!",
+    de: "Kontaktiere mich gerne über das untenstehende Formular!",
+    fr: "N'hésitez pas à me contacter en utilisant le formulaire ci-dessous!",
+    hr: "Slobodno me kontaktirajte putem obrasca u nastavku!",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_contact_form_name: {
+    en: "Name:",
+    de: "Name:",
+    fr: "Nom:",
+    hr: "Ime:",
+    gg: "Globi und Sophia:"
+  },
+  main_contact_form_subject: {
+    en: "Subject:",
+    de: "Betreff:",
+    fr: "Sujet:",
+    hr: "Predmet:",
+    gg: "Globi und Sophia:"
+  },
+  main_contact_form_message: {
+    en: "Message:",
+    de: "Nachricht:",
+    fr: "Message:",
+    hr: "Poruka:",
+    gg: "Globi und Sophia:"
+  },
+  main_contact_form_submit: {
+    en: "Send Message",
+    de: "Nachricht senden",
+    fr: "Envoyer le message",
+    hr: "Pošalji poruku",
+    gg: "Globi und Sophia:"
+  },
+  main_contact_form_success: {
+    en: "E-Mail sent successfully!",
+    de: "E-Mail erfolgreich gesendet!",
+    fr: "E-mail envoyé avec succès!",
+    hr: "E-mail uspješno poslan!",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_contact_form_fail: {
+    en: "An error occurred while sending the email",
+    de: "Beim Senden der E-Mail ist ein Fehler aufgetreten",
+    fr: "Une erreur s'est produite lors de l'envoi de l'e-mail",
+    hr: "Došlo je do greške prilikom slanja e-pošte",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_contact_form_error_no_name: {
+    en: "Name is required",
+    de: "Name ist erforderlich",
+    fr: "Le nom est requis",
+    hr: "Ime je obavezno",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_contact_form_error_no_subject: {
+    en: "Subject is required",
+    de: "Betreff ist erforderlich",
+    fr: "Le sujet est requis",
+    hr: "Predmet je obavezan",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_contact_form_error_no_message: {
+    en: "Message is required",
+    de: "Nachricht ist erforderlich",
+    fr: "Le message est requis",
+    hr: "Poruka je obavezna",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
   projects_form_title: {
     en: "Upload Project Card",
     de: "Projektkarte hochladen",

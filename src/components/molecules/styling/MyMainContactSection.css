@@ -1,195 +1,107 @@
-.contact-section {
-    background: linear-gradient(135deg, #2c3e50 0%, #1a1a1a 100%);
-    padding: 5rem 0;
-    color: white;
-    position: relative;
+.my-main-contact-section {
+    padding: 4rem 2rem;                                         /* Sets the section padding */
 }
 
-.contact-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 30% 70%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
-    z-index: 0;
+.my-main-contact-container {
+    max-width: 75rem;                                           /* Sets the maximum width of the contact section */
+    margin: 0 auto;                                             /* Centers the contact section */
 }
 
-.section-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 1;
+.my-main-contact-title {
+    margin: 0 0 0.5rem 0;                                       /* Margin below the name */
+    font-size: 2.5rem;                                          /* Font size for the name */
+    font-weight: 700;                                           /* Font weight for the name */
+    text-align: center;                                         /* Centers the name */
 }
 
-.section-title {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    text-align: center;
+.my-main-contact-subtitle {
+    position: relative;                                         /* Position relative for the title */
+    margin: 0 0 1.75rem 0;                                      /* Margin below the title */
+    font-size: 1.5rem;                                          /* Font size for the title */  
+    font-weight: 500;                                           /* Font weight for the title */ 
+    text-align: center;                                         /* Centers the name */
+    color: var(--pfc-light-blue);                               /* Color for the title */
 }
 
-.section-subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 3rem;
-    text-align: center;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+.my-main-contact-card {
+    padding: 3rem;                                              /* Sets the forms distance from the text */
+    border-radius: 1rem;                                        /* Sets the forms corner curveture */
+    box-shadow: 0 0.25rem 1.25rem var(--pfc-white-darkest);     /* Sets the forms shadow */
+    background-color: var(--pfc-white);                         /* Sets the forms background color */
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+html.dark .my-main-contact-card {
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-black-lightest);   /* Sets the forms shadow in darkmode */
+    background-color: var(--pfc-black-dark);                    /* Sets the forms background in darkmode */
 }
 
-.contact-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.my-main-contact-form {
+    display: flex;                                              /* Flexbox for layout */
+    flex-direction: column;                                     /* Column layout for the form */
+    gap: 1.5rem;                                                /* Space between form elements */
 }
 
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.my-main-contact-field {
+    display: flex;                                              /* Flexbox for field layout */
+    flex-direction: column;                                     /* Column layout for each field */
+    gap: 0.5rem;                                                /* Space between label and input */
 }
 
-.contact-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+.my-main-contact-field label {
+    font-weight: bold;                                          /* Makes the label bold */
 }
 
-.contact-icon svg {
-    width: 30px;
-    height: 30px;
-    fill: white;
+.my-main-contact-input,
+.my-main-contact-textarea {
+    padding: 0.75rem 1rem;                                      /* Sets the padding for inputs and textareas */
+    border: 0.063rem solid var(--pfc-white-darker);             /* Sets the border design */
+    border-radius: 0.5rem;                                      /* Sets the corner curve */
+    background-color: var(--pfc-white-lightest);                /* Sets its background color */
 }
 
-.email .contact-icon {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+html.dark .my-main-contact-input,
+html.dark .my-main-contact-textarea {
+    background-color: var(--pfc-black-lighter);                 /* Sets its background color */
+    color: var(--pfc-white);                                    /* Sets the written text color */
 }
 
-.phone .contact-icon {
-    background: linear-gradient(135deg, #2ecc71, #27ae60);
+.my-main-contact-textarea {
+    min-height: 7.5rem;                                         /* Sets the minimum height for textareas */ 
 }
 
-.linkedin .contact-icon {
-    background: linear-gradient(135deg, #0077b5, #006699);
+.my-main-contact-button {
+    padding: 0.9rem 1.5rem;                                     /* Sets the buttons padding */
+    border: none;                                               /* Removes the border from the button */
+    border-radius: 0.5rem;                                      /* Sets the buttons corner curve */
+    background-color: var(--pfc-blue);                          /* Sets the buttons background color */
+    font-size: 1.1rem;                                          /* Sets the buttons font size */
+    color: white;                                             /* Sets the buttons text color */
+    transition: background-color 0.3s ease, transform 0.3s ease;/* Smooth transition for background color and transform */
 }
 
-.github .contact-icon {
-    background: linear-gradient(135deg, #333, #222);
+.my-main-contact-button:hover {
+    transform: translateY(-5px);                                /* Makes the forms come up when hovered */
+    background-color: var(--pfc-dark-blue);                     /* Sets the forms background in darkmode */
 }
 
-.contact-method {
-    font-size: 1.3rem;
-    margin: 0 0 0.5rem 0;
-    color: white;
+.my-main-contact-popup-message {
+    position: fixed;                                            /* Fixed position for the popup message */
+    bottom: 2rem;                                               /* Position from the bottom */
+    left: 50%;                                                  /* Center horizontally */ 
+    transform: translateX(-50%);                                /* Center horizontally */
+    padding: 1rem 2rem;                                         /* Padding for the popup message */
+    border-radius: 0.75rem;                                     /* Sets the corner curve for the popup message */
+    box-shadow: 0 0.25rem 1.25rem var(--pfc-white-darkest);     /* Sets the shadow for the popup message */
+    background-color: var(--pfc-white);                         /* Sets the background color for the popup message */
+    color: var(--pfc-black);                                    /* Sets the text color for the popup message */
+    font-size: 1rem;                                            /* Sets the font size for the popup message */
+    font-weight: 500;                                           /* Sets the font weight for the popup message */
+    z-index: 1000;                                              /* Ensures the popup is above other elements */
+    transition: opacity 0.3s ease-in-out;                       /* Smooth transition for opacity */ 
 }
 
-.contact-detail {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    display: block;
-    text-decoration: none;
-}
-
-.contact-button {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: 2px solid white;
-    color: white;
-    background: transparent;
-}
-
-.email .contact-button {
-    border-color: #3498db;
-    color: #3498db;
-}
-
-.email .contact-button:hover {
-    background: #3498db;
-    color: white;
-}
-
-.phone .contact-button {
-    border-color: #2ecc71;
-    color: #2ecc71;
-}
-
-.phone .contact-button:hover {
-    background: #2ecc71;
-    color: white;
-}
-
-.linkedin .contact-button {
-    border-color: #0077b5;
-    color: #0077b5;
-}
-
-.linkedin .contact-button:hover {
-    background: #0077b5;
-    color: white;
-}
-
-.github .contact-button {
-    border-color: #333;
-    color: #333;
-}
-
-.github .contact-button:hover {
-    background: #333;
-    color: white;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 576px) {
-    .contact-section {
-        padding: 3rem 0;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+html.dark .my-main-contact-popup-message {
+    box-shadow: 0 0.25rem 1rem var(--pfc-black-lightest);       /* Sets the shadow for the popup message in darkmode */
+    background-color: var(--pfc-black-dark);                    /* Sets the background color for the popup message in darkmode */
+    color: var(--pfc-white);                                    /* Sets the text color for the popup message in darkmode */
 }
