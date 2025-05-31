@@ -1,6 +1,3 @@
-MyProjectCard.css
-MyProjectsPage.tsx
-
 MyEnvDropDown.tsx 
     - Actually change Environments
 MyNavBar.tsx
@@ -19,3 +16,7 @@ MyProjectsPage.tsx
     - Update Cards
 MyMainContactSection.tsx
     - Repetition of form fields could be extracted
+MyMainCertificatesSection.tsx
+    - Height of Cards is inconsistent in responsive design.
+MyMainPageData.tsx
+    - Add C1 results

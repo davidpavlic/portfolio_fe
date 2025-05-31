@@ -1,0 +1,95 @@
+.my-main-certificates-section {
+    padding: 2rem 0;                                                /* Top and bottom padding */
+}
+
+.my-main-certificates-container {
+    max-width: 100rem;                                              /* Maximum width for the section */
+    margin: 0 auto;                                                 /* Center the section */
+    padding: 0 2rem;
+}
+
+.my-main-certificates-carousel-container {
+    position: relative;                                             /* Relative positioning for the carousel */
+    padding: 0 4rem 2.5rem 4rem;                                    /* Padding for the carousel */ 
+}
+
+.my-main-certificate-card {
+    padding: 1.5rem;                                                /* Sets the forms distance from the text */
+    margin: 1rem 1rem 1rem 1rem;                                    /* Margin around the form */
+    border-radius: 0.75rem;                                         /* Sets the forms corner curvature */
+    box-shadow: 0 0.25rem 1.25rem var(--pfc-white-darkest);         /* Sets the forms shadow */
+    background: var(--pfc-white);                                   /* Sets the forms background color */
+}
+
+html.dark .my-main-certificate-card {
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-black-lightest);       /* Sets the forms shadow in darkmode */
+    background: var(--pfc-black-dark);                              /* Dark mode background */
+}
+
+.my-main-certificate-header {
+    margin-bottom: 1.25rem;                                         /* Margin below the header */ 
+    min-height: 10rem;                                              /* Minimum height for the header */
+}
+
+.my-main-certificate-type {
+    margin-bottom: 0.5rem;                                          /* Margin below the type */
+    font-size: 0.75rem;                                             /* Font size for the type */
+    font-weight: bold;                                              /* Makes the type bold */
+    text-transform: uppercase;                                      /* Uppercase for the type */
+    color: var(--pfc-gray-darker);                                  /* Color for the type */
+}
+
+.my-main-certificate-title {
+    margin-bottom: 0.25rem;                                         /* Margin below the title */
+    font-size: 1.4rem;                                              /* Font size for the title */
+    font-weight: bold;                                              /* Makes the title bold */
+}
+
+.my-main-certificate-issuer {
+    margin-bottom: 0.25rem;                                         /* Margin below the issuer */    
+    font-size: 1rem;                                                /* Font size for the issuer */ 
+    font-weight: bold;                                              /* Makes the issuer bold */
+    color: var(--pfc-light-blue);                                   /* Color for the issuer */ 
+}
+
+.my-main-certificate-date {
+    font-size: 0.9rem;                                              /* Font size for the date */
+    font-weight: bold;                                              /* Makes the date bold */
+    color: var(--pfc-gray-darker);                                  /* Color for the date */
+}
+
+.my-main-certificate-content {
+    display: flex;                                                  /* Flexbox for layout */
+    flex-direction: column;                                         /* Column layout for the content */
+}
+
+.my-main-certificate-description {
+    flex-grow: 1;                                                   /* Allows the description to grow */
+    min-height: 5rem;                                               /* Minimum height for the description */
+    margin-bottom: 0.5rem;                                          /* Margin below the description */
+    line-height: 1.6;                                               /* Line height for better readability */
+}
+
+.my-main-download-button {
+    display: inline-flex;                                           /* Inline-flex for button layout */
+    padding: 0.75rem 1.5rem;                                        /* Sets the buttons padding */
+    border-radius: 50px;                                            /* Sets the buttons corner curve */ 
+    background: var(--pfc-blue);                                    /* Sets the buttons background color */
+    text-decoration: none;                                          /* Removes underline from the link */
+    color: var(--pfc-white);                                        /* Sets the buttons text color */
+    transition: all 0.3s ease;                                      /* Smooth transition for background color and transform */
+}
+
+.my-main-download-button:hover {
+    background: var(--pfc-dark-blue);                               /* Darker background on hover */  
+    transform: translateY(-2px);                                    /* Slight lift on hover */
+}
+
+.my-main-certificates-swiper-button {
+    color: var(--pfc-blue) !important;                              /* Color for the navigation buttons */
+    transition: all 0.3s ease;                                      /* Smooth transition for hover effects */
+}
+
+.my-main-certificates-swiper-button:hover {
+    transform: scale(1.1);                                          /* Slightly enlarge buttons on hover */
+}

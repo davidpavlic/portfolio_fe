@@ -2,7 +2,7 @@ import './styling/MyMainPage.css';
 import MyMainHeaderSection from '../components/molecules/mainpage/MyMainHeaderSection';
 import MyMainSkillsSection from '../components/molecules/mainpage/MyMainSkillsSection';
 import MyMainJourneySection from '../components/molecules/mainpage/MyMainJourneySection';
-import MyMainReferencesSection from '../components/molecules/mainpage/MyMainReferencesSection';
+import MyMainCertificatesSection from '../components/molecules/mainpage/MyMainCertificatesSection';
 import MyMainContactSection from '../components/molecules/mainpage/MyMainContactSection';
 
 export const MainPage = () => {
@@ -11,7 +11,7 @@ export const MainPage = () => {
         <MyMainHeaderSection/>
         <MyMainSkillsSection/>
         <MyMainJourneySection/>
-        <MyMainReferencesSection/>
+        <MyMainCertificatesSection/>
         <MyMainContactSection/>
       </div>
   );

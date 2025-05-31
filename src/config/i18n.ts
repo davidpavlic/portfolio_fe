@@ -491,6 +491,139 @@ const translations = {
     hr: "Izvrsno postignuće iz matematike, fizike i engleskog",
     gg: "Globi und Sophia"
   },
+  main_certificates_title: {
+    en: "Certificates & References",
+    de: "Zertifikate & Referenzen",
+    fr: "Certificats & Références",
+    hr: "Certifikati i reference",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_subtitle: {
+    en: "My professional qualifications and certifications",
+    de: "Meine beruflichen Qualifikationen und Zertifikate",
+    fr: "Mes qualifications et certifications professionnelles",
+    hr: "Moje profesionalne kvalifikacije i certifikati",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_cerificates_entry_1_title: {
+    en: "David Pavlic Resume",
+    de: "David Pavlic Lebenslauf",
+    fr: "David Pavlic Résumé",
+    hr: "David Pavlic Životopis",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_1_description: {
+    en: "My professional resume detailing my skills, experiences, and qualifications.",
+    de: "Mein professioneller Lebenslauf, der meine Fähigkeiten, Erfahrungen und Qualifikationen beschreibt.",
+    fr: "Mon Résumé professionnel détaillant mes compétences, expériences et qualifications.",
+    hr: "Moj profesionalni životopis koji opisuje moje vještine, iskustva i kvalifikacije.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_entry_2_title: {
+    en: "Reference Letter by Accenture",
+    de: "Referenzschreiben von Accenture",
+    fr: "Lettre de référence d'Accenture",
+    hr: "Pismo preporuke od Accenturea",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_2_description: {
+    en: "Reference letter by Accenture, highlighting my contributions and skills during my apprenticeship.",
+    de: "Referenzschreiben von Accenture, das meine Beiträge und Fähigkeiten während meiner Lehre hervorhebt.",
+    fr: "Lettre de référence d'Accenture, mettant en avant mes contributions et compétences durant mon apprentissage.",
+    hr: "Pismo preporuke od Accenturea, koje ističe moje doprinose i vještine tijekom mog učenja.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_entry_3_title: {
+    en: "Reference Letter by Informaticon",
+    de: "Referenzschreiben von Informaticon",
+    fr: "Lettre de référence d'Informaticon",
+    hr: "Pismo preporuke od Informaticona",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_3_description: {
+    en: "Reference letter by Informaticon AG, detailing my role and achievements in the company.",
+    de: "Referenzschreiben von Informaticon AG, das meine Rolle und Leistungen im Unternehmen beschreibt.",
+    fr: "Lettre de référence d'Informaticon AG, détaillant mon rôle et mes réalisations dans l'entreprise.",
+    hr: "Pismo preporuke od Informaticon AG, koje opisuje moju ulogu i postignuća u tvrtki.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_entry_4_title: {
+    en: "Foundatianl Requirements Engineer",
+    de: "Requirements Engineer Foundation Level",
+    fr: "Niveau Fondamental en Ingénierie des Exigences",
+    hr: "Osnovna razina inženjerstva zahtjeva",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_4_description: {
+    en: "Certification in requirements engineering, demonstrating my ability to gather, analyze, and manage requirements effectively.",
+    de: "Zertifizierung in Requirements Engineering, die meine Fähigkeit zeigt, Anforderungen effektiv zu sammeln, zu analysieren und zu verwalten.",
+    fr: "Certification en ingénierie des exigences, démontrant ma capacité à recueillir, analyser et gérer les exigences de manière efficace.",
+    hr: "Certifikacija u inženjerstvu zahtjeva, koja pokazuje moju sposobnost učinkovite prikupljanja, analize i upravljanja zahtjevima.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_entry_5_title: {
+    en: "Cambridge English C1 Advanced",
+    de: "Cambridge English C1 Advanced",
+    fr: "Cambridge English C1 Advanced",
+    hr: "Cambridge English C1 Advanced",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_5_description: {
+    en: "Cambridge English C1 Advanced certification, demonstrating my proficiency in English at an advanced level.",
+    de: "Cambridge English C1 Advanced-Zertifizierung, die meine Englischkenntnisse auf fortgeschrittenem Niveau zeigt.",
+    fr: "Certification Cambridge English C1 Advanced, démontrant ma maîtrise de l'anglais à un niveau avancé.",
+    hr: "Cambridge English C1 Advanced certifikacija, koja pokazuje moju stručnost u engleskom jeziku na naprednoj razini.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_entry_6_title: {
+    en: "BSc in Computer Science",
+    de: "BSc in Informatik",
+    fr: "BSc en Informatique",
+    hr: "BSc u računalnim znanostima",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_6_description: {
+    en: "Currently pursuing a Bachelor's degree in Computer Science at ZHAW, expected to graduate in 2027. GPA of 5.5/6. (ongoing)",
+    de: "Derzeit verfolge ich einen Bachelor-Abschluss in Informatik an der ZHAW, der voraussichtlich 2027 abgeschlossen wird. Notendurchschnitt von 5.5/6. (derzeit)",
+    fr: "Actuellement en cours d'obtention d'un Bachelor en Informatique à la ZHAW, prévu pour 2027. Moyenne de 5.5/6. (en cours)",
+    hr: "Trenutno pohađam Bachelor iz računalnih znanosti na ZHAW-u, očekivano diplomiranje 2027 godine. Prosjek 5.5/6. (u tijeku)",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_entry_7_title: {
+    en: "Vocational Baccalaureate (Technical)",
+    de: "Berufsmaturität (Technisch)",
+    fr: "Baccalauréat Professionnel (Technique)",
+    hr: "Stručna matura (Tehnička)",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_7_description: {
+    en: "Technical vocational baccalaureate (GPA: 5.2/6) with excellent grades in mathematics, physics and english.",
+    de: "Technische Berufsmaturität (Notendurchschnitt: 5.2/6) mit hervorragenden Leistungen in Mathematik, Physik und Englisch.",
+    fr: "Baccalauréat Technique Professionnel (Moyenne: 5.2/6) avec d'excellentes notes en mathématiques, physique et anglais.",
+    hr: "Tehnička stručna matura (prosjek: 5.2/6) s odličnim ocjenama iz matematike, fizike i engleskog.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_entry_8_title: {
+    en: "Vocational School for Software Engineers",
+    de: "Berufsschule für Applikationsentwickler",
+    fr: "École Professionnelle pour Ingénieurs Logiciels",
+    hr: "Stručna škola za softverske inženjere",
+    gg: "Globi und Sophia"
+  },
+  main_certificates_entry_8_description: {
+    en: "Completed vocational education in software engineering, covering programming, systems analysis, and project management.",
+    de: "Abgeschlossene Berufsausbildung in Software Engineering, einschließlich Programmierung, Systemanalyse und Projektmanagement.",
+    fr: "Formation professionnelle en ingénierie logicielle, couvrant la programmation, l'analyse des systèmes et la gestion de projet.",
+    hr: "Završeno stručno obrazovanje u softverskom inženjerstvu, uključujući programiranje, analizu sustava i upravljanje projektima.",
+    gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
+  },
+  main_certificates_download: {
+    en: "Download Certificate",
+    de: "Zertifikat herunterladen",
+    fr: "Télécharger le certificat",
+    hr: "Preuzmi certifikat",
+    gg: "Globi und Sophia"
+  },
   main_contact_title: {
     en: "Get In Touch",
     de: "Kontaktiere Mich",
