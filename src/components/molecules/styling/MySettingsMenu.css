@@ -49,3 +49,12 @@ html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle {
 html.dark .my-navbar-settings-cog {
     color: var(--pfc-white);                    /* Set settings icon color */
 }
+
+/* COLLAPSED THEME SWITCHER */
+.my-navbar-settings-dropdown .my-theme-switcher-icon-button {
+    width: 100%;                                /* Makes the theme switcher button full width */
+    display: flex;                              /* Align icon vertically */
+    justify-content: left;                      /* Align icon horizontally */
+    padding: 0.75rem 1rem;                      /* Sets the padding for the button */
+    margin: 0;                                  /* Removes the margin from the button */
+}

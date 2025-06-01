@@ -16,6 +16,10 @@ html.dark .my-dropdown-menu-item {
     color: var(--pfc-white);                            /* Overrides bootstraps standard black color on idle element */
 }
 
+.my-dropdown-menu-item-no-padding {
+    padding: 0rem;                                      /* Removes the automatic padding from the bootstrap component */
+}
+
 /* SELECTED/HOVER DROPDOWN ELEMENT */
 .my-dropdown-menu-item.active,
 .my-dropdown-menu-item:hover {

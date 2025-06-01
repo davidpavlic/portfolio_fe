@@ -18,5 +18,5 @@ html.dark .my-theme-switcher-icon-button {
 }
 
 html.dark .my-theme-switcher-icon-button:hover {
-    background-color: var(--pfc-black-darker);      /* Sets a hover background color */
+    background-color: var(--pfc-black-dark);      /* Sets a hover background color */
 }

@@ -36,6 +36,7 @@ const MySettingsMenu = () => {
         <MyDropdownList
           items={SETTING_COMPONENTS}
           onClick={(e) => e.stopPropagation()}
+          noPadding={true}
         />
       </Dropdown>
     );
