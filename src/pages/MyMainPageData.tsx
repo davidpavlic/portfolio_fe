@@ -100,7 +100,7 @@ export const useExperiences = () => {
                 t('main_journey_experience_entry_1_description_4'),
                 t('main_journey_experience_entry_1_description_5'),
             ],
-            technologies: ['PowerBuilder', 'SQL', 'API Integration', 'Cloud Solutions']
+            technologies: ['PowerBuilder', 'SQL', 'Client Interaction', 'API Integration']
         },
         {
             id: 2,

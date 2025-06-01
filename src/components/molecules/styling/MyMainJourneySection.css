@@ -1,89 +1,83 @@
-/* Base Styles */
-.journey-section {
-  padding: 4rem 0;
+.my-main-journey-section {
+  padding: 4rem 4rem 6rem 4rem;                             /* Padding for the section */
 }
 
-.journey-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.my-main-journey-container {
+  max-width: 80rem;                                   /* Maximum width for the container */ 
+  margin: auto;                                       /* Center the container */
 }
 
-.journey-header {
-  text-align: center;
-  margin-bottom: 3rem;
+.my-main-journey-header {
+  margin-bottom: 3rem;                                /* Margin below the header */
+  text-align: center;                                 /* Center the header text */
 }
 
 .my-main-journey-title {
-    position: relative;                                             /* Position relative for the title */
-    margin: 0 0 1.75rem 0;                                          /* Margin below the title */
-    font-size: 1.5rem;                                              /* Font size for the title */  
-    font-weight: 500;                                               /* Font weight for the title */ 
-    color: var(--pfc-light-blue);                                   /* Color for the title */
+    position: relative;                               /* Position relative for the title */
+    margin: 0 0 1.75rem 0;                            /* Margin below the title */
+    font-size: 1.5rem;                                /* Font size for the title */  
+    font-weight: 500;                                 /* Font weight for the title */ 
+    color: var(--pfc-light-blue);                     /* Color for the title */
 }
 
 /* Timeline Layout */
-.journey-timeline {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  position: relative;
+.my-main-journey-timeline {
+  position: relative;                                 /* Position relative for the timeline */  
+  display: grid;                                      /* Use grid layout for the timeline */
+  grid-template-columns: 1fr 1fr;                     /* Two equal columns */
+  gap: 4rem;                                          /* Gap between columns */
 }
 
-.timeline-column {
-  position: relative;
+.my-main-timeline-column {
+  position: relative;                                 /* Position relative for the column */
 }
 
-.timeline-category {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--pfc-light-blue);
-  color: var(--pfc-light-blue);
+.my-main-timeline-category {
+  margin-bottom: 2rem;                                /* Margin below the category */
+  padding-bottom: 0.5rem;                             /* Padding below the category */
+  border-bottom: 2px solid var(--pfc-light-blue);     /* Bottom border for the category */
+  font-size: 1.5rem;                                  /* Font size for the category */
+  text-align: center;                                 /* Center the category text */ 
+  color: var(--pfc-light-blue);                       /* Color for the category */
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .journey-timeline {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  .my-main-journey-timeline {
+    grid-template-columns: 1fr;                       /* Single column layout for smaller screens */
+    gap: 3rem;                                        /* Reduced gap between columns */
   }
   
-  .timeline-column {
-    padding: 0;
+  .my-main-timeline-column {
+    padding: 0;                                       /* Remove padding for the column */
   }
 }
 
 @media (max-width: 768px) {
-  .journey-header {
-    margin-bottom: 2rem;
+  .my-main-journey-header {
+    margin-bottom: 2rem;                              /* Reduced margin below the header */
   }
   
-  .journey-title {
-    font-size: 2rem;
+  .my-main-journey-title {
+    font-size: 2rem;                                  /* Increased font size for the title */
   }
   
-  .journey-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .timeline-category {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+  .my-main-timeline-category {
+    font-size: 1.3rem;                                /* Adjusted font size for the category */
+    margin-bottom: 1.5rem;                            /* Reduced margin below the category */ 
   }
 }
 
 @media (max-width: 480px) {
-  .journey-section {
-    padding: 3rem 0;
+  .my-main-journey-section {
+    padding: 3rem 0;                                  /* Reduced padding for the section */ 
   }
   
-  .journey-container {
-    padding: 0 1rem;
+  .my-main-journey-container {
+    padding: 0 1rem;                                  /* Padding for the container */
   }
   
-  .journey-title {
-    font-size: 1.8rem;
+  .my-main-journey-title {
+    font-size: 1.8rem;                                /* Adjusted font size for the title */ 
   }
 }

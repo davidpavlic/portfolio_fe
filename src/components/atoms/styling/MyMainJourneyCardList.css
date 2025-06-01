@@ -1,7 +1,5 @@
-
-
-.timeline-items {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+.my-main-journey-cardlist {
+  display: flex;              /* Use flexbox for layout */
+  flex-direction: column;     /* Stack items vertically */
+  gap: 2rem;                  /* Gap between items */ 
+}

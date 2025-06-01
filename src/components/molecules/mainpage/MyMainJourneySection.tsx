@@ -12,22 +12,22 @@ const MyMainJourneySection = () => {
   const education = useEducation();
 
   return (
-    <section className="journey-section">
-      <div className="journey-container">
-        <div className="journey-header">
-          <h2 className="my-main-header-name">{t('main_journey_title')}</h2>
-          <p className="my-main-journey-title">{t('main_journey_subtitle')}</p>
+    <section className='my-main-journey-section'>
+      <div className='my-main-journey-container'>
+        <div className='my-main-journey-header'>
+          <h2 className='my-main-header-name'>{t('main_journey_title')}</h2>
+          <p className='my-main-journey-title'>{t('main_journey_subtitle')}</p>
         </div>
 
-        <div className="journey-timeline">
-          <div className="timeline-column">
-            <h3 className="timeline-category">{t('main_journey_experience')}</h3>
-            <MyMainJourneyCardList type="experience" items={experiences} />
+        <div className='my-main-journey-timeline'>
+          <div className='my-main-timeline-column'>
+            <h3 className='my-main-timeline-category'>{t('main_journey_experience')}</h3>
+            <MyMainJourneyCardList type='experience' items={experiences} />
           </div>
 
-          <div className="timeline-column">
-            <h3 className="timeline-category">{t('main_journey_education')}</h3>
-            <MyMainJourneyCardList type="education" items={education} />
+          <div className='my-main-timeline-column'>
+            <h3 className='my-main-timeline-category'>{t('main_journey_education')}</h3>
+            <MyMainJourneyCardList type='education' items={education} />
           </div>
         </div>
       </div>
