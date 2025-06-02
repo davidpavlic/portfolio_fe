@@ -1,9 +1,7 @@
-import '../styling/MyDropdownToggle.css';
-import '../styling/MyDropdownList.css';
+import '../styling/MyLanguageDropDown.css'
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Dropdown } from 'react-bootstrap';
 
 //* CONSTANTS *///
 // Define language items with translation keys
@@ -20,6 +18,7 @@ const LANGUAGE_ITEMS = [
 const MyLanguageDropDown = () => {
   const { i18n, t } = useTranslation();
   const toggleRef = useRef<HTMLButtonElement>(null); // Ref for the toggle button
+  const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown menu
   const [code, setCode] = useState<string>(localStorage.getItem('language') || 'en');   // Retrieve stored code from localStorage or fallback to defaultCode
   const [show, setShow] = useState(false); // Control dropdown visibility
 
@@ -41,28 +40,41 @@ const MyLanguageDropDown = () => {
     requestAnimationFrame(() => toggleRef.current?.blur()); // Blurs the button with the next free frame
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setShow(false); // Close dropdown when clicking outside
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside); // Add event listener for clicks outside the dropdown
+    return () => document.removeEventListener('mousedown', handleClickOutside); // Cleanup on unmount
+  }, []);
+
   return (
-    <Dropdown show={show} onToggle={setShow} onSelect={handleSelect}>
-      <Dropdown.Toggle
+    <div className="my-language-dropdown" ref={dropdownRef}>
+      <button
         ref={toggleRef}
-        className='my-dropdown-toggle'
+        className={`my-dropdown-toggle ${show ? 'show' : ''}`}
+        onClick={() => setShow(!show)} // Toggle dropdown visibility
+        aria-expanded={show}
       >
         {currentLabel}
-      </Dropdown.Toggle>
-      <Dropdown.Menu className='my-dropdown-menu'>
-        {LANGUAGE_ITEMS.map(({ code, labelKey }) => (
-          // For each item in the 'items' array, create a Dropdown.Item.
-          // The eventkey is passed to the function specified in the parents onSelect property.
-          <Dropdown.Item
-            className={`my-dropdown-menu-item`}
-            eventKey={code}
-            key={code}
-          >
-            {t(labelKey)}
-          </Dropdown.Item>
-        ))}
-      </Dropdown.Menu>
-    </Dropdown>
+      </button>
+      {show && (
+        <div className="my-dropdown-menu">
+          {LANGUAGE_ITEMS.map(({ code, labelKey }) => (
+            <button
+              key={code}
+              className="my-dropdown-menu-item"
+              onClick={() => handleSelect(code)} // Handle item selection
+            >
+              {t(labelKey)}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 

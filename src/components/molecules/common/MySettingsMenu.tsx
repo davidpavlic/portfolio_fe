@@ -1,23 +1,20 @@
 import '../styling/MySettingsMenu.css';
-import { useState, useEffect } from 'react';
-import { Dropdown, Nav } from 'react-bootstrap';
+import { useState, useEffect, useRef } from 'react';
 import { FaCog } from 'react-icons/fa';
 import MyEnvDropDown from '../../atoms/common/MyEnvDropDown';
 import MyLanguageDropDown from '../../atoms/common/MyLanguageDropDown';
 import MyThemeSwitcher from '../../atoms/common/MyThemeSwitcher';
 
-
-//* CONSTANTS *///
 const SETTING_COMPONENTS = [
   { code: 'theme', component: <MyThemeSwitcher /> },
   { code: 'language', component: <MyLanguageDropDown /> },
   { code: 'env', component: <MyEnvDropDown /> },
 ];
 
-
-///* FUNCTIONAL COMPONENT *///
 const MySettingsMenu = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -25,41 +22,54 @@ const MySettingsMenu = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   if (windowWidth <= 1100) {
     return (
-      <Dropdown className='my-navbar-settings-dropdown'>
-        <Dropdown.Toggle
-          className='my-navbar-settings-toggle'
+      <div className="my-navbar-settings-dropdown" ref={dropdownRef}>
+        <button
+          className={`my-navbar-settings-toggle ${showDropdown ? 'active' : ''}`}
+          onClick={() => setShowDropdown(!showDropdown)}
+          aria-expanded={showDropdown}
         >
-          <FaCog className='my-navbar-settings-cog' />
-        </Dropdown.Toggle>
-        <Dropdown.Menu className='my-dropdown-menu'>
-          {SETTING_COMPONENTS.map(({ code, component }) => (
-            // For each item in the 'items' array, create a Dropdown.Item.
-            // The eventkey is passed to the function specified in the parents onSelect property.
-            <Dropdown.Item
-              className={`my-dropdown-menu-item my-dropdown-menu-item-no-padding`}
-              eventKey={code}
-              key={code}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {component}
-            </Dropdown.Item>
-          ))}
-        </Dropdown.Menu>
-      </Dropdown>
+          <FaCog className="my-navbar-settings-cog" />
+        </button>
+        
+        {showDropdown && (
+          <div className="my-dropdown-menu">
+            {SETTING_COMPONENTS.map(({ code, component }) => (
+              <div
+                key={code}
+                className="my-dropdown-menu-item my-dropdown-menu-item-no-padding"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {component}
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     );
   }
 
   return (
-    <Nav className='my-navbar-settings'>
+    <div className="my-navbar-settings">
       {SETTING_COMPONENTS.map(({ code, component }) => (
-        <div key={code}>{component}</div>
+        <div key={code} className="nav-item">
+          {component}
+        </div>
       ))}
-    </Nav>
+    </div>
   );
 };
 
-
-///* EXPORT *///
 export default MySettingsMenu;

@@ -1,9 +1,12 @@
 /* NAV SETTINGS */
 .my-navbar-settings,
 .my-navbar-settings-dropdown {
-    position: absolute;                         /* Position for gradual margin */
-    right: 2%;                                  /* Gradual margin to the right */
-    gap: 20px;                                  /* Sets the spaces between the settings */
+    position: absolute;
+    right: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }
 
 .my-navbar-settings-dropdown {

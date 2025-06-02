@@ -1,0 +1,129 @@
+/* Container */
+.my-language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Toggle Button */
+.my-dropdown-toggle {
+    border: none;
+    background: none;
+    color: var(--pfc-black);
+    transition: background-color 0.2s ease-in-out;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+    min-width: 120px;
+    position: relative;
+}
+
+html.dark .my-dropdown-toggle {
+    color: var(--pfc-white);
+}
+
+/* Dropdown Menu */
+.my-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 100%;
+    padding: 0;
+    margin: 4px 0 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.2s ease;
+}
+
+html.dark .my-dropdown-menu {
+    background-color: var(--pfc-black-darker);
+}
+
+/* Menu Items */
+.my-dropdown-menu-item {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--pfc-black);
+    transition: background-color 0.2s ease-in-out;
+}
+
+html.dark .my-dropdown-menu-item {
+    color: var(--pfc-white);
+}
+
+/* Hover and Active States */
+.my-dropdown-menu-item:hover,
+.my-dropdown-menu-item:focus {
+    background-color: var(--pfc-white-darkest);
+    color: var(--pfc-black);
+    outline: none;
+}
+
+html.dark .my-dropdown-menu-item:hover,
+html.dark .my-dropdown-menu-item:focus {
+    background-color: var(--pfc-black-dark);
+    color: var(--pfc-white);
+}
+
+/* Toggle Button States */
+.my-dropdown-toggle:hover {
+    background-color: var(--pfc-white-darkest);
+    color: var(--pfc-black);
+}
+
+html.dark .my-dropdown-toggle:hover {
+    background-color: var(--pfc-black-darker);
+    color: var(--pfc-white);
+}
+
+.my-dropdown-toggle.show,
+.my-dropdown-toggle:focus {
+    background-color: var(--pfc-gray);
+    color: var(--pfc-black);
+    outline: none;
+}
+
+html.dark .my-dropdown-toggle.show,
+html.dark .my-dropdown-toggle:focus {
+    background-color: var(--pfc-black-dark);
+    color: var(--pfc-white);
+}
+
+/* Collapsed Dropdown Toggle (for mobile) */
+.my-navbar-settings-dropdown .my-dropdown-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin: 0;
+    padding: 0.75rem 1rem;
+}
+
+.my-navbar-settings-dropdown .my-dropdown-toggle::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.75em;
+    border: none;
+    content: '►';
+    font-size: 0.75em;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
