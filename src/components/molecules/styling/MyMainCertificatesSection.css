@@ -88,6 +88,7 @@ html.dark .my-main-certificate-card {
 .my-main-certificates-swiper-button {
     color: var(--pfc-blue) !important;                              /* Color for the navigation buttons */
     transition: all 0.3s ease;                                      /* Smooth transition for hover effects */
+    z-index: 1 !important;
 }
 
 .my-main-certificates-swiper-button:hover {
