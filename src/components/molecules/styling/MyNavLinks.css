@@ -16,7 +16,23 @@ html.dark .navbar-toggler-icon {
 /* RESPONSIVE SETTINGS */
 @media (max-width: 767px) {
     .navbar-toggler {
-        margin-right: calc(2% + 4.5rem);           /* 2% matches the settings container's margin from .my-navbar-settings-dropdown*/
+        margin-right: calc(2% + 4.5rem);        /* 2% matches the settings container's margin from .my-navbar-settings-dropdown*/
         margin-left: auto;                      /* Adjust the left margin to the right margin*/
+    }
+
+    .my-nav-links .my-navbar-link {
+        text-align: center;                     /* Centers the text in the nav links */
+    }
+
+    .my-nav-links {
+        padding: 2rem 0;                        /* Adds padding to the top and bottom of the nav links */
+    }
+    
+    .my-nav-links .my-navbar-link.active {
+        text-decoration: underline;             /* Underlines the active link */
+    }
+
+    .my-nav-links .my-navbar-link::after {
+        display: none;                          /* Hides the underline effect on the active link */
     }
 }
