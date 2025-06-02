@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 //* CONSTANTS *///
 const ENV_ITEMS = [
-  { code: 'p', labelKey: 'env_prod' },
-  { code: 't', labelKey: 'env_test' },
+    { code: 'p', labelKey: 'env_prod' },
+    { code: 't', labelKey: 'env_test' },
 ];
 
 ///* FUNCTIONAL COMPONENT *///
@@ -45,31 +45,20 @@ const MyEnvDropDown = () => {
 
     return (
         <div className="my-env-dropdown" ref={dropdownRef}>
-            <button
-                ref={toggleRef}
-                className={`my-dropdown-toggle ${show ? 'show' : ''}`}
-                onClick={() => setShow(!show)}
-                aria-expanded={show}
-            >
-                {currentLabel}
-            </button>
+            <li className="nav-item">
+                <a className="icon-button" onClick={() => setShow(!show)}>
+                    {currentLabel}
+                </a>
+            </li>
             {show && (
-                <div className="my-dropdown-menu">
-                    {ENV_ITEMS.map(({ code, labelKey }) => (
-                        <button
-                            key={code}
-                            className="my-dropdown-menu-item"
-                            onClick={() => handleSelect(code)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    handleSelect(code);
-                                }
-                            }}
-                            tabIndex={0}
-                        >
-                            {t(labelKey)}
-                        </button>
-                    ))}
+                <div className="dropdown">
+                    <div className="menu">
+                        {ENV_ITEMS.map(({ code, labelKey }) => (
+                            <a key={code} className="menu-item" onClick={() => handleSelect(code)}>
+                                {t(labelKey)}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             )}
         </div>

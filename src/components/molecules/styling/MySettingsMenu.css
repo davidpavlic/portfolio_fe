@@ -1,54 +1,115 @@
-/* NAV SETTINGS */
-.my-navbar-settings,
-.my-navbar-settings-dropdown {
+:root {
+    --bg: #242526;
+    --bg-accent: #484a4d;
+    --text-color: #dadce1;
+    --nav-size: 60px;
+    --border: 1px solid #474a4d;
+    --border-radius: 8px;
+    --speed: 500ms;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-item {
+    width: calc(var(--nav-size) * 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button {
+    --button-size: calc(var(--nav-size) * 0.5) width: var(--button-size);
+    height: var(--button-size);
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown {
     position: absolute;
-    right: 2%;
+    top: 58px;
+    width: 300px;
+    transform: translateX(-45%);
+    background-color: var(--bg);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    overflow: hidden;
+    transition: height var(--speed) ease;
+}
+
+.menu-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+    transition: background var(--speed);
+    padding: 0.5rem;
+}
+
+.menu-item:hover {
+    background-color: #525357;
+}
+
+.my-settings-menu {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 20px;
+    gap: 3rem;
+    justify-content: flex-end;
 }
 
-.my-navbar-settings-dropdown {
-    top: 1px;                                   /* Makes the logo stick to the top, when burger menu opened */
+.menu {
+    width: 100%;
 }
 
-.my-navbar-settings-dropdown .dropdown-menu {
-    right: 0;                                   /* Makes the settings open to the left, instead of right (out of bounds) */          
-    left: auto;                                 /* Makes the settings open to the left, instead of right (out of bounds) */
+.menu-primary-enter {
+    position: absolute;
+    transform: translateX(-110%);
 }
 
-/* NAV TOGGLE SETTINGS */
-.my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
-.my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
-.my-navbar-settings-dropdown .my-navbar-settings-toggle {
-    font-size: 24px;                            /* Sets the settings icon size */
-    height: 40px;                               /* Sets the button height */
-    width: 56px;                                /* Sets the button width */
-    border-radius: 0.4rem;                      /* Sets custom curved button */
-    border-color: var(--pfc-gray-light);        /* Sets button color */
-    background-color: transparent;              /* Remove bootstrap button color (none doesnt work) */
-    display: flex;                              /* Align icon vertically */
-    align-items: center;                        /* Align icon vertically */
-    margin-top: 7px;                            /* Align button vertically */
+.menu-primary-enter-active {
+    transform: translateX(0);
+    transition: all 500ms ease;
 }
 
-html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:focus,
-html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle:hover,
-html.dark .my-navbar-settings-dropdown .my-navbar-settings-toggle {
-    border-color: var(--pfc-white);             /* Set border color in dark mode */
+.menu-primary-exit {
+    position: absolute;
 }
 
-.my-navbar-settings-toggle::after {
-    border: none;                               /* Removes the standard arrow of the Bootstrap Dropdown Toggle */
+.menu-primary-exit-active {
+    transform: translateX(-110%);
+    transition: all 500ms ease;
 }
 
-/* NAV COG SETTINGS */
-.my-navbar-settings-cog {
-    color: var(--pfc-black-lightest);           /* Set settings icon color */
-    padding-left: 6px;                          /* Align icon horizontally */
+
+
+.menu-sub-enter {
+    position: absolute;
+    transform: translateX(-110%);
 }
 
-html.dark .my-navbar-settings-cog {
-    color: var(--pfc-white);                    /* Set settings icon color */
+.menu-sub-enter-active {
+    transform: translateX(0);
+    transition: all 500ms ease;
+}
+
+.menu-sub-exit {
+    position: absolute;
+}
+
+.menu-sub-exit-active {
+    transform: translateX(-110%);
+    transition: all 500ms ease;
 }

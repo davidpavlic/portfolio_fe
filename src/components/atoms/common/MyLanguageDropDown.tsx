@@ -35,14 +35,13 @@ const MyLanguageDropDown = () => {
     localStorage.setItem('language', eventKey);
     setCode(eventKey);
 
-    // Close the dropdown and blur the toggle button.
-    setShow(false);
+    setShow(false); // Close the dropdown
     requestAnimationFrame(() => toggleRef.current?.blur()); // Blurs the button with the next free frame
   };
 
   const handleClickOutside = (event: MouseEvent) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-      setShow(false); // Close dropdown when clicking outside
+      setShow(false);
     }
   };
 
@@ -52,29 +51,24 @@ const MyLanguageDropDown = () => {
   }, []);
 
   return (
-    <div className="my-language-dropdown" ref={dropdownRef}>
-      <button
-        ref={toggleRef}
-        className={`my-dropdown-toggle ${show ? 'show' : ''}`}
-        onClick={() => setShow(!show)} // Toggle dropdown visibility
-        aria-expanded={show}
-      >
-        {currentLabel}
-      </button>
+    <ul>
+      <li className="nav-item">
+        <a className="icon-button" onClick={() => setShow(!show)}>
+          {currentLabel}
+        </a>
+      </li>
       {show && (
-        <div className="my-dropdown-menu">
-          {LANGUAGE_ITEMS.map(({ code, labelKey }) => (
-            <button
-              key={code}
-              className="my-dropdown-menu-item"
-              onClick={() => handleSelect(code)} // Handle item selection
-            >
-              {t(labelKey)}
-            </button>
-          ))}
+        <div className="dropdown">
+          <div className="menu">
+            {LANGUAGE_ITEMS.map(({ code, labelKey }) => (
+              <a key={code} className="menu-item" onClick={() => handleSelect(code)}>
+                {t(labelKey)}
+              </a>
+            ))}
+          </div>
         </div>
       )}
-    </div>
+    </ul >
   );
 };
 
