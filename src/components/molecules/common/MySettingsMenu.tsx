@@ -5,8 +5,6 @@ import { FaCog } from 'react-icons/fa';
 import MyEnvDropDown from '../../atoms/common/MyEnvDropDown';
 import MyLanguageDropDown from '../../atoms/common/MyLanguageDropDown';
 import MyThemeSwitcher from '../../atoms/common/MyThemeSwitcher';
-import MyDropdownList from '../../atoms/common/MyDropdownList';
-import MyDropdownToggle from '../../atoms/common/MyDropdownToggle';
 
 
 //* CONSTANTS *///
@@ -30,14 +28,25 @@ const MySettingsMenu = () => {
   if (windowWidth <= 1100) {
     return (
       <Dropdown className='my-navbar-settings-dropdown'>
-        <MyDropdownToggle className='my-navbar-settings-toggle'>
+        <Dropdown.Toggle
+          className='my-navbar-settings-toggle'
+        >
           <FaCog className='my-navbar-settings-cog' />
-        </MyDropdownToggle>
-        <MyDropdownList
-          items={SETTING_COMPONENTS}
-          onClick={(e) => e.stopPropagation()}
-          noPadding={true}
-        />
+        </Dropdown.Toggle>
+        <Dropdown.Menu className='my-dropdown-menu'>
+          {SETTING_COMPONENTS.map(({ code, component }) => (
+            // For each item in the 'items' array, create a Dropdown.Item.
+            // The eventkey is passed to the function specified in the parents onSelect property.
+            <Dropdown.Item
+              className={`my-dropdown-menu-item my-dropdown-menu-item-no-padding`}
+              eventKey={code}
+              key={code}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {component}
+            </Dropdown.Item>
+          ))}
+        </Dropdown.Menu>
       </Dropdown>
     );
   }

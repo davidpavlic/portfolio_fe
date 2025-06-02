@@ -2,7 +2,6 @@ MyNavBar.tsx
     - Dropdown in Dropdown
         - https://www.youtube.com/watch?v=IF6k0uZuypA (7:37-16:51)
         - Make MyDropDownList & MyDropDownToggle generic for the my-navbar-settings-dropdown section.
-    - Collapsed Nav Dropdown Menu Design. 
 
 MyEnvDropDown.tsx 
     - Actually change Environments
