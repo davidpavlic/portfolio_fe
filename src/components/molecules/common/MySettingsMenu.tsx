@@ -14,6 +14,7 @@ const MySettingsMenu = () => {
   const [activeMenu, setActiveMenu] = useState<'main' | 'language' | 'environment'>('main');
   const [menuHeight, setMenuHeight] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLAnchorElement>(null);
 
   const SETTING_COMPONENTS = [
     { code: 'theme', component: <MyThemeSwitcher /> },
@@ -37,14 +38,19 @@ const MySettingsMenu = () => {
     //TODO: Change environament logic
   };
 
+  // Close dropdown when clicking outside
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node) &&
+      !toggleRef.current?.contains(event.target as Node)
+    ) {
+      setShowDropdown(false);
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setShowDropdown(false);
-      }
-    };
-
     window.addEventListener('resize', handleResize);
     document.addEventListener('mousedown', handleClickOutside);
 
@@ -128,19 +134,23 @@ const MySettingsMenu = () => {
 
   if (windowWidth <= 1100) {
     return (
-      <ul className="no-margin">
-        <li className="settings-button">
-          <a onClick={() => setShowDropdown(prev => !prev)}>
-            <FaCog className='my-navbar-settings-cog' />
+      <ul className="my-navbar-settings-button-container">
+        <li className="my-navbar-settings-list">
+          <a
+            ref={toggleRef}
+            className="my-navbar-settings-button"
+            onClick={() => setShowDropdown(prev => !prev)}
+          >
+            <FaCog className='my-navbar-settings-icon' />
           </a>
+          {showDropdown && renderMobileDropdown()}
         </li>
-        {showDropdown && renderMobileDropdown()}
       </ul>
     );
   }
 
   return (
-    <div className="my-settings-menu">
+    <div className="my-navbar-settings-menu">
       {SETTING_COMPONENTS.map(({ code, component }) => (
         <div key={code}>{component}</div>
       ))}

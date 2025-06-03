@@ -12,6 +12,7 @@ const ENV_ITEMS = [
 const MyEnvDropDown = () => {
     const { t } = useTranslation();
     const dropdownRef = useRef<HTMLDivElement>(null);
+    const toggleRef = useRef<HTMLAnchorElement>(null);
     const [code, setCode] = useState<string>(localStorage.getItem('env') || 'p');
     const [show, setShow] = useState(false);
 
@@ -30,7 +31,11 @@ const MyEnvDropDown = () => {
 
     // Close dropdown when clicking outside
     const handleClickOutside = (event: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node) && show) {
+        if (
+            dropdownRef.current &&
+            !dropdownRef.current.contains(event.target as Node) &&
+            !toggleRef.current?.contains(event.target as Node)
+        ) {
             setShow(false);
         }
     };
@@ -43,21 +48,25 @@ const MyEnvDropDown = () => {
     return (
         <ul className="my-env-dropdown-container">
             <li>
-                <a className="my-env-dropdown-toggle" onClick={() => setShow(!show)}>
+                <a
+                    ref={toggleRef}
+                    className="my-env-dropdown-toggle"
+                    onClick={() => setShow(!show)}
+                >
                     {currentLabel}
                 </a>
-            </li>
-            {show && (
-                <div className="my-env-dropdown" ref={dropdownRef}>
-                    <div className="my-env-dropdown-menu">
-                        {ENV_ITEMS.map(({ code, labelKey }) => (
-                            <a key={code} className="my-env-dropdown-menu-item" onClick={() => handleSelect(code)}>
-                                {t(labelKey)}
-                            </a>
-                        ))}
+                {show && (
+                    <div className="my-env-dropdown" ref={dropdownRef}>
+                        <div className="my-env-dropdown-menu">
+                            {ENV_ITEMS.map(({ code, labelKey }) => (
+                                <a key={code} className="my-env-dropdown-menu-item" onClick={() => handleSelect(code)}>
+                                    {t(labelKey)}
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </li>
         </ul>
     );
 };

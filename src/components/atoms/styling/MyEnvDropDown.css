@@ -40,7 +40,7 @@ html.dark .my-env-dropdown-toggle:hover {
     right: 0;                                           /* Aligns the dropdown to the right of the container */
     min-width: 7rem;                                    /* Sets a minimum width for the dropdown */
     margin-top: 0.5rem;                                 /* Adds a small margin above the dropdown */
-    border-radius: var(--border-radius);                /* Rounds the corners of the dropdown */
+    border-radius: 0.5rem;                              /* Rounds the corners of the dropdown */
     border: 1px solid var(--pfc-black-light);           /* Adds a border to the dropdown */
     background-color: var(--pfc-white-lightest);        /* Sets background color for the dropdown */
     overflow: hidden;                                   /* Hides overflow content */
