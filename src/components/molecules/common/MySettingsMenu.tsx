@@ -78,7 +78,9 @@ const MySettingsMenu = () => {
         onEnter={calculateHeight}
       >
         <div className="menu">
-          <a className="menu-item theme-switcher-item"><MyThemeSwitcher /></a>
+          <div className="menu-item theme-switcher-item">
+            <MyThemeSwitcher />
+          </div>
           <a className="menu-item" onClick={() => setActiveMenu('language')}>Language</a>
           <a className="menu-item" onClick={() => setActiveMenu('environment')}>Environment</a>
         </div>
@@ -134,18 +136,17 @@ const MySettingsMenu = () => {
 
   if (windowWidth <= 1100) {
     return (
-      <ul className="my-navbar-settings-button-container">
-        <li className="my-navbar-settings-list">
-          <a
-            ref={toggleRef}
-            className="my-navbar-settings-button"
-            onClick={() => setShowDropdown(prev => !prev)}
-          >
-            <FaCog className='my-navbar-settings-icon' />
-          </a>
-          {showDropdown && renderMobileDropdown()}
-        </li>
-      </ul>
+      <div className="my-navbar-settings-wrapper">
+        <a
+          ref={toggleRef}
+          className="my-navbar-settings-button"
+          onClick={() => setShowDropdown(prev => !prev)}
+        >
+          <FaCog className='my-navbar-settings-icon' />
+        </a>
+
+        {showDropdown && renderMobileDropdown()}
+      </div>
     );
   }
 
