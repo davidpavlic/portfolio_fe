@@ -1,0 +1,74 @@
+.my-language-dropdown-container {
+    position: relative;                                 /* Allows absolute positioning of dropdown */
+    margin: 0;                                          /* Resets margin */
+    padding: 0;                                         /* Resets padding */
+    list-style: none;                                   /* Removes default list styling */
+}
+
+.my-language-dropdown-toggle {
+    display: inline-block;                              /* Makes the toggle an inline-block element */
+    padding: 0.375rem 0.75rem;                          /* Adds padding for better click area */
+    border-radius: 0.375rem;                            /* Rounds the corners of the toggle */
+    cursor: pointer;                                    /* Changes cursor to pointer on hover */
+    text-decoration: none;                              /* Removes underline from text */
+    color: var(--pfc-black);                            /* Sets text color */
+    transition: background-color 0.2s ease-in-out;      /* Smooth transition for background color change */
+}
+
+html.dark .my-language-dropdown-toggle {
+    color: var(--pfc-white);                            /* Changes text color in dark mode */
+}
+
+.my-language-dropdown-toggle:hover {
+    background-color: var(--pfc-white-darkest);         /* Changes background color on hover */
+}
+
+html.dark .my-language-dropdown-toggle:hover {
+    background-color: var(--pfc-black-dark);            /* Changes background color on hover in dark mode */
+}
+
+.my-language-dropdown-toggle::after {
+    content: '▼';                                       /* Adds a down arrow after the toggle text */
+    margin-left: 0.5rem;                                /* Adds space between text and arrow */
+    display: inline-block;                              /* Makes the arrow an inline-block element */
+    transform: scaleY(0.7);                             /* Scales the arrow vertically for a better appearance */
+    font-size: 0.875rem;                                /* Sets font size for the arrow */
+}
+
+.my-language-dropdown {
+    position: absolute;                                 /* Positions the dropdown absolutely relative to the container */
+    right: 0;                                           /* Aligns the dropdown to the right of the container */
+    min-width: 10rem;                                   /* Sets a minimum width for the dropdown */
+    margin-top: 0.5rem;                                 /* Adds a small margin above the dropdown */
+    border-radius: var(--border-radius);                /* Rounds the corners of the dropdown */
+    border: 1px solid var(--pfc-black-light);           /* Adds a border to the dropdown */
+    background-color: var(--pfc-white-lightest);        /* Sets background color for the dropdown */
+    overflow: hidden;                                   /* Hides overflow content */
+}
+
+html.dark .my-language-dropdown {
+    border: 1px solid var(--pfc-white);                 /* Changes border color in dark mode */
+    background-color: var(--pfc-black-darker);          /* Changes background color in dark mode */
+}
+
+.my-language-dropdown-menu-item {
+    display: flex;                                      /* Makes each item a flex container */
+    align-items: center;                                /* Centers items vertically */
+    height: 3rem;                                       /* Sets a fixed height for each item */
+    padding: 0 1rem;                                    /* Adds horizontal padding */
+    text-decoration: none;                              /* Removes underline from text */
+    color: var(--pfc-black);                            /* Sets text color */
+    transition: background-color 0.2s ease-in-out;      /* Smooth transition for background color change */
+}
+
+html.dark .my-language-dropdown-menu-item {
+    color: var(--pfc-white);                            /* Changes text color in dark mode */
+}
+
+.my-language-dropdown-menu-item:hover {
+    background-color: var(--pfc-white-darkest);         /* Changes background color on hover */
+}
+
+html.dark .my-language-dropdown-menu-item:hover {
+    background-color: var(--pfc-black-dark);            /* Changes background color on hover in dark mode */
+}

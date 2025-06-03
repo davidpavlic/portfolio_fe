@@ -15,6 +15,7 @@ const translations = {
   nav_projects: { en: "Projects", de: "Projects", fr: "Projects", hr: "Projects", gg: "Globi" },
   nav_passions: { en: "Passions", de: "Passions", fr: "Passions", hr: "Passions", gg: "Globi" },
   nav_llm: { en: "My LLM", de: "Mein LLM", fr: "Mon LLM", hr: "Moj LLM", gg: "Globi" },
+  nav_back: { en: "Back", de: "Zurück", fr: "Retour", hr: "Natrag", gg: "Globi" },
   nav_newsscraper: {
     en: "News Scraper",
     de: "News Scraper",

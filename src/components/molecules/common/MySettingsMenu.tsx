@@ -72,7 +72,7 @@ const MySettingsMenu = () => {
         onEnter={calculateHeight}
       >
         <div className="menu">
-          <a className="menu-item"><MyThemeSwitcher /></a>
+          <a className="menu-item theme-switcher-item"><MyThemeSwitcher /></a>
           <a className="menu-item" onClick={() => setActiveMenu('language')}>Language</a>
           <a className="menu-item" onClick={() => setActiveMenu('environment')}>Environment</a>
         </div>
@@ -90,11 +90,11 @@ const MySettingsMenu = () => {
             ← Back
           </a>
           {[
-            { label: 'English', code: 'en' },
-            { label: 'German', code: 'de' },
-            { label: 'French', code: 'fr' },
-            { label: 'Croatian', code: 'hr' },
-            { label: 'Globi', code: 'gg' },
+            { label: t('env_english'), code: 'en' },
+            { label: t('env_german'), code: 'de' },
+            { label: t('env_french'), code: 'fr' },
+            { label: t('env_croatian'), code: 'hr' },
+            { label: t('env_globi'), code: 'gg' },
           ].map(({ label, code }) => (
             <a key={code} className="menu-item" onClick={() => handleLanguageSelect(code)}>
               {label}
@@ -128,10 +128,10 @@ const MySettingsMenu = () => {
 
   if (windowWidth <= 1100) {
     return (
-      <ul>
-        <li className="nav-item">
-          <a className="icon-button" onClick={() => setShowDropdown(prev => !prev)}>
-            <FaCog />
+      <ul className="no-margin">
+        <li className="settings-button">
+          <a onClick={() => setShowDropdown(prev => !prev)}>
+            <FaCog className='my-navbar-settings-cog' />
           </a>
         </li>
         {showDropdown && renderMobileDropdown()}

@@ -22,4 +22,6 @@ MyMainPageData.tsx
     - Add C1 results
 MyMainJourneySection.tsx
     - Make both columns the same height
+MyEnvDropDown.tsx & MyLanguageDropDown.tsx
+    - Make the dropdowns more generic.
 GLOBAL REFACTOR ONCE AGAIN 

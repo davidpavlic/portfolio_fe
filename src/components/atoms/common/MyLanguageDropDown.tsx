@@ -1,5 +1,4 @@
 import '../styling/MyLanguageDropDown.css'
-
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -17,7 +16,6 @@ const LANGUAGE_ITEMS = [
 ///* FUNCTIONAL COMPONENT *///
 const MyLanguageDropDown = () => {
   const { i18n, t } = useTranslation();
-  const toggleRef = useRef<HTMLButtonElement>(null); // Ref for the toggle button
   const dropdownRef = useRef<HTMLDivElement>(null); // Ref for the dropdown menu
   const [code, setCode] = useState<string>(localStorage.getItem('language') || 'en');   // Retrieve stored code from localStorage or fallback to defaultCode
   const [show, setShow] = useState(false); // Control dropdown visibility
@@ -36,11 +34,10 @@ const MyLanguageDropDown = () => {
     setCode(eventKey);
 
     setShow(false); // Close the dropdown
-    requestAnimationFrame(() => toggleRef.current?.blur()); // Blurs the button with the next free frame
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node) && show) {
       setShow(false);
     }
   };
@@ -51,21 +48,19 @@ const MyLanguageDropDown = () => {
   }, []);
 
   return (
-    <ul>
-      <li className="nav-item">
-        <a className="icon-button" onClick={() => setShow(!show)}>
+    <ul className="my-language-dropdown-container">
+      <li>
+        <a className="my-language-dropdown-toggle" onClick={() => setShow(!show)}>
           {currentLabel}
         </a>
       </li>
       {show && (
-        <div className="dropdown">
-          <div className="menu">
-            {LANGUAGE_ITEMS.map(({ code, labelKey }) => (
-              <a key={code} className="menu-item" onClick={() => handleSelect(code)}>
-                {t(labelKey)}
-              </a>
-            ))}
-          </div>
+        <div className="my-language-dropdown" ref={dropdownRef}>
+          {LANGUAGE_ITEMS.map(({ code, labelKey }) => (
+            <a key={code} className="my-language-dropdown-menu-item" onClick={() => handleSelect(code)}>
+              {t(labelKey)}
+            </a>
+          ))}
         </div>
       )}
     </ul >

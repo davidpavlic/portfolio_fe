@@ -1,129 +1,74 @@
-/* Container */
+.my-env-dropdown-container {
+    position: relative;                                 /* Allows absolute positioning of dropdown */
+    margin: 0;                                          /* Resets margin */
+    padding: 0;                                         /* Resets padding */
+    list-style: none;                                   /* Removes default list styling */
+}
+
+.my-env-dropdown-toggle {
+    display: inline-block;                              /* Makes the toggle an inline-block element */
+    padding: 0.375rem 0.75rem;                          /* Adds padding for better click area */
+    border-radius: 0.375rem;                            /* Rounds the corners of the toggle */
+    cursor: pointer;                                    /* Changes cursor to pointer on hover */
+    text-decoration: none;                              /* Removes underline from text */
+    color: var(--pfc-black);                            /* Sets text color */
+    transition: background-color 0.2s ease-in-out;      /* Smooth transition for background color change */
+}
+
+html.dark .my-env-dropdown-toggle {
+    color: var(--pfc-white);                            /* Changes text color in dark mode */
+}
+
+.my-env-dropdown-toggle:hover {
+    background-color: var(--pfc-white-darkest);         /* Changes background color on hover */
+}
+
+html.dark .my-env-dropdown-toggle:hover {
+    background-color: var(--pfc-black-dark);            /* Changes background color on hover in dark mode */
+}
+
+.my-env-dropdown-toggle::after {
+    content: '▼';                                       /* Adds a down arrow after the toggle text */
+    margin-left: 0.5rem;                                /* Adds space between text and arrow */
+    display: inline-block;                              /* Makes the arrow an inline-block element */
+    transform: scaleY(0.7);                             /* Scales the arrow vertically for a better appearance */
+    font-size: 0.875rem;                                /* Sets font size for the arrow */
+}
+
 .my-env-dropdown {
-    position: relative;
-    display: inline-block;
+    position: absolute;                                 /* Positions the dropdown absolutely relative to the container */
+    right: 0;                                           /* Aligns the dropdown to the right of the container */
+    min-width: 7rem;                                    /* Sets a minimum width for the dropdown */
+    margin-top: 0.5rem;                                 /* Adds a small margin above the dropdown */
+    border-radius: var(--border-radius);                /* Rounds the corners of the dropdown */
+    border: 1px solid var(--pfc-black-light);           /* Adds a border to the dropdown */
+    background-color: var(--pfc-white-lightest);        /* Sets background color for the dropdown */
+    overflow: hidden;                                   /* Hides overflow content */
 }
 
-/* Toggle Button */
-.my-dropdown-toggle {
-    border: none;
-    background: none;
-    color: var(--pfc-black);
-    transition: background-color 0.2s ease-in-out;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 4px;
-    text-align: left;
-    min-width: 120px;
-    position: relative;
+html.dark .my-env-dropdown {
+    border: 1px solid var(--pfc-white);                 /* Changes border color in dark mode */
+    background-color: var(--pfc-black-darker);          /* Changes background color in dark mode */
 }
 
-html.dark .my-dropdown-toggle {
-    color: var(--pfc-white);
+.my-env-dropdown-menu-item {
+    display: flex;                                      /* Makes each item a flex container */
+    align-items: center;                                /* Centers items vertically */
+    height: 3rem;                                       /* Sets a fixed height for each item */
+    padding: 0 1rem;                                    /* Adds horizontal padding */
+    text-decoration: none;                              /* Removes underline from text */
+    color: var(--pfc-black);                            /* Sets text color */
+    transition: background-color 0.2s ease-in-out;      /* Smooth transition for background color change */
 }
 
-/* Dropdown Menu */
-.my-dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    min-width: 100%;
-    padding: 0;
-    margin: 4px 0 0;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.2s ease;
+html.dark .my-env-dropdown-menu-item {
+    color: var(--pfc-white);                            /* Changes text color in dark mode */
 }
 
-html.dark .my-dropdown-menu {
-    background-color: var(--pfc-black-darker);
+.my-env-dropdown-menu-item:hover {
+    background-color: var(--pfc-white-darkest);         /* Changes background color on hover */
 }
 
-/* Menu Items */
-.my-dropdown-menu-item {
-    display: block;
-    width: 100%;
-    padding: 8px 16px;
-    text-align: left;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--pfc-black);
-    transition: background-color 0.2s ease-in-out;
-}
-
-html.dark .my-dropdown-menu-item {
-    color: var(--pfc-white);
-}
-
-/* Hover and Active States */
-.my-dropdown-menu-item:hover,
-.my-dropdown-menu-item:focus {
-    background-color: var(--pfc-white-darkest);
-    color: var(--pfc-black);
-    outline: none;
-}
-
-html.dark .my-dropdown-menu-item:hover,
-html.dark .my-dropdown-menu-item:focus {
-    background-color: var(--pfc-black-dark);
-    color: var(--pfc-white);
-}
-
-/* Toggle Button States */
-.my-dropdown-toggle:hover {
-    background-color: var(--pfc-white-darkest);
-    color: var(--pfc-black);
-}
-
-html.dark .my-dropdown-toggle:hover {
-    background-color: var(--pfc-black-darker);
-    color: var(--pfc-white);
-}
-
-.my-dropdown-toggle.show,
-.my-dropdown-toggle:focus {
-    background-color: var(--pfc-gray);
-    color: var(--pfc-black);
-    outline: none;
-}
-
-html.dark .my-dropdown-toggle.show,
-html.dark .my-dropdown-toggle:focus {
-    background-color: var(--pfc-black-dark);
-    color: var(--pfc-white);
-}
-
-/* Collapsed Dropdown Toggle (for mobile) */
-.my-navbar-settings-dropdown .my-dropdown-toggle {
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    margin: 0;
-    padding: 0.75rem 1rem;
-}
-
-.my-navbar-settings-dropdown .my-dropdown-toggle::after {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0.75em;
-    border: none;
-    content: '►';
-    font-size: 0.75em;
-}
-
-/* Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+html.dark .my-env-dropdown-menu-item:hover {
+    background-color: var(--pfc-black-dark);            /* Changes background color on hover in dark mode */
 }
