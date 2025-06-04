@@ -1,0 +1,55 @@
+/* GENERAL */
+.my-main-skills-wrapper {
+    max-width: 75rem;                                           /* Sets the maximum width of the wrapper */
+    margin: auto;                                               /* Centers the wrapper horizontally */
+}
+
+.my-main-skills-content {
+    display: grid;                                              /* Creates a grid layout for the list and category */
+    grid-template-columns: 1fr 1.5fr;                           /* Defines two columns with different widths */
+    gap: 3rem;                                                  /* Adds space between the columns */
+}
+
+/* RIGHT COLUMN - GENERAL */
+.my-main-skills-category-wrapper {
+    align-self: center;                                         /* Prevents the category section from stretching */
+    padding: 2rem;                                              /* Adds padding inside the category wrapper */
+    border-radius: 1rem;                                        /* Rounds the corners of the category wrapper */
+    box-shadow: 0 0.625rem 1.875rem var(--pfc-white-darkest);   /* Adds a shadow effect to the category wrapper */
+    background: var(--pfc-white);                               /* Sets the background color of the category wrapper */
+}
+
+html.dark .my-main-skills-category-wrapper { 
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-black-lightest);   /* Adds a shadow effect for dark mode */
+    background-color: var(--pfc-black-dark);                    /* Sets the background color for dark mode */   
+}
+
+.my-main-skills-category-grid {
+    display: flex;                                              /* Creates a flexbox layout for the category grid */
+    flex-direction: column;                                     /* Arranges the categories in a column */
+    gap: 1.5rem;                                                /* Adds space between the categories */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1110px) {
+    .my-main-skills-content {
+        grid-template-columns: 1fr;                             /* Changes to a single column layout */
+        gap: 2rem;                                              /* Adjusts the gap between columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .my-main-skills-wrapper {
+        padding: 0 0.5rem;                                      /* Adds padding to the wrapper */ 
+    }
+}
+
+@media (max-width: 480px) {
+    .my-main-skills-category-wrapper {
+        padding: 1rem;                                          /* Adjusts padding for smaller screens */
+    }
+    
+    .my-main-skills-category-grid {
+        gap: 1rem;                                              /* Adjusts gap between categories */ 
+    }
+}

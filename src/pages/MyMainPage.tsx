@@ -1,17 +1,19 @@
 import './styling/MyMainPage.css';
-import { useTranslation } from "react-i18next";
+import MyMainHeaderSection from '../components/molecules/mainpage/MyMainHeaderSection';
+import MyMainSkillsSection from '../components/molecules/mainpage/MyMainSkillsSection';
+import MyMainJourneySection from '../components/molecules/mainpage/MyMainJourneySection';
+import MyMainCertificatesSection from '../components/molecules/mainpage/MyMainCertificatesSection';
+import MyMainContactSection from '../components/molecules/mainpage/MyMainContactSection';
 
 export const MainPage = () => {
-  const { t } = useTranslation();
-  
   return (
-    <nav>
-        {Array.from({ length: 100 }, () => (
-          <div>
-            {t("home_dummy")}<br />
-          </div>
-        ))}
-    </nav>
+      <div>
+        <MyMainHeaderSection/>
+        <MyMainSkillsSection/>
+        <MyMainJourneySection/>
+        <MyMainCertificatesSection/>
+        <MyMainContactSection/>
+      </div>
   );
 };
 export default MainPage;

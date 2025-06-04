@@ -11,7 +11,7 @@
 }
 
 html.dark .my-project-card-form-container {
-    box-shadow: 0 0.25rem 0.938rem var(--pfc-gray);         /* Sets the forms shadow in darkmode */
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-black-lightest);         /* Sets the forms shadow in darkmode */
     background-color: var(--pfc-black-dark);                /* Sets the forms background in darkmode */
 }
 
@@ -21,7 +21,7 @@ html.dark .my-project-card-form-container {
 }
 
 html.dark .my-project-card-form-container:hover {
-    box-shadow: 0 0.25rem 0.938rem var(--pfc-white-dark);   /* Sets the forms shadow when hovered in darkmode*/
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-gray-darker);   /* Sets the forms shadow when hovered in darkmode*/
 }
 
 /* GRID LAYOUT */
@@ -80,7 +80,7 @@ html.dark .my-project-card-form-container:hover {
     color: var(--pfc-black);                                /* Sets the text color */
 }
 
-html.drak .my-project-card-popup-message {
+html.dark .my-project-card-popup-message {
     color: var(--pfc-white);                                /* Sets the pop up text color in darkmode */
 }
 

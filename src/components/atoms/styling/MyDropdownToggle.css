@@ -33,3 +33,22 @@ html.dark  .my-dropdown-toggle:focus:not(:focus-visible){   /* When selected */
     background-color: var(--pfc-black-dark);                /* Override previously defined background color */
     color: var(--pfc-white);                                /* Override previously defined white color */
 }
+
+/* COLLAPSED DROPDOWN TOGGLE */
+.my-navbar-settings-dropdown .my-dropdown-toggle {
+    width: 100%;                                /* Makes the theme switcher button full width */
+    display: flex;                              /* Align icon vertically */
+    justify-content: left;                      /* Align icon horizontally */
+    margin: 0;                                  /* Removes the margin from the button */
+    padding: 0.75rem 1rem;                      /* Sets the padding for the button */
+}
+
+.my-navbar-settings-dropdown .my-dropdown-toggle::after {
+    position: absolute;                         /* Position the arrow icon */
+    top: 50%;                                   /* Center vertically */
+    transform: translateY(-50%);                /* Adjust vertical alignment */
+    right: 0.75em;                              /* Position the arrow icon to the right */
+    border: none;                               /* Remove border */
+    content: '►';                               /* Use a right arrow character */
+    font-size: 0.75em;                          /* Set font size for the arrow */
+}

@@ -1,0 +1,83 @@
+.my-main-journey-section {
+  padding: 4rem 4rem 6rem 4rem;                             /* Padding for the section */
+}
+
+.my-main-journey-container {
+  max-width: 80rem;                                   /* Maximum width for the container */ 
+  margin: auto;                                       /* Center the container */
+}
+
+.my-main-journey-header {
+  margin-bottom: 3rem;                                /* Margin below the header */
+  text-align: center;                                 /* Center the header text */
+}
+
+.my-main-journey-title {
+    position: relative;                               /* Position relative for the title */
+    margin: 0 0 1.75rem 0;                            /* Margin below the title */
+    font-size: 1.5rem;                                /* Font size for the title */  
+    font-weight: 500;                                 /* Font weight for the title */ 
+    color: var(--pfc-light-blue);                     /* Color for the title */
+}
+
+/* Timeline Layout */
+.my-main-journey-timeline {
+  position: relative;                                 /* Position relative for the timeline */  
+  display: grid;                                      /* Use grid layout for the timeline */
+  grid-template-columns: 1fr 1fr;                     /* Two equal columns */
+  gap: 4rem;                                          /* Gap between columns */
+}
+
+.my-main-timeline-column {
+  position: relative;                                 /* Position relative for the column */
+}
+
+.my-main-timeline-category {
+  margin-bottom: 2rem;                                /* Margin below the category */
+  padding-bottom: 0.5rem;                             /* Padding below the category */
+  border-bottom: 2px solid var(--pfc-light-blue);     /* Bottom border for the category */
+  font-size: 1.5rem;                                  /* Font size for the category */
+  text-align: center;                                 /* Center the category text */ 
+  color: var(--pfc-light-blue);                       /* Color for the category */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .my-main-journey-timeline {
+    grid-template-columns: 1fr;                       /* Single column layout for smaller screens */
+    gap: 3rem;                                        /* Reduced gap between columns */
+  }
+  
+  .my-main-timeline-column {
+    padding: 0;                                       /* Remove padding for the column */
+  }
+}
+
+@media (max-width: 768px) {
+  .my-main-journey-header {
+    margin-bottom: 2rem;                              /* Reduced margin below the header */
+  }
+  
+  .my-main-journey-title {
+    font-size: 2rem;                                  /* Increased font size for the title */
+  }
+  
+  .my-main-timeline-category {
+    font-size: 1.3rem;                                /* Adjusted font size for the category */
+    margin-bottom: 1.5rem;                            /* Reduced margin below the category */ 
+  }
+}
+
+@media (max-width: 480px) {
+  .my-main-journey-section {
+    padding: 3rem 0;                                  /* Reduced padding for the section */ 
+  }
+  
+  .my-main-journey-container {
+    padding: 0 1rem;                                  /* Padding for the container */
+  }
+  
+  .my-main-journey-title {
+    font-size: 1.8rem;                                /* Adjusted font size for the title */ 
+  }
+}

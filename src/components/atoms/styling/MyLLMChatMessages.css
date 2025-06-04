@@ -44,9 +44,7 @@ html.dark .my-llm-chat-messages {
     align-self: flex-start;                         /* Aligns assistant messages to the left */
     border-bottom-left-radius: 0.25rem;             /* Rounded bottom left corner */
     background: var(--pfc-white-dark);              /* Assistant message background */
-    color: var(--pfc-black);                        /* Assistant message text color */
 }
-
 html.dark .my-llm-chat-messages-assistant-message {
     background: var(--pfc-black-lightest);          /* Dark mode assistant message background */
 }

@@ -1,0 +1,104 @@
+/* Timeline Card */
+.my-main-journey-card {
+    position: relative;     
+    padding: 2rem;                                              /* Padding around the card content */
+    border-radius: 0px 0.75rem 0.75rem 0px;                     /* Rounded corners for the card */
+    background: var(--pfc-white);                               /* Sets the forms background */
+    border-left: 4px solid var(--pfc-light-blue);               /* Blue left border for experience cards */
+    box-shadow: 0 0.25rem 1.25rem var(--pfc-white-darkest);     /* Sets the forms shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;      /* Smooth transition for hover effect */
+}
+
+html.dark .my-main-journey-card {
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-black-lightest);   /* Sets the forms shadow in darkmode */
+    background: var(--pfc-black-dark);                          /* Sets the forms background in darkmode */
+}
+
+.my-main-journey-card:hover {
+    transform: translateY(-5px);                                /* Slight lift on hover */  
+}
+
+/* Card Content */
+.my-main-journey-card-period {
+    font-size: 0.9rem;                                          /* Font size for the period */
+    font-weight: bold;                                          /* Bold font for emphasis */
+    color: var(--pfc-gray-darker);                              /* Dark gray color for the period */
+    margin-bottom: 0.5rem;                                      /* Margin below the period */
+}
+
+.my-main-journey-card-title {
+    font-size: 1.4rem;                                          /* Font size for the title */
+    font-weight: bold;                                          /* Bold font for the title */
+    margin-bottom: 0.3rem;                                      /* Margin below the title */
+    color: var(--pfc-black);                                    /* Color for the title */
+}
+
+html.dark .my-main-journey-card-title {
+    color: var(--pfc-white);                                    /* Color for the title in dark mode */
+}
+
+.my-main-journey-card-subtitle {
+    font-size: 1rem;                                            /* Font size for the subtitle */
+    color: var(--pfc-light-blue);                               /* Light blue color for the subtitle */
+    margin-bottom: 1.5rem;                                      /* Margin below the subtitle */
+}
+
+.my-main-journey-card-description {
+    margin-bottom: 1.5rem;                                      /* Margin below the description */
+    padding-left: 1.5rem;                                       /* Padding left for bullet points */
+}
+
+.my-main-journey-card-description li {
+    margin-bottom: 0.8rem;                                      /* Margin below each list item */
+    line-height: 1.6;                                           /* Line height for better readability */   
+    position: relative;                                         /* Position relative for bullet points */
+    padding-left: 0.5rem;                                       /* Padding left for bullet points */
+}
+
+/* Tags & Achievements */
+.my-main-journey-tags-title {
+    font-size: 1rem;                                            /* Font size for the tags title */
+    font-weight: bold;                                          /* Bold font for the tags title */
+    margin-bottom: 0.75rem;                                     /* Margin below the tags title */
+    color: var(--pfc-light-blue);                               /* Light blue color for the tags title */
+}
+
+.my-main-journey-tags-container {
+    display: flex;                                              /* Flexbox for tags layout */
+    flex-wrap: wrap;                                            /* Wrap tags to the next line if needed */
+    gap: 0.5rem;                                                /* Gap between tags */
+}
+
+.my-main-journey-tag {
+    background: var(--pfc-transparent-blue);                    /* Transparent blue background for tags */
+    color: var(--pfc-light-blue);                               /* Light blue color for tag text */
+    padding: 0.3rem 0.8rem;                                     /* Padding for tags */
+    border-radius: 3rem;                                        /* Rounded corners for tags */
+    font-size: 0.8rem;                                          /* Font size for tags */
+    font-weight: bold;                                          /* Bold font for tags */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .my-main-journey-card {
+        padding: 1.5rem;                                        /* Reduced padding for smaller screens */
+    }
+  
+    .my-main-journey-card-title {
+      font-size: 1.2rem;                                        /* Adjusted font size for the title */
+    }
+}
+@media (max-width: 480px) {
+    .my-main-journey-card-description li {
+      font-size: 0.95rem;                                       /* Adjusted font size for list items */ 
+    }
+    
+    .my-main-journey-tags-container {
+      gap: 0.3rem;                                              /* Reduced gap between tags */
+    }
+    
+    .my-main-journey-tag {
+      font-size: 0.75rem;                                       /* Adjusted font size for tags */
+      padding: 0.2rem 0.6rem;                                   /* Reduced padding for tags */
+    }
+  }

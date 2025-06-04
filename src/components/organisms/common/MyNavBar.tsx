@@ -31,7 +31,7 @@ export const MyNavBar = () => {
         <MyNavLinks />
       </Navbar.Collapse>
 
-      <MySettingsMenu />
+      <MySettingsMenu/>
     </Navbar>
   );
 };

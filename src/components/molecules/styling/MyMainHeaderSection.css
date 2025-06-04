@@ -1,0 +1,163 @@
+.my-main-header-container {
+    padding: 4rem;                                                /* Top and bottom padding */
+}
+
+.my-main-header-content {
+    max-width: 75rem;                                               /* Maximum width of the content */
+    display: flex;                                                  /* Flexbox for layout */
+    align-items: center;                                            /* Center items vertically */
+    justify-content: center;                                        /* Center items horizontally */
+    margin: 0 auto;                                                 /* Center the content */
+    gap: 5rem;                                                      /* Space between image and text */  
+}
+
+.my-main-header-image-container {
+    flex: 0 0 15rem;                                                /* Fixed width for the image container */
+}
+
+.my-main-header-image {
+    width: 100%;                                                    /* Full width of the container */  
+    border-radius: 50%;                                             /* Circular image */
+    border: 0.313rem solid var(--pfc-white);                        /* White border around the image */
+    box-shadow: 0 0.938rem 1.875rem var(--pfc-transparent-dark);    /* Shadow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;          /* Smooth transition for hover effect */
+}
+
+html.dark .my-main-header-image {
+    box-shadow: 0 0.938rem 1.875rem var(--pfc-transparent-light);   /* Dark mode shadow */
+}
+
+.my-main-header-image:hover {
+    transform: scale(1.02);                                         /* Scale effect on hover */
+}
+
+.my-main-header-name {
+    margin: 0 0 0.5rem 0;                                           /* Margin below the name */
+    font-size: 2.5rem;                                              /* Font size for the name */
+    font-weight: 700;                                               /* Font weight for the name */
+}
+
+.my-main-header-title {
+    position: relative;                                             /* Position relative for the title */
+    margin: 0 0 1.75rem 0;                                          /* Margin below the title */
+    font-size: 1.5rem;                                              /* Font size for the title */  
+    font-weight: 500;                                               /* Font weight for the title */ 
+    color: var(--pfc-light-blue);                                   /* Color for the title */
+}
+
+.my-main-header-title::after {
+    content: '';                                                    /* Empty content for the pseudo-element */
+    position: absolute;                                             /* Absolute positioning to the title */
+    bottom: -0.5rem;                                                /* Positioning below the title */
+    left: 0;                                                        /* Align to the left */
+    width: 3.125rem;                                                /* Width of the line */
+    height: 0.188rem;                                               /* Height of the line */
+    background: var(--pfc-light-blue);                              /* Color of the line */
+    border-radius: 0.188rem;                                        /* Rounded corners for the line */
+}
+
+.my-main-header-summary {
+    position: relative;                                             /* Position relative for the summary */
+    max-width: 43.75rem;                                            /* Maximum width for the summary */
+    margin-bottom: 1.5rem;                                          /* Margin below the summary */
+    line-height: 1.7;                                               /* Spacing between lines */
+    font-size: 1.15rem;                                             /* Font size for the summary */
+}
+
+.my-main-header-social-links {
+    display: flex;                                                  /* Flexbox for layout */
+    gap: 1rem;                                                      /* Space between social links */
+    margin-top: 2rem;                                               /* Margin above the social links */
+}
+
+.my-main-header-social-link {
+    display: inline-flex;                                           /* Inline flex for layout */
+    align-items: center;                                            /* Center items vertically */
+    gap: 0.5rem;                                                    /* Space between icon and text */
+    padding: 0.7rem 1.5rem;                                         /* Padding for the links */
+    border-radius: 3.125rem;                                        /* Rounded corners for the links */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);            /* Shadow effect */
+    font-weight: 500;                                               /* Font weight for the links */
+    text-decoration: none;                                          /* No underline for links */
+    color: var(--pfc-white);                                        /* Text color for links */
+    transition: all 0.3s ease;                                      /* Smooth transition for hover effect */
+}
+
+.my-main-header-social-link:hover {
+    transform: translateY(-0.125rem);                               /* Lift effect on hover */
+}
+
+.my-main-header-linkedin {
+    background: var(--pfc-linkedin);                                /* LinkedIn background color */
+}
+
+.my-main-header-linkedin:hover {
+    background: var(--pfc-linkedin-darker);                         /* LinkedIn hover color */
+}
+
+.my-main-header-github {
+    background: var(--pfc-github);                                  /* GitHub background color */
+}
+
+.my-main-header-github:hover {
+    background: var(--pfc-github-darker);                           /* GitHub hover color */
+}
+
+
+@media (max-width: 1200px) {
+    .my-main-header-content {
+        gap: 4rem;                                                  /* Reduce gap between image and text */
+    }
+}
+
+@media (max-width: 992px) {
+    .my-main-header-content {
+        gap: 3rem;                                                  /* Further reduce gap between image and text */
+    }
+}
+
+@media (max-width: 768px) {
+    .my-main-header-container {
+        padding: 3rem 0;                                            /* Reduce top and bottom padding */ 
+    }
+
+    .my-main-header-content {
+        flex-direction: column;                                     /* Stack image and text vertically */
+        text-align: center;                                         /* Center text alignment */
+        gap: 2.5rem;                                                /* Space between image and text */
+    }
+
+    .my-main-header-name {
+        font-size: 2.2rem;                                          /* Reduce font size for the name */
+    }
+
+    .my-main-header-image-container {
+        flex: 0 0 11.25rem;                                         /* Fixed width for the image container */
+    }
+
+    .my-main-header-title {
+        font-size: 1.3rem;                                          /* Reduce font size for the title */
+    }
+
+    .my-main-header-title::after {
+        left: 50%;                                                  /* Center the line under the title */
+        transform: translateX(-50%);                                /* Center the line */
+    }
+
+    .my-main-header-social-links {
+        justify-content: center;                                    /* Center social links */
+    }
+}
+
+@media (max-width: 576px) {
+
+    .my-main-header-social-links {
+        flex-direction: column;                                     /* Stack social links vertically */
+        align-items: center;                                        /* Center items vertically */
+    }
+
+    .my-main-header-social-link {
+        width: 11.25rem;                                            /* Fixed width for social links */
+        justify-content: center;                                    /* Center items in the link */
+    }
+}

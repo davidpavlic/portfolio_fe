@@ -1,0 +1,107 @@
+.my-main-contact-section {
+    padding: 4rem 2rem;                                         /* Sets the section padding */
+}
+
+.my-main-contact-container {
+    max-width: 75rem;                                           /* Sets the maximum width of the contact section */
+    margin: 0 auto;                                             /* Centers the contact section */
+}
+
+.my-main-contact-title {
+    margin: 0 0 0.5rem 0;                                       /* Margin below the name */
+    font-size: 2.5rem;                                          /* Font size for the name */
+    font-weight: 700;                                           /* Font weight for the name */
+    text-align: center;                                         /* Centers the name */
+}
+
+.my-main-contact-subtitle {
+    position: relative;                                         /* Position relative for the title */
+    margin: 0 0 1.75rem 0;                                      /* Margin below the title */
+    font-size: 1.5rem;                                          /* Font size for the title */  
+    font-weight: 500;                                           /* Font weight for the title */ 
+    text-align: center;                                         /* Centers the name */
+    color: var(--pfc-light-blue);                               /* Color for the title */
+}
+
+.my-main-contact-card {
+    padding: 3rem;                                              /* Sets the forms distance from the text */
+    border-radius: 1rem;                                        /* Sets the forms corner curveture */
+    box-shadow: 0 0.25rem 1.25rem var(--pfc-white-darkest);     /* Sets the forms shadow */
+    background-color: var(--pfc-white);                         /* Sets the forms background color */
+}
+
+html.dark .my-main-contact-card {
+    box-shadow: 0 0.25rem 0.938rem var(--pfc-black-lightest);   /* Sets the forms shadow in darkmode */
+    background-color: var(--pfc-black-dark);                    /* Sets the forms background in darkmode */
+}
+
+.my-main-contact-form {
+    display: flex;                                              /* Flexbox for layout */
+    flex-direction: column;                                     /* Column layout for the form */
+    gap: 1.5rem;                                                /* Space between form elements */
+}
+
+.my-main-contact-field {
+    display: flex;                                              /* Flexbox for field layout */
+    flex-direction: column;                                     /* Column layout for each field */
+    gap: 0.5rem;                                                /* Space between label and input */
+}
+
+.my-main-contact-field label {
+    font-weight: bold;                                          /* Makes the label bold */
+}
+
+.my-main-contact-input,
+.my-main-contact-textarea {
+    padding: 0.75rem 1rem;                                      /* Sets the padding for inputs and textareas */
+    border: 0.063rem solid var(--pfc-white-darker);             /* Sets the border design */
+    border-radius: 0.5rem;                                      /* Sets the corner curve */
+    background-color: var(--pfc-white-lightest);                /* Sets its background color */
+}
+
+html.dark .my-main-contact-input,
+html.dark .my-main-contact-textarea {
+    background-color: var(--pfc-black-lighter);                 /* Sets its background color */
+    color: var(--pfc-white);                                    /* Sets the written text color */
+}
+
+.my-main-contact-textarea {
+    min-height: 7.5rem;                                         /* Sets the minimum height for textareas */ 
+}
+
+.my-main-contact-button {
+    padding: 0.9rem 1.5rem;                                     /* Sets the buttons padding */
+    border: none;                                               /* Removes the border from the button */
+    border-radius: 0.5rem;                                      /* Sets the buttons corner curve */
+    background-color: var(--pfc-blue);                          /* Sets the buttons background color */
+    font-size: 1.1rem;                                          /* Sets the buttons font size */
+    color: white;                                             /* Sets the buttons text color */
+    transition: background-color 0.3s ease, transform 0.3s ease;/* Smooth transition for background color and transform */
+}
+
+.my-main-contact-button:hover {
+    transform: translateY(-5px);                                /* Makes the forms come up when hovered */
+    background-color: var(--pfc-dark-blue);                     /* Sets the forms background in darkmode */
+}
+
+.my-main-contact-popup-message {
+    position: fixed;                                            /* Fixed position for the popup message */
+    bottom: 2rem;                                               /* Position from the bottom */
+    left: 50%;                                                  /* Center horizontally */ 
+    transform: translateX(-50%);                                /* Center horizontally */
+    padding: 1rem 2rem;                                         /* Padding for the popup message */
+    border-radius: 0.75rem;                                     /* Sets the corner curve for the popup message */
+    box-shadow: 0 0.25rem 1.25rem var(--pfc-white-darkest);     /* Sets the shadow for the popup message */
+    background-color: var(--pfc-white);                         /* Sets the background color for the popup message */
+    color: var(--pfc-black);                                    /* Sets the text color for the popup message */
+    font-size: 1rem;                                            /* Sets the font size for the popup message */
+    font-weight: 500;                                           /* Sets the font weight for the popup message */
+    z-index: 1000;                                              /* Ensures the popup is above other elements */
+    transition: opacity 0.3s ease-in-out;                       /* Smooth transition for opacity */ 
+}
+
+html.dark .my-main-contact-popup-message {
+    box-shadow: 0 0.25rem 1rem var(--pfc-black-lightest);       /* Sets the shadow for the popup message in darkmode */
+    background-color: var(--pfc-black-dark);                    /* Sets the background color for the popup message in darkmode */
+    color: var(--pfc-white);                                    /* Sets the text color for the popup message in darkmode */
+}

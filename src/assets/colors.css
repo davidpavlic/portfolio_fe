@@ -25,10 +25,20 @@
     --pfc-green: #48bb78;
     --pfc-blue: #007bff;
     --pfc-dark-blue: #006adc;
+    --pfc-light-blue: #3498db;
 
     /* Transparent Colors */
-    --pfc-transparent-light: #ffffffe6;
-    --pfc-transparent-dark: #000000e6;
+    --pfc-transparent-lighter: #ffffffe6;
+    --pfc-transparent-light: #ffffff1a;
+    --pfc-transparent-dark: #0000001a;
+    --pfc-transparent-darker: #000000e6;
     --pfc-transparent-green: #48bb780d;
     --pfc-transparent-red: #ff44440d;
+    --pfc-transparent-blue: #3498db1a;
+
+    /* Themes */
+    --pfc-linkedin: #00a0dc;
+    --pfc-linkedin-darker: #0086cf;
+    --pfc-github: #6e5494;
+    --pfc-github-darker: #5d477d;
 }
