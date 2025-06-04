@@ -46,20 +46,20 @@ const MyEnvDropDown = () => {
     }, []);
 
     return (
-        <ul className="my-env-dropdown-container">
+        <ul className='my-env-dropdown-container'>
             <li>
                 <a
                     ref={toggleRef}
-                    className="my-env-dropdown-toggle"
+                    className='my-env-dropdown-toggle'
                     onClick={() => setShow(!show)}
                 >
                     {currentLabel}
                 </a>
                 {show && (
-                    <div className="my-env-dropdown" ref={dropdownRef}>
-                        <div className="my-env-dropdown-menu">
+                    <div className='my-env-dropdown' ref={dropdownRef}>
+                        <div className='my-env-dropdown-menu'>
                             {ENV_ITEMS.map(({ code, labelKey }) => (
-                                <a key={code} className="my-env-dropdown-menu-item" onClick={() => handleSelect(code)}>
+                                <a key={code} className='my-env-dropdown-menu-item' onClick={() => handleSelect(code)}>
                                     {t(labelKey)}
                                 </a>
                             ))}

@@ -47,21 +47,21 @@ const MyLanguageDropDown = () => {
   };
 
   return (
-    <ul className="my-language-dropdown-container">
+    <ul className='my-language-dropdown-container'>
       <li>
         <a
           ref={toggleRef}
-          className="my-language-dropdown-toggle"
+          className='my-language-dropdown-toggle'
           onClick={handleToggle}
         >
           {currentLabel}
         </a>
         {show && (
-          <div className="my-language-dropdown" ref={dropdownRef}>
+          <div className='my-language-dropdown' ref={dropdownRef}>
             {LANGUAGE_ITEMS.map(({ code, labelKey }) => (
               <a
                 key={code}
-                className="my-language-dropdown-menu-item"
+                className='my-language-dropdown-menu-item'
                 onClick={() => handleSelect(code)}
               >
                 {t(labelKey)}

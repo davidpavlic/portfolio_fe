@@ -1,75 +1,3 @@
-/* DROPDOWN CONTAINER */
-.dropdown {
-    position: absolute;
-    top: 3rem;
-    width: 10rem;
-    right: 0;
-    margin-top: 0.5rem;                                 /* Adds a small margin above the dropdown */
-    margin-right: calc(2% + 0.5rem);
-    max-height: fit-content;
-    overflow: hidden;
-    transition: height 500ms ease;
-    background-color: var(--pfc-white-lightest);        /* Sets background color for the dropdown */
-    border: 1px solid var(--pfc-black-light);           /* Adds a border to the dropdown */
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
-
-html.dark .dropdown {
-    background-color: var(--pfc-black-darker);          /* Changes background color in dark mode */
-    border: 1px solid var(--pfc-white);                 /* Changes border color in dark mode */
-}
-
-.menu {
-    width: 100%;
-}
-
-.menu-item {
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    padding: 0 1rem;
-    text-decoration: none;
-    transition: all 500ms ease;
-}
-
-.menu-item.theme-switcher-item {
-    padding: 0;
-    height: 50px; /* Match other menu items */
-    display: flex;
-}
-
-.menu-item.theme-switcher-item > * {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* If you want elements spaced */
-    padding: 0 1rem;
-    box-sizing: border-box;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.my-navbar-settings-wrapper {
-    /* KEEP EMPTY SINCE IT EFFECTS THE BUTTON AND THE DROPDOWN */
-}
-
 /* COLLAPSED SETTINGS BUTTON */
 .my-navbar-settings-button {
     position: absolute;                         /* Position relative to parent */
@@ -96,20 +24,68 @@ html.dark .my-navbar-settings-button {
     padding-bottom: 0.063rem;                   /* Adjusts the padding for the cog icon */
 }
 
+/* DROPDOWN MENU */
+.my-navbar-settings-dropdown {
+    position: absolute;                         /* Position relative to parent */
+    top: 3.5rem;                                /* Sets distance from the top of the parent */
+    right: 0;                                   /* Aligns the dropdown to the right */
+    width: 10rem;                               /* Sets the width of the dropdown */
+    max-height: fit-content;                    /* Allows the dropdown to fit its content */
+    margin-right: calc(2% + 0.5rem);            /* 2% matches the settings container's margin from .my-navbar-settings-button */
+    overflow: hidden;                           /* Hides overflow content */
+    border: 1px solid var(--pfc-black-light);   /* Adds a border to the dropdown */
+    border-radius: 0.5rem;                      /* Rounded corners for the dropdown */
+    background-color: var(--pfc-white-lightest);/* Sets background color for the dropdown */
+    transition: height 500ms ease;              /* Smooth transition for height changes */
+    cursor: pointer;                            /* Pointer cursor for interactivity */
+}
+
+html.dark .my-navbar-settings-dropdown {
+    background-color: var(--pfc-black-darker);  /* Changes background color in dark mode */
+    border: 1px solid var(--pfc-white);         /* Changes border color in dark mode */
+}
+
+.my-navbar-settings-dropdown-menu {
+    width: 100%;                                /* Full width of the dropdown */
+}
+
 /* DROPDOWN ELEMENT */
-.menu-item {
+.my-navbar-settings-dropdown-menu-item {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    transition: all 500ms ease;
     color: var(--pfc-black);                    /* Default text color */
 }
 
-html.dark .menu-item {
+html.dark .my-navbar-settings-dropdown-menu-item {
     color: var(--pfc-white);                    /* Changes text color on hover in dark mode */
 }
-.menu-item:hover {
+
+.my-navbar-settings-dropdown-menu-item:hover {
     background-color: var(--pfc-white-darkest); /* Changes background color on hover */
 }
 
-html.dark .menu-item:hover {
+html.dark .my-navbar-settings-dropdown-menu-item:hover {
     background-color: var(--pfc-black-dark);    /* Changes background color on hover in dark mode */
+}
+
+.my-navbar-settings-dropdown-menu-item.my-navbar-settings-theme-switcher-item {
+    display: flex;                              /* Use flexbox for layout */
+    height: 3rem;                               /* Sets height for theme switcher item */
+    padding: 0;                                 /* No padding for theme switcher item */
+}
+
+.my-navbar-settings-dropdown-menu-item.my-navbar-settings-theme-switcher-item > * {
+    display: flex;                              /* Use flexbox for layout */
+    align-items: center;                        /* Center items vertically */
+    justify-content: space-between;             /* Space between items */
+    width: 100%;                                /* Full width of the parent */
+    height: 100%;                               /* Full height of the parent */
+    padding: 0 1rem;                            /* Sets padding for the theme switcher item */
+    box-sizing: border-box;                     /* Ensures padding is included in width/height */
 }
 
 /* UNCOLLAPSED SETTINGS */
@@ -121,42 +97,37 @@ html.dark .menu-item:hover {
 }
 
 /* ANIMATIONS */
-/* Remove position: absolute from primary and sub-menu enter/exit states */
-/* This allows them to be part of the flex layout */
-
 .menu-primary-enter {
-    position: absolute;
-    transform: translateX(-110%);
+    position: absolute;                         /* Position relative to parent */
+    transform: translateX(-110%);               /* Start off-screen to the left */
 }
 
 .menu-primary-enter-active {
-    transform: translateX(0%);
-    transition: all 500ms ease;
+    transform: translateX(0%);                  /* Slide in from the left */
+    transition: all 500ms ease;                 /* Smooth transition */
 }
 
 .menu-primary-exit {
-    position: absolute;
+    position: absolute;                         /* Position relative to parent */
 }
 
 .menu-primary-exit-active {
-    transform: translateX(-110%);
-    transition: all 500ms ease;
+    transform: translateX(-110%);               /* Slide out to the left */
+    transition: all 500ms ease;                 /* Smooth transition */
 }
 
 .menu-sub-enter {
-    transform: translateX(110%);
+    transform: translateX(110%);                /* Start off-screen to the right */
 }
 
 .menu-sub-enter-active {
-    transform: translateX(0%);
-    transition: all 500ms ease;
+    transform: translateX(0%);                  /* Slide in from the right */
+    transition: all 500ms ease;                 /* Smooth transition */
 }
 
-.menu-sub-exit {
-    /* No change needed here, will be moved by flex */
-}
+/* .menu-sub-exit {} */
 
 .menu-sub-exit-active {
-    transform: translateX(110%);
-    transition: all 500ms ease;
+    transform: translateX(110%);                /* Slide out to the right */
+    transition: all 500ms ease;                 /* Smooth transition */
 }
