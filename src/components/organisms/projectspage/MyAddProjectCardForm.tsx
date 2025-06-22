@@ -5,6 +5,7 @@ import { addProjectCard } from '../../../services/MyProjectCardService';
 import MyProjectFileUpload from '../../molecules/projectspage/MyProjectFileUpload';
 import MyProjectFormField from '../../molecules/projectspage/MyProjectFormField';
 import MyProjectTechStack from '../../molecules/projectspage/MyProjectTechStack';
+import MyPasswordModal from '../../molecules/common/MyPasswordModal';
 
 
 ///* FUNCTIONAL COMPONENT *///
@@ -20,6 +21,7 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [popupMessage, setPopupMessage] = useState<string | null>(null);
+    const [showPasswordModal, setShowPasswordModal] = useState(false);
 
     // Function to validate the form
     const validateForm = () => {
@@ -38,11 +40,25 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
         return !Object.keys(newErrors).length;  // Returns true if object is empty, false if it contains errors
     };
 
-    // Handle form submission
-    const handleSubmit = async (e: React.FormEvent) => {
+    // Function to handle form submission authorization
+    const authorizeSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+
         if (!validateForm()) return;
 
+        setShowPasswordModal(true);
+    }
+
+    const onAuthorized = (success: boolean, password: string) => {
+        setShowPasswordModal(false);
+        if (success) {
+            handleSubmit(password); 
+        }
+    };
+
+    // Handle form submission
+    const handleSubmit = async (password: string) => {
+        console.log(password)
         setIsSubmitting(true);
         const formPayload = new FormData();
         formPayload.append('title', formData.title);
@@ -64,56 +80,64 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
     };
 
     return (
-        <div className='my-project-card-form-container'>
-            <h2>{t('projects_form_title')}</h2>
-            <form onSubmit={handleSubmit}>
-                <div className='my-project-card-split-layout'>
-                    <div className='my-project-card-left-column'>
-                        <MyProjectFormField
-                            id='title'
-                            label={t('projects_form_card_title')}
-                            value={formData.title}
-                            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                            error={errors.title}
-                            disabled={isSubmitting}
-                            onKeyDown={e => e.key === 'Enter' && e.preventDefault()}    // Prevent form submission on Enter key
-                        />
-                        <MyProjectFormField
-                            id='description'
-                            label={t('projects_form_card_description')}
-                            value={formData.description}
-                            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                            error={errors.description}
-                            disabled={isSubmitting}
-                            isTextArea
-                        />
-                        <MyProjectTechStack
-                            id='techStack'
-                            label={t('projects_form_card_techstack')}
-                            value={formData.techStack}
-                            onChange={(e) => setFormData({ ...formData, techStack: e.target.value })}
-                            error={errors.techStack}
-                            disabled={isSubmitting}
-                            techStack={techStack}
-                            setTechStack={setTechStack}
-                        />
+        <div>
+            {showPasswordModal && (
+                <MyPasswordModal
+                    closeModal={() => setShowPasswordModal(false)}
+                    onAuthorized={onAuthorized}
+                />
+            )}
+            <div className='my-project-card-form-container'>
+                <h2>{t('projects_form_title')}</h2>
+                <form onSubmit={authorizeSubmit}>
+                    <div className='my-project-card-split-layout'>
+                        <div className='my-project-card-left-column'>
+                            <MyProjectFormField
+                                id='title'
+                                label={t('projects_form_card_title')}
+                                value={formData.title}
+                                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                                error={errors.title}
+                                disabled={isSubmitting}
+                                onKeyDown={e => e.key === 'Enter' && e.preventDefault()}    // Prevent form submission on Enter key
+                            />
+                            <MyProjectFormField
+                                id='description'
+                                label={t('projects_form_card_description')}
+                                value={formData.description}
+                                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                                error={errors.description}
+                                disabled={isSubmitting}
+                                isTextArea
+                            />
+                            <MyProjectTechStack
+                                id='techStack'
+                                label={t('projects_form_card_techstack')}
+                                value={formData.techStack}
+                                onChange={(e) => setFormData({ ...formData, techStack: e.target.value })}
+                                error={errors.techStack}
+                                disabled={isSubmitting}
+                                techStack={techStack}
+                                setTechStack={setTechStack}
+                            />
+                        </div>
+                        <div className='my-project-card-right-column'>
+                            <MyProjectFileUpload
+                                file={formData.file}
+                                error={errors.file}
+                                isSubmitting={isSubmitting}
+                                onFileSelect={(file) => setFormData({ ...formData, file })}
+                            />
+                        </div>
                     </div>
-                    <div className='my-project-card-right-column'>
-                        <MyProjectFileUpload
-                            file={formData.file}
-                            error={errors.file}
-                            isSubmitting={isSubmitting}
-                            onFileSelect={(file) => setFormData({ ...formData, file })}
-                        />
-                    </div>
-                </div>
-                <button type='submit' disabled={isSubmitting} className='my-project-card-submit-button'>
-                    {isSubmitting ? t('projects_form_submitting') : t('projects_form_submit')}
-                </button>
-            </form>
+                    <button type='submit' disabled={isSubmitting} className='my-project-card-submit-button'>
+                        {isSubmitting ? t('projects_form_submitting') : t('projects_form_submit')}
+                    </button>
+                </form>
 
-            {/* Popup message for feedback */}
-            {popupMessage && <div className='my-project-card-popup-message'>{popupMessage}</div>}
+                {/* Popup message for feedback */}
+                {popupMessage && <div className='my-project-card-popup-message'>{popupMessage}</div>}
+            </div>
         </div>
     );
 };

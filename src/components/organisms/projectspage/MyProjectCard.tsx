@@ -1,6 +1,8 @@
 import '../styling/MyProjectCard.css';
 import MyDeleteButton from '../../atoms/common/MyDeleteButton';
 import { deleteProjectCard } from '../../../services/MyProjectCardService';
+import { useState } from 'react';
+import MyPasswordModal from '../../molecules/common/MyPasswordModal';
 
 
 ///* TYPE DEFINTION *///
@@ -29,31 +31,59 @@ const MyProjectCard = ({
   techStack,
   layout,
   onDelete,
-}: MyProjectCardProps) => (
-  <div className={'my_project_card_container ' + (layout ? 'my_project_card_align_right' : '')}>
-    <div className='my_project_card_image_container'>
-      <img src={imageUrl} alt={title} className='my_project_card_image' />
-    </div>
-    <div className='my_project_card_content'>
-      <div className='my_project_card_title_container'>
-        <h3 className='my_project_card_title'>{title}</h3>
-        <MyDeleteButton
-          onClick={async () => {
-            const success = await deleteProjectCard(id);
-            if (success) onDelete(id);
-          }}
-          className='my-project-card-deletebutton'
+}: MyProjectCardProps) => {
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+
+  // Function to handle form submission authorization
+  const authorizeSubmit = () => {
+    setShowPasswordModal(true);
+  }
+
+  const onAuthorized = (success: boolean, password: string) => {
+    setShowPasswordModal(false);
+    if (success) {
+      handleSubmit(password);
+    }
+  };
+
+  const handleSubmit = async (password: string) => {
+    console.log(password);
+    const success = await deleteProjectCard(id);
+    if (success) onDelete(id);
+  }
+
+
+  return (
+    <div>
+      {showPasswordModal && (
+        <MyPasswordModal
+          closeModal={() => setShowPasswordModal(false)}
+          onAuthorized={onAuthorized}
         />
-      </div>
-      <p className='my_project_card_description'>{description}</p>
-      <div className='my_project_card_tech_stack'>
-        {techStack.map((tech, index) => (
-          <span key={index} className='my_project_card_tech_item'>{tech}</span>
-        ))}
+      )}
+      <div className={'my_project_card_container ' + (layout ? 'my_project_card_align_right' : '')}>
+        <div className='my_project_card_image_container'>
+          <img src={imageUrl} alt={title} className='my_project_card_image' />
+        </div>
+        <div className='my_project_card_content'>
+          <div className='my_project_card_title_container'>
+            <h3 className='my_project_card_title'>{title}</h3>
+            <MyDeleteButton
+              onClick={authorizeSubmit}
+              className='my-project-card-deletebutton'
+            />
+          </div>
+          <p className='my_project_card_description'>{description}</p>
+          <div className='my_project_card_tech_stack'>
+            {techStack.map((tech, index) => (
+              <span key={index} className='my_project_card_tech_item'>{tech}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+}
 
 
 
