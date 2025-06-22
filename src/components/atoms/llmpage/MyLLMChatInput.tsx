@@ -12,7 +12,7 @@ import MyPasswordModal from '../../molecules/common/MyPasswordModal';
 type MyLLMChatInputProps = {
     userInput: string;
     setUserInput: (value: string) => void;
-    sendMessage: () => void;
+    sendMessage: (password: string) => void;
     llmStatus: string;
 };
 
@@ -25,7 +25,7 @@ const MyLLMChatInput = ({ userInput, setUserInput, sendMessage, llmStatus }: MyL
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && !isDisabled) {
-            sendMessage();
+            authorizeSubmit();
         }
     };
 
@@ -42,8 +42,7 @@ const MyLLMChatInput = ({ userInput, setUserInput, sendMessage, llmStatus }: MyL
     };
 
     const handleSubmit = async (password: string) => {
-        console.log(password);
-        sendMessage();
+        sendMessage(password);
     }
 
     return (

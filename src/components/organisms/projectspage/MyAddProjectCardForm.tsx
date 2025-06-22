@@ -58,7 +58,6 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
 
     // Handle form submission
     const handleSubmit = async (password: string) => {
-        console.log(password)
         setIsSubmitting(true);
         const formPayload = new FormData();
         formPayload.append('title', formData.title);
@@ -66,7 +65,7 @@ const MyAddProjectCardForm = ({ onProjectAdded }: { onProjectAdded: () => void }
         techStack.forEach((tech) => { formPayload.append('techstacks', tech); });  // Append each tech stack to the form data
         if (formData.file) formPayload.append('image', formData.file);
 
-        const success = await addProjectCard(formPayload);
+        const success = await addProjectCard(formPayload, password);
         setPopupMessage(success ? ('✅ ' + t('projects_form_success')) : ('❌ ' + t('projects_form_fail')));
 
         if (success) {

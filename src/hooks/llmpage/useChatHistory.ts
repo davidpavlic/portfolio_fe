@@ -44,8 +44,8 @@ export const useChatHistory = () => {
     * 
     * @param chatId - ID of the chat to delete
     */
-    const handleDeleteChat = async (chatId: string) => {
-        const success = await deleteLLMChat(chatId);
+    const handleDeleteChat = async (chatId: string, password: string) => {
+        const success = await deleteLLMChat(chatId, password);
         if (success) {
             setHistory(prev => prev.filter(entry => entry.id !== chatId));
             if (selectedChatId === chatId) {

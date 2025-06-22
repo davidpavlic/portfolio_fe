@@ -21,7 +21,7 @@ type MyLLMChatProps = {
     messages: Array<{ fromUser: boolean, content: string }>;
     userInput: string;
     setUserInput: (value: string) => void;
-    sendMessage: () => void;
+    sendMessage: (password: string) => void;
     toggleSidebar: () => void;
 }
 

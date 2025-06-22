@@ -11,10 +11,16 @@ const API_URLS = {
 
 ///* HELPER FUNCTIONS *///
 // Function to create POST request options with JSON body
-export const createPostOptions = (body: FormData): RequestInit => ({
-    method: 'POST',
-    body,
-});
+export const createPostOptions = (body: FormData, password: string): RequestInit => {
+    const headers: HeadersInit = {};
+    headers['X-Auth-Password'] = password;
+
+    return {
+        method: 'POST',
+        headers,
+        body,
+    }
+};
 
 
 ///* PUBLIC API METHODS *///
@@ -22,13 +28,16 @@ export const fetchProjectCards = async () => {
     return await fetchFromAPI(API_URLS.PROJECT_CARD_URL);
 };
 
-export const addProjectCard = async (formData: FormData): Promise<boolean> => {
-    return await fetchFromAPI(API_URLS.PROJECT_CARD_URL, createPostOptions(formData));
+export const addProjectCard = async (formData: FormData, password: string): Promise<boolean> => {
+    return await fetchFromAPI(API_URLS.PROJECT_CARD_URL, createPostOptions(formData, password));
 };
 
-export const deleteProjectCard = async (projectcard_id: string) => {
+export const deleteProjectCard = async (projectcard_id: string, password: string) => {
     try {
-        await fetchFromAPI(`${API_URLS.PROJECT_CARD_URL}/${projectcard_id}`, { method: "DELETE" });
+        const headers: HeadersInit = {};
+        headers['X-Auth-Password'] = password;
+
+        await fetchFromAPI(`${API_URLS.PROJECT_CARD_URL}/${projectcard_id}`, { method: "DELETE", headers });
         return true;
     } catch (error) {
         return false;

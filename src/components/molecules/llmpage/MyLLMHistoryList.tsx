@@ -18,7 +18,7 @@ type LLMHistoryEntry = {
 type LLMHistoryListProps = {
   history: LLMHistoryEntry[];
   onLoadChat: (id: string) => void;
-  onDeleteChat: (id: string) => void;
+  onDeleteChat: (id: string, password: string) => void;
 };
 
 
@@ -28,7 +28,7 @@ const MyLLMHistoryList = ({ history, onLoadChat, onDeleteChat }: LLMHistoryListP
 
   return (
     <div className='my-llm-history-list'>
-      <h4 className='my-llm-history-list-title'>{t('llm_history')}</h4> {/* TODO: i18n */}
+      <h4 className='my-llm-history-list-title'>{t('llm_history')}</h4> 
       <div className='my-llm-history-list-element'>
         {history.map((entry) => (
           <MyLLMHistoryItem

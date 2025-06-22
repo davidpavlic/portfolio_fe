@@ -19,6 +19,17 @@ export const createPostOptions = (body: object): RequestInit => ({
   body: JSON.stringify(body),
 });
 
+export const createPostOptionsPassword = (body: object, password: string): RequestInit => {
+  const headers: HeadersInit = {};
+  headers['X-Auth-Password'] = password;
+  headers['Content-Type'] = 'application/json';
+  return {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(body),
+  }
+};
+
 
 ///* PUBLIC API METHODS *///
 export const fetchAIResponse = async (prompt: string) => {
@@ -30,13 +41,16 @@ export const fetchLLMChatsByUser = async () => {
   return await fetchFromAPI(API_URLS.CHAT_USER_URL);
 };
 
-export const createChatUser = async (chatTitle: string) => {
-  return await fetchFromAPI(API_URLS.CHAT_USER_URL, createPostOptions({ title: chatTitle }));
+export const createChatUser = async (chatTitle: string, password: string) => {
+  return await fetchFromAPI(API_URLS.CHAT_USER_URL, createPostOptionsPassword({ title: chatTitle }, password));
 };
 
-export const deleteLLMChat = async (llm_chat_id: string) => {
+export const deleteLLMChat = async (llm_chat_id: string, password: string) => {
   try {
-    await fetchFromAPI(`${API_URLS.CHAT_USER_URL}/${llm_chat_id}`, { method: 'DELETE' });
+    const headers: HeadersInit = {};
+    headers['X-Auth-Password'] = password;
+
+    await fetchFromAPI(`${API_URLS.CHAT_USER_URL}/${llm_chat_id}`, { method: 'DELETE', headers });
     return true;
   } catch (error) {
     return false;
@@ -47,6 +61,6 @@ export const fetchLLMEntriesByChat = async (id: string) => {
   return await fetchFromAPI(`${API_URLS.CHAT_USER_URL}/${id}`);
 };
 
-export const createChatEntry = async (llmChatUserId: string, text: string, fromUser: boolean, entryOrder: number) => {
-  return await fetchFromAPI(API_URLS.CHAT_ENTRY_URL, createPostOptions({ llmChatUserId, text, fromUser, entryOrder }));
+export const createChatEntry = async (llmChatUserId: string, text: string, fromUser: boolean, entryOrder: number, password: string) => {
+  return await fetchFromAPI(API_URLS.CHAT_ENTRY_URL, createPostOptionsPassword({ llmChatUserId, text, fromUser, entryOrder }, password));
 };

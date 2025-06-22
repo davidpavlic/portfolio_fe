@@ -33,8 +33,8 @@ export const MyLLMPage = () => {
     collapseSidebarIfMobile();
   };
 
-  const handleSendMessage = async () => {
-    await sendMessage(userInput, llmStatus);
+  const handleSendMessage = async (password: string) => {
+    await sendMessage(userInput, llmStatus, password);
     await loadHistory();
     setUserInput("");
   };

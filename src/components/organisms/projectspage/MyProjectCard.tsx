@@ -47,8 +47,7 @@ const MyProjectCard = ({
   };
 
   const handleSubmit = async (password: string) => {
-    console.log(password);
-    const success = await deleteProjectCard(id);
+    const success = await deleteProjectCard(id, password);
     if (success) onDelete(id);
   }
 

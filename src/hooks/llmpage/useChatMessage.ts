@@ -64,13 +64,13 @@ export const useChatMessage = (selectedChatId: string | null, onNewChatCreated?:
     };
 
     // This function sends a message to the AI and handles the response.
-    const sendMessage = async (userInput: string, llmStatus: string) => {
+    const sendMessage = async (userInput: string, llmStatus: string, password: string) => {
         if (!userInput.trim() || llmStatus !== "running") return;                           // Check if the input is empty or if the LLM is not running
 
         try {
             setMessages(prev => [...prev, { fromUser: true, content: userInput.trim() }]);  // Add the user message to the local chat history
             const aiContent = await fetchStreamingAIResponse(userInput.trim());             // Fetch the AI response in a streaming manner
-            await saveMessagesToBackend(userInput.trim(), aiContent);                       // Save the messages to the backend
+            await saveMessagesToBackend(userInput.trim(), aiContent, password);             // Save the messages to the backend
         } catch (error) {
             console.error("Error processing message:", error);
             setMessages(prev => prev.slice(0, -1));
@@ -129,12 +129,12 @@ export const useChatMessage = (selectedChatId: string | null, onNewChatCreated?:
 
 
     // Helperfunction for sendMessage: creates a new chat user and saves the messages to the backend.
-    const saveMessagesToBackend = async (userInput: string, aiContent: string) => {
-        const chatId = selectedChatId ?? (await createChatUser(await generateChatTitle(userInput, aiContent))).id;  // Create a new chat user if no chat is selected
-        if (!selectedChatId) onNewChatCreated?.(chatId);                                                            // Call the callback function if a new chat is created
+    const saveMessagesToBackend = async (userInput: string, aiContent: string, password: string) => {
+        const chatId = selectedChatId ?? (await createChatUser(await generateChatTitle(userInput, aiContent), password)).id;  // Create a new chat user if no chat is selected
+        if (!selectedChatId) onNewChatCreated?.(chatId);                                                                      // Call the callback function if a new chat is created
 
-        await createChatEntry(chatId, userInput, true, messages.length + 1);                                        // Create a new chat entry for the user message
-        await createChatEntry(chatId, aiContent, false, messages.length + 2);                                       // Create a new chat entry for the AI response
+        await createChatEntry(chatId, userInput, true, messages.length + 1, password);                                        // Create a new chat entry for the user message
+        await createChatEntry(chatId, aiContent, false, messages.length + 2, password);                                       // Create a new chat entry for the AI response
     };
 
     return { messages, setMessages, loadChatEntries, sendMessage };

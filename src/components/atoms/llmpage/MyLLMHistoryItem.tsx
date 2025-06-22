@@ -11,7 +11,7 @@ import MyPasswordModal from '../../molecules/common/MyPasswordModal';
 type MyLLMHistoryItemProps = {
     entry: { id: string, title: string, date: string };
     onLoadChat: (id: string) => void;
-    onDelete: (id: string) => void;
+    onDelete: (id: string, password: string) => void;
 }
 
 
@@ -32,8 +32,7 @@ const MyLLMHistoryItem = ({ entry, onLoadChat, onDelete }: MyLLMHistoryItemProps
     };
 
     const handleSubmit = async (password: string) => {
-        console.log(password);
-        onDelete(entry.id);
+        onDelete(entry.id, password);
     }
 
     return (

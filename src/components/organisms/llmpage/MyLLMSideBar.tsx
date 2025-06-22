@@ -15,7 +15,7 @@ type MyLLMSideBarProps = {
   history: HistoryEntry[];
   onNewChat: (message: string) => void;
   onLoadChat: (id: string) => void;
-  onDeleteChat: (id: string) => void;
+  onDeleteChat: (id: string, password: string) => void;
 };
 
 //TODO: Collapse Navbar when selecting a chat or outside of the sidebar additionally
