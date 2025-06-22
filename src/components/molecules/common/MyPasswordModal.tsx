@@ -1,18 +1,22 @@
 import { useState } from 'react';
 import '../styling/MyPasswordModal.css';
+import bcrypt from 'bcryptjs'; // Import the bcryptjs library
 
 const MyPasswordModal = ({ closeModal, onAuthorized }: { closeModal: () => void, onAuthorized: (success: boolean, password: string) => void }) => {
-    const [passwordA, setPasswordA] = useState("");
-    const [passwordB, setPasswordB] = useState("");
+    const [frontendPassword, setFrontendPassword] = useState("");
+    const [backendPassword, setBackendPassword] = useState("");
     const [error, setError] = useState("");
 
-    const CORRECT_A = "abc123";
+    const PREFIX = "i_NeeD!!S7cur1ty-";
+    const SUFFIX = "justARandom_Suffix";
+    const SALT = "$2b$10$HtLKA7MroEjbY2WjKaFVmu";
+    const HASH = "$2b$10$HtLKA7MroEjbY2WjKaFVmu6n2hqpqRGM2r4VnNm..dclz21hSTu0W";
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
-        if (passwordA === CORRECT_A) {
-            onAuthorized(true, passwordB);
+        const generatedPassword = await bcrypt.hash(PREFIX + frontendPassword + SUFFIX, SALT);
+        if (generatedPassword === HASH) {
+            onAuthorized(true, backendPassword);
         } else {
             setError("Wrong passwords");
         }
@@ -32,8 +36,8 @@ const MyPasswordModal = ({ closeModal, onAuthorized }: { closeModal: () => void,
                         <label>Frontend Password:</label>
                         <input
                             type="password"
-                            value={passwordA}
-                            onChange={(e) => setPasswordA(e.target.value)}
+                            value={frontendPassword}
+                            onChange={(e) => setFrontendPassword(e.target.value)}
                             className="my-password-input"
                         />
                     </div>
@@ -41,8 +45,8 @@ const MyPasswordModal = ({ closeModal, onAuthorized }: { closeModal: () => void,
                         <label>Backend Password:</label>
                         <input
                             type="password"
-                            value={passwordB}
-                            onChange={(e) => setPasswordB(e.target.value)}
+                            value={backendPassword}
+                            onChange={(e) => setBackendPassword(e.target.value)}
                             className="my-password-input"
                         />
                     </div>
