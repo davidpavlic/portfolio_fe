@@ -549,7 +549,7 @@ const translations = {
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
   main_certificates_entry_4_title: {
-    en: "Foundatianl Requirements Engineer",
+    en: "Foundational Requirements Engineer",
     de: "Requirements Engineer Foundation Level",
     fr: "Niveau Fondamental en Ingénierie des Exigences",
     hr: "Osnovna razina inženjerstva zahtjeva",
@@ -570,10 +570,10 @@ const translations = {
     gg: "Globi und Sophia"
   },
   main_certificates_entry_5_description: {
-    en: "Cambridge English C1 Advanced certification, demonstrating my proficiency in English at an advanced level.",
-    de: "Cambridge English C1 Advanced-Zertifizierung, die meine Englischkenntnisse auf fortgeschrittenem Niveau zeigt.",
-    fr: "Certification Cambridge English C1 Advanced, démontrant ma maîtrise de l'anglais à un niveau avancé.",
-    hr: "Cambridge English C1 Advanced certifikacija, koja pokazuje moju stručnost u engleskom jeziku na naprednoj razini.",
+    en: "Cambridge English C1 Advanced certification, completed at level C2, demonstrating my advanced proficiency in English.",
+    de: "Cambridge English C1 Advanced-Zertifizierung, abgeschlossen auf C2-Niveau, die meine fortgeschrittene Englischkenntnisse zeigt.",
+    fr: "Certification Cambridge English C1 Advanced, terminée au niveau C2, démontrant ma maîtrise avancée de l'anglais.",
+    hr: "Cambridge English C1 Advanced certifikacija, završena na razini C2, koja pokazuje moje napredno znanje engleskog jezika.",
     gg: "Globi und Sophia fliegen bis ins Gebirge hinauf."
   },
   main_certificates_entry_6_title: {

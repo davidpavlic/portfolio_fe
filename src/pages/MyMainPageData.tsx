@@ -7,7 +7,7 @@ import gradesBMS from '../assets/files/Notenausweis_BMS.pdf';
 import gradesTBZ from '../assets/files/Notenausweis_TBZ.pdf';
 import gradesUni from '../assets/files/Notenausweis_Studium.pdf';
 import certificateReqEng from '../assets/files/Certificate_ReqEng.pdf';
-import certificateEngC1 from '../assets/files/Certificate_EngC1.txt'; //TODO
+import certificateEngC1 from '../assets/files/Certificate_EngC1.pdf';
 
 
 ///* SKILLS DATA *///
